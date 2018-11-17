@@ -1,0 +1,9 @@
+ inline  int  currentToken()
+{
+        /*  __it  is  of  type  std::vector  &amp;lt;int&amp;gt;::iterator  */
+
+        return  (__it  &amp;lt;  __tokens.begin())  ?  Syntax::OUT_OF_RANGE_BEGIN  :
+                      (__it  &amp;gt;  __tokens.end())      ?  Syntax::OUT_OF_RANGE_END  :
+                      *__it;
+}
+ 

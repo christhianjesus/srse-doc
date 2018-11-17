@@ -1,0 +1,29 @@
+ int  main(void){
+    int  loop,  line;
+    char  str[512];
+    char  string[512];
+    FILE  *fd  =  fopen("Student  Passwords.txt",  "r");
+    if  (fd  ==  NULL)  {
+        printf("Failed  to  open  file\n");
+        return  -1;
+    }
+    printf("Enter  the  string:  ");
+    scanf("%s",string);
+    printf("Enter  the  line  number  to  read  :  ");
+    scanf("%d",  &amp;amp;line);
+
+    for(loop  =  0;loop&amp;lt;line;++loop){
+        fgets(str,  sizeof(str),  fd);
+    }
+    printf("\nLine  %d:  %s\n",  line,  str);
+
+    if(strcmp(string,str)  ==  0  ){
+        printf("Match");
+    }else{
+        printf("No  Match");
+    }
+    fclose(fd);
+    getch();
+    return  0;
+}
+ 

@@ -1,0 +1,2 @@
+ vector&amp;lt;char&amp;gt;  vec  {  'a',  'b',  'c',  'd'  };
+ 

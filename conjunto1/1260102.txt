@@ -1,0 +1,3 @@
+ Node*  tempPtr  =  top;
+top  =  new  Node(value,  tempPtr);
+ 

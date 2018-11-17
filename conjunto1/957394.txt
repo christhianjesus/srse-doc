@@ -1,0 +1,9 @@
+ struct  node{
+        int  val;
+        void  split(node&amp;amp;  l,  node&amp;amp;  r){}
+        void  merge(node&amp;amp;  a,  node&amp;amp;  b)
+        {
+                val  =  min(  a.val,  b.val  );
+        }
+}tree[1&amp;lt;&amp;lt;(n+1)];
+ 

@@ -1,0 +1,13 @@
+ enum  MyEnum
+{    A_ENUM_VALUE=0,
+      B_ENUM_VALUE,
+      C_ENUM_VALUE
+};
+
+
+int  main()
+{
+  printf("My  enum  Value  :  %d\n",  (int)C_ENUM_VALUE);
+  return  0;
+}
+ 

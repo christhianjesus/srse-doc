@@ -1,0 +1,4 @@
+ int  error  =  0;
+socklen_t  len  =  sizeof  (error);
+int  retval  =  getsockopt  (socket_fd,  SOL_SOCKET,  SO_ERROR,  &amp;amp;error,  &amp;amp;len  );
+ 

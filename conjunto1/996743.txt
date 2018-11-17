@@ -1,0 +1,17 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+int  main()  {
+        int  x[10];
+        printf("%p\n",  x);
+        #pragma  omp  parallel  private(x)  
+        {
+                printf("%p\n",  x);
+        }
+
+        int*  y  =  (int*)malloc(10*sizeof(int));
+        #pragma  omp  parallel  firstprivate(y)
+        {
+                printf("%p\n",  y);
+        }
+}
+ 

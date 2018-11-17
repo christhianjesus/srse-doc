@@ -1,0 +1,4 @@
+ std::unordered_set&amp;lt;std::weak_ptr&amp;lt;T&amp;gt;,
+                                      MyWeakPtrHash&amp;lt;T&amp;gt;,
+                                      MyWeakPtrEqual&amp;lt;T&amp;gt;&amp;gt;  wpSet;
+ 

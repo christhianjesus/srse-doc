@@ -1,0 +1,37 @@
+ static  size_t  reader(void  *ptr,  size_t  size,  size_t  nmemb,  FILE  *stream)  {
+        size_t  retcode  =  fread(ptr,  size,  nmemb,  stream);
+        cout  &amp;lt;&amp;lt;  "***  We  read  "  &amp;lt;&amp;lt;  retcode  &amp;lt;&amp;lt;  "  bytes  from  file"  &amp;lt;&amp;lt;  endl;
+        return  retcode;
+}
+
+void  upload()  {  //upload()  is  called  from  ouside
+        FILE  *pFile;
+        pFile  =  fopen("map.txt"  ,  "r");
+
+        struct  stat  file_info;
+        stat("map.txt",  &amp;amp;file_info);
+        size_t  size  =  (size_t)file_info.st_size;
+        uploadFile(pFile,  size);
+}
+
+bool  uploadFile(void*  data,  size_t  datasize)  {
+        CURL  *curl;
+        CURLcode  res;
+
+        curl  =  curl_easy_init();
+        if  (curl)  {
+                char  *post_params  =  ...;
+                curl_easy_setopt(curl,  CURLOPT_URL,  url);
+                curl_easy_setopt(curl,  CURLOPT_UPLOAD,  1L);
+                curl_easy_setopt(curl,  CURLOPT_POSTFIELDS,  post_params);
+                curl_easy_setopt(curl,  CURLOPT_POSTFIELDSIZE,  (long)  strlen(post_params));
+                curl_easy_setopt(curl,  CURLOPT_READFUNCTION,  reader);
+                curl_easy_setopt(curl,  CURLOPT_READDATA,  data);
+                curl_easy_setopt(curl,  CURLOPT_INFILESIZE_LARGE,  (curl_off_t)  datasize);
+
+                res  =  curl_easy_perform(curl);
+                curl_easy_cleanup(curl);
+        }
+        return  true;
+}
+ 

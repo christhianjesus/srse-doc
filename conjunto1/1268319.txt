@@ -1,0 +1,10 @@
+ void  SomeOtherFunction();
+
+void  SomeFunction()  {
+        SomeOtherFunction();
+}
+
+void  SomeOtherFunction()  {
+        printf("What?");
+}
+ 

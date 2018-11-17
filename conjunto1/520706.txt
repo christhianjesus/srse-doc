@@ -1,0 +1,19 @@
+ int  b=0;
+
+while(minutes_left&amp;gt;0)
+{
+        for(minutes_left=minutes_left;minutes_left&amp;gt;0  &amp;amp;&amp;amp;  b==0;minutes_left-=10)
+        {
+                system("cls");
+                banner();
+                printf("        TIME  LEFT\n");
+                printf("----------------\n");
+                printf("          %d:%d0\n",(minutes_left/60),  (minutes_left%60)/10);
+                printf("----------------\n");
+                printf("\nPress  any  key  to  enter  you  transaction  code  and  finish  parking\n");
+                b=kbhit();
+                Sleep(10000);
+        }
+
+}
+ 

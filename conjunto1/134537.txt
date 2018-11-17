@@ -1,0 +1,28 @@
+ %{
+#include  "lista4.tab.hpp"
+#include  &amp;lt;stdlib.h&amp;gt;
+extern  int  yylex();
+%}
+%%
+"="  {return  EQ;}
+"!="        {return  NE;}
+"&amp;lt;"  {return  LT;}
+"&amp;gt;"  {return  GT;}
+":="        {return  ASSIGN;}
+";"  {return  SEMICOLON;}
+"IF"        {return  IF;}
+"THEN"{return  THEN;}
+
+"END"  {return  END;}
+[_a-z]+  {yylval.text  =  strdup(yytext);  return  IDENTIFIER;}
+[  \t]+
+[0-9]+                    {
+                                yylval.var  =  atoi  (yytext);
+                                return  NUMBER;
+                                }
+[-+/^*'%'()]        {
+                                return  *yytext;
+                                }
+\n                            return  RESULT;
+%%
+ 

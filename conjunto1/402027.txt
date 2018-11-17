@@ -1,0 +1,32 @@
+ sprite  =  Sprite("icon.jpg",  300,  300,  0)
+sprite2  =  Sprite("icon.jpg",  100,  100,  0)
+
+b1  =  BoxObject(sprite)
+b2  =  BoxObject(sprite2)
+
+sprite3  =  Sprite("circle.png",  200,  100,  0)
+sprite4  =  Sprite("circle.png",  300,  100,  0)
+
+b3  =  CircleObject(sprite3)
+b4  =  CircleObject(sprite4)
+
+n  =  Node()
+n:AddChild(b1)
+n:AddChild(b2)
+n:AddChild(b3)
+n:AddChild(b4)
+
+for  i  =  0,  10,  1  do  
+        x  =  math.random(700)
+        y  =  math.random(500)
+        n:AddChild(BoxObject(Sprite("icon.jpg",  x,  y,  0)))
+end
+
+for  i  =  0,  10,  1  do  
+        x  =  math.random(700)
+        y  =  math.random(500)
+        local  s  =  Sprite("circle.png",  x,  y,  0)
+        local  o  =  CircleObject(s)
+        n:AddChild(BoxObject)
+end
+ 

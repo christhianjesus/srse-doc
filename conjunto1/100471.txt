@@ -1,0 +1,38 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;R.h&amp;gt;
+#include  &amp;lt;R_ext/BLAS.h&amp;gt;
+#include  &amp;lt;R_ext/Lapack.h&amp;gt;
+
+double*  getcopy(int*  nrow,  int*  ncol,double*  a)
+{
+        double*  copy  =  malloc(*nrow**ncol*sizeof(double));
+        int  i;
+        for(i=0;i&amp;lt;*nrow**ncol;i++)
+        {
+                copy[i]  =  a[i];
+        }
+        return  copy;
+}
+
+int  main()  {
+int  m=3,n=3;
+double  a[]  =  {12,-51,4,6,167,-68,-4,24,-41};
+double*  acopy  =  getcopy(&amp;amp;m,&amp;amp;n,a);
+
+double  tau[3];
+int  info=0;
+int  i;
+
+int  one=1;
+double*  work  =  malloc(max(&amp;amp;one,&amp;amp;m)*sizeof(double));
+int  lwork  =  0;
+int  lda  =  max(&amp;amp;m,&amp;amp;n);
+
+F77_NAME(dgeqrf)(&amp;amp;m,&amp;amp;n,acopy,&amp;amp;m,tau,work,&amp;amp;lwork,&amp;amp;info);
+
+for(i=0;i&amp;lt;m*n;i++)
+printf("%f",acopy[i]);
+
+return  0;
+}
+ 

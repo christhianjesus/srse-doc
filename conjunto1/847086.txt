@@ -1,0 +1,11 @@
+ Newclass::NewClass(  SomeStruct  *  const  *  array,  int  arr_size  )
+{
+      SomeStruct  **  myReference  =  new  SomeStruct  *  [arr_size];
+      for  (int  i  =  0;  i  &amp;lt;  arr_size;  ++i)
+      {
+            myReference[i]  =  array[i];
+      }
+
+      myReference[0]  -&amp;gt;  value  =  10;
+}
+ 

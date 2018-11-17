@@ -1,0 +1,4 @@
+ AnalyzerManager::AnalyzerManager()  :  m_AnalyzerIF(new  CAnalyzerIF())
+{
+}
+ 

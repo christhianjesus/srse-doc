@@ -1,0 +1,4 @@
+ r1  =  std::set_intersection(a,b);
+r2  =  std::set_difference(a,b);
+r3  =  std::set_difference(b,a);
+ 

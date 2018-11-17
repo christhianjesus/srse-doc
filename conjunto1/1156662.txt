@@ -1,0 +1,2 @@
+ Const  U_MIN  As  Double  =  1e-5
+ 

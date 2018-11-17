@@ -1,0 +1,10 @@
+ struct  s2  {
+        void  *a;
+        char  b[2];
+        int  c;
+}  __attribute__((packed));
+
+//  Byte  layout  in  memory  (32-bit  little-endian):
+//  |  a0  |  a1  |  a2  |  a3  |  b0  |  b1  |  c0  |  c1  |  c2  |  c3  |
+//  addresses  increasing  ====&amp;gt;
+ 

@@ -1,0 +1,15 @@
+ #ifndef  _DLL_MYDLL_H_
+#define  _DLL_MYDLL_H_
+#include  &amp;lt;iostream&amp;gt;
+#if  defined  DLL_EXPORT
+#define  DECLDIR  __declspec(dllexport)
+#else
+#define  DECLDIR  __declspec(dllimport)
+#endif
+
+extern  "C"
+{
+DECLDIR  void  MyMethod();
+}
+#endif
+ 

@@ -1,0 +1,29 @@
+ enum  messageType  {New  =  0,  Old  =  1,  No_Message  =  2};
+
+typedef  struct  {
+        enum  messageType  type;
+        unsigned  int  senderID;
+        char  message[100];
+}  StoredMessageData;
+
+struct  StoredMessage  {
+        unsigned  int  recipientID;
+        vector&amp;lt;StoredMessageData&amp;gt;  messages;
+
+        StoredMessage(const  unsigned  int&amp;amp;  intRecipient  =  0,  const  vector&amp;lt;StoredMessageData&amp;gt;&amp;amp;  data  =  vector&amp;lt;StoredMessageData&amp;gt;())
+        :  recipientID(intRecipient),  messages(data)
+        {
+                messages.reserve(10);
+        }
+
+        bool  operator&amp;lt;(const  StoredMessage&amp;amp;  compareTo)  const
+        {
+                return  recipientID  &amp;lt;  compareTo.recipientID;
+        }
+
+        bool  operator==(const  StoredMessage&amp;amp;  compareTo)  const
+        {
+                return  recipientID  ==  compareTo.recipientID;
+        }
+};
+ 

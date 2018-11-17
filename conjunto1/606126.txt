@@ -1,0 +1,10 @@
+ #ifdef  WIN32_MANAGED  
+public  ref    struct  ProductData
+#else
+struct  ProductData
+#endif
+{
+        UINT32  ProductId;                      //!&amp;lt;  Product  ID        
+        UINT32  PRoductRev;                  //!&amp;lt;  Build  Revision
+};
+ 

@@ -1,0 +1,2 @@
+ v.erase(std::remove(v.begin(),  v.end(),  value),  v.begin);
+ 

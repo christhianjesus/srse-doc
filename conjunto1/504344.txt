@@ -1,0 +1,4 @@
+ WavFile  WF;
+void*  Ptr  =  WF.SoundData.data();
+//  void*  Ptr  =  &amp;amp;WF.SoundData[0];  -  C++03
+ 

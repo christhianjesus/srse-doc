@@ -1,0 +1,4 @@
+ const  string          &amp;amp;textA  =  ..,  //  reference
+                                  &amp;amp;textB  =  ..,  //  reference
+                                  textC  =  ..;  //  value
+ 

@@ -1,0 +1,15 @@
+ //  relevant  imports
+using  namespace  soci;
+using  namespace  std;
+int  main(int  argc,  char**  argv)  {
+        string  dbName  =  "mysql";
+        string  options  =  "dbname=db  user=root  password=abc";
+        try  {
+                session  sql(dbName,  options);  //  this  is  line  22
+        }  catch  (exception  e)  {
+                printf("%s",  e.what());
+        }
+        printf("working");
+        return  0;
+}
+ 

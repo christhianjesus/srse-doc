@@ -1,0 +1,3 @@
+ /*  in  file  can.h  */
+extern  int  speed;
+ 

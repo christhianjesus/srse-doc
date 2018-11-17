@@ -1,0 +1,8 @@
+ filesrc  ---&amp;gt;  decodebin  ---&amp;gt;  videoconvert  ---&amp;gt;  appsink
+
+filesrc  ---&amp;gt;  decodebin  ---&amp;gt;  videoconvert  ---&amp;gt;  appsink
+
+...
+
+filesrc  ---&amp;gt;  decodebin  ---&amp;gt;  videoconvert  ---&amp;gt;  appsink
+ 

@@ -1,0 +1,2 @@
+     fscanf(  fp,  "%d",  &amp;amp;n  );
+ 

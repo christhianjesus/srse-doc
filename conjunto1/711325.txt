@@ -1,0 +1,2 @@
+ QMessageLogger(__FILE__,  __LINE__,  0).debug()  &amp;lt;&amp;lt;  "Hello  world!";
+ 

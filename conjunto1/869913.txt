@@ -1,0 +1,14 @@
+ int  LoadData::startLoading()
+{
+QNetworkAccessManager*  netManager  =  new  QNetworkAccessManager(this);
+
+        const  QUrl  url(_URL);
+        QNetworkRequest  request(url);
+
+        QNetworkReply*  reply  =  netManager-&amp;gt;get(request);
+        bool  ok  =  connect(reply,  SIGNAL(finished()),  this,  SLOT(onReplyFinished()));
+        Q_ASSERT(ok);
+        Q_UNUSED(ok);
+        return  0;
+}
+ 

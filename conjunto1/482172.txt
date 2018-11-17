@@ -1,0 +1,53 @@
+ List&amp;lt;Point&amp;gt;  FindBrightestSquare(int[,]  image,  int  N,  out  int  squareSum)
+{
+        int  width  =  image.GetLength(0);
+        int  height  =  image.GetLength(1);
+        if  (width  &amp;lt;  N  ||  height  &amp;lt;  N)
+        {
+                return  false;
+        }
+
+        int  currentSum;
+        for  (int  y  =  0;  y  &amp;lt;  height;  y++)
+        {
+                currentSum  =  0;
+                for  (int  x  =  0;  x  &amp;lt;  width;  x++)
+                {
+                        currentSum  +=  image[x,y];
+                        if  (x  =&amp;gt;  N)
+                        {
+                                currentSum  -=  image[x-N,y];
+                                image[x-N,y]  =  currentSum;
+                        }
+                }
+        }
+
+        int?  bestSum  =  null;
+        List&amp;lt;Point&amp;gt;  bestCandidates  =  new  List&amp;lt;Point&amp;gt;();
+        for  (int  x  =  0;  x  &amp;lt;=  width-N;  x++)
+        {
+                currentSum  =  0;
+                for  (int  y  =  0;  y  &amp;lt;  height;  y++)
+                {
+                        currentSum  +=  image[x,y];
+                        if  (y  &amp;gt;=  N)
+                        {
+                                currentSum  -=  image[x,  y-N];
+                                if  (bestSum  ==  null  ||  currentSum  &amp;gt;  bestSum)
+                                {
+                                        bestSum  =  currentSum;
+                                        bestCandidates.Clear();
+                                        bestCandidates.Add(new  Point(x,  y-N));
+                                }
+                                else  if  (currentSum  ==  bestSum)
+                                {
+                                        bestCandidates.Add(new  Point(x,  y-N));
+                                }
+                        }
+                }
+        }
+
+        squareSum  =  bestSum.Value;
+        return  bestCandidates;
+}
+ 

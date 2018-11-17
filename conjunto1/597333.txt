@@ -1,0 +1,8 @@
+ int  main()
+{
+    x('A')  ;
+    x('r')  ;
+    x('m')  ;
+    return  0;
+}
+ 

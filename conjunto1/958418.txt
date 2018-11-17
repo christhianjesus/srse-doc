@@ -1,0 +1,7 @@
+ main()
+{
+        float  a  =  0.2005;
+        float  b  =  a  *  100;
+        printf("%.2f\n",b);
+}
+ 

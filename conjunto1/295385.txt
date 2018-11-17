@@ -1,0 +1,5 @@
+ void  mycblas_dscal(int  N,  double  scale,  double*  data,  int  inc)
+{
+        dscal_((int*)  &amp;amp;N,  (double*)  &amp;amp;scale,  data,  (int*)  &amp;amp;inc);
+}
+ 

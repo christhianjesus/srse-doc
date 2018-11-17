@@ -1,0 +1,2 @@
+ std::vector&amp;lt;Thread&amp;gt;  myVector(128,  Thread(params,...));//  won't  compile
+ 

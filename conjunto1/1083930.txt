@@ -1,0 +1,25 @@
+               void  Student::add_quiz()
+              {
+                cout  &amp;lt;&amp;lt;  "enter  score:  "  &amp;lt;&amp;lt;  endl;
+                int  score;
+                cin  &amp;gt;&amp;gt;  score;
+                total_score  +=  score;
+                quiz_count++;
+
+
+
+              }
+
+              int  main  ()
+              {
+                Student  student1;
+                student1.add_quiz();
+                student1.get_name();
+                student1.get_total_score();
+                student1.get_average_score();
+
+                return  0;
+
+
+              }
+ 

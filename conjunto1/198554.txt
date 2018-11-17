@@ -1,0 +1,2 @@
+ typedef  struct  MyStruct  {  int  a;  }  MyStruct;
+ 

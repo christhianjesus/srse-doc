@@ -1,0 +1,2 @@
+ void  months  (FILE  *fp,  char  ***ugly_pointer)
+ 

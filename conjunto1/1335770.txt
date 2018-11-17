@@ -1,0 +1,51 @@
+ function  Eratosthenes($number)
+{
+        static  $primes  =  array();
+
+        if  (empty($primes[$number])  ===  true)
+        {
+                $sqrt  =  sqrt($number);
+                $primes[$number]  =  array_merge(array(2),  range(3,  $number,  2));
+
+                for  ($i  =  2;  $i  &amp;lt;=  $sqrt;  ++$i)
+                {
+                        foreach  ($primes[$number]  as  $key  =&amp;gt;  $value)
+                        {
+                                if  (($value  !=  $i)  &amp;amp;&amp;amp;  ($value  %  $i  ==  0))
+                                {
+                                        unset($primes[$number][$key]);
+                                }
+                        }
+                }
+        }
+
+        return  $primes[$number];
+}
+
+$time  =  microtime(true);
+$number  =  99995;
+$primes  =  array();
+
+if  ($number  %  2  ==  0)
+{
+        $primes  =  array(2,  2);
+}
+
+else
+{
+        $primes  =  array(2,  3);
+}
+
+$number  -=  array_sum($primes);
+
+foreach  (Eratosthenes($number)  as  $prime)
+{
+        if  (in_array($number  -  $prime,  Eratosthenes($number)))
+        {
+                $primes[]  =  $prime;
+                $primes[]  =  $number  -  $prime;
+
+                die(implode('  +  ',  $primes)  .  '  ('  .  (microtime(true)  -  $time)  .  ')');
+        }
+}
+ 

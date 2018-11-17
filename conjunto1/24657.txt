@@ -1,0 +1,9 @@
+ void  func()
+{
+        if  (n  &amp;gt;  5)
+        {
+              MessageBox(0,  "n  is  greater  than  5",  "Error",  0);
+              return;
+        }
+}
+ 

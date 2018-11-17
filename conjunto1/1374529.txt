@@ -1,0 +1,6 @@
+ ofstream  myfile;
+myfile.open  ("data.txt");
+for  (  int  i  =  1;  i  &amp;lt;=  5;  ++i  )
+    myfile  &amp;lt;&amp;lt;  i  &amp;lt;&amp;lt;  "\n";
+myfile.close();
+ 

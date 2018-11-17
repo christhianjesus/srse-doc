@@ -1,0 +1,13 @@
+ Class  A
+{
+//vector  is  here  -  it's  a  private  vector
+}
+Class  B
+{
+//add  values  to  the  vector  here
+}
+main()
+{
+//access  the  vector  here,  and  print  out  the  values
+}
+ 

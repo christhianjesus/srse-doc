@@ -1,0 +1,7 @@
+ D::SignalT&amp;lt;int&amp;gt;  volume  =
+(
+        (width,  height)  -&amp;gt;*  []  (int  w,  int  h)  {  return  w  *  h;  },
+        depth
+)
+-&amp;gt;*  []  (int  area,  int  d)  {  return  a  *  d;  };
+ 

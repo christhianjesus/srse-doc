@@ -1,0 +1,2 @@
+ ModifyStyle(  WS_BORDER,  0,  SWP_FRAMECHANGED  );
+ 

@@ -1,0 +1,5 @@
+ if  ((LONG_LONG_MAX  /  1000000)  &amp;gt;  V1)
+{
+...
+}
+ 

@@ -1,0 +1,2 @@
+ QString  fileLocation  =  QFileDialog::getOpenFileName(this,("Open  File"),  "",  ("Simulation  Configuration  File(*.scf);;Input  Files(*.prp  *.sze  *.i  *.I  *.tab  *.inp  *.tbl)"));  //launches  File  Selector
+ 

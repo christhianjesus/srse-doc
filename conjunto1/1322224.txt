@@ -1,0 +1,10 @@
+ //  File:  globaldata.cc
+#include  globaldata.h
+
+namespace  GlobalData
+{
+
+        Object  data1;
+        Object  data2;
+}
+ 

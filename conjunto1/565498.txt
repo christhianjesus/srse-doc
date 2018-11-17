@@ -1,0 +1,24 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+
+
+int  main()
+{
+        char  word[31],  word2[31];
+        int  size1,  size2;
+        int  i,  j,  k;  //  control
+        int  count  =  0;
+
+                printf  ("\nInput  the  first  word");
+                scanf  ("%s",  word);
+                printf  ("\nInput  the  second  word:  ");
+                scanf  ("  %s",  word2);
+
+//  I  tried    to  make    a  loop  through  the  first  string  and  if  it  matches  a  letter,  it  would  loop  through  the  others  (if  they  are  equal,  we  have  a  substring),  but  failed  to  put  it  on  the  `for`  loop
+
+
+printf  ("'%s'  appears  %d  times  within  '%s'",  word2,  count,  word);
+
+return  0;
+}
+ 

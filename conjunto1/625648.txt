@@ -1,0 +1,11 @@
+ template  &amp;lt;class  T&amp;gt;  class  auto_ptr
+{
+        T*  ptr;
+public:
+        explicit  auto_ptr(T*  p  =  0)  :  ptr(p)  {}
+        ~auto_ptr()                                  {delete  ptr;}
+        T&amp;amp;  operator*()                            {return  *ptr;}  //  &amp;lt;-----  The  problematic  row.
+        T*  operator-&amp;gt;()                          {return  ptr;}
+        //  ...
+};
+ 

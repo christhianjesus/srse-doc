@@ -1,0 +1,2 @@
+ objdump  -M  intel  -d  a.out
+ 

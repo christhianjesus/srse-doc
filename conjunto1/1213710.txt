@@ -1,0 +1,2 @@
+         RanNum  =  RanNum1to10();
+ 

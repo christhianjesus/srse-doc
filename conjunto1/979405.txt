@@ -1,0 +1,15 @@
+ std::ostream&amp;amp;  operator&amp;lt;&amp;lt;(std::ostream&amp;amp;  os,  frameType  x)
+{
+        switch  (a)
+        {
+            case  PETROLEUM:                return  os  &amp;lt;&amp;lt;  "[petroleum]n";
+            case  COAL:                          return  os  &amp;lt;&amp;lt;  "[coal]";
+            case  NATURAL_GAS:            return  os  &amp;lt;&amp;lt;  "[natural  gas]";
+            case  URANIUM:                    return  os  &amp;lt;&amp;lt;  "[uranium]";
+            case  GLOBAL_WARMING:      return  os  &amp;lt;&amp;lt;  "[global  warming]";
+            case  NUCLEAR_DISASTER:  return  os  &amp;lt;&amp;lt;  "[nuclear  disaster]";
+            case  DIRT:                          return  os  &amp;lt;&amp;lt;  "[dirt]";
+            default:                              return  os  &amp;lt;&amp;lt;  "&amp;lt;invalid&amp;gt;";  //  or  throw?
+        }
+}
+ 

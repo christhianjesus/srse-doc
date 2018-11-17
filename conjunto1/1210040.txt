@@ -1,0 +1,3 @@
+ std::shared_ptr&amp;lt;Person&amp;gt;  bob(  new  Person  ("Bob")  );
+bob-&amp;gt;introduce();
+ 

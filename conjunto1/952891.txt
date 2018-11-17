@@ -1,0 +1,10 @@
+ static  const  uint32_t  shipCategory  =    0x1  &amp;lt;&amp;lt;  0;    //  1
+static  const  uint32_t  DonutCategory  =    0x1  &amp;lt;&amp;lt;  1;
+static  const  uint32_t  PizzaCategory  =    0x1  &amp;lt;&amp;lt;  2;
+static  const  uint32_t  ChocolateCategory  =    0x1  &amp;lt;&amp;lt;  3;
+static  const  uint32_t  SoftCategory  =    0x1  &amp;lt;&amp;lt;  4;
+static  const  uint32_t  AppleCategory  =    0x1  &amp;lt;&amp;lt;  5;
+static  const  uint32_t  GrapeCategory  =    0x1  &amp;lt;&amp;lt;  6;
+static  const  uint32_t  OrangeCategory  =    0x1  &amp;lt;&amp;lt;  7;
+static  const  uint32_t  BananaCategory  =    0x1  &amp;lt;&amp;lt;  8;  //  256
+ 

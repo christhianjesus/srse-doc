@@ -1,0 +1,3 @@
+ std::array&amp;lt;int,  3&amp;gt;  arr  {  1,2,3  };
+for(int  i  :  arr)  std::cout  &amp;lt;&amp;lt;  i;
+ 

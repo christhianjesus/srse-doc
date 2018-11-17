@@ -1,0 +1,2 @@
+ warning:  implicit  conversion  from  'float'  to  'double'  when  passing  argument  to  function
+ 

@@ -1,0 +1,21 @@
+ #include  &amp;lt;vector&amp;gt;
+#include  &amp;lt;sstream&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;iterator&amp;gt;
+#include  &amp;lt;algorithm&amp;gt;
+
+int  main()
+{
+        std::stringstream      data("1,2,3,4,5,6,7,8,9");
+        std::vector&amp;lt;int&amp;gt;        vdata;
+
+        //  Read  the  data  from  a  stream
+        std::copy(std::istream_iterator&amp;lt;ObjectSepReader&amp;lt;int,  ','&amp;gt;  &amp;gt;(data),
+                            std::istream_iterator&amp;lt;ObjectSepReader&amp;lt;int,  ','&amp;gt;  &amp;gt;(),
+                            std::back_inserter(vdata)
+                          );
+
+        //  Copy  data  to  output  for  testing
+        std::copy(vdata.begin(),  vdata.end(),  std::ostream_iterator&amp;lt;int&amp;gt;(std::cout,"  "));
+}
+ 

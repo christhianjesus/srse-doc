@@ -1,0 +1,16 @@
+ template  &amp;lt;int  i&amp;gt;  struct  A
+{
+        typedef  int  T;
+};
+
+template&amp;lt;int  i&amp;gt;
+struct  B
+{
+        static  const  int  i  =  i;  //  &amp;lt;--  this  seems  to  cause  the  problem
+        typename  A&amp;lt;i&amp;gt;::T  F();
+};
+
+
+template&amp;lt;int  i&amp;gt;
+typename  A&amp;lt;i&amp;gt;::T  B&amp;lt;i&amp;gt;::F()              {  return  B&amp;lt;i&amp;gt;::i;  }
+ 

@@ -1,0 +1,46 @@
+ #include  &amp;lt;boost/numeric/ublas/matrix.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/vector.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/io.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/vector_proxy.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/matrix.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/triangular.hpp&amp;gt;  
+#include  &amp;lt;boost/numeric/ublas/lu.hpp&amp;gt;  
+
+namespace  ublas  =  boost::numeric::ublas;  
+template&amp;lt;class  T&amp;gt;  
+bool  InvertMatrix  (const  ublas::matrix&amp;lt;T&amp;gt;&amp;amp;  input,  ublas::matrix&amp;lt;T&amp;gt;&amp;amp;  inverse)  {  
+        using  namespace  boost::numeric::ublas;  
+        typedef  permutation_matrix&amp;lt;std::size_t&amp;gt;  pmatrix;  
+        //  create  a  working  copy  of  the  input  
+        matrix&amp;lt;T&amp;gt;  A(input);  
+        //  create  a  permutation  matrix  for  the  LU-factorization  
+        pmatrix  pm(A.size1());  
+        //  perform  LU-factorization  
+        int  res  =  lu_factorize(A,pm);  
+        if(  res  !=  0  )
+                return  false;  
+        //  create  identity  matrix  of  "inverse"  
+        inverse.assign(ublas::identity_matrix&amp;lt;T&amp;gt;(A.size1()));  
+        //  backsubstitute  to  get  the  inverse  
+        lu_substitute(A,  pm,  inverse);  
+        return  true;  
+}
+
+int  main(){  
+        using  namespace  boost::numeric::ublas;  
+        matrix&amp;lt;double&amp;gt;  m(4,5);  
+        vector&amp;lt;double&amp;gt;  v(4);  
+        vector&amp;lt;double&amp;gt;  thetas;  
+        m(0,0)  =  1;  m(0,1)  =  2104;  m(0,2)  =  5;  m(0,3)  =  1;m(0,4)  =  45;  
+        m(1,0)  =  1;  m(1,1)  =  1416;  m(1,2)  =  3;  m(1,3)  =  2;m(1,4)  =  40;  
+        m(2,0)  =  1;  m(2,1)  =  1534;  m(2,2)  =  3;  m(2,3)  =  2;m(2,4)  =  30;  
+        m(3,0)  =  1;  m(3,1)  =  852;  m(3,2)  =  2;  m(3,3)  =  1;m(3,4)  =  36;  
+        std::cout&amp;lt;&amp;lt;m&amp;lt;&amp;lt;std::endl;  
+        matrix&amp;lt;double&amp;gt;  product  =  prod(trans(m),  m);  
+        std::cout&amp;lt;&amp;lt;product&amp;lt;&amp;lt;std::endl;  
+        matrix&amp;lt;double&amp;gt;  inversion(5,5);  
+        bool  inverted;  
+        inverted  =  InvertMatrix(product,  inversion);  
+        std::cout  &amp;lt;&amp;lt;  inversion  &amp;lt;&amp;lt;  std::endl;  
+}  
+ 

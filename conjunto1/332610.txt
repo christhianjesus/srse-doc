@@ -1,0 +1,4 @@
+ struct  Date;  //  forward  declaration
+
+struct  Date{  int  d,  m,  y;  };  //  class  definition  (struct  is  a  class-key)  
+ 

@@ -1,0 +1,23 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;inttypes.h&amp;gt;
+#define  LT  4000000
+typedef  uint64_t  Numtype;
+int  main(  void  )
+{
+        Numtype  n0  =  1;
+        Numtype  n1  =  1;
+        Numtype  n2  =  0;
+        Numtype  sum  =  0;
+        for(;;)
+        {
+                n2  =  n0  +  n1;
+                if  (  n2  &amp;gt;  LT  )  break;
+                if  (  n2  %  2  ==  0  )  sum  +=  n2;
+                n0  =  n1;
+                n1  =  n2;
+        }
+
+        printf("\nThe  required  Answer:  %ld\n",  sum);
+        return  0;
+}
+ 

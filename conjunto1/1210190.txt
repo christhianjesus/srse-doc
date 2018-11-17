@@ -1,0 +1,4 @@
+ void  configureStartMode(gps_start_mode  mode)  {
+        gpsWrite(mode);
+}
+ 

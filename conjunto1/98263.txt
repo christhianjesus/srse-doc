@@ -1,0 +1,35 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;bitset&amp;gt;
+#include  &amp;lt;iomanip&amp;gt;
+#include  &amp;lt;boost/format.hpp&amp;gt;
+using  namespace  std;
+
+template&amp;lt;class  T&amp;gt;  bitset&amp;lt;sizeof(T)*CHAR_BIT&amp;gt;  toBinary(const  T  num)  
+{
+        bitset&amp;lt;sizeof(T)*CHAR_BIT&amp;gt;  mybits;
+        const  char  *  const  p  =  reinterpret_cast&amp;lt;const  char*&amp;gt;(&amp;amp;num);
+        for  (int  i  =  sizeof(T)*CHAR_BIT-1  ;  i  &amp;gt;=  0  ;  --i)
+                mybits.set(i,  (*(p)&amp;amp;(1&amp;lt;&amp;lt;i)));
+        return  mybits;
+}
+
+template&amp;lt;class  T&amp;gt;  void  printBinary(T  num,  ostream&amp;amp;  stream  =  cout)
+{
+        stream  &amp;lt;&amp;lt;  boost::format("%-35s  %-8s  %-32s\n")    %    typeid(T).name()  %  num  %  toBinary(num).to_string();
+}
+
+struct  Foo{void  bar(){}};
+
+int  main()  
+{      
+    printBinary(-8);
+    printBinary(8u);
+    printBinary('a');
+    printBinary(8.2f);    
+    printBinary("Overflow");
+    printBinary(main);
+    printBinary(&amp;amp;Foo::bar);
+    printBinary(8.2);
+    std::cin.get();
+}
+ 

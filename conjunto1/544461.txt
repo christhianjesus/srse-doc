@@ -1,0 +1,9 @@
+ [Boost  Loop]  Elapsed  time:    0.468  seconds
+[Blitz  Loop]  Elapsed  time:    0.125  seconds
+[arma    Loop]    Elapsed  time:    0.046  seconds
+[Native  Loop]Elapsed  time:    0.047  seconds
+[Boost  computation]  Elapsed  time:    0.796  seconds
+[Blitz  computation]  Elapsed  time:    0.109  seconds
+[arma    computation]  Elapsed  time:    0.078  seconds
+[Native  computation]Elapsed  time:    0.062  seconds
+ 

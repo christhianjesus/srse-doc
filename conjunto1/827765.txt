@@ -1,0 +1,36 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+int  main(void)
+{
+int  a,b,c;
+printf("Enter  values  of  a,b,c:");
+scanf("%d  %d  %d",a,b,c);
+
+printf("\nDescending  order  of  the  numbers  entered:");
+
+/*Test  for  Biggest  Number*/
+if((a&amp;gt;b)&amp;amp;&amp;amp;(a&amp;gt;c))
+  printf("%d",a);
+else  if((b&amp;gt;a)&amp;amp;&amp;amp;(b&amp;gt;c))
+  printf("%d",b);
+else  if((c&amp;gt;a)&amp;amp;&amp;amp;(c&amp;gt;b))
+  printf("%d",c);
+
+  /*Test  for  Second  Biggest  Number*/
+  if((a&amp;gt;b&amp;amp;&amp;amp;a&amp;lt;c)||(a&amp;lt;b&amp;amp;&amp;amp;a&amp;gt;c))
+    printf("%d",a);
+  else  if((b&amp;gt;a&amp;amp;&amp;amp;b&amp;lt;c)||(b&amp;lt;a&amp;amp;&amp;amp;b&amp;gt;c))
+    printf("%d",b);
+  else  if((c&amp;gt;a&amp;amp;&amp;amp;c&amp;lt;b)||(c&amp;lt;a&amp;amp;&amp;amp;c&amp;gt;b))
+    printf("%d",c);
+
+/*Test  for  Smallest  Number*/
+if((a&amp;lt;b)&amp;amp;&amp;amp;(a&amp;lt;c))
+  printf("%d",a);
+else  if((b&amp;lt;a)&amp;amp;&amp;amp;(b&amp;lt;c))
+  printf("%d",b);
+else  if((c&amp;lt;a)&amp;amp;&amp;amp;(c&amp;lt;b))
+  printf("%d",c);
+
+  return  0;
+}
+ 

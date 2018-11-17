@@ -1,0 +1,5 @@
+ while(number  &amp;gt;  0)  {
+      ++count;
+      number  /=  10;
+}//end  while
+ 

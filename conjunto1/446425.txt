@@ -1,0 +1,3 @@
+ #define  __isctype(c,  type)  \
+    ((*__ctype_b_loc())[(int)  (c)]  &amp;amp;  (unsigned  short  int)  type)
+ 

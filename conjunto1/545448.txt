@@ -1,0 +1,2 @@
+ if  (setMember[i]  ==  "foo")  {exist  =  true;}
+ 

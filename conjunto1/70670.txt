@@ -1,0 +1,3 @@
+ class_&amp;lt;MyCclass&amp;gt;("MyClass")
+        .def("MyFunc",  &amp;amp;MyClass::PyMyFunc);
+ 

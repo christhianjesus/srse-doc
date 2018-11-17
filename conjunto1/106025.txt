@@ -1,0 +1,5 @@
+ //  sick  corner  case:
+struct  type  {};
+int  operator+(  type&amp;amp;&amp;amp;  lhs,  type&amp;amp;&amp;amp;  rhs  );
+double  operator+(  type  const  &amp;amp;  lhs,  type  const  &amp;amp;  rhs  );
+ 

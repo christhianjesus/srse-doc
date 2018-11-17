@@ -1,0 +1,27 @@
+ class  MyClass  :  public  QObject
+{
+      public:
+      MyClass():i(0)
+      {
+              QTimer::singleShot(1000,this,SLOT(callback()));//or  call  callback()  directly  here
+      }  //constructor
+
+      protected:
+      unsigned  int  i;
+      void  paintEvent(QPaintEvent  *  p)
+      {        
+          //do  your  painting  here    
+      }
+
+      public  slots:
+      void  callback()
+      {
+            method(circle[i]);  //co-ordinates  change
+            //circle[i].pain(  &amp;amp;  painter);  //don't  use  QPainter  here  -  call  update  instead
+            update();
+            ++i;//increment  counter
+            if(i&amp;lt;10)  QTimer::singleShot(1000,this,SLOT(callback()));
+      }
+
+}
+ 

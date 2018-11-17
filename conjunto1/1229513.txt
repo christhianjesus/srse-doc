@@ -1,0 +1,15 @@
+ from  ctypes  import  cast,  CFUNCTYPE,  c_char_p,  c_long
+
+buffer  =  ''.join(map(chr,  [  #0000000000000000  &amp;lt;add&amp;gt;:
+    0x55,                                          #  push      %rbp
+    0x48,  0x89,  0xe5,                  #  mov        %rsp,%rbp
+    0x48,  0x89,  0x7d,  0xf8,      #  mov        %rdi,-0x8(%rbp)
+    0x48,  0x8b,  0x45,  0xf8,      #  mov        -0x8(%rbp),%rax
+    0x48,  0x83,  0xc0,  0x0a,      #  add        $0xa,%rax
+    0xc9,                                          #  leaveq  
+    0xc3,                                          #  retq
+]))
+
+fptr  =  cast(c_char_p(buffer),  CFUNCTYPE(c_long,  c_long))
+print  fptr(1234)
+ 

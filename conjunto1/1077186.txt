@@ -1,0 +1,7 @@
+         if(statBuf.st_size  !=  fread(fileContent,  1,  statBuf.st_size,  fp))
+              {
+              rCode=errno;
+              fprintf(stderr,  "fread()  failed.    errno[%d]\n",  errno);
+              goto  CLEANUP;
+              }
+ 

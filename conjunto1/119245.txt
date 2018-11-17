@@ -1,0 +1,18 @@
+ int  f(int  &amp;amp;i)  {  return  ++i;  }
+
+#define  e100          r5(m20)
+#define  m20            m5,m5,m5,m5
+#define  m5              r5(e1)
+#define  e1              f(i)    //avoiding  ++i  right  here,  to  avoid  UB!
+#define  r5(e)        e,e,e,e,e
+
+int  main()  {
+                int  i=0;                      //this  is  used  in  the  macro  e1
+                int  a[]  =  {e100};    //filling  array  values  with  macros!
+                int  n    =  sizeof(a)/sizeof(int);
+                cout  &amp;lt;&amp;lt;  "count  =  "  &amp;lt;&amp;lt;  n  &amp;lt;&amp;lt;  endl;
+                for(int  i  =  0  ;  i  &amp;lt;  n  ;  i++  )  
+                        cout  &amp;lt;&amp;lt;  a[i]  &amp;lt;&amp;lt;  endl;
+                return  0;
+}
+ 

@@ -1,0 +1,2 @@
+ set&amp;lt;string*&amp;gt;  myStrings;
+ 

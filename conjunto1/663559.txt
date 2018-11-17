@@ -1,0 +1,2 @@
+ std::vector&amp;lt;std::pair&amp;lt;T,  U&amp;gt;&amp;gt;  vec;
+ 

@@ -1,0 +1,25 @@
+ class  CDigit
+{
+private:
+int  m_iDigit;
+public:
+CDigit()  
+{
+        m_iDigit  =  0;
+}
+CDigit(  const  int  digit  )  
+{
+        m_iDigit  =  digit;
+}
+void  setDigit(  const  int  digit  )
+{
+        m_iDigit  =  digit;
+}
+int  getDigit()  const
+{
+        return  m_iDigit;
+}
+virtual  void  output(ostream  &amp;amp;x)  =  0;
+virtual  bool  less(  CDigit  *pDigit  )  =  0;
+};
+ 

@@ -1,0 +1,16 @@
+ ...
+unsigned  char  buffer[BUFFER_SIZE];
+...
+ssize_t  count  =  recv(client_handle,  &amp;amp;buffer,  BUFFER_SIZE,  0);
+...
+unsigned  int  cmd;
+unsigned  long  commands_count  =  count/4;
+for(cmd  =  0;  cmd  !=  commands_count;  ++cmd)
+{
+        printf("Buffer  =  %d\n",  buffer[0]);
+        printf("Buffer  =  %d\n",  buffer[1]);
+        printf("Buffer  =  %d\n",  buffer[2]);
+        printf("Buffer  =  %d\n",  buffer[3]);
+}
+...
+ 

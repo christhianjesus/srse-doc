@@ -1,0 +1,9 @@
+ float*array=NULL;
+switch(elements)  {
+    case  1:  array={1};  break;
+    case  2:  array={7,  1};  break;
+    case  3:  array={3,  2,  -1};  break;
+    case  4:  array={10,  20,  30,  40};  break;
+    default:break;
+}
+ 

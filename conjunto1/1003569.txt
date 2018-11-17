@@ -1,0 +1,14 @@
+ template&amp;lt;typename  T&amp;gt;
+class  APIClient
+{
+        //  ...  other  code  ...
+
+        static  void  __cdecl  callback(Event  e,  void*  context)
+        {
+            APIClient*  instance  =  (APIClient*)context;
+
+            //  forward  the  event  to  the  subclass
+            instance-&amp;gt;on_event(e);
+        }
+}
+ 

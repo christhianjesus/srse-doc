@@ -1,0 +1,6 @@
+ C:\Users\Ben\Dropbox\Learning  Programming\C++\Strings\Strings.cpp||In  function  'int  main()':|
+C:\Users\Ben\Dropbox\Learning  Programming\C++\Strings\Strings.cpp|17|error:  ISO  C++  forbids  comparison  between  pointer  and  integer  [-fpermissive]|
+C:\Users\Ben\Dropbox\Learning  Programming\C++\Strings\Strings.cpp|19|error:  invalid  conversion  from  'const  char*'  to  'char'  [-fpermissive]|
+C:\Users\Ben\Dropbox\Learning  Programming\C++\Strings\Strings.cpp|23|error:  expected  primary-expression  before  ']'  token|
+||===  Build  finished:  3  errors,  0  warnings  (0  minutes,  0  seconds)  ===|
+ 

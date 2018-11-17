@@ -1,0 +1,37 @@
+ class  Minimode  :  public  QWidget,  public  MediaPlayerPluginInterface
+{
+                        Q_OBJECT
+                        Q_PLUGIN_METADATA(IID  MediaPlayerPluginInterface_iid)
+                        Q_INTERFACES(MediaPlayerPluginInterface)
+
+        private:
+                        Ui::ConfigForm  _ui;
+
+                        QWeakPointer&amp;lt;MediaPlayer&amp;gt;  _mediaPlayer;
+                        bool  _startMoving;
+                        QPoint  _pos,  _globalPos;
+
+        public:
+                        explicit  Minimode();
+
+                        virtual  ~Minimode();
+                        inline  virtual  QString  name()  const  {  return  "Minimode";  }
+                        inline  virtual  QString  version()  const  {  return  "1.0";  }
+                        inline  virtual  bool  providesView()  const  {  return  true;  }
+                        virtual  QWidget*  configPage();
+                        virtual  void  setMediaPlayer(QWeakPointer&amp;lt;MediaPlayer&amp;gt;  mediaPlayer);
+                        virtual  void  toggleViews(QWidget  *view);
+        protected:
+                        /**  Redefined  to  be  able  to  drag  this  widget  on  screen.  */
+                        void  mouseMoveEvent(QMouseEvent  *e);
+
+                        /**  Redefined  to  be  able  to  drag  this  widget  on  screen.  */
+                        void  mouseReleaseEvent(QMouseEvent  *e);
+
+                        void  mousePressEvent(QMouseEvent  *e);
+
+        private:
+                        void  applyColorToStandardIcon(QPushButton  *button);
+
+        };
+ 

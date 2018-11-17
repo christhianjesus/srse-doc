@@ -1,0 +1,12 @@
+ HashTable::HashTable(){
+
+char  charToBeStored;
+theList.resize(4096);
+for(int  i=  0;  i&amp;lt;256;  i++){
+        charToBeStored  =  i;
+        string  stringToBeStored  =  charToBeStored;  //Problem  is  here  I  also  need  to  store
+//  strings  beside  char.  I  need  to  store  them  both  
+        theList.push_back(charToBeStored);  //  Used  &amp;lt;vectors&amp;gt;  -&amp;gt;  vector&amp;lt;string&amp;gt;  theList;
+    }
+}
+ 

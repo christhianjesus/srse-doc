@@ -1,0 +1,24 @@
+ ZeroMemory(tmp,  256);
+
+sprintf(tmp,"USER  %s  \"\"  \"127.0.0.1\"  :%s\r\n",NICK,NICK);
+send(sock,tmp,strlen(tmp),0);
+//-------------------------------------------------------------------
+ZeroMemory(tmp,  256);
+sprintf(tmp,"NICK  %s\r\n",  NICK);
+send(sock,tmp,strlen(tmp),0);
+//----------------------------------------------------------------------
+char  sockbuff[MAXDATASIZE];  //  array  to  hold  the  incoming  socket  data
+char  suffix[512];
+while  (1)  {
+        recv(sock,  sockbuff,  512,  0);
+        if(sscanf(sockbuff,  "PING  :%s",  suffix)  &amp;gt;  0){
+                ZeroMemory(tmp,  256);
+                sprintf(tmp,  "PONG  :%s\r\n",  suffix);
+                send(sock,tmp,strlen(sockbuff),0);
+        }
+
+        ZeroMemory(tmp,  256);
+        sprintf(tmp,"JOIN  %s\r\n",  CHAN);
+        send(sock,tmp,strlen(tmp),0);  
+}
+ 

@@ -1,0 +1,2 @@
+ (*head)-&amp;gt;next  =  new;
+ 

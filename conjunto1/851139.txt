@@ -1,0 +1,5 @@
+ void  CardDeck::Add(const  Card&amp;amp;  card)
+{
+        m_Cards.insert(std::lower_bound(m_Cards.begin(),m_Cards.end(),card,*insert  smaller  than  operator  here*),card);
+}
+ 

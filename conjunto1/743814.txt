@@ -1,0 +1,4 @@
+ typedef  priority_queue&amp;lt;int,vector&amp;lt;int&amp;gt;,mycomparison&amp;gt;  mypq_type;
+mypq_type  fifth  (mycomparison());
+mypq_type  sixth  (mycomparison(true));  
+ 

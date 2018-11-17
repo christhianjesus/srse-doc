@@ -1,0 +1,6 @@
+ class  Array2D
+{
+        std::vector&amp;lt;std::vector&amp;lt;double&amp;gt;  &amp;gt;  myData;
+        //    ...
+};
+ 

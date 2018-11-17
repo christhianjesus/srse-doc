@@ -1,0 +1,17 @@
+ #include  &amp;lt;iostream&amp;gt;  
+#include  &amp;lt;cstdio&amp;gt;
+using  namespace  std;
+
+class  Dummy  {
+public:
+        Dummy();
+};
+
+inline  Dummy::Dummy()  {
+        printf("Wow!  :Dummy  rocks\n");
+}
+
+int  main()  {
+        Dummy  d;
+}
+ 

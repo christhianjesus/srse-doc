@@ -1,0 +1,18 @@
+ enum  item_type  {  VAR,  CONST,  FUNC  };
+
+struct  var  {
+    enum  item_type;
+    int  id;
+};
+
+struct  constant  {
+    enum  item_type;
+    double  value;
+};
+
+struct  func  {
+    enum  item_type;
+    double  (*func)(double,  double);
+    enum  item_type  *a,  *b;
+};
+ 

@@ -1,0 +1,6 @@
+ BOOST_PYTHON_MODULE(example)
+{
+    PyEval_InitThreads();  //  Initialize  GIL  to  support  non-python  threads.
+    //  ...
+}
+ 

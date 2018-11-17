@@ -1,0 +1,4 @@
+ void  myFunction  (NonSimpleObject  foo)  {
+      //modify  foo  here
+}
+ 

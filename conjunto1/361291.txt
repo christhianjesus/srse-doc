@@ -1,0 +1,2 @@
+ int  b    =  myMap.at("1").b;
+ 

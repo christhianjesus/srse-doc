@@ -1,0 +1,37 @@
+ /////////////////////////////
+//  ComException
+
+CString  FormatMessage(HRESULT  result)
+{
+        CString  strMessage;
+        WORD  facility  =  HRESULT_FACILITY(result);
+        CComPtr&amp;lt;IErrorInfo&amp;gt;  iei;
+        if  (S_OK  ==  GetErrorInfo(0,  &amp;amp;iei)  &amp;amp;&amp;amp;  iei)
+        {
+                //  get  the  error  description  from  the  IErrorInfo  
+                BSTR  bstr  =  NULL;
+                if  (SUCCEEDED(iei-&amp;gt;GetDescription(&amp;amp;bstr)))
+                {
+                        //  append  the  description  to  our  label
+                        strMessage.Append(bstr);
+
+                        //  done  with  BSTR,  do  manual  cleanup
+                        SysFreeString(bstr);
+                }
+        }
+        else  if  (facility  ==  FACILITY_ITF)
+        {
+                //  interface  specific  -  no  standard  mapping  available
+                strMessage.Append(_T("FACILITY_ITF  -  This  error  is  interface  specific.    No  further  information  is  available."));
+        }
+        else
+        {
+                //  attempt  to  treat  as  a  standard,  system  error,  and  ask  FormatMessage  to  explain  it
+                CString  error;
+                CErrorMessage::FormatMessage(error,  result);  //  &amp;lt;-  This  is  just  a  wrapper  for  ::FormatMessage,  left  to  reader  as  an  exercise  :)
+                if  (!error.IsEmpty())
+                        strMessage.Append(error);
+        }
+        return  strMessage;
+}
+ 

@@ -1,0 +1,19 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;string&amp;gt;
+#include  &amp;lt;sstream&amp;gt;
+
+using  namespace  std;
+
+int  main()  {
+        string  s(  "1234567890987654321");
+
+        stringstream  strm(  s);
+
+        __int64  x;
+
+        strm  &amp;gt;&amp;gt;  x;
+
+        cout  &amp;lt;&amp;lt;  x;
+
+}
+ 

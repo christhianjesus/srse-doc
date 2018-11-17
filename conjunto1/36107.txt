@@ -1,0 +1,18 @@
+   if  (ch!=  "    ")                                      //i  used  space  as  an  indicator  where  one  number  ends
+                                                                    //so  while  space  havent  been  reahced,  read  letters.
+        {  bigch[x]  =  ch;                            //get  read  letter  into  bigch  array.  
+            x++;                                                //icrement  bigch  array  step
+
+        }
+  else  
+
+  if(ch  ==  "  ")                          //if  space  is  reached  that  means  one  number  has  ended  and
+    {                                                im  trying  to  set  a  flag  at  that  moment.  it  will  be  used  further.
+        checknumber++;                  the  flag  is  simple  number.  first  space  will  set  checknumber  to  1
+                                                      second  space  will  set  it  to  2.  thats  all.
+    }  
+
+    if  (checknumber  ==  1)                                            //if  our  checknumber  is  1,  wich  means  that  reading    
+                                                                                          of  first  number  is  done,  lets  make  one  whole  float                            
+                                                                                          from  that  bigch  array.
+ 

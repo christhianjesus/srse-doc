@@ -1,0 +1,34 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;utility&amp;gt;
+#include  &amp;lt;functional&amp;gt;
+
+struct  Obj
+{
+        Obj()
+        {
+                std::cout  &amp;lt;&amp;lt;  __PRETTY_FUNCTION__  &amp;lt;&amp;lt;  '\n';
+        }
+
+        Obj(Obj  const&amp;amp;)
+        {
+                std::cout  &amp;lt;&amp;lt;  __PRETTY_FUNCTION__  &amp;lt;&amp;lt;  '\n';
+        }
+
+        Obj(Obj&amp;amp;&amp;amp;)
+        {
+                std::cout  &amp;lt;&amp;lt;  __PRETTY_FUNCTION__  &amp;lt;&amp;lt;  '\n';
+        }
+};
+
+void  foo(Obj,  Obj)
+{
+        std::cout  &amp;lt;&amp;lt;  __PRETTY_FUNCTION__  &amp;lt;&amp;lt;  '\n';
+}
+
+int  main()
+{
+        using  namespace  std::placeholders;
+        auto  fn  =  std::bind(foo,  _1,  _1);
+        fn(Obj());
+}
+ 

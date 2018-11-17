@@ -1,0 +1,2 @@
+ UStream&amp;amp;  operator&amp;lt;&amp;lt;(  UStream&amp;amp;,  UStream&amp;amp;  (*f)(  UStream&amp;amp;  )  );
+ 

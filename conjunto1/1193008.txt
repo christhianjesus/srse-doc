@@ -1,0 +1,3 @@
+ attr.type  =  PERF_TYPE_RAW;
+attr.config  =  0x8010;  //  Event  Number  =  10H,  Umask  Value  =  80H
+ 

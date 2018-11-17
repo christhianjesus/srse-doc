@@ -1,0 +1,26 @@
+ Search  for  :  ?  
+New
+Char  i  :  N  -  0x7fff52eb4ba0  
+Char  i  :  e  -  0x7fff52eb4ba1  
+Char  i  :  w  -  0x7fff52eb4ba2  
+Char  i  :  
+  -  0x7fff52eb4ba3  
+Char  i  :  �  -  0x7fff52eb4ba4  
+Char  i  :  �  -  0x7fff52eb4ba5  
+Char  i  :  �  -  0x7fff52eb4ba6  
+Char  i  :  �  -  0x7fff52eb4ba7  
+Char  i  :  
+  -  0x7fff52eb4ba8  
+Char  i  :  �  -  0x7fff52eb4ba9  
+Char  i  :  �  -  0x7fff52eb4baa  
+Char  i  :  �  -  0x7fff52eb4bab  
+Char  i  :    -  0x7fff52eb4bac  
+Char  i  :  �  -  0x7fff52eb4bad  
+Char  i  :  �  -  0x7fff52eb4bae  
+Char  i  :  �  -  0x7fff52eb4baf  
+Char  i  :  @  -  0x7fff52eb4bb0  &amp;lt;----  ??
+Char  i  :  ∑  -  0x7fff52eb4bb1  &amp;lt;----  ??
+Char  i  :  î  -  0x7fff52eb4bb2  &amp;lt;----  ??
+Char  i  :  l  -  0x7fff52eb4bb3  &amp;lt;----  ??
+Char  i  :  ˇ  -  0x7fff52eb4bb4  &amp;lt;----  ??
+ 

@@ -1,0 +1,35 @@
+ #include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+
+class  CountedInstances  {
+public:
+    static  int  Counter;
+    CountedInstances()  {
+        Counter++;
+        cout  &amp;lt;&amp;lt;  Counter  &amp;lt;&amp;lt;  endl;
+    }
+};
+
+int  CountedInstances::Counter  =  0;
+
+template&amp;lt;class  T&amp;gt;  class  GenTest  {
+    static  CountedInstances  OnePerType;
+    T  mT;
+public:
+    GenTest(T  pT)  {
+        mT  =  pT;
+    }
+};
+
+template&amp;lt;class  T&amp;gt;  CountedInstances  GenTest&amp;lt;T&amp;gt;::OnePerType  =  CountedInstances();
+
+int  main()  {
+    GenTest&amp;lt;int&amp;gt;  g1(1);
+    GenTest&amp;lt;int&amp;gt;  g11(11);
+    GenTest&amp;lt;int&amp;gt;  g111(111);
+    GenTest&amp;lt;double&amp;gt;  g2(1.0);
+    cout  &amp;lt;&amp;lt;  CountedInstances::Counter  &amp;lt;&amp;lt;  endl;
+    //CountedInstances  c1;
+    //CountedInstances  c2;
+}
+ 

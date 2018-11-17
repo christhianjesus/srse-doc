@@ -1,0 +1,2 @@
+ class  GameOverState  {}  static  const  std::string  GameOverState::s_gameOverID  =  "GAMEOVER";
+ 

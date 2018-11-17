@@ -1,0 +1,7 @@
+ #define  MAX_ELEMENTS  10
+int  array[MAX_ELEMENTS];
+int  cnt;
+for(cnt  =  0;  cnt  &amp;lt;  MAX_ELEMENTS;  cnt+=1)  {
+      array[cnt]  =  cnt;
+}
+ 

@@ -1,0 +1,6 @@
+ class  Foo{
+        int  x,y;
+        int  getX()  {  return  x;  }
+        int  getY()  {  return  y;  }
+};
+ 

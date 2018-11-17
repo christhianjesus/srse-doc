@@ -1,0 +1,6 @@
+ S1:  False,  the  code  will  compile
+S2:  True,  never  checks  for  NULL
+S3:  False,  as  unwind  pointed  out,  if  px  ==  py  it  would  fail
+S4:  True  for  the  case  cited  above
+S5:  False,  never  subtracts  any  pointers
+ 

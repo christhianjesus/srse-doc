@@ -1,0 +1,10 @@
+ class  A
+{
+        private:
+                std::string  name;
+                std::set&amp;lt;A*&amp;gt;  links;
+
+        public:
+                //  constr.,  destr.,  getter,  setter,  ...
+};
+ 

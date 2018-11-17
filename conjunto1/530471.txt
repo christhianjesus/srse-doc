@@ -1,0 +1,4 @@
+   make  menuconfig
+                  \--&amp;gt;  Kernel  Hacking
+                      \--&amp;gt;  Detect  Soft  Lockups
+ 

@@ -1,0 +1,4 @@
+ void  person::new_person(){
+    person  *(id+index)  =  new  person(name_temp,  age_temp,  quote_temp);
+}
+ 

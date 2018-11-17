@@ -1,0 +1,3 @@
+ SDL_SetWindowSize(Window,  ScreenSizeX,  ScreenSizeY);
+screen  =  SDL_GetWindowSurface(Window);
+ 

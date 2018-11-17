@@ -1,0 +1,20 @@
+ #ifndef  _ComponentClass_H
+#define  _ComponentClass_H
+
+template&amp;lt;  class  T&amp;gt;
+class  ComponentClass
+{
+                public:
+
+                              typedef  ComponentClass*  posizione;
+                              static  const  posizione  POSIZIONENULLA;
+                              ComponentClass();
+};
+
+template&amp;lt;  class  T&amp;gt;
+ComponentClass&amp;lt;T&amp;gt;::ComponentClass()
+{
+const  posizione  POSIZIONENULLA=(ComponentClass*)-1;
+}
+#endif
+ 

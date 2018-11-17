@@ -1,0 +1,4 @@
+ A  a_;
+a_  &amp;lt;&amp;lt;  data1  &amp;lt;&amp;lt;  data2;
+string  datax(a_[offset],  size);
+ 

@@ -1,0 +1,5 @@
+ if  (sendto  (cli,cBuf1,19,0,(struct  sockaddr  *)&amp;amp;servaddr,serv_length)  &amp;lt;  0)
+{
+        bail  ("Send  the  first  requirment  Frame  error  --  UDP");
+}
+ 

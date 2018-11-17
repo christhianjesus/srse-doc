@@ -1,0 +1,5 @@
+         char*  url;
+        sup  =  "news"
+        sup="http://www."+sup+"yahoo.com";
+        strcpy(url,  sup.c_str());
+ 

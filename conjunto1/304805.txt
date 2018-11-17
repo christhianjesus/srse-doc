@@ -1,0 +1,13 @@
+ Listen  Inside  127.0.0.1:1000;
+Listen  Outside  {
+        IP  1.2.3.4;
+        Port  1000;
+        TLS  {
+                CertFile  /path/to/file;
+        };
+};
+ACL  default_acl  {
+        IP  192.168.0.0/24;
+        IP  10.0.0.0/24;
+};
+ 

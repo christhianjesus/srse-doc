@@ -1,0 +1,6 @@
+ double  logp  =  0;
+do  {
+        k++;
+        logp  +=  log(mrand.rand());
+}  while(  logp  &amp;gt;  -lambda);
+ 

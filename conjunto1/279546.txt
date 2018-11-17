@@ -1,0 +1,8 @@
+ Bit&amp;amp;  plus(int  newval)
+{
+  value+=newval;
+  if(value&amp;gt;=pow(2,width))
+  cout&amp;lt;&amp;lt;"Overflow";
+  return  *this;
+}
+ 

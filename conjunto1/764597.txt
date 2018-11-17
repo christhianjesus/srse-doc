@@ -1,0 +1,4 @@
+ bool  is_sunk(uint64_t  board,  uint64_t  ship)  {
+        return  board  &amp;amp;  ship  ==  ship;
+}
+ 

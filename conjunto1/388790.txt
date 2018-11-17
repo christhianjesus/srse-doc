@@ -1,0 +1,7 @@
+ int  temp_count  =  count2;      //  Or  whatever  type  count2  is
+for  (unit32_t  x  =  0;  x  &amp;lt;  4;  x++)
+{
+        new_value[x]  =  temp_count  %  10;
+        temp_count  /=  10;
+}
+ 

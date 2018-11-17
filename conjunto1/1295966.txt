@@ -1,0 +1,30 @@
+ #include  &amp;lt;map&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;string&amp;gt;
+using  namespace  std;
+
+struct  A  {
+        typedef  int  (A::*MFP)(int);
+        std::map  &amp;lt;string,  MFP&amp;gt;  fmap;
+
+        int  f(  int  x  )  {  return  x  +  1;  }
+        int  g(  int  x  )  {  return  x  +  2;  }
+
+
+        A()  {
+          fmap.insert(  std::make_pair(  "f",  &amp;amp;A::f  ));
+          fmap.insert(  std::make_pair(  "g",  &amp;amp;A::g  ));
+        }
+
+        int  Call(  const  string  &amp;amp;  s,  int  x  )  {
+          MFP  fp  =  fmap[s];
+          return  (this-&amp;gt;*fp)(x);
+        }
+};
+
+int  main()  {
+        A  a;
+        cout  &amp;lt;&amp;lt;  a.Call(  "f",  0  )  &amp;lt;&amp;lt;  endl;
+        cout  &amp;lt;&amp;lt;  a.Call(  "g",  0  )  &amp;lt;&amp;lt;  endl;
+}
+ 

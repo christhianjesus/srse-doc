@@ -1,0 +1,9 @@
+ void  keyPressedFn(unsigned  char  key,  int  x,  int  y){
+        switch(key){
+        case  'a':
+        case  'A':
+        //  do  work  for  A  or  a
+        break;
+        }
+}
+ 

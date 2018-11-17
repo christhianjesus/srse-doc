@@ -1,0 +1,7 @@
+ identifier  %=  
+                                char_("a-zA-Z")
+                        &amp;gt;&amp;gt;  *char_("a-zA-Z_0-9")
+                ;
+
+qi::rule&amp;lt;Iterator,  std::string()&amp;gt;  identifier;
+ 

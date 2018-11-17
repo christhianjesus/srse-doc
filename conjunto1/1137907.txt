@@ -1,0 +1,4 @@
+ struct  foo  *s  =  ...;
+int  x  =  s-&amp;gt;f;
+if  (!s)  return  ERROR;
+ 

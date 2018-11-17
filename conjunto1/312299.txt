@@ -1,0 +1,12 @@
+ list  *print_list(list  *plist)
+{
+                node  *current  =  plist-&amp;gt;head;
+                int  i;
+                for(i=1;current!=NULL;i++)
+                {        
+                        printf("[%d]  %s\n",i  ,current-&amp;gt;name);
+                        printf("Birth  Date:  %d/%d/%d\n",  current-&amp;gt;month,  current-&amp;gt;day,  current-&amp;gt;year);
+                        current=current-&amp;gt;next;
+        }
+}
+ 

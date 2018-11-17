@@ -1,0 +1,14 @@
+ class  SimulatedDiskFile  {
+    private:
+        //  ...
+    public:
+        //  ...
+        struct  comparator  {
+            bool  operator  ()  (SimulatedDiskFile*  const&amp;amp;  file_1,  SimulatedDiskFile*  const&amp;amp;  file_2)  {
+                return  ((*file_1)-&amp;gt;getFileName()  &amp;lt;  (*file_2)-&amp;gt;getFileName());
+            }
+        };
+}
+
+typedef  set&amp;lt;SimulatedDiskFile*,  SimulatedDiskFile::comparator&amp;gt;  FileSet;
+ 

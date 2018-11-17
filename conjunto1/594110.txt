@@ -1,0 +1,16 @@
+ int  main()
+{
+        srand((unsigned)time(0));
+        vector&amp;lt;int&amp;gt;  data;
+
+        //  fill  a  vector  with  random  junk.
+        generate_n(back_inserter(data),  20,  []()  {  return  std::rand()  %  99+1;});
+        copy(data.begin(),  data.end(),  ostream_iterator&amp;lt;int&amp;gt;(cout,  "  "));
+        cout  &amp;lt;&amp;lt;  endl;
+
+        mergesort(data.begin(),  data.size());
+        copy(data.begin(),  data.end(),  ostream_iterator&amp;lt;int&amp;gt;(cout,  "  "));
+        cout  &amp;lt;&amp;lt;  endl;
+        return  0;
+}
+ 

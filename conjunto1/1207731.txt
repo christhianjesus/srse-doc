@@ -1,0 +1,17 @@
+ struct  item  {
+    int  b;
+};
+
+class  test  {
+  public:
+    test(const  test&amp;amp;  copy)  =  delete;
+
+    test(const  item&amp;amp;  a)  {
+        std::cout  &amp;lt;&amp;lt;  "OK  "  &amp;lt;&amp;lt;  a.b  &amp;lt;&amp;lt;  std::endl;
+    }
+};
+
+int  main()  {
+    test  a  =  item{10};  //error:  use  of  deleted  function  ‘test::test(const  test&amp;amp;)’
+}
+ 

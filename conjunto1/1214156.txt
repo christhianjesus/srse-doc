@@ -1,0 +1,2 @@
+         fd=open("/test.txt",O_CREAT|O_RDWR|O_TRUNC,0777);
+ 

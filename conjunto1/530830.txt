@@ -1,0 +1,20 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+#include  &amp;lt;inttypes.h&amp;gt;
+
+/**  To  access  long  long  values  as  a  byte  array*/
+typedef  union  uInt64ToByte__
+{
+        uint64_t  m_Value;
+        unsigned  char  m_ByteArray[8];
+
+}uInt64ToByte;
+
+int  main()
+{
+        uInt64ToByte  longLongToByteArrayUnion;
+        longLongToByteArrayUnion.m_Value  =  atoll("01030920316");
+        printf("%d,%d,%d,%d,%d,%d,%d,%d",longLongToByteArrayUnion.m_ByteArray[0],longLongToByteArrayUnion.m_ByteArray[1],longLongToByteArrayUnion.m_ByteArray[2],longLongToByteArrayUnion.m_ByteArray[3],longLongToByteArrayUnion.m_ByteArray[4],longLongToByteArrayUnion.m_ByteArray[5],longLongToByteArrayUnion.m_ByteArray[6],longLongToByteArrayUnion.m_ByteArray[7]);
+        return  0;
+}
+ 

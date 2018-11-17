@@ -1,0 +1,7 @@
+ main()
+{
+        int  a[10];
+        *(a  +  1)  =  0;    //  proper  use  of  *  to  dereference
+        a  +  1  =  0;  //  will  not  compile;  error  is  "l-value  required"
+}
+ 

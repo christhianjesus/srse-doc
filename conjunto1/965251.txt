@@ -1,0 +1,17 @@
+ char  c;
+string  actualPhrase  =  "the  phrase";
+string  revealPhrase  =  "__________";
+int  length  =  actualPhrase.length();
+int  curIndex;
+while(actualPhrase.compare(revealPhrase)  !=  0)
+{
+      cin  &amp;gt;&amp;gt;  c;
+      for(int  i=0;  i  &amp;lt;  length;  i  +=  1)
+      {
+            if(actualPhrase[i]  ==  c)
+            {
+                  revealPhrase[i]  =  c;
+            }
+      }
+}
+ 

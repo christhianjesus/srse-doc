@@ -1,0 +1,2 @@
+ *pointerName  =  4;
+ 

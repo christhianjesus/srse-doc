@@ -1,0 +1,23 @@
+ Stream  httpStream;
+                try
+                {
+                        httpStream  =  request.RequestContext.HttpContext.Request.InputStream;
+                }
+                catch  (HttpException)
+                {
+                        return;
+                }
+
+                        byte[]  tmp  =  new  byte[httpStream.Length];
+                        int  bytesRead  =  httpStream.Read(tmp,  0,  1024  *  1024);
+                        int  totalBytesRead  =  bytesRead;
+                        while  (bytesRead  &amp;gt;  0)
+                        {
+                                bytesRead  =  httpStream.Read(tmp,  totalBytesRead,  1024  *  1024);
+                                totalBytesRead  +=  bytesRead;
+                        }
+                        httpStream.Close();
+                        httpStream.Dispose();
+
+                      //Save  "tmp"  to  file...
+ 

@@ -1,0 +1,14 @@
+ try
+{
+      set&amp;lt;ArrType*&amp;gt;  sHeap;
+      ArrType*  myArr  =  new  ArrType[5];
+      sHeap.Add(myArr);
+      someExternalRoutine(myArr);
+      ...
+}  
+catch(CString  s)
+{
+      DeleteAllPointersInMyHeap(sHeap);
+      throw(s);
+}
+ 

@@ -1,0 +1,6 @@
+ First-chance  exception  at  0x758cd36f  in  OSGP.exe:  Microsoft  C++  exception:  std::bad_alloc  at  memory  location  0x0019f2f4..
+First-chance  exception  at  0x758cd36f  in  OSGP.exe:  Microsoft  C++  exception:  std::bad_alloc  at  memory  location  0x0019ec84..
+First-chance  exception  at  0x758cd36f  in  OSGP.exe:  Microsoft  C++  exception:  [rethrow]  at  memory  location  0x00000000..
+The  thread  'Win32  Thread'  (0x16dc)  has  exited  with  code  0  (0x0).
+The  program  '[448]  OSGP.exe:  Native'  has  exited  with  code  0  (0x0).**
+ 

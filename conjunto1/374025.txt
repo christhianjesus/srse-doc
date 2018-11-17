@@ -1,0 +1,19 @@
+ class  File
+{
+        public:
+
+        static  bool  load(  File  &amp;amp;  file,  std::string  const  &amp;amp;  fileName  );
+
+        private:
+
+        std::vector&amp;lt;  char  &amp;gt;  data;
+};
+
+int  main(  void  )
+{
+        std::string  fileName  =  "foo.txt";
+        File  myFile;
+
+        File::load(  myFile,  fileName  );
+}
+ 

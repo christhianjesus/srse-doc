@@ -1,0 +1,55 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+
+typedef  enum  STATUS  {
+        START,SPC,NUM,COMMA,CR
+}  Status;
+
+int  main(void){
+        int  ch;
+        Status  pre_stat,  stat;
+        pre_stat=stat=START;
+
+        while(EOF!=(ch=getchar())){
+                switch(ch){
+                case  '\n':
+                        stat  =  CR;
+                        if(pre_stat  ==  START  ||  pre_stat  ==  SPC  ||  pre_stat  ==  NUM){
+                                //pre_stat  =  stat;
+                                pre_stat  =  START;//line  end  move  to  line  start,  reset  status
+                        }  else
+                                goto  NG;
+                        break;
+                case  '  ':
+                        stat  =  SPC;
+                        if(pre_stat  ==  START  ||  pre_stat  ==  SPC){
+                                pre_stat  =  stat;
+                        }  else
+                                goto  NG;
+                        break;
+                case  '0':  case  '1':  case  '2':  case  '3':  case  '4':
+                case  '5':  case  '6':  case  '7':  case  '8':  case  '9':
+                        stat  =  NUM;
+                        if(pre_stat  ==  START  ||  pre_stat  ==  COMMA){
+                                pre_stat  =  stat;
+                        }  else
+                                goto  NG;
+                        break;
+                case  ',':
+                        stat  =  COMMA;
+                        if(pre_stat  ==  NUM){
+                                pre_stat  =  stat;
+                        }  else
+                                goto  NG;
+                        break;
+                default:
+                        goto  NG;
+                }
+        }
+        printf("OK");
+        return  EXIT_SUCCESS;
+NG:
+        printf("NG");
+        return  EXIT_FAILURE;
+}
+ 

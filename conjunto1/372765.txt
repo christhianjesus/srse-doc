@@ -1,0 +1,5 @@
+ A*  lBaseobj  =  new  A  (  );
+lBaseobj-&amp;gt;func1(  );
+delete  lBaseobj;  //  call  delete  here
+lBaseobj  =  new  B(  );
+ 

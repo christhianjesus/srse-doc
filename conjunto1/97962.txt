@@ -1,0 +1,50 @@
+ #include  &amp;lt;cassert&amp;gt;
+
+template&amp;lt;typename  S&amp;gt;  struct  PA1  {};  template&amp;lt;typename  S&amp;gt;  struct  QA1  {};
+template&amp;lt;typename  S&amp;gt;  struct  PA2  {};  template&amp;lt;typename  S&amp;gt;  struct  QA2  {};
+template&amp;lt;typename  S&amp;gt;  struct  PB    {};  template&amp;lt;typename  S&amp;gt;  struct  QB    {};
+template&amp;lt;typename  S&amp;gt;  struct  PC    {};  template&amp;lt;typename  S&amp;gt;  struct  QC    {};
+
+template&amp;lt;typename  S&amp;gt;  struct  A1  {  typedef  PA1&amp;lt;S&amp;gt;  P;  typedef  QA1&amp;lt;S&amp;gt;  Q;  };
+template&amp;lt;typename  S&amp;gt;  struct  A2  {  typedef  PA2&amp;lt;S&amp;gt;  P;  typedef  QA2&amp;lt;S&amp;gt;  Q;  };
+template&amp;lt;typename  S&amp;gt;  struct  B    {  typedef  PB&amp;lt;S&amp;gt;    P;  typedef  QB&amp;lt;S&amp;gt;    Q;  };
+template&amp;lt;typename  S&amp;gt;  struct  C    {  typedef  PC&amp;lt;S&amp;gt;    P;  typedef  QC&amp;lt;S&amp;gt;    Q;  };
+
+template&amp;lt;typename  PA,  typename  QA&amp;gt;
+char  fn(PA,  QA)  {
+        return  'a';
+}
+
+template&amp;lt;typename  S&amp;gt;  char  fn(PB&amp;lt;S&amp;gt;,  QB&amp;lt;S&amp;gt;)  {  return  'b';  }
+template&amp;lt;typename  S&amp;gt;  char  fn(PC&amp;lt;S&amp;gt;,  QC&amp;lt;S&amp;gt;)  {  return  'c';  }
+
+template&amp;lt;typename  T&amp;gt;
+struct  Action
+{
+        char  z;
+        Action(typename  T::P  p,  typename  T::Q  q)
+        {
+                z  =  fn(p,  q);
+        }
+};
+
+int  main()
+{
+        PA1&amp;lt;int&amp;gt;  pa1;  QA1&amp;lt;int&amp;gt;  qa1;
+        PA2&amp;lt;int&amp;gt;  pa2;  QA2&amp;lt;int&amp;gt;  qa2;
+        PB&amp;lt;int&amp;gt;    pb;    QB&amp;lt;int&amp;gt;    qb;
+        PC&amp;lt;int&amp;gt;    pc;    QC&amp;lt;int&amp;gt;    qc;
+
+        assert(  fn(pa1,  qa1)  ==  'a'  );
+        assert(  fn(pa2,  qa2)  ==  'a'  );
+
+        assert(  fn(pb,  qb)  ==  'b'  );
+        assert(  fn(pc,  qc)  ==  'c'  );
+
+        Action&amp;lt;A1&amp;lt;int&amp;gt;  &amp;gt;  aa1  =  Action&amp;lt;A1&amp;lt;int&amp;gt;  &amp;gt;(pa1,  qa1);        assert(  aa1.z  ==  'a'  );
+        Action&amp;lt;A2&amp;lt;int&amp;gt;  &amp;gt;  aa2  =  Action&amp;lt;A2&amp;lt;int&amp;gt;  &amp;gt;(pa2,  qa2);        assert(  aa2.z  ==  'a'  );
+
+        Action&amp;lt;B&amp;lt;int&amp;gt;  &amp;gt;  ab  =  Action&amp;lt;B&amp;lt;int&amp;gt;  &amp;gt;(pb,  qb  );        assert(  ab.z  ==  'b'  );
+        Action&amp;lt;C&amp;lt;int&amp;gt;  &amp;gt;  ac  =  Action&amp;lt;C&amp;lt;int&amp;gt;  &amp;gt;(pc,  qc  );        assert(  ac.z  ==  'c'  );
+}
+ 

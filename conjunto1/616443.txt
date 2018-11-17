@@ -1,0 +1,8 @@
+ int
+main(void)
+{
+        char  ip  [11]  =  "65.55.57.27";
+        printf(ip);
+        return  0;
+}
+ 

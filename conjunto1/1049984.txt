@@ -1,0 +1,3 @@
+ char**  array  =  malloc(sizeof(char*)  *  num));
+getArray(num,  files);
+ 

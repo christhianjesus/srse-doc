@@ -1,0 +1,9 @@
+         if(D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED,  &amp;amp;Direct2DFactory)  !=  S_OK)
+                throw  std::runtime_error("RENDERWINDOW::InitializeDirect2D:  Failed  to  create  a  factory  interface.");
+        RECT  WindowRect;
+        memset(&amp;amp;WindowRect,  0,  sizeof(RECT));
+        GetClientRect(this-&amp;gt;WndHandle,  &amp;amp;WindowRect);
+        D2D1_SIZE_U  WindowSize  =  D2D1::SizeU(WindowRect.right,  WindowRect.bottom);
+        Direct2DFactory-&amp;gt;CreateHwndRenderTarget(D2D1::RenderTargetProperties(D2D1_RENDER_TARGET_TYPE_HARDWARE),  
+        D2D1::HwndRenderTargetProperties(this-&amp;gt;WndHandle,  WindowSize,  D2D1_PRESENT_OPTIONS_IMMEDIATELY),  &amp;amp;RenderTarget);
+ 

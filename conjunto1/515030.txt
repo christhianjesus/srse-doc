@@ -1,0 +1,2 @@
+ scanf("%d%",&amp;amp;info-&amp;gt;id);    //  should  be  scanf("%d",&amp;amp;info-&amp;gt;id);
+ 

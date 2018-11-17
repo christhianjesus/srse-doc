@@ -1,0 +1,10 @@
+ inline/__forceinline  void  float4::set_wxy(const  float4&amp;amp;  x)
+{
+        float4  tmp2  =  *this;
+        tmp2.set_wxyz(x);                                                  //  set_wxyz  =  1  x  _mm_shuffle_ps
+        const  __m128  xyw_tmp  =  tmp2.zxyw().data;    //  zxyw()  =  1  x  _mm_shuffle_ps
+        const  __m128  z_tmp  =  zxyw().data;                  //  zxyw()  =  1  x  _mm_shuffle_ps
+        tmp2  =  _mm_move_ss(xyw_tmp,  z_tmp);
+        set_zxyw(tmp2);                                                      //  set_zxyw()  =  1  x  _mm_shuffle_ps
+}
+ 

@@ -1,0 +1,5 @@
+ template  &amp;lt;typename  type&amp;gt;
+void  foo(std::enable_if&amp;lt;std::is_same&amp;lt;type,  char&amp;gt;::value||std::is_same&amp;lt;type,  signed  char&amp;gt;::value||std::is_same&amp;lt;type,  unsigned  char&amp;gt;::value,  type&amp;gt;  x)
+{
+}
+ 

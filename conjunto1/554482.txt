@@ -1,0 +1,2 @@
+ char  Record_Info[file_length  +  1];
+ 

@@ -1,0 +1,33 @@
+ Inserting  Abc
+Inserting  Xyz
+operator(Abc  Xyz)
+operator(Xyz  Abc)
+operator(Abc  Xyz)
+operator(Xyz  Abc)
+Inserting  123
+operator(Abc  123)
+operator(123  Abc)
+operator(123  Abc)
+operator(Abc  123)
+Inserting  987
+operator(Abc  987)
+operator(123  987)
+operator(987  123)
+operator(987  Abc)
+operator(987  Abc)
+operator(Abc  987)
+operator(123  987)
+operator(987  123)
+Finding  (Abc)
+operator(Abc  Abc)
+operator(123  Abc)
+operator(Abc  123)
+operator(987  Abc)
+operator(Abc  987)
+operator(Abc  Abc)
+Finding  (Xyz)
+operator(Abc  Xyz)
+operator(Xyz  Abc)
+operator(Xyz  Xyz)
+operator(Xyz  Xyz)
+ 

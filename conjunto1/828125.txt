@@ -1,0 +1,2 @@
+ if  (strcmp("..",  readDir-&amp;gt;d_name)  &amp;amp;&amp;amp;  strcmp(".",  readDir-&amp;gt;d_name))  {
+ 

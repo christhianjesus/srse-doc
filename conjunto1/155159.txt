@@ -1,0 +1,8 @@
+ class  Something:
+        def  __init__(self):
+                EventManager.addEventHandler(FooEvent,  self.onFooEvent)
+        def  __del__(self):
+                EventManager.removeEventHandler(FooEvent,  self.onFooEvent)
+        def  onFooEvent(self,  event):
+                pass
+ 

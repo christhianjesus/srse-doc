@@ -1,0 +1,5 @@
+ exer3.c:  In  function  ‘shm_pipe_pipe’:
+exer3.c:69:39:  error:  expected  ‘)’  before  ‘;’  token
+exer3.c:69:39:  error:  too  few  arguments  to  function  ‘shmget’
+/usr/include/i386-linux-gnu/sys/shm.h:54:12:  note:  declared  here
+ 

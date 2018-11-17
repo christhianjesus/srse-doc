@@ -1,0 +1,15 @@
+ void  f1(char  *name)
+{
+    size_t  len  =  strlen(name);
+    char  localstr[len+1];
+    char  *tmp;
+    strcpy(localstr,  name);
+
+    tmp  =  strtok(localstr,  "  ,");
+    while(tmp)
+    {
+        ...
+        tmp  =  strtok(NULL,  "  ,");
+    }
+}
+ 

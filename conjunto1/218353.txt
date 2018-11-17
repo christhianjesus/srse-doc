@@ -1,0 +1,5 @@
+ char  data[20];
+int  value;
+
+memcpy(&amp;amp;value,data,sizeof(int));
+ 

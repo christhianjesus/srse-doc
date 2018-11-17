@@ -1,0 +1,26 @@
+ namespace  unstd  {
+
+template&amp;lt;typename  T,class  Allocator  =  std::allocator&amp;lt;T&amp;gt;&amp;gt;
+class  SList
+{
+
+public:
+
+        typedef  typename  Allocator::value_type  value_type;
+        typedef  typename  size_t  size_type;
+        typedef  typename  Allocator::template  rebind&amp;lt;T&amp;gt;::other  allocator_type;
+        typedef  typename  Allocator::reference  reference;
+        typedef  typename  Allocator::const_reference  const_reference;
+        typedef  typename  T*  pointer;
+        typedef  typename  const  T*  const_pointer;
+        typedef  typename  ptrdiff_t  difference_type;
+
+        typedef  typename  SList_Iterator_Forward&amp;lt;T&amp;gt;  iterator;
+        typedef  typename  const  SList_Iterator_Forward&amp;lt;T&amp;gt;  const_iterator;
+
+....
+                /*-----  ITERATORS  -------*/
+        iterator  begin();
+        ...
+        };}
+ 

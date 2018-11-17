@@ -1,0 +1,27 @@
+ //  Libraries
+#include  &amp;lt;cs50.h&amp;gt;
+#include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;string.h&amp;gt;
+
+//  Program  
+int  main(void)
+{
+        //  Get  CC  number
+        printf("Enter  your  credit  card  number:  ");
+        long  long  number_ll  =  GetLongLong();
+        //  printf("%lld\n",  number_ll);
+
+        //  Convert  long  long  to  string  
+        char  number_str[64];
+        sprintf(number_str,  "%lld",  number_ll);
+        //  printf("%s\n",  number_str);
+
+        //  Get  length  of  card  number  string
+        int  cclength  =  strlen(number_str);
+
+        //  Check  the  length  of  card  number  string
+        if  (  !  (cclength  ==  13  ||  cclength  ==  15  ||  cclength  ==  16))
+                printf("INVALID\n");
+        else    
+                printf("%d\n",number_str[3]);
+ 

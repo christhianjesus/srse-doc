@@ -1,0 +1,2 @@
+ destination[numOfElements]  =  '\0';
+ 

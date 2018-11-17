@@ -1,0 +1,10 @@
+ #define  __USE_FILE_OFFSET64
+#define  __USE_LARGEFILE64
+#include  &amp;lt;fcntl.h&amp;gt;
+
+int
+main(void)  {
+        int  fd  =  open64("/",  O_RDONLY);
+        return  0;
+}
+ 

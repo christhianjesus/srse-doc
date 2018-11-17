@@ -1,0 +1,10 @@
+ class  AgentMemory  {
+    //...
+    private:
+        boost::ptr_map&amp;lt;std::string,  VectorWrapperBase&amp;gt;  memory_map;
+};
+
+std::map&amp;lt;std::string,  AgentMemory&amp;gt;  agent_map;
+//...
+agent_map.insert(std::pair&amp;lt;std::string,  AgentMemory&amp;gt;(agent_name,  AgentMemory()));
+ 

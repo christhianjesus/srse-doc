@@ -1,0 +1,2 @@
+   result  =  (float)pow(var,  3.0);
+ 

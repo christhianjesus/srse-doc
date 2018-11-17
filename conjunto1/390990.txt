@@ -1,0 +1,130 @@
+   /*  This  function  runs  the  matrix  dot  product  on  whatever  OpenCL  device  
+    *  you  specify  
+    */
+cl_int  OpenCL_MatrixMul(cl_device_id  *  device,  cl_context  *  context,  
+        cl_command_queue  *  commandQueue,  cl_kernel  *  matrixMulKernel,  float  *  A_h,  
+        float  *  B_h,  float  *  C_h,  const  cl_uint  HeightA,  const  cl_uint  WidthB,  
+        const  cl_uint  WidthAHeightB)
+{
+        printf("Inside  matrix  mul,  WidthA:  %zu,  WidthB:  %zu,  WidthAHeightB:  %zu\n",  
+                HeightA,  WidthB,  WidthAHeightB);
+
+        //this  error  variable  will  record  any  errors  found  and  will  be  returned  
+        //by  this  function
+        cl_int  error  =  CL_SUCCESS;
+        cl_int  clEnqueueReadBuffer_error;
+
+        //declare  a  place  for  the  memory  on  the  device,  A  is  the  A  matrix,  
+        //B  is  the  B  matrix,  C  is  the  C  result  matrix
+        cl_mem  A_d,  B_d,  C_d;                              
+        //this  is  a  temporary  value  for  holding  the  maximum  work  group  size
+        size_t  maximum_local_ws;
+
+        //variable  for  holding  the  number  of  work  items  per  group
+        size_t  local_ws[2];  
+        //variable  for  holding  the  number  of  work  items                            
+        size_t  global_ws[2];                        
+
+        //calcuate  work  group  and  local  size
+        //get  the  maximum  work  group  size  for  the  kernel,  i.e.  set  local_ws
+        clGetKernelWorkGroupInfo((*  matrixMulKernel),  (*  device),  
+                CL_KERNEL_WORK_GROUP_SIZE,  sizeof(maximum_local_ws),  
+                &amp;amp;maximum_local_ws,  NULL);
+
+        //find  the  largest  integer,  power  of  2,  square  root,  for  maximum_local_ws  
+        //that  is  less  than  or  equal  to  16
+        for(size_t  i  =  1;  (i  *  i)  &amp;lt;=  maximum_local_ws  &amp;amp;&amp;amp;  i  &amp;lt;=  maxBlockSize;  i  *=  2)
+        {
+                local_ws[0]  =  i;
+                local_ws[1]  =  i;
+        }
+        //calculate  global  work  size
+        global_ws[0]  =  WidthB;    
+        global_ws[1]  =  HeightA;
+
+        printf("Work  group  size  calculated.\n");
+
+        //Allocate  global  memory  on  the  device
+        //put  A  on  the  device
+        A_d  =  clCreateBuffer  ((*  context),  CL_MEM_COPY_HOST_PTR,  
+                (WidthAHeightB  *  HeightA  *  sizeof(float)),  A_h,  &amp;amp;error);        
+        //put  B  on  the  device      
+        B_d  =  clCreateBuffer  ((*  context),  CL_MEM_COPY_HOST_PTR,  
+                (WidthB  *  WidthAHeightB  *  sizeof(float)),  B_h,  &amp;amp;error);
+        //create  a  space  for  C  on  the  device                
+        C_d  =  clCreateBuffer  ((*  context),  CL_MEM_READ_WRITE,  
+                (HeightA  *  WidthB  *  sizeof(float)),  NULL,  &amp;amp;error);                            
+
+        printf("Global  memory  allocated.\n");
+
+        if(error  ==  CL_SUCCESS)
+        {
+                //set  the  prarameters  of  the  kernels
+                //Put  in  A
+                error    =  clSetKernelArg((*  matrixMulKernel),  0,  sizeof(cl_mem),  &amp;amp;A_d);
+                //Put  in  B                                                                                                    
+                error  |=  clSetKernelArg((*  matrixMulKernel),  1,  sizeof(cl_mem),  &amp;amp;B_d);
+                //Put  in  C                                                                    
+                error  |=  clSetKernelArg((*  matrixMulKernel),  2,  sizeof(cl_mem),  &amp;amp;C_d);                                                    
+                //Put  in  HeightA
+                error  |=  clSetKernelArg((*  matrixMulKernel),  3,  sizeof(cl_uint),  
+                        &amp;amp;HeightA);                                                            
+                //Put  in  WidthB
+                error  |=  clSetKernelArg((*  matrixMulKernel),  4,  sizeof(cl_uint),  
+                        &amp;amp;WidthB);                                                              
+                //Put  in  WidthAHeightB
+                error  |=  clSetKernelArg((*  matrixMulKernel),  5,  sizeof(cl_uint),
+                        &amp;amp;WidthAHeightB);                                                
+
+                printf("Parameters  added  to  the  kernel.\n");
+
+                if(error  ==  CL_SUCCESS)
+                {
+                        //execute  the  kernel
+                        printf("Running  Kernel,  Local  work  size:  %zu  x  %zu  global  worksize:  
+                        %zu  x  %zu,  HeightA:  %zu,  WidthB:  %zu,  WidthAHeightB:  %zu\n",  
+                                local_ws[0],  local_ws[1],  global_ws[0],  global_ws[1],  
+                                HeightA,  WidthB,  WidthAHeightB);
+                        error  =  clEnqueueNDRangeKernel((*  commandQueue),      
+                                (*  matrixMulKernel),  1,  NULL,  global_ws,  local_ws,  0,  NULL,  
+                                NULL);
+
+                                printf("Kernel  Ran.\n");
+
+                        if(error  ==  CL_SUCCESS)
+                        {
+                                  printf("Kernel  Launched  Successfully\n");
+                        }
+                        else
+                        {
+                                printf("Kernel  Not  Launched\n");
+                        }
+                }
+        }
+        else  
+        {
+                printf("Parameters  not  added  to  the  kernel.\n");
+        }
+        printf("Reading  results  back  from  device\n");
+
+        //read  the  result  back  to  the  host  system,  (copy  C_h  to  C_d)
+        clEnqueueReadBuffer_error  =  clEnqueueReadBuffer((*  commandQueue),  C_d,    
+                CL_TRUE,  0,  HeightA  *  WidthB  *  sizeof(float),  C_h,  0,  NULL,  NULL);
+
+        //make  sure  we  don't  write  over  previous  errors,  if  
+        //clEnqueueReadBuffer_error  has  an  error
+        if(error  ==  CL_SUCCESS)
+        {
+                error  =  clEnqueueReadBuffer_error;
+        }
+
+        printf("Freeing  device  memory\n");
+
+        //Free  global  memory  on  the  device
+        clReleaseMemObject(A_d);
+        clReleaseMemObject(B_d);
+        clReleaseMemObject(C_d);
+
+        return  error;
+}
+ 

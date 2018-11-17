@@ -1,0 +1,22 @@
+ class  GameCharacter  {
+  public:
+    enum  class  DrivingState  {  Accelerating,  Breaking,  Stopped  };
+    enum  class  WalkingState  {  Stopped,  Running,  Walking  };
+
+    DrivingState  driving_state()  {  return  ds_;  }
+    void  set_driving_state(DrivingState  ds)  {  ds_  =  ds;  }
+
+    WalkingState  walking_state()  {  return  ws_;  }
+    void  set_walking_state(WalkingState  ws)  {  ws_  =  ws;  }
+
+    DrivingState  ds_;
+    WalkingState  ws_;
+};
+
+int  main()  {
+    GameCharacter  g;
+    g.set_walking_state(GameCharacter::WalkingState::Stopped);
+    g.set_driving_state(GameCharacter::DrivingState::Stopped);
+    return  0;
+}      
+ 

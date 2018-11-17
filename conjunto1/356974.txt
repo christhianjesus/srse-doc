@@ -1,0 +1,2 @@
+ void  create_vertices(struct  node  *arr[],  int  size)
+ 

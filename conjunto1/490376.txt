@@ -1,0 +1,5 @@
+ typedef  struct  buffers_s
+{
+      double  *buf1,  *buf2;
+}  Buffers;
+ 

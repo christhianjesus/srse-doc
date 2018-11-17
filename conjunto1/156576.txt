@@ -1,0 +1,21 @@
+ mutex  queue_mutex;
+cond_t  queue_not_full,  queue_not_empty;
+
+void  enqueue_work(Work  w)  {
+        mutex_lock(&amp;amp;queue_mutex);
+        while  (queue_full())
+                cond_wait(&amp;amp;queue_not_full,  &amp;amp;queue_mutex);
+        add_work_to_queue(w);
+        cond_signal(&amp;amp;queue_not_empty);
+        mutex_unlock(&amp;amp;queue_mutex);
+}
+
+Work  dequeue_work()  {
+        mutex_lock(&amp;amp;queue_mutex);
+        while  (queue_empty())
+                cond_wait(&amp;amp;queue_not_empty,  &amp;amp;queue_mutex);
+        Work  w  =  remove_work_from_queue();
+        cond_signal(&amp;amp;queue_not_full);
+        mutex_unlock(&amp;amp;queue_mutex);
+}
+ 

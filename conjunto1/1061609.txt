@@ -1,0 +1,25 @@
+ void  qsort(int  array[],  int  start,  int  end){
+
+        int  temp_start  =  start,  temp_end  =  end;
+        int  part  =  array[start];
+
+        if(start  &amp;gt;=  end){
+                return;
+        }
+
+        while(temp_end  &amp;gt;  temp_start){
+                for(temp_end;  array[temp_end]  &amp;gt;=  array[temp_start]  &amp;amp;&amp;amp;  temp_end  &amp;gt;  temp_start;  temp_end  --);
+
+                array[temp_start]  =  array[temp_end];
+
+                for(temp_start;  array[temp_start]  &amp;lt;  part  &amp;amp;&amp;amp;  temp_end  &amp;gt;  temp_start;  temp_start++);
+
+                array[temp_end]  =  array[temp_start];
+        }
+
+        array[temp_start]  =  part;
+
+        qsort(array,  start,  temp_start);
+        qsort(array,  temp_start,  end);
+}
+ 

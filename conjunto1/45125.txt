@@ -1,0 +1,12 @@
+ void  GetMatrixElem(  float  t  [][2]  ,int  x  ,int  y  ,float**  val  )
+{
+        if  (val)  //  &amp;amp;&amp;amp;  (x  &amp;gt;=  0)  &amp;amp;&amp;amp;  (x  &amp;lt;  20)  &amp;amp;&amp;amp;  (y&amp;gt;=0)  &amp;amp;&amp;amp;  (y&amp;lt;2)
+                *val  =  &amp;amp;t[x][y];
+}
+
+//  ...
+
+float  t  [20][2];
+float*  pElem  =  NULL;
+GetMatrixElem(  t  ,10  ,1  ,&amp;amp;pElem  );
+ 

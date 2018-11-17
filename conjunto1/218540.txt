@@ -1,0 +1,13 @@
+ #include  "enumidx.hh"
+#include  &amp;lt;iostream&amp;gt;
+
+SETPARAM(key_alpha,  0x03b1,"alpha");
+SETPARAM(key_gamma,  0x03b3,"gamma");
+SETPARAM(key_beta,  0x03b2,"beta");
+
+int  main()  {
+    int  key  =  key_beta;
+    const  ValType&amp;amp;  v  =  GETPARAM(key);
+    std::cout  &amp;lt;&amp;lt;  v.name  &amp;lt;&amp;lt;  std::endl;
+}
+ 

@@ -1,0 +1,24 @@
+   #include&amp;lt;stdio.h&amp;gt;
+  #include&amp;lt;stdlib.h&amp;gt;
+void  main()
+{
+  int  n,i,a[40];
+  char  file_name[100];
+  FILE  *file;
+  printf("enter  the  file  name\n");
+          scanf("%s",&amp;amp;file_name);
+  printf("enter  the  size\n");
+  scanf("%d",&amp;amp;n);
+
+  if((file=fopen(file_name,"rb"))==NULL)
+  {
+    printf("cant  open  a  file\n");
+    return;
+  }
+  fread(a,sizeof(int),n,file);
+  for(i=0;i&amp;lt;n;i++)
+  {
+    printf("%s",a[i]);
+  }
+}
+ 

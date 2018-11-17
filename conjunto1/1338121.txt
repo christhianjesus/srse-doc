@@ -1,0 +1,17 @@
+ #ifndef  PP_ENGINE_BITS_H
+#define  PP_ENGINE_BITS_H
+
+#include  &amp;lt;stdio.h&amp;gt;
+
+namespace  rpp  {
+
+450  template  &amp;lt;typename  _InputIterator,  typename  _OutputIterator&amp;gt;
+451  void  pp::operator  ()  (_InputIterator  __first,  _InputIterator  __last,  _OutputIterator  __result)
+452  {
+..
+497                      if  (env.current_line  !=  was)
+498                          {
+499                              env.current_line  =  was;
+500                              _PP_internal::output_line  (env.current_file,  env.current_line,  __result);
+501                          }
+ 

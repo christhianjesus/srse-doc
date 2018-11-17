@@ -1,0 +1,17 @@
+ int  foo(){
+      try{
+            return  bar(0);
+      }  catch(std::exception&amp;amp;  ex){
+            //do  cleanup
+            throw  ex;
+      }
+}
+
+int  bar(unsigned  int  i){
+      if(i  ==  0){
+            throw  std::string("Value  must  be  greater  than  0");
+      }  else{
+            return  0;
+      }
+}
+ 

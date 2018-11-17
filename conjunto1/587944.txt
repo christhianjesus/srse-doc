@@ -1,0 +1,7 @@
+ #define  ROL(a,  offset)  ((((Lane)a)  &amp;lt;&amp;lt;  ((offset)  %  LANE_BIT_SIZE))  ^  (((Lane)a)  &amp;gt;&amp;gt;  (LANE_BIT_SIZE-((offset)  %  LANE_BIT_SIZE))))
+
+Lane  rotateLeft(Lane  lane,  int  rotateCount)
+{
+        return  ((Lane)lane  &amp;lt;&amp;lt;  (rotateCount  %  LANE_BIT_SIZE))  ^  ((Lane)lane  &amp;gt;&amp;gt;  (LANE_BIT_SIZE  -  (rotateCount  %  LANE_BIT_SIZE)))  ;
+}
+ 

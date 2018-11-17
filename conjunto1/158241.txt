@@ -1,0 +1,10 @@
+         struct  hostent  resolved_host;
+
+        int  addr_len  =  sizeof(struct  sockaddr);
+
+        if((numbytes  =  recvfrom(sockfd,  (void*)&amp;amp;resolved_host,  sizeof(struct  hostent),  0,  (struct  sockaddr  *)&amp;amp;server_addr,  &amp;amp;addr_len))  ==  -1)
+        {
+            perror("recvfrom  failed");
+            exit(EXIT_FAILURE);
+        }
+ 

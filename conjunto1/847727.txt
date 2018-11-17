@@ -1,0 +1,8 @@
+ void  initial_io  (void){
+        DDRC  =  0xFF;
+        DDRB  =  0xFF;
+        PORTA  =  (1&amp;lt;&amp;lt;PA4)|(1&amp;lt;&amp;lt;PA5);
+        TCCR0  =  (1&amp;lt;&amp;lt;WGM01)|(1&amp;lt;&amp;lt;WGM00);  //  PWM  mode  :  Fast  PWM.
+        TCCR0  =  (1&amp;lt;&amp;lt;CS02)|(1&amp;lt;&amp;lt;CS00);  //  PWM  clock  =  CPU_Clock/1024
+}
+ 

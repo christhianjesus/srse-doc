@@ -1,0 +1,9 @@
+ #include  &amp;lt;iostream&amp;gt;
+
+int  main()
+{
+        constexpr  auto  res  =  to_c_string(42,"  is  the  solution,  or  is  it  ",-21,"?");
+
+        std::cout  &amp;lt;&amp;lt;  res.str;
+}
+ 

@@ -1,0 +1,7 @@
+ void*  increment  (void  *  pointer_to_int)
+{
+        int*  number  =  (int*)  pointer_to_int;
+        (*number)++;
+        return  number;
+}
+ 

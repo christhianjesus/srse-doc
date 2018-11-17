@@ -1,0 +1,7 @@
+ /**
+  *  MyGenericModule.h
+  */
+  typedef  myAbstractType  ...;
+  void  genericFunction(MyAbstractType  param);
+  ...
+ 

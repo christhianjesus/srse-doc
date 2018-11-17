@@ -1,0 +1,17 @@
+ private  void  WorkingFunction()
+{
+        String  filePath  =  @"C:\MyFile.txt";
+        //  Calling  the  managed  c++  functions...
+}
+
+private  void  NotWorkingFunction()
+{
+        Microsoft.Win32.OpenFileDialog  fileDialog  =  new  Microsoft.Win32.OpenFileDialog();
+        Nullable&amp;lt;bool&amp;gt;  result  =  fileDialog.ShowDialog();  
+        if(result  ==  true)
+        {
+                String  filePath  =  fileDialog.FileName;
+                //  Calling  the  managed  c++  functions...
+        }
+}
+ 

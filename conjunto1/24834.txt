@@ -1,0 +1,11 @@
+ List&amp;lt;CLIParent^&amp;gt;  getCliObjects()
+{
+        List&amp;lt;CLIParent^&amp;gt;  myList  =  gcnew  List&amp;lt;CLIParent^&amp;gt;();
+        vector&amp;lt;Parent*&amp;gt;  myVector  =    getCppObjects();
+        for  int  i=0;  i  &amp;lt;  myVector.size();  ++i)
+        {
+                myList-&amp;gt;add(gcnew  CLIParent(myVector-&amp;gt;at(i)));
+        }
+        return  myList;
+}
+ 

@@ -1,0 +1,2 @@
+ pkg-config  lapackpp  --libs
+ 

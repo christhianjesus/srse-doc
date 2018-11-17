@@ -1,0 +1,5 @@
+ void  Socket::sendData(QJsonArray  data)
+{
+        qDebug()  &amp;lt;&amp;lt;  data[1];
+}
+ 

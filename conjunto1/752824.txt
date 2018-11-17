@@ -1,0 +1,6 @@
+ {
+          TestClass  *test  =  new  TestClass();
+          //  do  something
+          delete  test;
+}
+ 

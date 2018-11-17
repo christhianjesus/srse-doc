@@ -1,0 +1,27 @@
+ int  variable  =  (algorithm  that  creates  a  number);
+
+if  (variable  ==  certain  number)
+{
+fruitbag1  apple(40,50);
+}
+else  if  (variable  ==  another  certain  number)
+{
+fruitbag2  apple(25,50);
+}
+
+else  if  (variable  ==  another  certain  number)
+{
+fruitbag3  apple(30,50);
+}
+
+while  (condition)
+{
+      while  (another  condition)
+      {
+
+      apple.weight();
+      apple.colour();
+      }
+    apple.price();
+}
+ 

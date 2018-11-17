@@ -1,0 +1,8 @@
+ p  *addNewPerson(char  *name)
+{
+    p  *newPerson  =  (p  *)malloc(sizeof(person));
+    //here  how  can  I  assign  the  name  to  this  new  person?
+    ...
+    return  newPerson;
+}
+ 

@@ -1,0 +1,24 @@
+ Address  of  x:  00481DE4
+sizeof(X)      :  4
+Value  at  -1:  0x0  (0)
+Value  at  -2:  0x0  (0)
+Value  at  -3:  0x0  (0)
+Value  at  -4:  0xa  (10)
+Value  at  -5:  0xc  (12)
+Value  at  -6:  0x0  (0)
+Value  at  -7:  0x2f  (47)
+Value  at  -8:  0x8  (8)
+Value  at  -9:  0x2f  (47)
+Value  at  -10:  0x98  (152)
+Address  of  y:  00481E70
+Value  at  -1:  0xc  (12)
+Value  at  -2:  0x0  (0)
+Value  at  -3:  0x2f  (47)
+Value  at  -4:  0x8  (8)
+Value  at  -5:  0x2a  (42)
+Value  at  -6:  0x98  (152)
+Value  at  -7:  0xf8  (248)
+Value  at  -8:  0xb0  (176)
+Value  at  -9:  0x0  (0)
+Value  at  -10:  0x48  (72)
+ 

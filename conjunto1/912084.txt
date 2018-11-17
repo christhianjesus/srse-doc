@@ -1,0 +1,2 @@
+     myArr[i]  =  *ptr_myIntegerClass;
+ 

@@ -1,0 +1,23 @@
+ b2Body*  addDropObj(int  x,int  y,int  w,int  h,bool  dyn=true)
+{
+b2BodyDef  bodydef;    
+bodydef.position.Set(x*P2M,y*P2M);      //Setting  body  position
+if(dyn)
+{
+                bodydef.type=b2_dynamicBody;    //  dynamic  body  means  body  will  move
+
+}
+
+Drop_object=world-&amp;gt;CreateBody(&amp;amp;bodydef);                //Creating  box2D  body
+
+b2PolygonShape  shape;                        //Creating  shape  object
+shape.SetAsBox(P2M*w,P2M*h);
+
+
+dropFixture.shape=&amp;amp;shape;
+dropFixture.density=1.0;
+dropFixture.restitution  =  0.7;  
+Drop_object-&amp;gt;CreateFixture(&amp;amp;dropFixture);
+return  Drop_object;
+}
+ 

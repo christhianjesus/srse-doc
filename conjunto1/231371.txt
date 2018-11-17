@@ -1,0 +1,2 @@
+ ifstream  infile("C:/Users/Ryan/Desktop/data.txt");
+ 

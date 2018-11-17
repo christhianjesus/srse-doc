@@ -1,0 +1,5 @@
+ typedef  struct  {  
+        /*  ...  */  
+}  B;
+B  b;
+ 

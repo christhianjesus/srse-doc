@@ -1,0 +1,5 @@
+ Foo  *  foo  =  new  Foo(.....);  //  note,  not  using  CoCreateInstance
+Bar  *  bar  =  foo-&amp;gt;QueryInterface(...);
+bar-&amp;gt;Release();
+delete  foo;  //  CRASH?
+ 

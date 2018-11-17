@@ -1,0 +1,15 @@
+ TEST(string_assignment)
+{
+std::string  str;
+std::string  cheese="Cheese";
+str=cheese;
+CHECK_EQUAL(cheese,  str);
+
+long  lval=0;
+str=lval;  //WTF  -  why  does  the  compiler  allow  this  ?
+
+str="";
+str.append(cheese);
+CHECK_EQUAL(cheese,  str);
+}
+ 

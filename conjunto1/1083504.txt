@@ -1,0 +1,5 @@
+ class  Process_Base{
+        public:
+                  virtual  void  process()  =  0;
+};
+ 

@@ -1,0 +1,6 @@
+ $  gcc  -o  wtest  wtest.c
+$  ./wtest  3&amp;gt;/dev/stdout
+aaaaaa
+bbbbbb
+cccccc
+ 

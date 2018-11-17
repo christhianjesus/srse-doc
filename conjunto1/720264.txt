@@ -1,0 +1,2 @@
+ Failed  to  open  database  �!�u�foo.kch#msiz=249821240256#bnum=4199616:  Cannot  allocate  memory
+ 

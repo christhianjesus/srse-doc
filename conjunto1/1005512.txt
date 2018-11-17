@@ -1,0 +1,4 @@
+ if  (fabs(a  -  b)  &amp;lt;=  EPSILON  )  {
+        //  ...
+}
+ 

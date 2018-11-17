@@ -1,0 +1,6 @@
+ my_global  =  my_cpp_class()
+call_script("a.lua")  --  a.lua  contains  "my_global  =  nil"
+--  "call_script"  is  actually  a  simplified  notation  
+--  I  create  script  as  userdata  and  then  I  can  
+--  set  its  child  scripts  that  should  be  reloaded  once  script  is  modified
+ 

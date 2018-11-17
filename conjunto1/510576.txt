@@ -1,0 +1,4 @@
+ char  ch  ;
+scanf("%c",&amp;amp;ch)  ;
+printf("%d",ch)  ;
+ 

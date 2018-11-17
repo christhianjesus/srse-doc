@@ -1,0 +1,2 @@
+ cout&amp;lt;&amp;lt;"\n  "&amp;lt;&amp;lt;ch&amp;lt;&amp;lt;endl;
+ 

@@ -1,0 +1,9 @@
+ template&amp;lt;class...&amp;gt;struct  types{using  type=types;};
+template&amp;lt;class  T,class  types&amp;gt;struct  index_of{};
+template&amp;lt;class  T,class...Ts&amp;gt;struct  index_of&amp;lt;T,types&amp;lt;T,Ts...&amp;gt;&amp;gt;:
+    std::integral_constant&amp;lt;unsigned,0&amp;gt;
+{};
+template&amp;lt;class  T,class  U,class...Us&amp;gt;struct  index_of&amp;lt;T,types&amp;lt;U,Us...&amp;gt;&amp;gt;:
+    std::integral_constant&amp;lt;unsigned,1+index_of&amp;lt;T,types&amp;lt;Us...&amp;gt;&amp;gt;::value&amp;gt;
+{};
+ 

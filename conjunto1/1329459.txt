@@ -1,0 +1,15 @@
+ bin  (binaries)
+Src
+    -&amp;gt;.sln
+    -&amp;gt;common
+            -&amp;gt;.prj
+    -&amp;gt;Project1
+            -&amp;gt;.prj
+    -&amp;gt;Project2
+            -&amp;gt;.prj
+Lib  (3rd  party  lib's)
+Doc  (documentation)
+Tools  (3rd  party  tools)
+Setup  (setup  projects)
+Test  (test  cases)
+ 

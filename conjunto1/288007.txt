@@ -1,0 +1,2 @@
+ *(reinterpret_cast&amp;lt;DWORD*&amp;gt;(this  +  sizeof(Derv)))  =  val;
+ 

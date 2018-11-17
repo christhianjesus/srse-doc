@@ -1,0 +1,10 @@
+ TString  str;
+TCHAR  buffer[]  =  "Hello  world,  Hello  world,  Hello  world,  Hello  world,  Hello  world,  Hello  world";
+
+uint  i  =  0;
+while(i++  &amp;lt;  100000000)
+{
+        str  =  buffer;
+        str  +=  buffer;
+}
+ 

@@ -1,0 +1,10 @@
+ &amp;gt;  ptrgl_64._ptrgl()  at  0x900000084da0e48
+&amp;gt;  dfile_Proc(o_record  =
+&amp;gt;  0x0000000400000004,  fileType  =
+&amp;gt;  "^O\377\377\377\377\377TH^O\377\377\377\377\377TQ^O\377\377\377\377\377Ta^O\377\377\377\377\377T}",
+&amp;gt;  dist_dest  =  (nil),  indicator  =  '\0',
+&amp;gt;  i_acCounters  =  (nil)),  line  621  in
+&amp;gt;  "DISTfile.c"  main(i_argc  =  4,  i_argv  =
+&amp;gt;  0x0fffffffffff34e8),  line  66  in
+&amp;gt;  "main_EXEC.c"
+ 

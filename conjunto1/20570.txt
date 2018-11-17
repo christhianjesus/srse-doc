@@ -1,0 +1,4 @@
+ PixelData  data1  =  RayTracer::gatherPixelData(pixel1.x,  pixel1.y);
+...
+shadePixels(data1,  data2,  data3,  data4,  &amp;amp;col1out,  &amp;amp;col2out,  &amp;amp;col3out,  &amp;amp;col4out);
+ 

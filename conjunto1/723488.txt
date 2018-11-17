@@ -1,0 +1,22 @@
+ #ifndef  HEADERS_H
+#define  HEADERS_H
+
+#include  &amp;lt;string&amp;gt;
+#include  &amp;lt;vector&amp;gt;
+#include  &amp;lt;windows.h&amp;gt;
+#include  &amp;lt;windowsx.h&amp;gt;
+#include  &amp;lt;vector&amp;gt;
+#include  &amp;lt;d3d9.h&amp;gt;
+#include  &amp;lt;d3dx9.h&amp;gt;
+
+#pragma  comment  (lib,  "d3d9.lib")
+#pragma  comment  (lib,  "d3dx9.lib")
+
+#define  SCREEN_WIDTH    1920  
+#define  SCREEN_HEIGHT  1080
+
+LPDIRECT3D9  d3d;
+LPDIRECT3DDEVICE9  d3dDevice;
+
+#endif
+ 

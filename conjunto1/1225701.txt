@@ -1,0 +1,10 @@
+ enum  MyPretendEnum
+{
+      Apples,
+      Oranges,
+      Pears,
+      Bananas,
+      First  =  Apples,
+      Last  =  Bananas
+};
+ 

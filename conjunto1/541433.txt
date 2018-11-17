@@ -1,0 +1,8 @@
+ CB_Natural_T  whitenotes()
+{
+        CB_Natural_T  init;
+        ...
+        return  init;
+}
+CB_Natural_T  const  WHITENOTES  =  whitenotes();
+ 

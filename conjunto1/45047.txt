@@ -1,0 +1,6 @@
+ if(i==0){
+    //do  something  1
+}else  if(i==1){
+    //do  something  2
+}
+ 

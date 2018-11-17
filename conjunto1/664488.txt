@@ -1,0 +1,23 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;vector&amp;gt;
+
+using  namespace  std;
+
+
+class  block{
+public:
+        long  nx,ny;
+        vector&amp;lt;long&amp;gt;  s;
+        block(long  &amp;amp;x,  long  &amp;amp;y):nx(x),ny(y),vector&amp;lt;long&amp;gt;  s((x+1)*(y+1),0)  {}
+};
+
+int  main()  {
+        block  B(2,2);
+        for(int  i=1;i&amp;lt;=9;i++)  {
+                cout&amp;lt;&amp;lt;B.s(i);
+        }
+
+        cout  &amp;lt;&amp;lt;  "!!!Hello  World!!!"  &amp;lt;&amp;lt;  endl;  //  prints  !!!Hello  World!!!
+        return  0;
+}
+ 

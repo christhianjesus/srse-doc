@@ -1,0 +1,8 @@
+ class  A{
+private:
+    AnotherClass  B;
+    int  x;
+public:
+    A():x(5){}  //B  is  never  explicitly  initialized
+};
+ 

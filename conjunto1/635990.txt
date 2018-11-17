@@ -1,0 +1,5 @@
+ Stats  statObject;
+statObject  =  Stats();    //using  compiler  defined  assignment  operator.
+
+Stats  statObject  =  Stats();    //using  compiler  defined  copy  constructor.
+ 

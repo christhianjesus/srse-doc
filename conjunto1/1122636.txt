@@ -1,0 +1,12 @@
+ template  &amp;lt;typename  T&amp;gt;
+struct  ArgumentRef
+{
+        ArgumentRef(T&amp;amp;  t)  :  t_(t)  {  }
+        operator  T&amp;amp;()  {  return  t_;  }
+        operator  const  T&amp;amp;()  const  {  return  t_;  }
+        T&amp;amp;  t_;
+};
+
+typedef  std::vector&amp;lt;unsigned  char&amp;gt;  Buffer;
+Buffer  &amp;amp;operator+=(ArgumentRef&amp;lt;Buffer&amp;gt;  a,  Buffer  const  &amp;amp;b)  {  }
+ 

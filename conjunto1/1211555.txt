@@ -1,0 +1,20 @@
+ #ifndef  AREA_H
+#define  AREA_H
+#include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+
+
+class  Area
+{
+        private:
+                int  height;
+        public:
+                int  base;
+                Area();
+                int  calcArea();
+
+
+};
+
+#endif  //  AREA_H
+ 

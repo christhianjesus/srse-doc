@@ -1,0 +1,4 @@
+ int  n  =  1;
+int*  n_ptr  =  &amp;amp;n;
+int&amp;amp;  n2  =  std::ref(*n_ptr);
+ 

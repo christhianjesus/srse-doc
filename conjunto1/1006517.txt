@@ -1,0 +1,24 @@
+ #include  &amp;lt;iostream&amp;gt;
+struct  Room
+{
+        int  length;
+        int  width;
+        Room()
+        {
+                length  =  0;
+                width  =  0;
+        }
+        Room(int  value  =  8)
+        {
+                (void)value;
+                length  =  8;
+                width  =  8;
+        }
+};
+int  main()
+{
+        Room  obj1;  //  ambiguous  call
+        std::cout  &amp;lt;&amp;lt;  obj1.length  &amp;lt;&amp;lt;  "\n";
+        return  (0);
+}
+ 

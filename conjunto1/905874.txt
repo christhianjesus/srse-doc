@@ -1,0 +1,10 @@
+ class  A
+{
+        public:
+        ~A()
+        {
+                i=10;
+                  cout  &amp;lt;&amp;lt;  "In  destructor  function,  i  =  "  &amp;lt;&amp;lt;  i&amp;lt;&amp;lt;  endl;
+        }
+};
+ 

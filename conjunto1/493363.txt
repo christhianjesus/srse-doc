@@ -1,0 +1,11 @@
+ struct  Key
+{
+        int  a;
+        int  b;
+        bool  operator&amp;lt;(  Key  const&amp;amp;  rhs  )  const
+        {
+                return  a  &amp;lt;  rhs.a
+                        ||  (  !(rhs.a  &amp;lt;  a)  &amp;amp;&amp;amp;  b  &amp;lt;  rhs.b  );
+        }
+};
+ 

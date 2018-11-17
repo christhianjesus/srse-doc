@@ -1,0 +1,2 @@
+ static  bool  foo  =  register_type();
+ 

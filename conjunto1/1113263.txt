@@ -1,0 +1,3 @@
+ memcpy(oldPtr,  newPtr,  sizeof(struct  RGBTriplet)  *  802);
+memset(newPtr,  0,  sizeof(struct  RGBTriplet)  *  802);
+ 

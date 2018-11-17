@@ -1,0 +1,2 @@
+ while(*s++  =  (  *t++  &amp;amp;&amp;amp;  n--  &amp;gt;  0  )  );
+ 

@@ -1,0 +1,11 @@
+                 for  (var  i  =  1;  i  &amp;lt;=  100;  i++)
+                {
+                        if  (i  %  3  ==  0)
+                                Console.Write("Fizz");
+                        if  (i  %  5  ==  0)
+                                Console.Write("Buzz");
+                        if  (i  %  3  !=  0  &amp;amp;&amp;amp;  i  %  5  !=  0)
+                                Console.Write(i);
+                        Console.WriteLine();
+                }
+ 

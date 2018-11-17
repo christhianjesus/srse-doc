@@ -1,0 +1,6 @@
+ while(blocking_call()  !=  exit_condition)
+{
+        while(have_work)
+                do_work();
+}
+ 

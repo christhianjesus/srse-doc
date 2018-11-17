@@ -1,0 +1,2 @@
+       std::sort(&amp;amp;card[0],  &amp;amp;card[cardmax]);
+ 

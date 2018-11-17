@@ -1,0 +1,14 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+int  main()
+{
+      int  i  =  2;
+      const  int  C  =  2;
+      switch(i)
+      {
+            case  C    :  printf("Hello")  ;
+            break;
+
+            default  :  printf("World");
+      }
+}
+ 

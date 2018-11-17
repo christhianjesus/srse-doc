@@ -1,0 +1,6 @@
+ base(base  &amp;amp;a)
+{
+    cout&amp;lt;&amp;lt;"base  Copy  Constructor\n";
+    a.i=i;
+}
+ 

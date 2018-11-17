@@ -1,0 +1,21 @@
+ [DllImport("MyDll.dll")]
+static  extern  int  GetData(ref  byte[]  data,  ref  int  size);
+
+static  void  Main()
+{
+        try
+        {
+                int  hr  =  0;
+                byte[]  gData  =  null;
+                int  gSize  =  0;
+                hr  =  GetData(ref  gData,  ref  gSize);
+                Console.WriteLine(gSize);
+                for  (int  i  =  0;  i  &amp;lt;  gSize;  i++)
+                        Console.WriteLine((char)gData[i]);
+        }
+        catch  (Exception  p)
+        {
+                Console.WriteLine(p.ToString());
+        }
+}
+ 

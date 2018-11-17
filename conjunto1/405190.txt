@@ -1,0 +1,35 @@
+ #include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+
+class  Pizza
+{
+      private:
+              double  pCost;
+              double  pPrice;
+
+      public:
+              Pizza(const  double&amp;amp;  c,  const  double&amp;amp;  p)  :  pCost(c),  pPrice(p){}
+              virtual  ~Pizza(){}
+              virtual  double  area()  =  0;
+              virtual  double  cost()  =  0;
+              virtual  double  price  ()  =  0;
+              virtual  double  profit()  =  0;
+              double  getCost()  const  {return  pCost;}
+              double  getPrice()  const  {return  pPrice;}
+};
+
+class  CircularPizza  :  public  Pizza
+{
+      private:
+              double  radius;
+
+      public:
+              CircularPizza(const  double&amp;amp;  r,  const  double&amp;amp;  c,  const  double&amp;amp;  p)
+                :  Pizza(c,  p),  radius(r){}
+                virtual  ~CircularPizza(){}
+                virtual  double  area(){  return  (3.14  *  radius  *  radius);}
+                virtual  double  cost()  {  return  area()  *  getCost();  }
+                virtual  double  price()  {  return  area()  *  getPrice();  }
+                virtual  double  profit()  {  return  price()  -  cost();}
+};
+ 

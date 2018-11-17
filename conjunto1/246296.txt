@@ -1,0 +1,9 @@
+ #define  READIN(a,  b)  if(scanf('"#%d"',  '"&amp;amp;a"')  !=  1)  {  printf("ERROR");  return  EXIT_FAILURE;  }
+
+int  main(void)
+{
+        unsigned  int  stack_size;
+        printf("Type  in  size:  ");
+        READIN(d,  stack_size);
+}
+ 

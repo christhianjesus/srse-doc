@@ -1,0 +1,5 @@
+ int  class1::Initialize()
+{
+        this-&amp;gt;sThread  =  std::thread(Update);
+}
+ 

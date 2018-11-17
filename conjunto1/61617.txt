@@ -1,0 +1,7 @@
+ int*  somefunction(size_t  sz)
+{
+        int*  mem;
+        mem  =  malloc(sz*sizeof(int));
+        return  mem;
+}
+ 

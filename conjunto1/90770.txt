@@ -1,0 +1,2 @@
+ undefined  reference  to  `__isoc99_sscanf@GLIBC_2.7'
+ 

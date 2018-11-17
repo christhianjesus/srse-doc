@@ -1,0 +1,12 @@
+ bool  operator  &amp;lt;  (const  Node&amp;amp;  a,  const  Node&amp;amp;  b)  {
+      int  a0  =  std::min(a.index_from,  a.index_to);
+      int  a1  =  std::max(a.index_from,  a.index_to);
+      int  b0  =  std::min(b.index_from,  b.index_to);
+      int  b1  =  std::max(b.index_from,  b.index_to);
+      if(a0  &amp;lt;  b0)  return  true;
+      else  if(a0  ==  b0)  {
+                if(a1  &amp;lt;  b1)  return  true;
+      }
+      return  false;
+}
+ 

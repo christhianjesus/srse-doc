@@ -1,0 +1,4 @@
+ b.erase(std::remove_if(b.begin(),  b.end(),  [](const  auto&amp;amp;x)  {
+    return  std::find(a.begin(),  a.end(),  x)  !=  a.end();
+}),  b.end());
+ 

@@ -1,0 +1,16 @@
+ class  Base    
+{    
+public:    
+        virtual  ~Base();    
+};    
+class  Derived  :  public  Base    
+{    
+public:    
+        virtual  ~Derived();    
+};    
+class  MoreDerived  :  public  Derived    
+{    
+public:    
+        virtual  ~MoreDerived();    
+};    
+ 

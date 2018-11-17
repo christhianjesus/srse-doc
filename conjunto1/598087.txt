@@ -1,0 +1,2 @@
+ std::vector&amp;lt;int&amp;gt;*  pv  =  new  std::vector&amp;lt;int&amp;gt;();
+ 

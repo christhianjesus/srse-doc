@@ -1,0 +1,15 @@
+ MyObject(double  P1,  double  P2,  bool  b)  {  
+        if  (b)  {
+                P1_  =  P1;
+                P2_  =  P2;
+                P3_  =  P4_  =  0.0;
+                P5  =  true;
+        }
+        else  {
+                P3_  =  P1;
+                P4_  =  P2;
+                P1_  =  P2_  =  0.0;
+                P5  =  false;
+        }
+}
+ 

@@ -1,0 +1,2 @@
+ UArray2.c:19:error:  request  for  member  ‘i’  in  something  not  a  structure  or  union
+ 

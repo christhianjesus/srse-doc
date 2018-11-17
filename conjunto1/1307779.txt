@@ -1,0 +1,5 @@
+ MyClass::MyClass(int  x)
+{
+        this-&amp;gt;x  =  x;
+}
+ 

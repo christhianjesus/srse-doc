@@ -1,0 +1,4 @@
+ $  python
+&amp;gt;&amp;gt;&amp;gt;  import  os
+&amp;gt;&amp;gt;&amp;gt;  os.listdir('.')
+ 

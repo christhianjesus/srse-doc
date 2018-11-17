@@ -1,0 +1,88 @@
+ /*  Demonstrate  IEEE  'double'  encoding  on  x86
+  *  Show  bit  patterns  and  'printf'  output  for  double  values
+  *  Show  error  representing  0.1,  and  accumulated  error  of  adding  0.1  many  times
+  *  G  Bulmer  2012
+  */
+
+
+#include  &amp;lt;stdio.h&amp;gt;
+
+typedef  struct  {
+        unsigned  long  long  mantissa  :52;  
+        unsigned  exponent  :11;  
+        unsigned  sign  :1;  
+}  double_bits;
+const  unsigned  exponent_offset  =  1023;
+
+typedef  union  {  double  d;  unsigned  long  long  l;  double_bits  b;  }  Xlate;
+
+void  print_xlate(Xlate  val)  {
+        const  long  long  IMPLIED  =  (1LL&amp;lt;&amp;lt;52);
+        if  (val.b.exponent  ==  0)  {  /*  zero?  */
+                printf("val:  d:  %19lf    bits:  %016llX  [sign:  %u  exponent:  zero=%u  mantissa:  %llX]\n",  
+                              val.d,  val.l,  val.b.sign,  val.b.exponent,  val.b.mantissa);
+        }  else  {
+                printf("val:  d:  %19lf    bits:  %016llX  [sign:  %u  exponent:  2^%4-d  mantissa:  %llX]\n",  
+                              val.d,  val.l,  val.b.sign,  ((int)val.b.exponent)-exponent_offset,  
+                                                                                                        (IMPLIED|val.b.mantissa));
+        }
+}
+
+
+double  add_many(double  d,  int  many)  {
+        double  accum  =  0.0;
+        while  (many--  &amp;gt;  0)  {        /*  only  works  for  +d  */
+                accum  +=  d;
+        }
+        return  accum;
+}
+
+int  main  (int  argc,  const  char  *  argv[])  {
+        Xlate  val;
+        val.b.sign  =  0;
+        val.b.exponent  =  exponent_offset+1;
+        val.b.mantissa  =  0;
+
+        print_xlate(val);
+
+        val.d  =  1.0;                                                print_xlate(val);
+
+        val.d  =  0.0;                                                print_xlate(val);
+
+        val.d  =  -1.0;                                              print_xlate(val);
+
+        val.d  =  3.0;                                                print_xlate(val);
+
+        val.d  =  7.0;                                                print_xlate(val);
+
+        val.d  =  (double)((1LL&amp;lt;&amp;lt;31)-1LL);        print_xlate(val);
+
+        val.d  =  2147483647.0;                              print_xlate(val);
+
+        val.d  =  10000.0;                                        print_xlate(val);
+
+        val.d  =  100000.0;                                      print_xlate(val);
+
+        val.d  =  1000000.0;                                    print_xlate(val);
+
+        val.d  =  0.1;                                                print_xlate(val);
+
+        val.d  =  add_many(0.1,  100000);
+        print_xlate(val);
+
+        val.d  =  add_many(0.1,  1000000);
+        print_xlate(val);
+
+        val.d  =  add_many(0.1,  10000000);
+        print_xlate(val);
+
+        val.d  =  add_many(0.1,10);                      print_xlate(val);
+        val.d  *=  2147483647.0;                            print_xlate(val);
+        int  i  =  val.d;                                            printf("int  i=truncate(d)=%d\n",  i);
+        int  j  =  lround(val.d);                            printf("int  i=lround(d)=%d\n",  j);
+
+        val.d  =  add_many(0.0001,1000)-0.1;    print_xlate(val);
+
+        return  0;
+}
+ 

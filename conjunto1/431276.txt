@@ -1,0 +1,3 @@
+ PORTA  =  0x0000
+OPT1  =  0xAB
+ 

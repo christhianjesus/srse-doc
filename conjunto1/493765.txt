@@ -1,0 +1,5 @@
+ if  (value  ==  0  &amp;amp;&amp;amp;  endptr  ==  token)
+{
+        /*  String  is  not  a  valid  number  */
+}
+ 

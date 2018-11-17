@@ -1,0 +1,13 @@
+ A  a;                                              //  Static  type  and  dynamic  type  are  identical.
+Base  &amp;amp;a_base  =  a;                    //  Static  type  is  Base;  dynamic  type  is  A.
+
+a.Get_Contaienr();                  //  Calls  A::Get_Container.
+a_base.Get_Container();        //  Calls  Base::Get_Container.
+
+B  *pb  =  new  B();                      //  Static  type  and  dynamic  type  of  *pb  (the  pointed-to
+                                                      //  object)  are  identical.
+Base  *pb_base  =  pb;                //  Static  type  is  Base;  dynamic  type  is  B.
+
+pb-&amp;gt;Get_Container();              //  Calls  B::Get_Container.
+pb_base-&amp;gt;Get_Container();    //  Calls  Base::Get_Container.
+ 

@@ -1,0 +1,21 @@
+ void  Tracker::uiuctime_tm(struct  tm*  out){
+        time_t  uiucTime;
+
+        //  give  currentTime  the  current  time
+        time(&amp;amp;uiucTime);
+
+        //  change  the  time  zone  to  UIUC
+        putenv("TZ=CST6CDT");
+        tzset();
+
+        //  get  the  localtime  for  the  tz  selected,  and  set  back  the  result  into  the  output  parameter.
+        localtime_r(&amp;amp;uiucTime,  out);
+
+        //  set  back  the  current  timezone
+        unsetenv("TZ");
+        tzset();
+}
+
+struct  tm  uiuctime;
+uiuctime_tm(&amp;amp;uiuctime);
+ 

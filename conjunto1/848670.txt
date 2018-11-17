@@ -1,0 +1,2 @@
+ line  3  This  is  assignment  operator.This  is  copy  cstr.
+ 

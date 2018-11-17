@@ -1,0 +1,24 @@
+ class  Student  {
+public:
+        Student()
+                :id_(rand()),
+                autogen_(true)
+        {}
+
+        Student(int  id)
+                :id_(id),
+                autogen_(false)
+        {}
+
+        void  SetID(int  id)
+        {
+                id_  =  id;
+                autogen_  =  false;
+        }
+
+        int  GetID()  const  {  return  id_;  }
+private:
+        int  id_;
+        bool  autogen_;
+};
+ 

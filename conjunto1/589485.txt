@@ -1,0 +1,50 @@
+ qint64  currentTimestamp  =  QDateTime::currentMSecsSinceEpoch()/1000;
+if  (this-&amp;gt;timeOfFirstVisit  ==  0)
+        this-&amp;gt;timeOfFirstVisit  =  currentTimestamp;
+if  (this-&amp;gt;timeOfPreviousVisit  ==  0)
+        this-&amp;gt;timeOfPreviousVisit  =  currentTimestamp;
+
+QString  googleAnalyticsRequestUrl;
+QTextStream(&amp;amp;googleAnalyticsRequestUrl)  &amp;lt;&amp;lt;  "http://www.google-analytics.com/__utm.gif"
+&amp;lt;&amp;lt;  "?utmwv=5.2.5"
+&amp;lt;&amp;lt;  "&amp;amp;utmac="  &amp;lt;&amp;lt;  TRACKING_ID
+&amp;lt;&amp;lt;  "&amp;amp;utmhn="  &amp;lt;&amp;lt;  HOST_NAME
+&amp;lt;&amp;lt;  "&amp;amp;utms="  &amp;lt;&amp;lt;  this-&amp;gt;sessionNumberOfQueries
+&amp;lt;&amp;lt;  "&amp;amp;utmn="  &amp;lt;&amp;lt;  QString::number(qrand())  //this-&amp;gt;generateRandomUTMN()
+&amp;lt;&amp;lt;  "&amp;amp;utmcc=__utma%3D"  &amp;lt;&amp;lt;  this-&amp;gt;domainHash
+        &amp;lt;&amp;lt;  "."  &amp;lt;&amp;lt;  this-&amp;gt;sessionId
+        &amp;lt;&amp;lt;  "."  &amp;lt;&amp;lt;  this-&amp;gt;timeOfFirstVisit
+        &amp;lt;&amp;lt;  "."  &amp;lt;&amp;lt;  this-&amp;gt;timeOfPreviousVisit
+        &amp;lt;&amp;lt;  "."  &amp;lt;&amp;lt;  currentTimestamp
+        &amp;lt;&amp;lt;  ".1%3B"
+&amp;lt;&amp;lt;  "&amp;amp;utmp="  &amp;lt;&amp;lt;  QString(QUrl::toPercentEncoding(pageUrl))
+&amp;lt;&amp;lt;  "&amp;amp;utmcs=-"
+&amp;lt;&amp;lt;  "&amp;amp;utmr=-"
+&amp;lt;&amp;lt;  "&amp;amp;utmip=127.0.0.1"
+&amp;lt;&amp;lt;  "&amp;amp;utmul="  +  QLocale::system().name().toLower().replace("_",  "-")
+&amp;lt;&amp;lt;  "&amp;amp;utmfl=-"
+&amp;lt;&amp;lt;  "&amp;amp;utmje=-"
+&amp;lt;&amp;lt;  "&amp;amp;utmsr="  +  QString::number(QApplication::desktop()-&amp;gt;screenGeometry().width())  +  "x"  +  QString::number(QApplication::desktop()-&amp;gt;screenGeometry().height())
+&amp;lt;&amp;lt;  "&amp;amp;utmhid="  +  QString::number(qrand());
+
+this-&amp;gt;timeOfPreviousVisit  =  currentTimestamp;
+this-&amp;gt;updateSessionNumberOfQueries();
+
+qDebug()  &amp;lt;&amp;lt;  "Sending  Google  Analytics  request:  "  &amp;lt;&amp;lt;  googleAnalyticsRequestUrl;
+
+//  Send  a  http  GET  request  to  the  created  URL
+QNetworkAccessManager  *manager  =  new  QNetworkAccessManager();
+connect(manager,  SIGNAL(finished(QNetworkReply  *)),this,  SLOT(googleAnalyticsRequestReceived(QNetworkReply  *)));
+connect(manager,  SIGNAL(finished(QNetworkReply  *)),manager,  SLOT(deleteLater()));
+
+QUrl  requestUrl(googleAnalyticsRequestUrl);
+QNetworkRequest  request(requestUrl);
+
+//  I  see  this  headers  with  Firebug,  but  I  think  that  they  are  not  necessary
+request.setRawHeader("Host",  "www.google-analytics.com");
+request.setRawHeader("User-Agent",  "Mozilla/5.0  (Windows  NT  6.1;  WOW64;  rv:19.0)  Gecko/20100101  Firefox/19.0");
+request.setRawHeader("X-Forwarded-For",  "127.0.0.1");
+request.setRawHeader("Connection",  "close");
+
+manager-&amp;gt;get(request);
+ 

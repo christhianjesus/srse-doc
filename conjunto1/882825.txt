@@ -1,0 +1,5 @@
+ int  a  =  13;
+stringstream  ss2;
+ss2  &amp;lt;&amp;lt;  a;
+string  str2  =  ss2.str();
+ 

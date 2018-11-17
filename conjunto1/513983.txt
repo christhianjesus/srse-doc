@@ -1,0 +1,10 @@
+ class  Foo
+{
+public:
+        void  add(  Bar*  p  )
+        {
+                assert(  p  !=  0  );        //  Precondition  unrelated  to  the  class  invariant
+                //  ...  whatever
+        }
+};
+ 

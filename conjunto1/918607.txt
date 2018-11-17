@@ -1,0 +1,11 @@
+ class  A  {
+public:
+    void  f1();
+#ifndef  NDEBUG
+public:
+#else
+private:
+#endif
+    void  f2();
+};
+ 

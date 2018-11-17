@@ -1,0 +1,15 @@
+ void  MainWindow::createLinearVector(QVector&amp;lt;float&amp;gt;  *vector,  float  min,  float  max  )
+{
+        float  elementDiff=(max-min)/(vector-&amp;gt;size()-1);
+
+        if(max&amp;gt;min)  min  -=  elementDiff;
+        else                min  +=  elementDiff;
+
+        for(int  i=0;  i&amp;lt;  vector-&amp;gt;size()+1  ;  i++  )
+        {
+                min  +=  elementDiff;
+                *(vector+i)  =  min;  //Problematic  line
+        }
+
+}
+ 

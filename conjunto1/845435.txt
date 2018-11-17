@@ -1,0 +1,10 @@
+ void  DoStuff(....,  bool  bEnableOutput  )
+{
+
+...
+      if  (  bEnableOutput  ==  true  )
+      {
+            printf(  "...."  );
+      }
+}
+ 

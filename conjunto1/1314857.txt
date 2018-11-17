@@ -1,0 +1,3 @@
+ const  Number  n(5);
+int  x  =  n;  //  error:  cannot  call  non-const  conversion  operator
+ 

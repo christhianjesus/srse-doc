@@ -1,0 +1,4 @@
+ SampleStruct  *strcc  =  TestFunction(type);
+//  do  something  with  the  struct
+delete  strcc;
+ 

@@ -1,0 +1,3 @@
+ myStruct  mine;
+initMyStruct(&amp;amp;mine);
+ 

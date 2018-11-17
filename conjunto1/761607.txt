@@ -1,0 +1,2 @@
+ connect(this,SIGNAL(SIGUpdateForm),this,SLOT(MyUpdateMehtod));
+ 

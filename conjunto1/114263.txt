@@ -1,0 +1,8 @@
+ //  'env'  is  the  java  environment  that  JNI  passes  to  us
+//  'jObject'  is  the  one  that  JNI  passes  to  us  (along  with  env)
+jclass  javaCallerClass  =  env-&amp;gt;GetObjectClass(jObject);
+jmethodID  methodId_getSharedPrefsEditor  =  env-&amp;gt;GetMethodID(
+        javaCallerClass,
+        "getSharedPrefsEditor",
+        "()Landroid/content/SharedPreferences/Editor;");
+ 

@@ -1,0 +1,49 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;SFML/Network.hpp&amp;gt;
+#include  &amp;lt;SFML/System.hpp&amp;gt;
+using  namespace  std;
+
+void  recAndGive(sf::SocketTCP  fromSock,  sf::SocketTCP  toSock)
+{
+      sf::Packet  Packet;
+      if(fromSock.Receive(Packet)  ==  sf::Socket::Done)
+      {
+              toSock.Send(Packet);
+      }
+
+}
+
+int  main()
+{
+      cout  &amp;lt;&amp;lt;  "Server  is  running.  [192.168.1.100]  [4567]"  &amp;lt;&amp;lt;  endl  &amp;lt;&amp;lt;  endl;
+      sf::IPAddress  Client1_ip;
+      sf::IPAddress  Client2_ip;
+
+      sf::SocketTCP  Client1;
+      sf::SocketTCP  Client2;
+
+      sf::SocketTCP  Listener;
+
+      if(!Listener.Listen(4567))
+              return  1;
+
+      cout  &amp;lt;&amp;lt;  "Server  is  listenig  to  port  4567,  waiting  for  connections..."  &amp;lt;&amp;lt;  endl;
+
+      //waiting  for  client1
+      Listener.Accept(Client1,&amp;amp;Client1_ip);
+      cout  &amp;lt;&amp;lt;  "Client  connected  :  "  &amp;lt;&amp;lt;  Client1_ip  &amp;lt;&amp;lt;  endl;
+
+      //waiting  for  client2
+      Listener.Accept(Client2,&amp;amp;Client2_ip);
+      cout  &amp;lt;&amp;lt;  "Client  connected  :  "  &amp;lt;&amp;lt;  Client2_ip  &amp;lt;&amp;lt;  endl;
+
+      while(true)
+      {
+              recAndGive(Client1,Client2);
+              recAndGive(Client2,Client1);
+      }
+
+
+      return  0;
+}
+ 

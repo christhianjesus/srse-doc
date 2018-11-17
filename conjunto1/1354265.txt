@@ -1,0 +1,13 @@
+ class  asd  {    
+        public:    
+        int  b;    
+        asd()  {  b  =  rand()  %  10;  }    
+        bool  operator&amp;lt;(asd  &amp;amp;other)  {  return  b  &amp;lt;  other.b;  }    
+};
+
+int  main()  {    
+        asd  *  c;  c  =  new  asd();    
+        set  &amp;lt;asd&amp;gt;  uaua;    
+        uaua.insert(c);    
+}
+ 

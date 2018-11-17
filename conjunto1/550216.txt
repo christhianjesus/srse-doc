@@ -1,0 +1,3 @@
+ (require  'auto-complete-config)
+(setq-default  ac-sources  '(ac-source-semantic-raw))
+ 

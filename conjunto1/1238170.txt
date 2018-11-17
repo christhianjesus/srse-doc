@@ -1,0 +1,33 @@
+ namespace  quoting  {
+struct  quoting_proxy  {
+        explicit  quoting_proxy(std::ostream  &amp;amp;  os):os(os){}
+
+        template&amp;lt;typename  Rhs&amp;gt;
+        friend  std::ostream  &amp;amp;  operator&amp;lt;&amp;lt;(quoting_proxy  const&amp;amp;  q,  
+                                                                          Rhs  const&amp;amp;  rhs)  {
+                return  q.os  &amp;lt;&amp;lt;  rhs;
+        }
+
+        friend  std::ostream  &amp;amp;  operator&amp;lt;&amp;lt;(quoting_proxy  const&amp;amp;  q,  
+                                                                          std::string  const&amp;amp;  rhs)  {
+                return  q.os  &amp;lt;&amp;lt;  "'"  &amp;lt;&amp;lt;  rhs  &amp;lt;&amp;lt;  "'";
+        }
+
+        friend  std::ostream  &amp;amp;  operator&amp;lt;&amp;lt;(quoting_proxy  const&amp;amp;  q,  
+                                                                          char  const*  rhs)  {
+                return  q.os  &amp;lt;&amp;lt;  "'"  &amp;lt;&amp;lt;  rhs  &amp;lt;&amp;lt;  "'";
+        }
+private:
+        std::ostream  &amp;amp;  os;
+};
+
+struct  quoting_creator  {  }  quote;
+quoting_proxy  operator&amp;lt;&amp;lt;(std::ostream  &amp;amp;  os,  quoting_creator)  {
+        return  quoting_proxy(os);
+}
+}
+
+int  main()  {
+        std::cout  &amp;lt;&amp;lt;  quoting::quote  &amp;lt;&amp;lt;  "hello"  &amp;lt;&amp;lt;  std::endl;  
+}
+ 

@@ -1,0 +1,4 @@
+ int*  a  =  new  int[6];
+
+memset(a,  0,  6*sizeof(int));
+ 

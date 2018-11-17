@@ -1,0 +1,6 @@
+ void  foo(double*  ptr1){
+          double*  ptr2;
+          ptr2  =  ptr1;
+          ptr2[0]  =  0.0;  
+}
+ 

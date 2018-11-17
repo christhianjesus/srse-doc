@@ -1,0 +1,10 @@
+ #include  "CtrlBrdEx.h"
+
+int  CtrlBrdEx::test2()  {
+
+        return  CtrlBrd.test()  +1;  
+
+}
+
+CtrlBrdEx  CtrlBrd;
+ 

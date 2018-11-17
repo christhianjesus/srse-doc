@@ -1,0 +1,5 @@
+ GPU  time  =  164.7487009845991
+GPU  result  =  8388851
+CPU  time  =  45.22368030957917
+CPU  result  =  7780599.5
+ 

@@ -1,0 +1,8 @@
+ class  MYDLL_EXPORT  MyClass  {
+
+
+//  ...
+
+
+};
+ 

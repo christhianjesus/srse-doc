@@ -1,0 +1,25 @@
+ #include  "Log.h"
+#include  &amp;lt;iostream&amp;gt;
+using  std::cout;
+using  std::endl;
+#include  &amp;lt;string&amp;gt;
+using  std::string;
+#include  &amp;lt;fstream&amp;gt;
+
+//  Constructor  w/no  parms  =  log  to  cout
+Log::Log()  :
+        output_stream(cout)
+{}
+
+//  Constructor  w/parms  =  log  to  file
+Log::Log(const  char*  dir,  const  char*  file)  {
+        string  output_file_name  =  string(dir)  +  "/"  +  string(file);
+        output_stream.open(output_file_name.c_str(),  std::ofstream::out);
+}
+
+//  Print()  sends  output  to  the  stream  (we'll  do  printf  semantics  later)
+void
+Log::Print(const  char*  msg,...)  {
+        output_stream  &amp;lt;&amp;lt;  msg  &amp;lt;&amp;lt;  endl;
+}
+ 

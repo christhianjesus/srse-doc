@@ -1,0 +1,9 @@
+ std::deque&amp;lt;SomeDataClass&amp;gt;  MyClassName::someMethod()  {
+    std::deque&amp;lt;DirectedEdge&amp;gt;  allDataItems;
+
+    for(  auto  const&amp;amp;  dq  :  someMember  )  {
+        allDataItems  =  concatenate(  std::move(allDataItems),  dq  );
+    }
+    return  allDataItems;
+}
+ 

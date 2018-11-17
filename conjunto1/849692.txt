@@ -1,0 +1,2 @@
+         const  uint32_t  value  =  msg.mValue.GetValAs  &amp;lt;uint32_t&amp;gt;();
+ 

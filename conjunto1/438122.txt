@@ -1,0 +1,5 @@
+ ch1=getchar();
+
+fflush(stdin);
+ch2=getchar();
+ 

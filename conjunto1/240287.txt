@@ -1,0 +1,3 @@
+ Vector&amp;lt;bool&amp;gt;  v(5,  true);
+v[3]  =  false;
+ 

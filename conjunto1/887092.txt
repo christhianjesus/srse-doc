@@ -1,0 +1,10 @@
+         //assign  0  to  cell  if  divisible  by  any  number  other  than  itself
+        for  (i=3;i&amp;lt;=sqrt(max);++i)
+        {
+                for  (f=0;f&amp;lt;=((max-min)/2);f++)
+                {
+                        if  (range[f]%i==0  &amp;amp;&amp;amp;  f!=i)
+                                range[f]=0;
+                }
+        }
+ 

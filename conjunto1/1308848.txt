@@ -1,0 +1,4 @@
+         if  (pow  &amp;amp;  1)
+                test  =  ((test  %  mod)  *  (num  %  mod))  %  mod;
+        num  =  ((num  %  mod)  *  (num  %  mod))  %  mod;
+ 

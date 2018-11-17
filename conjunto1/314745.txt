@@ -1,0 +1,9 @@
+ struct  state  {
+        state()  :  down(0),  half(0)  {}    //default  constructor
+        int  down,  half;
+        state(int  d,  int  h)  :  down(d),  half(h)  {}
+        int  valid()  {
+                return  down  !=  -1  &amp;amp;&amp;amp;  half  !=  -1;
+        }
+};
+ 

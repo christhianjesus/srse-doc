@@ -1,0 +1,6 @@
+ function  waitFor(id)
+        while  activeEvents[id]  ~=  nil  do
+                coroutine.yield()
+        end
+end
+ 

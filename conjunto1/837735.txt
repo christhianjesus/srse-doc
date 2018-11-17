@@ -1,0 +1,65 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;time.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+#include  &amp;lt;malloc.h&amp;gt;
+
+int  main(void)  {  
+
+        int  player_num  =  0;  int  number  =  0;  int  player_input  =  0;
+        int  guess  =  0;  char  input;  char  str[6]  =  {0};  int  Player_1  =  1;
+        int  Player_2  =  2;  int  Pass_1  =  3;  int  Pass_2  =  3;  int  i  =  1;
+        int  player_turn  =  0;  int  turn  =  0;
+
+        srand(time(NULL));    player_num  =  1  +  rand()  %  2;  /*  Random  number  is  generated  */
+        srand(time(NULL));    number  =  0  +  rand()  %  100;  /*  Random  number  is  generated  */
+
+        while(number  !=  guess)  {
+
+                printf("\nIt's  player's  %d  turn\n",  player_num);
+                printf("Player  Number?\n");
+                scanf("%d",  &amp;amp;player_input);
+
+                while  (player_num  !=  player_input)  {
+                        printf("You  Have  to  wait  your  turn.\nPlayer  number?\n");
+                }
+
+                if  (Player_1  !=  player_num)
+                        Player_2  =  player_num;
+
+                if  (i%2  ==  1)  {
+                        player_num  =  Player_1;
+                }  else  {
+                        player_num  =  Player_2;
+                }
+
+                i  =  i+1;
+
+                printf("Enter  Your  Guess,  0  -  100  or  Pass:  ");
+
+                scanf("%s",  str);
+
+                if  (strcmp(str,  "pass")  ==  0){
+                        if  (player_num  ==  Player_1){
+                                Pass_2  =  Pass_2  -1;
+                                printf("Player  2  has  %d  more  'Pass'  left!\n",  Pass_2);
+                        }      
+                        else  {
+                                Pass_1  =  Pass_1  -1;
+                                printf("Player  1  has  %d  more  'Pass'  left!\n",  Pass_1);
+                        }
+                }  else  {
+                        guess  =  atoi(str);
+                        if(guess  &amp;lt;  number)  /*  if  the  guess  is  lower,  output:  the  guess  is  too  low  */
+                                printf("Your  guess  was  to  low.\n  ");
+
+                        else  if(guess  &amp;gt;  number)  /*  if  the  guess  is  higher,  output:  the  guess  is  too  high  */
+                                printf("Your  guess  was  to  high.\n  ");
+
+                        else  /*  if  the  guess  is  equal  to  the  random  number:  Success!!  */
+                                printf("Yes!!  you  got  it!\n");
+
+                }
+        }
+        return  0;
+}
+ 

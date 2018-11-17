@@ -1,0 +1,5 @@
+ initialize(foo**  my_foo)
+{
+        *my_foo  =  new  Foo();
+}
+ 

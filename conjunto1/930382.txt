@@ -1,0 +1,5 @@
+ template  &amp;lt;typename  cT&amp;gt;
+std::basic_string&amp;lt;cT&amp;gt;  construct(char  const*  str)  {
+        //  ...
+}
+ 

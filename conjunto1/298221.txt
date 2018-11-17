@@ -1,0 +1,7 @@
+ do
+{
+      std::string  foo;
+      cin  &amp;gt;&amp;gt;  foo;
+        ...
+}  while  (foo  !=  "done");
+ 

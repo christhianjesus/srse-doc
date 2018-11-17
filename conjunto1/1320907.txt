@@ -1,0 +1,34 @@
+ #include  "inheritance.h"
+
+jint  JNI_OnLoad(JavaVM  *jvm,  void  *reserved)  {
+        JNIEnv  *env;
+        (*jvm)-&amp;gt;GetEnv(jvm,  (void**)&amp;amp;env,  JNI_VERSION_1_4);  
+
+        jclass  inheritance  =  (*env)-&amp;gt;FindClass(env,  "Inheritance");
+        jobject  o_inheritance  =  (*env)-&amp;gt;NewObject(env,  inheritance,  (*env)-&amp;gt;GetMethodID(env,  inheritance,  "&amp;lt;init&amp;gt;",  "()V"));
+        jclass  provider  =  (*env)-&amp;gt;FindClass(env,  "Provider");
+        jobject  o_provider  =  (*env)-&amp;gt;NewObject(env,  provider,  (*env)-&amp;gt;GetMethodID(env,  provider,  "&amp;lt;init&amp;gt;",  "()V"));
+
+        g_inheritance  =  (*env)-&amp;gt;NewGlobalRef(env,  inheritance);
+        g_provider  =  (*env)-&amp;gt;NewGlobalRef(env,  provider);
+
+        (*env)-&amp;gt;CallVoidMethod(env,  o_inheritance,  (*env)-&amp;gt;GetMethodID(env,  inheritance,  "onChange",  "(F)V"),  1.0);
+
+        //(*env)-&amp;gt;CallVoidMethod(env,  o_provider,  (*env)-&amp;gt;GetMethodID(env,  provider,  "registerChange",  "(LListener;)V"),  o_inheritance);
+        //(*env)-&amp;gt;CallVoidMethod(env,  o_provider,  (*env)-&amp;gt;GetMethodID(env,  provider,  "sendMsg",  "()V"));
+
+        (*env)-&amp;gt;DeleteLocalRef(env,  o_inheritance);
+        (*env)-&amp;gt;DeleteLocalRef(env,  o_provider);
+
+        return  JNI_VERSION_1_4;
+}
+JNIEXPORT  void  JNICALL  JNI_OnUnload(JavaVM  *jvm,  void  *reserved)  {
+        JNIEnv  *env;
+        (*jvm)-&amp;gt;GetEnv(jvm,  (void**)&amp;amp;env,  JNI_VERSION_1_4);  
+        (*env)-&amp;gt;DeleteGlobalRef(env,  g_inheritance);
+        (*env)-&amp;gt;DeleteGlobalRef(env,  g_provider);
+  }
+JNIEXPORT  void  JNICALL  Java_Inheritance_onChange(JNIEnv  *env,  jobject  self,  jfloat  f)  {
+        printf("[C]  %f\n",  f);
+}
+ 

@@ -1,0 +1,15 @@
+ //...in  some  loop
+currentFoo  =  mFoos[index];
+
+//  Queue  up  the  string  name.
+mStringQueue.push(currentFoo.mStringName);
+
+
+//...Later  on,  go  through  our  queue  and  pass  each  one  to  the  function.
+
+for  (int  queueIndex  =  0;  queueIndex  &amp;lt;  mStringQueue.size();  queueIndex++)
+{
+        Bar(mStringQueue.front());
+        mStringQueue.pop();
+}
+ 

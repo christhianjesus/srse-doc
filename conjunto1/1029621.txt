@@ -1,0 +1,15 @@
+ //  log.hpp  file
+#pragma  once
+#include&amp;lt;iostream&amp;gt;
+
+class  log  {
+    private:
+        static  int  m_cnt  =  0;
+    public:
+        void  log();
+};
+
+inline  void  log::log()  {
+        std::cout  &amp;lt;&amp;lt;  ++m_cnt  &amp;lt;&amp;lt;  std::endl;
+}
+ 

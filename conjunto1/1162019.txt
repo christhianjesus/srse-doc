@@ -1,0 +1,8 @@
+ void  MyView::resizeEvent(QResizeEvent  *event)
+{
+
+        fitInView(0,  0,  500,  500,Qt::KeepAspectRatio);
+
+        QGraphicsView::resizeEvent(event);
+}
+ 

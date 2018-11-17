@@ -1,0 +1,3 @@
+ $gcc  -E  wait.c  |  grep  -n  'err_ret'
+$gcc  -E  14.6.c  |  grep  -n  'err_ret'
+ 

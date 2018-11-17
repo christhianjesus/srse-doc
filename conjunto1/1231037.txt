@@ -1,0 +1,5 @@
+ SolverPotential::solve(a,  b,  c,  d){
+    SolvePotential::interpolate(a,  b);
+    SolverPotential::compute_flux(b,  c);
+    SolverPotential::compute_energy(c,  d)
+ 

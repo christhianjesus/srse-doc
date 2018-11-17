@@ -1,0 +1,2 @@
+ output  =  (  input  &amp;gt;&amp;gt;  2  )  &amp;amp;  0x07;
+ 

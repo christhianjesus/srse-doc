@@ -1,0 +1,41 @@
+ #include  "stdio.h"
+#include  "string.h"
+#include  "ctype.h"
+
+#define  TRUE  1
+#define  FALSE  0
+
+int  main()
+{
+        char  str[10000];
+        char  key[10000];
+
+        printf("Enter  the  string:-  ");
+        scanf("%[^\n]",  str);  //stops  scanning  when  user  presses  return
+
+        int  len  =  0;
+        int  isalphabet=  TRUE;
+        int  apply  =  1;
+        do
+        {
+                printf("What  is  the  length  of  the  key  you  are  entering?:-");
+                scanf("%d",  &amp;amp;len);
+
+                isalphabet=  isalpha(len);
+                apply  =  (len  &amp;gt;  (strlen(str)  -1))  ;
+
+        }  while  (!apply  ||  isalphabet);  //reiterate  the  loop  until  the  conditions  are  satisfied
+
+        int  i;
+        for(i  =  0;  i  &amp;lt;  len;  i++)
+        {
+                printf("%dth  digit  of  Key=  ",  i+1);
+                scanf("%c\n",  &amp;amp;key[i]);
+        }
+
+        for(i  =  0;  i  &amp;lt;  len;  i++){
+                printf("key[%d]  =  %c\n",  i,  key[i]);
+        }
+        return(0);    
+}
+ 

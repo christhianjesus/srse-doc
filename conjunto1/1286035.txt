@@ -1,0 +1,6 @@
+ std::vector&amp;lt;char&amp;gt;  messageBuffer;
+messageBuffer.resize(userName.size()+2);
+strcpy(&amp;amp;messageBuffer[0],usernamr.c_str());
+std::copy(userName.begin(),  userName.end(),  std::back_inserter(messageBuffer));
+theC_API(&amp;amp;messageBuffer[0]);
+ 

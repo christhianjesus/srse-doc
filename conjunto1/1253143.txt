@@ -1,0 +1,3 @@
+       RemoveObj((Parent**)&amp;amp;pCObj);
+      RemoveObj((Parent*&amp;amp;)&amp;amp;pCObj);
+ 

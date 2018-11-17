@@ -1,0 +1,2 @@
+ std::cout&amp;lt;&amp;lt;std::setprecision(10)&amp;lt;&amp;lt;y&amp;lt;&amp;lt;"\n";
+ 

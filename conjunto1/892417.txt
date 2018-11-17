@@ -1,0 +1,2 @@
+ BOOL  result  =  ExitWindowsEx(EWX_LOGOFF,  reason);
+ 

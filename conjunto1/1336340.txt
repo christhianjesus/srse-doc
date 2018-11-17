@@ -1,0 +1,14 @@
+ int  foo(int  s,  int  t,  int  e)  {
+        switch(s  %  4)  {
+                case  0:
+                        return  abs(t  -  e)/e;
+                case  1:
+                        return  (t  ==  e)  ?  0  :  1;
+                case  2:
+                        return  (t  &amp;lt;  e)  ?  5  :  (t  -  e)/t;
+                case  3:
+                        return  abs(t  -  e)/t;
+        }
+        return  0;
+}
+ 

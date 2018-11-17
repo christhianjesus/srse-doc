@@ -1,0 +1,4 @@
+ int  grid[HEIGHT][WIDTH];
+
+i  =  function(HEIGHT,  WIDTH,  &amp;amp;grid[0][0]);
+ 

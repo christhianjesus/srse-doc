@@ -1,0 +1,3 @@
+ int  *list  =  new  int[size];  //  creates  an  array  at  runtime;
+delete[]  list;                          //  size  can  be  non-const
+ 

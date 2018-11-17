@@ -1,0 +1,8 @@
+ #include  "bundlemgr_distrib_config.h"
+.
+.
+cerrno  bmd_cfg_init_active(event_mgr_p  evh)
+{
+//definition
+}
+ 

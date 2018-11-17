@@ -1,0 +1,37 @@
+ #include  &amp;lt;iostream&amp;gt;
+
+class  Employee
+{
+public:
+        void  setID(unsigned  id)
+        {
+                Identificaiton_Number  =  id;
+        }
+
+        unsigned  getID()
+        {
+                return  Identificaiton_Number;
+        }
+
+private:
+        unsigned  Identification_Number;
+        //  Current  capacity  of  the  set
+
+        unsigned  Department_Code;
+        //  Department  Code  of  employee
+
+        unsigned  Salary;
+        //  Salary  of  employee
+
+        str  Name;
+        //  Name  of  employee
+};
+
+int  main()
+{
+        Employee  e;
+
+        e.setID(5);
+        std::cout  &amp;lt;&amp;lt;  e.getID()  &amp;lt;&amp;lt;  std::endl;
+}
+ 

@@ -1,0 +1,8 @@
+ error:    "  error  C2440:  'static_cast'  :  cannot  convert  from  'InterceptorManager&amp;lt;C,TMethod&amp;gt;  *'  to  'BBInterceptor  *'  "  58
+with
+1&amp;gt;                [
+                      1&amp;gt;                        C=BClass,
+                      1&amp;gt;                        TMethod=void  AClass::`vcall'{0}'(const  InterceptorData  *)
+                      1&amp;gt;                ]
+1&amp;gt;                Types  pointed  to  are  unrelated;  conversion  requires  reinterpret_cast,  C-style  cast  or  function-style  cast
+ 

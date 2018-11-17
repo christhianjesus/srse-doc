@@ -1,0 +1,18 @@
+ int  main(){
+        int  n1;
+        int  n2;
+        int  n3;
+        printf("escribe  tres  numeros");
+        scanf("%d%d%d",  &amp;amp;n1,  &amp;amp;n2,  &amp;amp;n3);
+        if(n1  &amp;gt;  n2  &amp;amp;&amp;amp;  n1  &amp;gt;  n3){
+                printf("mayor  es  %d",  n1);
+        }
+        if(n2  &amp;gt;  n1  &amp;amp;&amp;amp;  n2  &amp;gt;  n3){
+                printf("mayor  es  %d",  n2);
+        }
+        if(n3  &amp;gt;  n1  &amp;amp;&amp;amp;  n3  &amp;gt;  n2){
+                printf("mayor  %d",  n3);
+        }
+        return  0;
+}
+ 

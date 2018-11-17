@@ -1,0 +1,5 @@
+ typedef  struct  {
+mpVector  p[3];
+mpVector  norm;
+}  TRIANGLE;
+ 

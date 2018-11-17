@@ -1,0 +1,4 @@
+ (*S).size  =  1;
+//or
+S-&amp;gt;size  +=  123;
+ 

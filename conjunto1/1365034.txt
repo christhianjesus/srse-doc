@@ -1,0 +1,30 @@
+         for  (self.composizione;  *composizione&amp;gt;kFine;  composizione++)  {
+        int  c=(int)*composizione;
+        NSLog(@"%d",c);
+        switch  (c)  {
+                case  kForchettaPesce:      case  kForchettaNormale:
+                {
+                        NSString  *imagePath;
+                        imagePath=[[NSString  alloc]initWithFormat:@"%@/%d.png",[[NSBundle  mainBundle]resourcePath],c];
+                        UIImage  *image=[[UIImage  alloc]initWithContentsOfFile:imagePath];
+                        [imagePath  release];
+                        NSLog(@"pippo");
+                        UIImageView  *imageView=[[UIImageView  alloc]initWithFrame:CGRectMake(0,  0,  image.size.width,  image.size.height)];
+                        imageView.image=image;
+                        [image  release];
+                        [self.view  addSubview:imageView];
+                        [imageView  release];
+
+                break;
+                }
+
+
+                default:
+                break;
+        }
+        NSLog(@"%d",(int)*composizione);
+
+
+
+}
+ 

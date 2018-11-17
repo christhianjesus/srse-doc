@@ -1,0 +1,33 @@
+ FILE  *fpr,  *fpw;
+unsigned  char  b[1024];
+bool  ok  =  false;
+fpr  =  fopen("M.exe","rb");
+if  (fpr  ==  NULL)
+        printf("File  open  M.exe  failed!");
+else
+{
+        fpw  =  fopen("P.exe","wb");
+        if  (fpw  ==  NULL)
+                printf("File  open  P.exe  failed!");
+        else
+        {
+                int  read;
+                while(1)
+                {
+                        read  =  fread(b,  1,  1024,  fpr);
+                        if  (read  &amp;lt;  1)
+                        {
+                                if  (read  ==  0)
+                                    ok  =  true;
+                                break;
+                        }
+                        if  (fwrite(b,  read,  1,  fpw)  !=  1)
+                                break;
+                }
+                fclose(fpw);
+        }
+        fclose(fpr);
+}
+if  (ok)
+        printf("Successfully  copied!");
+ 

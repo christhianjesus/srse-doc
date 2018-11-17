@@ -1,0 +1,2 @@
+ NSLog(  @"TRACE  %@  METHOD  %s:%d.",  [NSString  stringWithFormat:@"'Table  of  Contents.txt'  file's  count  of  Linefeed-delimited  rows:  %u.",  [rows  count]]  ,  __func__,  __LINE__  );
+ 

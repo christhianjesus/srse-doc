@@ -1,0 +1,18 @@
+   #include  &amp;lt;memory&amp;gt;
+  #include  "Fan.h"
+  using  namespace  mtm;
+  using  std::shared_ptr;
+
+
+
+
+  int  main()  {
+
+          auto  fan1  =  std::make_shared&amp;lt;Fan&amp;gt;(2,1,"Bob");
+          auto  fan2  =  std::make_shared&amp;lt;Fan&amp;gt;(3,5,"Bob");
+
+          fan2-&amp;gt;getId();
+
+  return  0;
+  }
+ 

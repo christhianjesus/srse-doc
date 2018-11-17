@@ -1,0 +1,11 @@
+ struct  address  {
+                                  int  street_no;
+                                  char  *street_name;
+                                  char  *city;
+                                  char  *prov;
+                                  char  *postal_code;
+                              };
+
+
+address  ta  =  (ta  =  address(),  ta.city  =  "Hamilton",  ta.prov  =  "Ontario",  ta);
+ 

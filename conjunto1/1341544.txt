@@ -1,0 +1,4 @@
+ Camera::init()  {
+        Car::Z-&amp;gt;getPos();
+}
+ 

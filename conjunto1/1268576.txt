@@ -1,0 +1,7 @@
+ struct  MY_STRUCT
+{
+    int  n1;
+    int  n2;
+    MY_STRUCT():  n1(0),  n2(0)  {}
+};
+ 

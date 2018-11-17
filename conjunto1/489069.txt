@@ -1,0 +1,4 @@
+ for(auto  i1  =  myVector.begin();  i1  !=  myVector.end();  ++i1)  //  loops  over  the  "external"  vector
+        for(auto  i2  =  i1-&amp;gt;begin();  i2  !=  i1-&amp;gt;end();  ++i2)  //  loops  over  the  "internal"  vectors
+                std::cout  &amp;lt;&amp;lt;  *i2;
+ 

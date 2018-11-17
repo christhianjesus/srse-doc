@@ -1,0 +1,2 @@
+ for  (auto  it  =  v.cbegin(),  end  =  v.cend();  it  !=  end;  ++it)
+ 

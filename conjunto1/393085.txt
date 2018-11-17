@@ -1,0 +1,3 @@
+         cout&amp;lt;&amp;lt;k&amp;lt;&amp;lt;"\n";
+        *d[1]=5;  //  trying  to  change  array  element
+ 

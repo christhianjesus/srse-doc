@@ -1,0 +1,2 @@
+ BOOST_ASSERT(has_capacity);
+ 

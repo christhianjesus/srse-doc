@@ -1,0 +1,10 @@
+ template  &amp;lt;class  T&amp;gt;
+tablo&amp;lt;T&amp;gt;::tablo()
+        :  nelem(0),  adr(nullptr)
+{  }
+
+template  &amp;lt;class  T&amp;gt;
+tablo&amp;lt;T&amp;gt;::tablo(int  size)
+        :  nelem(size),  adr(new  T[size])
+{  }
+ 

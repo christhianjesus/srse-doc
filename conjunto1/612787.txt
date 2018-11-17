@@ -1,0 +1,76 @@
+         #include  &amp;lt;linux/module.h&amp;gt;
+        #include  &amp;lt;linux/fs.h&amp;gt;
+        #include  &amp;lt;asm/uaccess.h&amp;gt;
+
+        MODULE_LICENSE("GPL");
+
+        static  int  major;
+        static  char  kbuf[250];
+
+        static  int  dv_open(struct  inode  *inode,  struct  file  *filp)
+        {
+                return  0;  
+        }
+
+        static  int  dv_close(struct  inode  *inode,  struct  file  *filp)
+        {
+                return  0;  
+        }
+
+        static  ssize_t  dv_read(struct  file  *filp,  char  __user  *buf,  
+                                        size_t  sz,  loff_t  *fpos)
+        {
+                int  r;
+                int  L;
+                printk("READ:Entering\n");
+
+                L  =  strlen(kbuf);
+                r  =  copy_to_user(buf,  kbuf,  L);
+
+                printk("READ:Ends\n");
+
+                return  L;  
+        }
+        static  ssize_t  dv_write(struct  file  *filp,  const  char  __user  *buf,  
+                                        size_t  sz,  loff_t  *fpos)
+        {
+                int  r,  wr_sz;
+
+                printk("WRITE:Entering\n");
+                memset(kbuf,'\0',  250);
+                if  (  sz  &amp;lt;=  250  )  {
+                      wr_sz  =  sz;
+                }  else  {
+                      wr_sz  =  250;
+                }
+                r  =  copy_from_user(kbuf,  buf,  wr_sz);
+
+                printk("WRITE:Rx  buf  =  %s\n",  kbuf);
+
+                return  0;
+
+        }
+        static  struct  file_operations  dv_fops  =  {
+                .open          =  dv_open,
+                .release    =  dv_close,
+                .read          =  dv_read,
+                .write        =  dv_write,
+                .owner        =  THIS_MODULE,
+        };
+
+        int  init_module(void)
+        {
+                major  =  register_chrdev(0,  "dvdev",  &amp;amp;dv_fops);
+                if  (  major  &amp;lt;  0  )  {
+                      printk("Error  in  registering  driver\n");
+                      return  -1;
+                }
+                else  printk("Success.  major  =  %d\n",  major);
+                return  0;
+        }
+
+        void  cleanup_module(void)
+        {
+                unregister_chrdev(major,  "dvdev");
+        }
+ 

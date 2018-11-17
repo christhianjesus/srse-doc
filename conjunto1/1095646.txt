@@ -1,0 +1,4 @@
+ [-2]:  0
+[-1]:  typeof(BaseTest)
+[  0]:  BaseTest::gB
+ 

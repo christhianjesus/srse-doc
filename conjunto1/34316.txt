@@ -1,0 +1,7 @@
+ enum  {  jazz,  country,  hiphop,  classic_rock,  progressive_rock,  metal  /*,  ...  */};
+
+if  (songs[i].genres[country])
+
+if  (songs[i].genres[hiphop])
+        process_hiphop(songs[i]);
+ 

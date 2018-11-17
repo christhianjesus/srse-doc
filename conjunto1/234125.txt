@@ -1,0 +1,8 @@
+ static  PyObject  *
+myfunction(PyObject  *self,  PyObject  *args){
+        if  (!PyArg_ParseTuple(args,  "i",  ...))
+                return  NULL;
+        /*  ....  */
+        Py_RETURN_NONE;
+}
+ 

@@ -1,0 +1,8 @@
+ Welcome  to  Employee  program.  Enter  Name  and  Salary  when  prompted.
+
+
+Enter  Name:  
+Enter  Salary:  
+What  percentage  to  raise  the  salary:  I  calculated
+Name:    :  Salary:  0
+ 

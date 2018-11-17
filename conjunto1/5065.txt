@@ -1,0 +1,16 @@
+ template&amp;lt;class  T&amp;gt;
+class  MyTree
+{
+public:
+        typedef  boost::function&amp;lt;  void  (MyTreeNode&amp;lt;T&amp;gt;*)  &amp;gt;  MyFunction;
+
+        void  traverse(MyFunction  f)  {
+                traverse(root,  f);
+        }
+private:
+            MyTreeNode&amp;lt;T&amp;gt;*  root;
+            void  traverse(MyTreeNode&amp;lt;T&amp;gt;*,  MyFunction  f);
+};
+
+tree.traverse(  boost::bind(  &amp;amp;func_with_args,  _1,  arg1,  arg2  )  );
+ 

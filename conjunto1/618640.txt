@@ -1,0 +1,13 @@
+ #include  &amp;lt;d3d11.h&amp;gt;
+#include  “DirectXMath.h”
+#include  “DirectXPackedVector.h”
+
+using  namespace  DirectX;  
+using  namespace  DirectX::PackedVector;
+
+struct  mystruct
+{
+      DirectX::XMFLOAT3  position;
+      DirectX::PackedVector::HALF  packedValue;
+};
+ 

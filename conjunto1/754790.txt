@@ -1,0 +1,10 @@
+ std::multiset&amp;lt;std::string&amp;gt;  s;
+
+std::copy(std::istream_iterator&amp;lt;std::string&amp;gt;(fin),//fin-  object  of  std::fstream
+                    std::istream_iterator&amp;lt;std::string&amp;gt;(),  
+                    std::inserter(s,  s.begin()));  
+
+s.insert("new_name");
+
+//Write  s  to  the  file
+ 

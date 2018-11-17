@@ -1,0 +1,2 @@
+ warning  C4244:  'argument'  :  conversion  from  'ULONGLONG'  to  'DWORD',  possible  loss  of  data
+ 

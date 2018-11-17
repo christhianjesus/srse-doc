@@ -1,0 +1,7 @@
+ #include  &amp;lt;fstream&amp;gt;
+
+std::ifstream  ifs("logfile");
+ifs.seekg(-500*1000,  std::ios_base::end);
+std::ofstream  ofs("logfile.new");
+ofs  &amp;lt;&amp;lt;  ifs.rdbuf();
+ 

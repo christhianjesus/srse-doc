@@ -1,0 +1,16 @@
+ typedef  struct{
+        pthread_mutex_t  mutex;
+        pthread_cond_t  cond;
+        int  readers;
+}flowers;
+
+        flower  tmp;
+        pthread_mutex_init(&amp;amp;tmp.mutex,NULL);
+        pthread_cond_init(&amp;amp;tmp.cond,NULL);
+        tmp.readers  =  0;
+
+        size  =  sizeof(flower);
+        st_int  =  &amp;amp;tmp;
+
+        ret  =  db_database_set_internal_data(product_name,  st_int,  size);
+ 

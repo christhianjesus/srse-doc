@@ -1,0 +1,13 @@
+ recursion(5);
+if  (5  &amp;gt;  0)  recursion(4);
+if  (4  &amp;gt;  0)  recursion(3);
+if  (3  &amp;gt;  0)  recursion(2);
+if  (2  &amp;gt;  0)  recursion(1);
+if  (1  &amp;gt;  0)  recursion(0);
+if  (0  &amp;gt;  0)  {  //  false,  so  if  body  skipped  and  function  simply  returns}
+printf("%d",  1);  //  The  next  statement  after  the  call  recursion(0)
+printf("%d",  2);  //  The  next  statement  after  the  call  recursion(1)
+printf("%d",  3);  //  The  next  statement  after  the  call  recursion(2)
+printf("%d",  4);  //  The  next  statement  after  the  call  recursion(3)
+printf("%d",  5);  //  The  next  statement  after  the  call  recursion(4)
+ 

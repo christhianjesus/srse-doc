@@ -1,0 +1,24 @@
+ //  Tries  until  successful,  or  user  interaction  demands  failure.
+bool  initialize()  {
+        for  (  ;;  )  {
+                try  {
+                        //  init  code
+                        return  true;
+                }
+                catch  (  ...  )  {
+                        cout  &amp;lt;&amp;lt;  "Init  Failed.  Fail  Program?"  &amp;lt;&amp;lt;  endl;
+                        if  (  yes  )  {
+                                return  false;
+                        }
+                }
+        }
+}
+
+int  main()  {
+        if  (  !  initialize()  )  {
+                return  EXIT_FAILURE;
+        }
+        //  rest  of  program
+        return  EXIT_SUCCESS;
+}
+ 

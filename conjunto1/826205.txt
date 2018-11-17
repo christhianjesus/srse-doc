@@ -1,0 +1,44 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+#include  &amp;lt;math.h&amp;gt;
+
+
+float  areaCirc(float  r){
+return  (M_PI*r*r);
+}
+
+float  volCyl(float  r,  float  h){
+return  (areaCirc(r)*h);
+}
+
+
+int  main(void)  {
+float  r,  h;
+int  k  =  0;
+float  volume;
+float  avgh  =  0;
+float  toth  =  0;
+
+do{
+        float  exit  =  scanf("%f%f",  &amp;amp;r,  &amp;amp;h);
+        if  (exit  ==  0)  
+        {break;}
+        if(r&amp;lt;=0  ||  r&amp;gt;10){
+                printf("Invalid  radius:  %.2f\n",r);
+        }
+        if(h&amp;lt;=0  ||  h&amp;gt;10){
+                printf("Invalid  height:  %.2f\n",h);
+        }
+        if(r&amp;gt;=0  &amp;amp;&amp;amp;  r&amp;lt;=10  &amp;amp;&amp;amp;  h&amp;gt;=0  &amp;amp;&amp;amp;  h  &amp;lt;=  10){
+        volume  =  volCyl(r,h);
+        k  =  k++;
+        printf("  Cylinder  %d  radius  %.2f  height  %.2f  volume  %.2f\n",k,r,h,volume);
+        toth  =  toth  +  h;
+}  }while(r&amp;gt;0  &amp;amp;&amp;amp;  h&amp;gt;0);
+        avgh  =  toth/k;
+        printf("Total  Height:  %.2f\n",toth);
+        printf("Average  Height:  %.2f\n",avgh);
+
+return  EXIT_SUCCESS;
+}
+ 

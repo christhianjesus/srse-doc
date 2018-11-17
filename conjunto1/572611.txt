@@ -1,0 +1,8 @@
+ partition::~partition()
+{
+        for(unsigned  i=0;  i&amp;lt;modules.size();  i++)
+        {
+                  delete  modules[i];
+        }
+}
+ 

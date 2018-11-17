@@ -1,0 +1,62 @@
+ QWidget  *MedicationDelegate::createEditor(QWidget  *parent,  const  QStyleOptionViewItem&amp;amp;              /*option*/,  const  QModelIndex&amp;amp;  /*index*/)  const
+{
+        EditMedicationDialog  *editor  =  new  EditMedicationDialog(parent);
+        editor-&amp;gt;setAttribute(Qt::WA_DeleteOnClose,  true);
+        editor-&amp;gt;setModal(true);
+
+        connect(editor,  SIGNAL(accepted()),  this,  SLOT(editorAccepted()));
+        connect(editor,  SIGNAL(rejected()),  this,  SLOT(editorRejected()));
+
+        return  editor;
+}
+
+void  MedicationDelegate::setEditorData(QWidget  *uncastedEditor,  const  QModelIndex&amp;amp;  index)  const
+{
+        int  currentRow  =  index.row();
+
+        QModelIndex  drugClassIndex  =  index.sibling(currentRow,  MedicationModel::DrugClass);
+        QModelIndex  drugIndex  =  index.sibling(currentRow,  MedicationModel::Drug);
+        QModelIndex  dosageIndex  =  index.sibling(currentRow,  MedicationModel::Dosage);
+        QModelIndex  amountIndex  =  index.sibling(currentRow,  MedicationModel::Amount);
+        QModelIndex  scheduleIndex  =  index.sibling(currentRow,  MedicationModel::Schedule);
+        QModelIndex  frequencyIndex  =  index.sibling(currentRow,  MedicationModel::Frequency);
+
+        QString  drugClass  =  index.model()-&amp;gt;data(drugClassIndex,  Qt::DisplayRole).toString();
+        QString  drug  =  index.model()-&amp;gt;data(drugIndex,  Qt::DisplayRole).toString();
+        QString  dosage  =  index.model()-&amp;gt;data(dosageIndex,  Qt::DisplayRole).toString();
+        QString  amount  =  index.model()-&amp;gt;data(amountIndex,  Qt::DisplayRole).toString();
+        QString  schedule  =  index.model()-&amp;gt;data(scheduleIndex,  Qt::DisplayRole).toString();
+        QString  frequency  =  index.model()-&amp;gt;data(frequencyIndex,  Qt::DisplayRole).toString();
+
+        EditMedicationDialog  *editor  =  qobject_cast&amp;lt;EditMedicationDialog*&amp;gt;(uncastedEditor);
+
+        //  these  methods  sets  the  current  row  values  in  the  editor
+        editor-&amp;gt;setDrugClass(drugClass);
+        editor-&amp;gt;setDrug(drug);
+        editor-&amp;gt;setDosage(dosage);
+        editor-&amp;gt;setAmount(amount);
+        editor-&amp;gt;setSchedule(schedule);
+        editor-&amp;gt;setFrequency(frequency);
+}
+
+void  MedicationDelegate::setModelData(QWidget  *uncastedEditor,  QAbstractItemModel  *model,  const  QModelIndex&amp;amp;  index)  const
+{
+        int  currentRow  =  index.row();
+
+        QModelIndex  drugClassIndex  =  index.sibling(currentRow,  MedicationModel::DrugClass);
+        QModelIndex  drugIndex  =  index.sibling(currentRow,  MedicationModel::Drug);
+        QModelIndex  dosageIndex  =  index.sibling(currentRow,  MedicationModel::Dosage);
+        QModelIndex  amountIndex  =  index.sibling(currentRow,  MedicationModel::Amount);
+        QModelIndex  scheduleIndex  =  index.sibling(currentRow,  MedicationModel::Schedule);
+        QModelIndex  frequencyIndex  =  index.sibling(currentRow,  MedicationModel::Frequency);
+
+        EditMedicationDialog  *editor  =  qobject_cast&amp;lt;EditMedicationDialog*&amp;gt;(uncastedEditor);
+
+        model-&amp;gt;setData(drugClassIndex,  editor-&amp;gt;drugClass());
+        model-&amp;gt;setData(drugIndex,  editor-&amp;gt;drug());  //  HERE
+        model-&amp;gt;setData(dosageIndex,  editor-&amp;gt;dosage());
+        model-&amp;gt;setData(amountIndex,  editor-&amp;gt;amount());
+        model-&amp;gt;setData(scheduleIndex,  editor-&amp;gt;schedule());
+        model-&amp;gt;setData(frequencyIndex,  editor-&amp;gt;frequency());
+}
+ 

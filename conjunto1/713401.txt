@@ -1,0 +1,47 @@
+ #include  &amp;lt;string&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+
+int  i_global;
+double  d_global;
+
+template  &amp;lt;class  T&amp;gt;
+void  assign(T  in)  {  
+        //  this  function  should  never  be  called.
+        assert(false);
+}
+
+template&amp;lt;&amp;gt;
+void  assign&amp;lt;int&amp;gt;(int  in)  {  
+        i_global  =  in;
+}
+
+template&amp;lt;&amp;gt;
+void  assign&amp;lt;double&amp;gt;(double  in)  {
+        d_global  =  in;
+}
+
+//  for  the  moment,  func(input)  will  just  call  assign(input):
+template  &amp;lt;class  T&amp;gt;
+void  func(T  input)  {
+        assign&amp;lt;T&amp;gt;(input);
+}
+
+int  main(int  argc,  char  **argv)  {  
+        if  (argc  !=  2)  {
+                std::cerr  &amp;lt;&amp;lt;  "Usage:  trash  &amp;lt;number&amp;gt;\n";
+                return  EXIT_FAILURE;
+        }
+
+        std::string  in(argv[1]);
+
+        //  see  if  the  input  contains  a  decimal  point,  and  act  accordingly:
+        if  (in.find('.')  !=  std::string::npos)
+                func(std::stod(in));
+        else
+                func(std::stoi(in));
+
+        //  show  the  results  --  the  values  of  the  globals:
+        std::cout  &amp;lt;&amp;lt;  "Result:\ndouble:  "  &amp;lt;&amp;lt;  d_global  &amp;lt;&amp;lt;  "\nint:  "  &amp;lt;&amp;lt;  i_global  &amp;lt;&amp;lt;  "\n";
+        return  0;
+}
+ 

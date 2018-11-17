@@ -1,0 +1,4 @@
+ Buffer.write(reinterpret_cast&amp;lt;char*&amp;gt;(&amp;amp;Hdr1),  sizeof(dbHdr1));
+Buffer.write(reinterpret_cast&amp;lt;char*&amp;gt;(&amp;amp;Body1),  sizeof(Body1));
+Buffer.write(reinterpret_cast&amp;lt;char*&amp;gt;(&amp;amp;Body2),  sizeof(Body2));
+ 

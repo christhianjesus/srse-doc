@@ -1,0 +1,10 @@
+ #!/bin/bash
+
+rm  *.o
+rm  *.so
+
+g++  -fpic  -g  -c  -Wall  hello_fn.cpp
+g++  -fpic  -g  -c  -Wall  bye_fn.cpp
+#make  a  shared  library,  not  a  static  library  (thanks  cat  plus  plus)
+g++  -shared  -o  libhello.so  hello_fn.o  bye_fn.o
+ 

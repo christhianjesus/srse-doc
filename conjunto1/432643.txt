@@ -1,0 +1,4 @@
+ #include  directives  
+const  int  SIZE=5;
+double  a[SIZE];
+ 

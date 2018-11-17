@@ -1,0 +1,22 @@
+ uint32_t  CRC32::calculate_CRC32(const  uint32_t*  plData,  uint32_t  lLength,  uint32_t          previousCrc32)
+  {
+        uint32_t  lCount;
+        const  uint32_t  lPolynomial  =  0x04C11DB7;
+        uint32_t  lCrc  =  previousCrc32;
+        unsigned  char*  plCurrent  =  (unsigned  char*)  plData;
+        lCrc  ^=  *plCurrent++;
+
+        while  (lLength--  !=  0)
+          {
+              for  (lCount  =  0  ;  lCount  &amp;lt;  lLength;  lCount++)
+              {
+                if  (lCrc  &amp;amp;  1)
+                lCrc  =  (lCrc  &amp;gt;&amp;gt;  8)  ^  lPolynomial;
+                      else
+                          lCrc  =  lCrc  &amp;gt;&amp;gt;  8;
+                }
+        }
+
+        return  lCrc;
+}
+ 

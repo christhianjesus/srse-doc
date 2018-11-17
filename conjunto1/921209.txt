@@ -1,0 +1,26 @@
+ int  scan_the_stack(...)
+{
+        printf("Going  to  scan  the  stack  forward\n");
+
+        int  i  =  0;
+        int*  stack_addr  =  &amp;amp;i;
+        for  (int  i  =  0;  i  &amp;lt;  100;  i++)
+        {
+                printf("%d  :  %X\n",  i,  *stack_addr);
+                stack_addr++;
+        }
+
+        return  0;
+}
+
+void  spawn_scan_stack()
+{  
+          taskSpawn("tScanner",          /*  name  of  new  task  (stored  at  pStackBase)  */
+                                        150,                        /*  priority  of  new  task  */
+                                        VX_FP_TASK,          /*  task  option  word  */
+                                        10000,                    /*  size  (bytes)  of  stack  needed  plus  name  */
+                                        scan_the_stack,  /*  entry  point  of  new  task  */
+                                        0,                            /*  1st  of  10  req'd  args  to  pass  to  entryPt  */
+                                        0,0,0,0,0,0,0,0,0);
+}
+ 

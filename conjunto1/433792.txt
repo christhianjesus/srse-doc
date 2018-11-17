@@ -1,0 +1,12 @@
+     (char  **)  
+
+    a                                  address  a
+                                        "points  to"
+                                        *a                                **a      
+    mem  1000                    mem  10000                  mem  20000
+    to  mem  1007              to  mem  10007
+    _____________          _____________          _______________  
+    pointer  var    --&amp;gt;  char  pointer      -&amp;gt;    char
+    10000                          20000                          'a'
+    _____________          _____________          _______________
+ 

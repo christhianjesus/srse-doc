@@ -1,0 +1,2 @@
+ codt.ParseDateTime(sqlresults.GetItem(_T("date"),l),0,MAKELANGID(LANG_ENGLISH,  SUBLANG_ENGLISH_UK));
+ 

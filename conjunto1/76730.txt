@@ -1,0 +1,57 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+
+void  main()
+
+{
+
+int  i,  j,  tree_Size,  spaces,  total_Spaces,  x;
+char  tree_Characters;
+
+printf("Enter  characters  to  use  --&amp;gt;  ");
+  scanf("%c",  &amp;amp;tree_Characters);
+printf("Enter  size  of  tree  --&amp;gt;  ");
+  scanf("%d",  &amp;amp;tree_Size);
+
+      //For  handling  top  part  of  tree
+      for  (i  =  0;  i  &amp;lt;=  tree_Size;  i++)  {
+            printf("\n");
+            total_Spaces  =  tree_Size  -  i;
+
+                //Determine  spaces  before  each  number  for  pyramid
+            for  (spaces  =  1;  spaces  &amp;lt;=  total_Spaces;  spaces++)  
+                  printf("  ");
+
+            //Make  first  line  always  one  number
+            for  (j  =  -1;  j  &amp;lt;  i;  j++)
+                  if  (j  &amp;lt;=  -1)
+                        printf("%c",  tree_Characters);
+                  else  if  (j  &amp;gt;  -1)
+                        printf("%c%c",  tree_Characters,  tree_Characters);
+      }  
+
+      //For  handling  stem  and  base  of  tree
+      for  (i  =  0;  i  &amp;lt;=  tree_Size;  i++)  {
+
+            //if  handling  stem
+            if  (i  &amp;lt;  tree_Size)  {
+                  printf("\n");    
+                  for  (spaces  =  1;  spaces  &amp;lt;=  tree_Size;  spaces++)
+                        printf("  ");
+                  printf("%c",  tree_Characters);
+            }
+
+            //else  if  handling  base
+
+            else  if  (i  ==  tree_Size)  {
+                  printf("\n");
+
+                  for  (x  =  0;  x  &amp;lt;=  tree_Size  *  2;  x++)  {
+                        printf("%c",  tree_Characters);
+                  }
+            }
+      }
+
+printf("\n");
+
+}
+ 

@@ -1,0 +1,19 @@
+ class  __declspec(dllexport)  A
+{
+    public:
+        A();
+        ~A();
+
+    private:
+        struct  StructData
+        {
+            unsigned  int  b_;
+        };
+
+#if  defined(WIN32)  &amp;amp;&amp;amp;  !defined(__GNUC__)
+        template  class  __declspec(dllexport)  std::allocator&amp;lt;StructData&amp;gt;;  //  explicit  instantiation  needed  to  prevent  warning  C4251
+        template  class  __declspec(dllexport)  std::vector&amp;lt;StructData,  std::allocator&amp;lt;StructData&amp;gt;  &amp;gt;;  //  explicit  instantiation  needed  to  prevent  warning  C4251
+#endif
+        std::vector&amp;lt;StructData&amp;gt;  StructDataVector_;
+};
+ 

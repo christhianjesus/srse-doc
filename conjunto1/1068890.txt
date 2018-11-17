@@ -1,0 +1,12 @@
+ std::string  line
+while(getline(cin,  line))  {
+        //  Note:  Omitting  the  case  where  the  line  contains  spaces,  only.
+        if(line.empty())  {
+              //  No  input;
+              break;
+        }
+        else  {
+              //  Parse  and  process  the  line.
+        }
+}
+ 

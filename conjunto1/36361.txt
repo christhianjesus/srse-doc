@@ -1,0 +1,8 @@
+ template  &amp;lt;typename  T,  typename  Hash,  typename  Pred,  typename  Allocator&amp;gt;
+std::unordered_set&amp;lt;T,Hash,Pred,Allocator&amp;gt;
+    make_unordered_set(Hash  const&amp;amp;  hash,  Pred  const&amp;amp;  pred,  Allocator  const&amp;amp;  alloc)
+{
+    static  size_t  const  nbBuckets  =  number_buckets&amp;lt;T&amp;gt;();
+    return  std::unordered_set&amp;lt;T,Hash,Pred,Allocator&amp;gt;(nbBuckets,  hash,  pred,  alloc);
+}
+ 

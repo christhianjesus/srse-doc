@@ -1,0 +1,72 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;unordered_map&amp;gt;
+#include  &amp;lt;functional&amp;gt;
+
+using  const_string_ref  =  std::reference_wrapper&amp;lt;const  std::string&amp;gt;;
+
+namespace  std
+{
+        template&amp;lt;&amp;gt;
+        struct  hash&amp;lt;const_string_ref&amp;gt;
+        {
+                size_t  operator()(const  const_string_ref&amp;amp;  ref)  const
+                {
+                        return  std::hash&amp;lt;std::string&amp;gt;()(ref);
+                }
+        };
+
+        bool        operator==(const  const_string_ref&amp;amp;  lhs,
+                                              const  const_string_ref&amp;amp;  rhs)
+        {
+                return  (lhs.get()  ==  rhs.get());
+        }
+}
+
+class  test
+{
+public:
+        void  process(const  std::string&amp;amp;  action)
+        {
+                (this-&amp;gt;*(ACTIONS_PROCESSORS_MAP_.at(action)))();
+        }
+
+private:
+    using  action_processor  =  void  (test::*)();
+    using  actions_map  =  std::unordered_map&amp;lt;const_string_ref,  action_processor&amp;gt;;
+
+private:
+    static  const  std::string  FIRST_KEY_;
+    static  const  std::string  SECOND_KEY_;
+
+    static  const  actions_map  ACTIONS_PROCESSORS_MAP_;
+
+private:            
+    void  first_action()
+    {
+            std::cout  &amp;lt;&amp;lt;  "first  works"  &amp;lt;&amp;lt;  std::endl;
+    }
+
+    void  second_action()
+    {
+            std::cout  &amp;lt;&amp;lt;  "second  works"  &amp;lt;&amp;lt;  std::endl;
+    }
+};
+
+const  std::string  test::FIRST_KEY_  =  "first";
+const  std::string  test::SECOND_KEY_  =  "second";
+
+const  test::actions_map  test::ACTIONS_PROCESSORS_MAP_  =
+{{std::cref(FIRST_KEY_),  &amp;amp;test::first_action},
+  {std::cref(SECOND_KEY_),  &amp;amp;test::second_action}};
+
+
+int  main()
+{
+      test  t;
+
+      t.process("first");
+      t.process("second");
+
+      return  0;
+}
+ 

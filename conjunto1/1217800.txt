@@ -1,0 +1,8 @@
+ #include  'Header.h';
+
+int  main()
+{
+        cout  &amp;lt;&amp;lt;  "hi";
+        return  0;
+}
+ 

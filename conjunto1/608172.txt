@@ -1,0 +1,8 @@
+ Power_time  **I;  
+I  =  (Power_vtime)malloc(sizeof(Power_time*)*nb_prev);  
+if  (I  ==  NULL)  exit(0);  
+for  (i  =  0;  i  &amp;lt;  nb_prev;  i++)  {  
+        I[i]  =  (Power_time*)malloc(sizeof(Power_versus_time)*nb_samples);  
+        if  (I_arriv[i]  ==  NULL)  exit(0);  
+}
+ 

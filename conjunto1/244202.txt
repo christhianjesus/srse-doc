@@ -1,0 +1,3 @@
+ str  *A_STRING  =  NEW_STRING();
+A_STRING  =  NEW_STRING();
+ 

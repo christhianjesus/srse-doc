@@ -1,0 +1,2 @@
+ bool  Database::Connect(char*  ip,  char*  user,  char*  pass,  char*  db)
+ 

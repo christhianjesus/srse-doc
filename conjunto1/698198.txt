@@ -1,0 +1,39 @@
+ class  Bla  {
+
+public:
+        Bla();
+        virtual  ~Bla();
+
+        virtual  float  myFunction();
+}
+
+class  MockBla  :  public  Bla  {
+        MockBla();
+        ~MockBla();
+        MOCKMETHOD0(myFunction,  float());
+}
+
+class  CallerClass  {
+
+public:
+        CallerClass()  {  MockBla*  myMock  =  new  MockBla();  }
+        virtual  ~CallerClass();
+
+        myCallingFunction()  {  myMock-&amp;gt;myFunction();  }
+}
+
+class  MyTestClass  :  public  ::testing::Test  {
+//....
+        TEST(myTest,  testMyFunction)  {
+        MockBla  mockBla;
+        EXPECT_CALL(mockBla,  myFunction()).Times(AtLeast(1));
+
+        CallerClass*  callerClass;
+        callerClass  =  new  CallerClass();
+
+        callerClass-&amp;gt;myCallingFunction();
+
+        }
+//....
+}
+ 

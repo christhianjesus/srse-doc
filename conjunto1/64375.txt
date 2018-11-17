@@ -1,0 +1,7 @@
+ void  FtpWindow::updateDataTransferProgress(qint64  readBytes,  
+        qint64  totalBytes)  
+{
+        progressDialog-&amp;gt;setMaximum(100);
+        progressDialog-&amp;gt;setValue((qint)((readBytes  *  100)  /  totalBytes));
+}
+ 

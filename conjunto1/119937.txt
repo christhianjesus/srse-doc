@@ -1,0 +1,2 @@
+ val  =  val  &amp;amp;  0xf7;  //  1111  0111
+ 

@@ -1,0 +1,10 @@
+ //foo.cpp
+extern  "C"  {
+    #include  "Foo.hpp"
+    #include  "foo.h"        
+
+    struct  myLib_foo  :  public  myLib::Foo  {};    //this  does  work
+
+    myLib_foo*  mkfoo()  {  return  static_cast&amp;lt;myLib_foo*&amp;gt;(new  myLib::Foo());  }
+}
+ 

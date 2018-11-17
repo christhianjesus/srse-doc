@@ -1,0 +1,4 @@
+ struct  bits  {  unsigned  int  foo:1;  };
+bits  b{1};
+f(b.foo);
+ 

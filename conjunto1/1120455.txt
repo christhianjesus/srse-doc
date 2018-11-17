@@ -1,0 +1,8 @@
+ void  main()  {
+        int  width  =  10,  height  =  10;
+        int  buffer[width*height];
+        int  (*p)[width]  =  (int  (*)[width])buffer;
+        p[2][2]=10;
+        printf("%d",  p[2][2]);
+}
+ 

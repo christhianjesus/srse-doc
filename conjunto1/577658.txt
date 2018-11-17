@@ -1,0 +1,12 @@
+ find(current_node,value):
+
+if  current_node.value  ==  value
+      return  found
+else  
+      if  find(current_node.left,value)  ==  found
+            return  found
+      else  if  find(current_node.right,value)  ==  found
+            return  found
+      else
+            return  not_found
+ 

@@ -1,0 +1,13 @@
+ session::exec()
+{
+        try
+        {
+                real_exec();
+        }
+        catch(...)
+        {
+                mark_as_connection_that_should_not_go_to_pool();
+                throw;
+        }
+}
+ 

@@ -1,0 +1,29 @@
+ #include  &amp;lt;stdexcept&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+
+class  X:  public  std::runtime_error    //  I  use  runtime_error  a  lot
+{                                                                      //  its  derived  from  std::exception
+        public:                                                  //  And  has  an  implementation  of  what()
+                X(std::string  const&amp;amp;  msg):
+                        runtime_error(msg)
+                {}
+};
+
+int  main()
+{
+        try
+        {
+                throw  X("Test");
+        }
+        catch(std::exception  const&amp;amp;  e)
+        {
+                std::cout  &amp;lt;&amp;lt;  "Message:  "  &amp;lt;&amp;lt;  e.what()  &amp;lt;&amp;lt;  "\n";
+
+                /*
+                  *  Note  this  is  platform/compiler  specific
+                  *  Your  milage  may  very
+                  */
+                std::cout  &amp;lt;&amp;lt;  "Type:        "  &amp;lt;&amp;lt;  typeid(e).name()  &amp;lt;&amp;lt;  "\n";
+        }
+}
+ 

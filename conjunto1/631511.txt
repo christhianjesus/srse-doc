@@ -1,0 +1,5 @@
+ public  static  uint  MakeWord(byte  low,  byte  high)
+{
+        return  ((uint)high  &amp;lt;&amp;lt;  8)  |  low;
+}
+ 

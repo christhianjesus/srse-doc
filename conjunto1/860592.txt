@@ -1,0 +1,12 @@
+ DEFAULTFUNC
+void  default_handler(...)
+{
+      ...
+}
+
+FUNC(28)
+void  handle_foo(...)
+{
+      ...
+}
+ 

@@ -1,0 +1,5 @@
+ string  word  =  "XYZ";
+string  alphabet  =  "ABCDEFGHIJKLMNOPQRSTUVW";
+alphabet  +=  word;
+cout  &amp;lt;&amp;lt;  alphabet  &amp;lt;&amp;lt;  "\n";
+ 

@@ -1,0 +1,53 @@
+ #pragma  pack(1)
+
+//...
+typedef  unsigned  short  word;
+//...
+
+#ifdef  _MOTOROLA_CPU
+typedef  struct
+{
+
+        word                ip_ver            :  4;
+        word                ihl                  :  4;
+        word                ip_tos            :  8;
+
+        word                tot_len;
+        word                identification;
+
+        word                flags              :  3;
+        word                fragment_ofs:  13;
+        word                time_to_live:  8;
+        word                protocol        :  8;
+
+        word                check_sum;
+
+        IP_ADDRESS_T        src;
+        IP_ADDRESS_T        dest;
+
+}  IP_MSG_HEADER_T,  *IP_MSG_HEADER_P;
+
+#else  //  Intel  CPU.
+typedef  struct
+{
+
+        word                ip_tos            :  8;
+        word                ihl                  :  4;
+        word                ip_ver            :  4;
+
+        word                tot_len;
+        word                identification;
+
+        word                fragment_ofs:  13;
+        word                flags              :  3;
+        word                protocol        :  8;
+        word                time_to_live:  8;
+
+        word                check_sum;
+
+        IP_ADDRESS_T        src;
+        IP_ADDRESS_T        dest;
+
+}  IP_MSG_HEADER_T,  *IP_MSG_HEADER_P;
+#endif
+ 

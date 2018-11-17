@@ -1,0 +1,20 @@
+ std::istream&amp;amp;  operator&amp;gt;&amp;gt;  (std::istream  &amp;amp;in,  AlbumCollection  &amp;amp;ac)
+        {
+                std::ifstream  inf("albums.txt");
+
+                //  If  we  couldn't  open  the  input  file  stream  for  reading
+                if  (!inf)
+                {
+                //  Print  an  error  and  exit
+                        std::cerr  &amp;lt;&amp;lt;  "Uh  oh,  file  could  not  be  opened  for  reading!"  &amp;lt;&amp;lt;  std::endl;
+                        exit(1);
+                }
+
+                //  While  there's  still  stuff  left  to  read
+                while  (inf)
+                {
+                        std::string  strInput;
+                        getline(inf,  strInput);
+                        in  &amp;gt;&amp;gt;  strInput;
+                }
+ 

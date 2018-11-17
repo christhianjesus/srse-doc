@@ -1,0 +1,19 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+
+int  main()
+{
+        struct  course
+        {
+                char  title[20];
+                int  num;
+        }  ;
+
+        struct  course  class;
+
+        printf("Enter  a  course  title  and  course  number");
+        scanf("%s  %d",  class.title,  &amp;amp;class.num);
+        printf("%s  %d",  class.title,  class.num);
+
+        return  0;
+}
+ 

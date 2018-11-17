@@ -1,0 +1,3 @@
+ myclass.f&amp;lt;&amp;lt;some&amp;lt;&amp;lt;information&amp;lt;&amp;lt;printed&amp;lt;&amp;lt;here;
+std::cout&amp;lt;&amp;lt;some&amp;lt;&amp;lt;information&amp;lt;&amp;lt;printed&amp;lt;&amp;lt;here;
+ 

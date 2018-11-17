@@ -1,0 +1,5 @@
+ bool  getBit(unsigned  char  byte,  unsigned  int  bitPosition)
+{
+        return  (byte  &amp;amp;  (1  &amp;lt;&amp;lt;  bitPosition))  !=  0;
+}
+ 

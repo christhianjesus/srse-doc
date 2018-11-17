@@ -1,0 +1,4 @@
+ Inside  Base::~Base()
+Inside  Base::foo()
+b-&amp;gt;x:  2359492
+ 

@@ -1,0 +1,6 @@
+ while  (entry.getNext()  !=  nullptr  &amp;amp;&amp;amp;  entry.getKey()  !=  key)
+{
+        prevEntry  =  entry;
+        entry  =  *entry.getNext();
+}
+ 

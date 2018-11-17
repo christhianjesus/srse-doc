@@ -1,0 +1,10 @@
+ int  main()  {
+    MyClass&amp;lt;Foo&amp;gt;  instance;
+    int  x  =  instance.Data(  [&amp;amp;](  Foo  const&amp;amp;  foo  )  {
+        return  foo.x;
+    });
+    instance.Data(  [&amp;amp;](  Foo&amp;amp;  foo  )  {
+        foo.y  =  3;
+    });
+}
+ 

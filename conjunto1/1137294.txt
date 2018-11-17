@@ -1,0 +1,15 @@
+ for  (int  iy  =  -1;  iy  &amp;lt;=  1;  iy++)
+        {
+                const  uchar  *  Mi_a  =  grayImage.ptr&amp;lt;uchar&amp;gt;(ay2  +  iy);
+                const  uchar  *  Mi_b  =  grayImage.ptr&amp;lt;uchar&amp;gt;(by2  +  iy);
+                const  uchar  *  Mi_c  =  grayImage.ptr&amp;lt;uchar&amp;gt;(cy2  +  iy);
+                for  (int  ix  =  -1;  ix  &amp;lt;=  1;  ix++)
+                {
+                        double  difa  =  Mi_a[ax2  +  ix]  -  Mi_b[bx2  +  ix];
+                        suma  +=  (difa)*(difa);
+
+                        double  difc  =  Mi_c[cx2  +  ix]  -  Mi_b[bx2  +  ix];
+                        sumc  +=  (difc)*(difc);
+                }
+        }
+ 

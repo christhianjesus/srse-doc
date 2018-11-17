@@ -1,0 +1,2 @@
+ ==7415==  Warning:  invalid  file  descriptor  1024  in  syscall  close()
+ 

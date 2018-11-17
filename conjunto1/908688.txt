@@ -1,0 +1,13 @@
+ size_t  const  s_chunkSize  =  1024  *  32;
+size_t  total  =  0;
+for  (;;)
+{
+        if  (!::malloc(s_chunkSize))
+        {
+                break;
+        }
+        total  +=  s_chunkSize;
+}
+printf("total  =  %li",  total);
+//  yes,  I  do  not  free  allocated  memory  for  simplicity
+ 

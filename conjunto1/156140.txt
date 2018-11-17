@@ -1,0 +1,2 @@
+ Reading  symbols  from  &amp;lt;executable&amp;gt;...done.
+ 

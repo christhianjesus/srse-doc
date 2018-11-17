@@ -1,0 +1,3 @@
+ ofstream  fs("/log");
+ostream  &amp;amp;os  =  fs;
+ 

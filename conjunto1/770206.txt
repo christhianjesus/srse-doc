@@ -1,0 +1,11 @@
+ public  class  NullableDouble
+{
+        private  double  _Value;
+        //  class  methods...
+}
+
+public  struct  Part
+{
+        public  NullableDouble  x;
+}
+ 

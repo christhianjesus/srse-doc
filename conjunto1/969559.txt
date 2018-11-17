@@ -1,0 +1,6 @@
+ arm,          //  ARM:  arm,  armv.*,  xscale
+aarch64,  //  AArch64:  aarch64
+....
+x86,          //  X86:  i[3-9]86
+x86_64,    //  X86-64:  amd64,  x86_64
+ 

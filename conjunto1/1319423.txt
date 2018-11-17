@@ -1,0 +1,31 @@
+ //  wrapper  to  hold  index
+template&amp;lt;typename  T&amp;gt;
+struct  Ti
+{
+        Ti(  size_t  index,  const  T&amp;amp;  t  )  :  index(index),  val(t)  {}
+        size_t  index;
+        const  T&amp;amp;  val;
+};
+
+//  you  class
+struct  X
+{
+        friend  ostream&amp;amp;  operator&amp;lt;&amp;lt;(  ostream&amp;amp;  out,  Ti&amp;lt;X&amp;gt;&amp;amp;  t  );
+protected:
+        int  some_data;
+};
+
+//  operator&amp;lt;&amp;lt;  for  X
+ostream&amp;amp;  operator&amp;lt;&amp;lt;(  ostream&amp;amp;  out,  Ti&amp;lt;X&amp;gt;&amp;amp;  t  )
+{
+        out  &amp;lt;&amp;lt;  "test  "  &amp;lt;&amp;lt;  t.index  &amp;lt;&amp;lt;  "    "  &amp;lt;&amp;lt;  t.val.some_data;
+        return  out;          
+}
+
+int  main()
+{
+        vector&amp;lt;X&amp;gt;  xxx;
+        for  (  size_t  i  =0;  i  &amp;lt;  xxx.size();  ++i)
+                cout  &amp;lt;&amp;lt;  Ti&amp;lt;X&amp;gt;(i+1,  xxx[i])  &amp;lt;&amp;lt;  endl;
+}
+ 

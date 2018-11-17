@@ -1,0 +1,4 @@
+ cv::Mat  F  =  A.clone();
+cv::Mat  G;
+A.copyTo(G);
+ 

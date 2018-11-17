@@ -1,0 +1,12 @@
+ //  Set  a  property
+ui-&amp;gt;button-&amp;gt;setProperty("myId",  1);
+
+//  Get  the  property  in  the  slot
+void  mySlot()  {
+    QVariant  propertyV  =  sender()-&amp;gt;property("myId");
+    if  (propertyV.isValid())  {
+        int  property  =  propertyV.toInt();
+        ...
+    }
+}
+ 

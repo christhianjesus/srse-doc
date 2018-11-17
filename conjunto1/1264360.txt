@@ -1,0 +1,13 @@
+ std::string  s  =  SOME_STRING;
+//  get  &lt;i&gt;temporary&lt;/i&gt;  LPSTR  (not  really  safe)
+LPSTR  pst  =  &amp;s[0];
+//  get  &lt;i&gt;temporary&lt;/i&gt;  LPCSTR  (pretty  safe)
+LPCSTR  pcstr  =  s.c_str();
+//  convert  to  std::wstring
+std::wstring  ws;  
+ws.assign(  s.begin(),  s.end()  );
+//  get  &lt;i&gt;temporary&lt;/i&gt;  LPWSTR  (not  really  safe)
+LPWSTR  pwst  =  &amp;ws[0];
+//  get  &lt;i&gt;temporary&lt;/i&gt;  LPCWSTR  (pretty  safe)
+LPCWSTR  pcwstr  =  ws.c_str();
+ 

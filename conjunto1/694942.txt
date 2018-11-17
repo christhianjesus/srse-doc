@@ -1,0 +1,18 @@
+         &amp;lt;  template  class  F  &amp;gt;
+          void  bigfunc(F&amp;amp;  f){
+
+            ...
+            f(i,j,k);  //call  the  function.
+            ...
+        }
+
+            void  f1(int  i,  int  j,  int  k){
+                    i++;  //only  use  parameter  i!
+            }    
+            void  f2(int  i,  int  j,  int  k){
+                    i++;  j++;  //only  use  parameter  i  and  j!
+            }    
+            void  f3(int  i,  int  j,  int  k){
+                    i++;  j++;  j++;
+            }    
+ 

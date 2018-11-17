@@ -1,0 +1,33 @@
+ struct  arraycmd  {
+struct  cmdr  lol[10];
+};
+
+
+
+struct  arraycmd  parseargs  (struct  ari  z){
+        struct  arraycmd  result;
+        char  *  pch;
+        int  i;
+        int  j  =  0;
+
+        for  (i=0;  i  &amp;lt;  200;i++){
+                  j  =  0;
+                  if  (z.value[i]  ==  NULL){
+                              break;
+                          }
+                        pch  =  strtok(z.value[i],"  ");
+        while(pch  !=  NULL)  {
+                if  (j  ==  0){
+                        result.lol[i].command  =  pch;        
+                        pch  =  strtok(NULL,  "  ");
+                        j++;
+                }  else  {
+                result.lol[i].args[j]=  pch;
+                pch  =  strtok(NULL,  "  ");
+                j++;
+                }
+        }
+        pch  =  strtok(NULL,  "  ");
+            }
+                  return  result;  
+ 

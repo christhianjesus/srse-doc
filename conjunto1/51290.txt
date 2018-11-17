@@ -1,0 +1,4 @@
+ gcc  -DNODE=1  -oapp1.elf  main.c  
+gcc  -DNODE=2  -oapp2.elf  main.c  
+gcc  -DNODE=3  -oapp3.elf  main.c  
+ 

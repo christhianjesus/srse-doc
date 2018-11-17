@@ -1,0 +1,2 @@
+ for  (j  =  size;  i  &amp;gt;  0;  i--)
+ 

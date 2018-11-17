@@ -1,0 +1,8 @@
+ int  main()  {
+        double  value(-std::numeric_limits&amp;lt;double&amp;gt;::max());
+        while(value  &amp;lt;  0)  {
+                std::cout  &amp;lt;&amp;lt;  value  &amp;lt;&amp;lt;  '\n';
+                value  =  std::nextafter(value,std::numeric_limits&amp;lt;double&amp;gt;::infinity());
+        }
+}
+ 

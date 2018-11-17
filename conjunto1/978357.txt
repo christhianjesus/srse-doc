@@ -1,0 +1,9 @@
+ emp  e;
+std::cout  &amp;lt;&amp;lt;  "sizeof(emp)  =  "  &amp;lt;&amp;lt;  sizeof(emp)  &amp;lt;&amp;lt;std::endl;
+std::cout  &amp;lt;&amp;lt;  "sizeof(emp::no)  =  "  &amp;lt;&amp;lt;  sizeof(e.no)  &amp;lt;&amp;lt;std::endl;
+std::cout  &amp;lt;&amp;lt;  "sizeof(emp::name)  =  "  &amp;lt;&amp;lt;  sizeof(e.name)  &amp;lt;&amp;lt;std::endl;
+
+std::cout  &amp;lt;&amp;lt;  "&amp;amp;e  =  "  &amp;lt;&amp;lt;  &amp;amp;e  &amp;lt;&amp;lt;std::endl;
+std::cout  &amp;lt;&amp;lt;  "&amp;amp;e.no  =  "  &amp;lt;&amp;lt;  &amp;amp;e.no  &amp;lt;&amp;lt;std::endl;
+std::cout  &amp;lt;&amp;lt;  "&amp;amp;e.name  =  "  &amp;lt;&amp;lt;  &amp;amp;e.name  &amp;lt;&amp;lt;std::endl;
+ 

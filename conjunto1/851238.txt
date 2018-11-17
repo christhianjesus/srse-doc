@@ -1,0 +1,20 @@
+         {
+                printf("Enter  the  filename:  ");
+                read(STDIN_FILENO,  userInput,  sizeof(userInput));
+                if((input_file1  =  open(userInput,  O_RDONLY))  &amp;lt;  0)
+                {
+                        perror(userInput);
+                        exit(1);
+                }
+
+                while((n  =  read(input_file1,  buffer,  sizeof(buffer)))  &amp;gt;  0)
+                {
+                        if((write(STDOUT_FILENO,  buffer,  n))  &amp;lt;  0)
+                        {
+                                perror("failed  to  write  to  standard-out");
+                                close(input_file1);
+                                exit(1);
+                        }
+                }
+        }
+ 

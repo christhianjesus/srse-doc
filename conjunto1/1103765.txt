@@ -1,0 +1,20 @@
+ double  test  =  0.000699;
+double  tmp  =  fabs(test);
+double  exp  =  10.0  -  floor(log10(tmp));
+double  powTen  =  exp10(10.0  -  floor(log10(tmp)));
+double  powTen2  =  exp10(exp);
+double  powTen3  =  exp10((int)exp);
+double  powTen4  =  exp10(exp);
+double  powTen5  =  pow(10,  exp);
+
+printf("exp:  %.16lf\n",  exp);
+printf("powTen:  %.16lf\n",  powTen);
+printf("powTen2:  %.16lf\n",  powTen2);
+printf("powTen3:  %.16lf\n",  powTen3);
+printf("powTen4:  %.16lf\n",  powTen4);
+
+//these  two  are  exact
+printf("10^14:  %.16lf\n",  exp10(14));
+printf("powTen5:  %.16lf\n",  powTen5);
+printf("exp  ==  14.0:  %d\n",  exp  ==  14.0);
+ 

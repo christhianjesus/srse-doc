@@ -1,0 +1,5 @@
+               lifetime      scope
+static  indefinite  local
+global  indefinite  global
+auto      definite      local
+ 

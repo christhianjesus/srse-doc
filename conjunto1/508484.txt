@@ -1,0 +1,69 @@
+ #include  &amp;lt;QtConcurrentRun&amp;gt;
+#include  &amp;lt;QFutureWatcher&amp;gt;
+#include  &amp;lt;QObject&amp;gt;
+
+#include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;stdexcept&amp;gt;
+
+void  MyFunction()
+{
+//    std::cout  &amp;lt;&amp;lt;  "MyFunction()"  &amp;lt;&amp;lt;  std::endl;
+    throw  std::runtime_error("Test  exception.");
+}
+
+template&amp;lt;typename  TFirstParam,  typename...  TParams&amp;gt;
+bool  ExceptionWrapper(TFirstParam  firstParam,  TParams&amp;amp;&amp;amp;  ...params)
+{
+    //  Here  'firstParam'  should  be  a  function  pointer,  and  'params'  are  the  arguments
+    //  that  should  be  passed  to  the  function
+    try
+    {
+        firstParam(params...);
+    }
+    catch(...)
+    {
+        std::cout  &amp;lt;&amp;lt;  "Exception  caught!"  &amp;lt;&amp;lt;  std::endl;
+        return  false;  //  failure
+    }
+
+    return  true;  //  success
+}
+
+struct  MyClass  :  public  QObject
+{
+    Q_OBJECT
+
+    MyClass()
+    {
+        connect(&amp;amp;this-&amp;gt;FutureWatcher,  SIGNAL(finished()),  this,  SLOT(slot_finished()));
+    }
+
+    void  DoSomething()
+    {
+        void  (*myFunctionPointer)()  =  MyFunction;
+        bool  (*functionPointer)(decltype(myFunctionPointer))  =  ExceptionWrapper;
+
+        QFuture&amp;lt;bool&amp;gt;  future  =  QtConcurrent::run(functionPointer);
+        this-&amp;gt;FutureWatcher.setFuture(future);
+    }
+
+    QFutureWatcher&amp;lt;void&amp;gt;  FutureWatcher;
+
+    void  slot_finished()
+    {
+        std::cout  &amp;lt;&amp;lt;  "Finished"  &amp;lt;&amp;lt;  std::endl;
+        if(!this-&amp;gt;FutureWatcher.result())
+        {
+            std::cout  &amp;lt;&amp;lt;  "There  was  an  error!"  &amp;lt;&amp;lt;  std::endl;
+        }
+    }
+};
+
+#include  "ExceptionWrapper.moc"
+
+int  main()
+{
+    MyClass  myClass  =  new  MyClass;
+    myClass-&amp;gt;DoSomething();
+}
+ 

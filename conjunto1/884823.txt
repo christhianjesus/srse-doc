@@ -1,0 +1,5 @@
+ std::map&amp;lt;int,std::tuple&amp;lt;int,std::string&amp;gt;&amp;gt;  dmap;
+for  (int  i  =  0;  i&amp;lt;3;  ++i){
+        dmap[i]  =  {10+i,  "test"};
+}
+ 

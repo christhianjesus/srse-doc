@@ -1,0 +1,10 @@
+ void  start()
+{
+        for  (size_t  i=0,  i&amp;lt;10000000;  ++i)
+        {
+                //  do  some  computing
+                QApplication::processEvents();  //  Else  clicking  the  stop  button  has  no  effect  until  the  end  of  the  loop
+                if  (m_stop)  break;  //  member  m_stop  set  to  false  at  start.
+        }
+}
+ 

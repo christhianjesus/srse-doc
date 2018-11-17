@@ -1,0 +1,86 @@
+ /*  Node  information  structure.  */
+typedef  struct  node  {
+        char  name[20];
+        char  val[20];
+        char  OS[10];
+        int  vm_id;
+        int  num_if;
+        //char  *OS;
+        if_val1  node_if[10];
+        long  int  memsize;
+}node1;
+
+/*  Interfaces  definition  structure.  */
+typedef  struct  INTERFACE  {
+        char  *ip_addr;
+        char  *netmask;
+        char  *gateway;
+}  if_val1,if_val2;
+
+I  have  the  above  two  structure.
+
+
+/*  File  pointer  .*/
+FILE  *f;
+
+
+int  main()
+{
+
+        node1  nodeuse;
+        node1  node1[20];
+        //if_val1  if_val[10];      
+        if_val1  zero_ifintf;
+
+        //int  a;
+        f=fopen("test.config","r");
+        if(!f)
+        return  1;
+
+        while(fgets(  string,  sizeof(string)-1,  f)  !=  NULL)
+        {
+                /*  Break  into  tokens.  */
+                p  =  string;
+                p  =  strtok(  string,  seps  );  /*  Find  first  token*/
+                while(  p  !=  NULL  )
+                {
+                if  (strcmp(p,"NODE")==0)
+                        {
+
+                        a  =  atoi  (strtok(  NULL,  seps  ));  /*  Find  next  token*/
+                        switch  (a)
+                                {
+                                case  1:
+                                {
+                                int  i=0;
+                                if(strcmp(p,"IP_ADDR_ETH")==0)
+                                                {
+
+                                                        printf("--------------hi1  \n");
+                                                        int  comp,a;
+                                                        printf("------------hi2  \n");
+                                                        a  =  atoi  (strtok(  NULL,  seps  ));  /*  Find  next  token*/
+
+                                                        if(a  &amp;lt;  (node1[i].num_if))
+                                                        {
+                                                                printf("-------------hi3  \n");
+                                                                p  =  strtok(  NULL,  seps  );  /*  Find  next  token*/
+                                                                (node1[i].node_if[a].ip_addr)=  p;
+                                                                //strcpy((node1[i].node_if[a].ip_addr),p);
+                                                printf("Node[%d]  interface-eth[%d]  address=%s  \n\n",  i,a,(node1[i].node_if[a].ip_addr)  );
+                                                        }
+
+                                                        printf("---------------------hi4  \n");
+                                                }
+                                        i++;
+                                }
+                                }}    //end  of  while  loop
+
+                //outside  while  loop  printf  's    
+
+                        printf("NODE[%d]  INTERFACE-ETH-[%d]  ADDRESS:  %s  \n",1,0,(node1[0].node_if[0].ip_addr));
+                        printf("NODE[%d]  INTERFACE-ETH-[%d]  ADDRESS:  %s  \n",1,1,(node1[0].node_if[1].ip_addr));
+                        printf("NODE[%d]  INTERFACE-ETH-[%d]  ADDRESS:  %s  \n",2,0,(node1[1].node_if[0].ip_addr));
+                        printf("NODE[%d]  INTERFACE-ETH-[%d]  ADDRESS:  %s  \n",2,1,(node1[1].node_if[1].ip_addr));
+                        printf("NODE[%d]  INTERFACE-ETH-[%d]  ADDRESS:  %s  \n",2,2,(node1[1].node_if[2].ip_addr));
+ 

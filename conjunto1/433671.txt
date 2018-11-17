@@ -1,0 +1,7 @@
+ void  insert_char(Node*  plist,  char  x,  int  p){
+    Node*  d=plist;
+    for  (int  i=1;  i&amp;lt;p  and  0!=d;  i++)
+        d=d-&amp;gt;next;
+    if  (0  !=d)
+        d-&amp;gt;x=x;
+ 

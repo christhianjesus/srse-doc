@@ -1,0 +1,6 @@
+ char*  pszKuchBhi  ;
+pszKuchBhi  =  malloc(10)  ;
+printf(  "%s\n",  pszKuchBhi  )  ;    
+//  Will  give  some  junk  values  as  the  memory  allocated  is  not  initialized  and  
+//  was  storing  some  garbage  values
+ 

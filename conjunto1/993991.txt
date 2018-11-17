@@ -1,0 +1,11 @@
+ void  timesTen(int  size,  int*  source,  int*  dest)  {
+        for(int  i  =  0;  i  &amp;lt;  size;  i++)  dest[i]  =  10*source[i];
+}
+
+int  main()  {
+        int  x[2];
+        int  a[2]={10,50};
+        timesTen(2,  a,  x);        //pointer  decay!
+        //x  now  contains  {100,  500}
+}
+ 

@@ -1,0 +1,6 @@
+ printf("pts:%s  pts_time:%s  dts:%s  dts_time:%s  duration:%s  duration_time:%s  stream_index:%d\n",
+        av_ts2str(pkt-&amp;gt;pts),  av_ts2timestr(pkt-&amp;gt;pts,  time_base),
+        av_ts2str(pkt-&amp;gt;dts),  av_ts2timestr(pkt-&amp;gt;dts,  time_base),
+        av_ts2str(pkt-&amp;gt;duration),  av_ts2timestr(pkt-&amp;gt;duration,  time_base),
+        pkt-&amp;gt;stream_index);        
+ 

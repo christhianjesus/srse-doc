@@ -1,0 +1,6 @@
+ int  x,y;
+x=1;
+y=1;
+increment_both_coordinate(x,y);
+//after  this  call,  you  want  to  have  x  =  2,  y  =  2
+ 

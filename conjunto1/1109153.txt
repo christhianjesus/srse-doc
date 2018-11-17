@@ -1,0 +1,10 @@
+ auto  main()  -&amp;gt;int
+{
+        unique_ptr&amp;lt;Person&amp;gt;  p{new  Person()};
+        _Person(*p);                                //  this  calls  a  function  _Person  
+                                                                //  with  a  copy  of  what  p  points  to
+                                                                //  this  copy  dies  at  the  end  of  function  scope
+        cout  &amp;lt;&amp;lt;  "New  Line"  &amp;lt;&amp;lt;  endl;  //  its  dctor  has  been  just  called
+      return  0;
+}                                                              //  and  now  is  called  dctor  for  original  variable  
+ 

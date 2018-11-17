@@ -1,0 +1,6 @@
+ #define  COMMAND_BUFFER_SIZE        256      /*  Modify  this  if  you  need  */
+
+snprintf(command,  COMMAND_BUFFER_SIZE,  "pppd  %s  call  %s",  dev,  provider);
+command[COMMAND_BUFFER_SIZE  -  1]  =  '\0';
+pppd_stream  =  popen(command,  "r");
+ 

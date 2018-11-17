@@ -1,0 +1,2 @@
+ 1&amp;gt;z:\sandbox\test.cpp(163):  warning  :  This  code  sucks;  come  back  and  fix  it
+ 

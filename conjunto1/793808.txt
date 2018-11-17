@@ -1,0 +1,16 @@
+ template&amp;lt;  typename  T  &amp;gt;  using  Map  =  const  T;
+
+template&amp;lt;  template&amp;lt;typename&amp;gt;  class  M,  typename  T  &amp;gt;
+struct  Apply;
+
+template&amp;lt;  template&amp;lt;typename&amp;gt;  class  M,  template&amp;lt;typename...&amp;gt;  class  C,  typename...  Ts  &amp;gt;
+struct  Apply&amp;lt;  M,  C&amp;lt;Ts...&amp;gt;  &amp;gt;  {  typedef  C&amp;lt;M&amp;lt;Ts&amp;gt;...&amp;gt;  type;  };
+
+template&amp;lt;  typename  T  &amp;gt;  struct  A  {};
+template&amp;lt;typename&amp;gt;  void  dummy();
+
+int  main()
+{
+        dummy&amp;lt;  Apply&amp;lt;Map,A&amp;lt;int&amp;gt;&amp;gt;::type  &amp;gt;();        
+}
+ 

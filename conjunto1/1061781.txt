@@ -1,0 +1,8 @@
+ StackP  newStack(void)
+{
+        StackP  temp;
+        temp  =  (StackP)malloc(sizeof(StackT));
+        temp-&amp;gt;size  =  0;
+        return  temp;
+}
+ 

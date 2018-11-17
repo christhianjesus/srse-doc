@@ -1,0 +1,5 @@
+ std::vector&amp;lt;boost::shared_ptr&amp;lt;A&amp;gt;  &amp;gt;  v1,  v2;
+boost::shared_ptr&amp;lt;A&amp;gt;  p(new  A(i));
+v1.push_back(p);
+v2.push_back(v1.at(0));
+ 

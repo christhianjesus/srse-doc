@@ -1,0 +1,5 @@
+ iterator  find(ITEM)
+const_iterator  find(ITEM)  const;
+iterator  find_if(ITEM,  PRED)
+const_iterator  find_if(ITEM,  PRED)  const;
+ 

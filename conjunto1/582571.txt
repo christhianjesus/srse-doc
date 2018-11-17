@@ -1,0 +1,2 @@
+ clang  -v  einformer.c  -o  einformer  $(python3.3-config  --cflags)  $(python3.3-config  --ldflags)
+ 

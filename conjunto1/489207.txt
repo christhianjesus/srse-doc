@@ -1,0 +1,22 @@
+ /*  File:  test.i  */
+%module  test
+
+%{
+#define  SWIG_FILE_WITH_INIT
+#include  "/home/users/jdoe/workspace/project/src/lib-cti/test.h"
+...
+%}
+
+#ifndef  CTI_TYPES_H_
+#define  CTI_TYPES_H_
+#include  "cti_const.h"
+
+typedef  char  FOO[CONST];
+
+typedef  struct
+{
+        char  *key;
+        void  *value;
+        int  size;
+}  cti_pair;
+ 

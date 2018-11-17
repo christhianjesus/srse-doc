@@ -1,0 +1,43 @@
+         Node::Node()  {
+}
+
+Node::Node(const  Node&amp;amp;  orig)  {
+
+        this-&amp;gt;id  =  orig.id;
+        this-&amp;gt;latitude  =  orig.latitude;
+        this-&amp;gt;longitude  =  orig.longitude;
+}
+
+Node::~Node()  {
+}
+
+Node::Node(std::string  id,  double  lat,  double  lon){
+        this-&amp;gt;id  =  id;
+        this-&amp;gt;latitude  =  lat;
+        this-&amp;gt;longitude  =  lon;
+}
+
+void  Node::SetLongitude(double  longitude)  {
+        this-&amp;gt;longitude  =  longitude;
+}
+
+double  const  &amp;amp;  Node::GetLongitude()  const  {
+        return  longitude;
+}
+
+void  Node::SetLatitude(double  latitude)  {
+        this-&amp;gt;latitude  =  latitude;
+}
+
+double  const  &amp;amp;  Node::GetLatitude()  const  {
+        return  latitude;
+}
+
+void  Node::SetId(std::string  id)  {
+        this-&amp;gt;id  =  id;
+}
+
+std::string  const  &amp;amp;  Node::GetId()  const  {
+        return  id;
+}
+ 

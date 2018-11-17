@@ -1,0 +1,15 @@
+ #include  &amp;lt;boost/mpl/vector.hpp  &amp;gt;
+#include  &amp;lt;boost/mpl/find.hpp&amp;gt;
+
+typedef  int  A;
+typedef  int  B;
+
+
+struct  foo
+{
+          typedef  boost::mpl::vector&amp;lt;A,  B&amp;gt;  supported_types;
+
+          foo(boost::mpl::find&amp;lt;supported_types,  A&amp;gt;::type,  A  a)  {}
+          foo(boost::mpl::find&amp;lt;supported_types,  B&amp;gt;::type,  B  b)  {}
+};
+ 

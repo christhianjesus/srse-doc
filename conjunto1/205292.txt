@@ -1,0 +1,44 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+
+class  I1
+{
+public:
+        virtual  void  R()  =  0;
+        virtual  ~I1(){}
+};
+
+class  I2
+{
+public:
+        virtual  void  R()  =  0;
+        virtual  ~I2(){}
+};
+
+class  IImpl:  public  I1,  public  I2
+{
+public:
+
+        virtual  void  I1::R()
+        {
+                printf("I1::R()\r\n");
+        }
+
+        virtual  void  I2::R()
+        {
+                printf("I2::R()\r\n");
+        }
+};
+
+int  main(int  argc,  char*  argv[])
+{
+        IImpl  impl;
+
+        I1  *p1  =  &amp;amp;impl;
+        I2  *p2  =  &amp;amp;impl;
+
+        p1-&amp;gt;R();
+        p2-&amp;gt;R();
+
+        return  0;
+}
+ 

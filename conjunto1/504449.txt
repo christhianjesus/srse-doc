@@ -1,0 +1,42 @@
+ (gdb)  disassemble  
+Dump  of  assembler  code  for  function  main:
+0x0804c663  &amp;lt;main+0&amp;gt;:        lea        0x4(%esp),%ecx
+0x0804c667  &amp;lt;main+4&amp;gt;:        and        $0xfffffff0,%esp
+0x0804c66a  &amp;lt;main+7&amp;gt;:        pushl    -0x4(%ecx)
+0x0804c66d  &amp;lt;main+10&amp;gt;:      push      %ebp
+0x0804c66e  &amp;lt;main+11&amp;gt;:      mov        %esp,%ebp
+0x0804c670  &amp;lt;main+13&amp;gt;:      push      %edi
+0x0804c671  &amp;lt;main+14&amp;gt;:      push      %esi
+0x0804c672  &amp;lt;main+15&amp;gt;:      push      %ebx
+0x0804c673  &amp;lt;main+16&amp;gt;:      push      %ecx
+0x0804c674  &amp;lt;main+17&amp;gt;:      sub        $0x525a8,%esp
+0x0804c67a  &amp;lt;main+23&amp;gt;:      call      0x804a22e  &amp;lt;__i686.get_pc_thunk.bx&amp;gt;
+0x0804c67f  &amp;lt;main+28&amp;gt;:      add        $0x6125,%ebx
+0x0804c685  &amp;lt;main+34&amp;gt;:      mov        (%ecx),%eax
+0x0804c687  &amp;lt;main+36&amp;gt;:      mov        %eax,-0x52578(%ebp)
+0x0804c68d  &amp;lt;main+42&amp;gt;:      mov        0x4(%ecx),%ecx
+0x0804c690  &amp;lt;main+45&amp;gt;:      mov        %ecx,-0x5257c(%ebp)
+0x0804c696  &amp;lt;main+51&amp;gt;:      movl      $0x0,-0x418(%ebp)
+0x0804c6a0  &amp;lt;main+61&amp;gt;:      movl      $0x400,0x8(%esp)
+0x0804c6a8  &amp;lt;main+69&amp;gt;:      movl      $0x0,0x4(%esp)
+0x0804c6b0  &amp;lt;main+77&amp;gt;:      lea        -0x410(%ebp),%eax
+0x0804c6b6  &amp;lt;main+83&amp;gt;:      mov        %eax,(%esp)
+0x0804c6b9  &amp;lt;main+86&amp;gt;:      call      0x8049c4c  &amp;lt;memset@plt&amp;gt;
+
+(gdb)  info  registers  
+eax                        0xf746d564              -146352796
+ecx                        0xf746d4e0              -146352928
+edx                        0xf746d500              -146352896
+ebx                        0x444a7ff4              1145733108
+esp                        0xf741af10              0xf741af10
+ebp                        0xf746d4c8              0xf746d4c8
+esi                        0x8050b30                134548272
+edi                        0x8049d90                134520208
+eip                        0x804c67a                0x804c67a  &amp;lt;main+23&amp;gt;
+eflags                  0x210282  [  SF  IF  RF  ID  ]
+cs                          0x23          35
+ss                          0x2b          43
+ds                          0x2b          43
+es                          0x2b          43
+fs                          0x0            0
+ 

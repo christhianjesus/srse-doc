@@ -1,0 +1,11 @@
+ QDir  dir(whereStuffIs);
+dir.setFilter(QDir::Files  |  QDir::NoSymLinks);
+dir.setSorting(QDir::Name);
+
+QFileInfoList  list  =  dir.entryInfoList();
+
+foreach(QFileInfo  fi,  list){
+        QListWidgetItem  *item  =  new  QListWidgetItem(fi.fileName());
+        ui-&amp;gt;ListWidgetA-&amp;gt;addItem(item);
+}
+ 

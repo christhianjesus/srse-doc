@@ -1,0 +1,5 @@
+ int  gcd(int  i,  int  x){
+      if(x  %  i  ==  0)  return(  i  );
+      return(  gcd(  x  %  i,  x  )  );
+}
+ 

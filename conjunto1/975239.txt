@@ -1,0 +1,8 @@
+ for  (y=10;y&amp;lt;100;y+=10)  
+{    //  &amp;lt;--  Did  you  mean  to  leave  this  out?
+
+                printf("x  is  %d  \n",x);
+                printf("y  is  %d  \n",y);
+
+}  //  &amp;lt;--  and  this?
+ 

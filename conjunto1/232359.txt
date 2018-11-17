@@ -1,0 +1,10 @@
+ #define  GUARD  try  {
+#define  ENDGUARD  }  catch(...)  {  mark_as_connection_that_should_not_go_to_pool();  throw;  }
+
+session::exec()
+{
+        GUARD
+        real_exec();
+        ENDGUARD
+}
+ 

@@ -1,0 +1,8 @@
+ for(;;)
+{
+        std::unique_ptr&amp;lt;int&amp;gt;  uptr(new  int);
+        std::shared_ptr&amp;lt;int&amp;gt;  sptr  =  std::make_shared&amp;lt;int&amp;gt;();
+
+        //  uptr  and  sptr  will  be  automatically  deleted  at  this  end  of  scope.
+}
+ 

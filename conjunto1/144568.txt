@@ -1,0 +1,6 @@
+ class  Child  :  Mom,  Dad  {};
+
+class  Mom  :  GrandMom1,  GrandDad1  {};
+
+class  Dad  :  GrandMom2,  GrandDad2  {};
+ 

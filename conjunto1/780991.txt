@@ -1,0 +1,14 @@
+ struct  a  {
+        uint32_t        foreColor_  :  32;
+        uint32_t        backColor_  :  32;
+        uint16_t        lfHeight_  :  16;
+        uint8_t          flags_:  4;
+        bool        lfBold_:  1;
+        bool        lfItalic_:  1;
+        bool        lfUnderLine_:  1;
+        bool        lfDashLine_:  1;  //for  ime  
+        bool        lfStrike_:  1;
+        bool        lfSubscript_:  1;
+        bool        lfSuperscript_:  1;
+};
+ 

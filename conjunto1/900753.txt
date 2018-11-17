@@ -1,0 +1,13 @@
+ int  main  ()  {
+
+        char  sMyUrl[]  =  "http%3a%2F%2ffoo+bar%2fabcd";
+
+        int  nNewLength  =  implodeURIComponent(sMyUrl);
+
+        /*  Let's  print:  "http://foo+bar/abcd\nLength:  19"  */
+        printf("%s\nLength:  %d\n",  sMyUrl,  nNewLength);
+
+        return  0;
+
+}
+ 

@@ -1,0 +1,6 @@
+ for  (int  i=0;  i&amp;lt;rowSize;  i++)  {
+        for  (int  j=0;  j&amp;lt;columnSize;  j++)  {
+                gameTable[i][j]  =  xxx;
+        }
+}
+ 

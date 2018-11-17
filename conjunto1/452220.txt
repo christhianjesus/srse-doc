@@ -1,0 +1,30 @@
+ //  Original
+void  foo()  {
+        DoSetup();
+        while  (...)  {
+                for  (;;)  {
+                        if  ()  {
+                                goto  X;
+                        }
+                }
+        }
+        label  X:  DoTearDown();
+}
+
+//  Refactored
+void  foo_in()  {
+        while  (...)  {
+                for  (;;)  {
+                        if  ()  {
+                                return;
+                        }
+                }
+        }
+}
+
+void  foo()  {
+        DoSetup();
+        foo_in();
+        DoTearDown();
+}
+ 

@@ -1,0 +1,49 @@
+ #include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+
+class  Time
+    {
+    public:
+          Time(  int  =  0,  int  =  0,  int  =  0  );
+          Time  setHour(  int  );
+          Time  setMinute(  int  );
+          void  print(  void  );
+
+    private:
+          int  hour;
+          int  minute;
+    };
+
+    Time::Time(int  hr,  int  mn,  int  sc)
+    {
+          hour  =  hr;
+          minute  =  mn;
+    }
+
+    void  Time::print(  void  )
+    {
+          cout  &amp;lt;&amp;lt;  "hour  =  "  &amp;lt;&amp;lt;  hour  &amp;lt;&amp;lt;  endl;
+          cout  &amp;lt;&amp;lt;  "minute  =  "  &amp;lt;&amp;lt;  minute  &amp;lt;&amp;lt;  endl;
+    }
+
+    Time  Time::setHour(  int  h  )
+    {
+          hour  =  (  h  &amp;gt;=  0  &amp;amp;&amp;amp;  h  &amp;lt;  24  )  ?  h  :  0;
+          return  *this;
+    }
+
+
+    Time  Time::setMinute(  int  m  )
+    {
+          minute  =  (  m  &amp;gt;=  0  &amp;amp;&amp;amp;  m  &amp;lt;  60  )  ?  m  :  0;
+          return  *this;
+    }
+
+int  main()
+{
+      cout  &amp;lt;&amp;lt;  "Hello,  world!"  &amp;lt;&amp;lt;  endl;
+      Time  t;
+      t.setHour(  10  ).setMinute(  25  );
+      t.print();
+}
+ 

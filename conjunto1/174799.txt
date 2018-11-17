@@ -1,0 +1,2 @@
+   foo(a,  sizeof(a)/sizeof(1));  
+ 

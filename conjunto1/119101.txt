@@ -1,0 +1,3 @@
+ typedef  void  (*WRITE_CALLBACK)(int  hMountEnv,  unsigned  __int64  NumBytesWritten,  
+                              void*  pContext);
+ 

@@ -1,0 +1,2 @@
+ user_data_n  =  reinterpret_cast&amp;lt;std::map&amp;lt;String,  void  *&amp;gt;  *&amp;gt;(user_data);
+ 

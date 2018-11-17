@@ -1,0 +1,2 @@
+ qRegisterMetaType&amp;lt;ClassA*&amp;gt;("ClassA*");
+ 

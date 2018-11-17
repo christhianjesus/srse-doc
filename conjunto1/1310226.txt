@@ -1,0 +1,4 @@
+ $  gcc  -Wall  -ansi  -pedantic  -o  un_char  un_char.c
+un_char.c:  In  function  ‘main’:
+un_char.c:8:  warning:  ISO  C90  does  not  support  the  ‘hh’  gnu_scanf  length  modifier
+ 

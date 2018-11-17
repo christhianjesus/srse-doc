@@ -1,0 +1,4 @@
+ class  B  :  private  A  {
+        //  ...
+};
+ 

@@ -1,0 +1,103 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;string&amp;gt;
+#include  &amp;lt;iomanip&amp;gt;
+#include  &amp;lt;cstdlib&amp;gt;
+using  namespace  std;
+
+
+//struct  of  Basketball  Player  info
+struct  BasketballPlayerInfo
+{
+        string  name;  //player  name
+
+        int  playerNum,  //player  number
+                pointsScored;  //points  scored
+
+};
+
+int  main()
+{
+        int  index,  //loop  count
+                total  =  0;  //hold  total  points
+        const  int  numPlayers  =  5;  //nuymber  of  players
+        BasketballPlayerInfo  players[numPlayers];  //Array  of  players
+
+        //ask  user  for  Basketball  Player  Info
+        cout  &amp;lt;&amp;lt;  "Enter  the  name,  number,  and  points  scored  for  each  of  the  5  players.\n";
+
+        for  (index  =  0;  index  &amp;lt;  numPlayers;  index++)
+        {
+                //collect  player  name
+                cout  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  endl;
+                cout  &amp;lt;&amp;lt;  "Enter  the  name  of  player  #  "  &amp;lt;&amp;lt;  (index  +  1);
+                cout  &amp;lt;&amp;lt;  ":  ";
+
+                //input  validation
+                if((!(getline(cin,  players[index].name))));    &amp;lt;----validation  goes  wrong!
+                {
+                        cout  &amp;lt;&amp;lt;  "Player  Name  must  be  alphabetical  characters  only!\n";
+                        cout  &amp;lt;&amp;lt;  "Program  terminating  please  start  over."  &amp;lt;&amp;lt;  endl;
+                        system("pause");
+                        exit(0);
+                }
+
+                getline(cin,  players[index].name);
+
+                //collect  players  number
+                cout  &amp;lt;&amp;lt;  "Enter  the  number  of  player  #  "  &amp;lt;&amp;lt;  (index  +  1);
+                cout  &amp;lt;&amp;lt;  ":  ";
+
+                //input  validation
+                if(!(cin  &amp;gt;&amp;gt;  players[index].playerNum))
+                {
+                        cout  &amp;lt;&amp;lt;  "Player  Name  must  be  numeric  characters  only!\n";
+                        cout  &amp;lt;&amp;lt;  "Program  terminating  please  start  over."  &amp;lt;&amp;lt;  endl;
+                        system("pause");
+                        exit(0);
+                }
+                //collect  points  scored
+                cout  &amp;lt;&amp;lt;  "Enter  points  scored  for  player  #  "  &amp;lt;&amp;lt;  (index  +  1);
+                cout  &amp;lt;&amp;lt;  ":  ";
+
+                //input  validation
+                if(!(cin  &amp;gt;&amp;gt;  players[index].pointsScored))
+                {
+                        cout  &amp;lt;&amp;lt;  "Player  Name  must  be  numeric  characters  only!\n";
+                        cout  &amp;lt;&amp;lt;  "Program  terminating  please  start  over."  &amp;lt;&amp;lt;  endl;
+                        system("pause");
+                        exit(0);
+                }
+
+                cin.ignore();
+        }
+
+        //display
+        cout  &amp;lt;&amp;lt;  "\n";
+        cout  &amp;lt;&amp;lt;  "Here  is  the  information  for  each  player:  \n";
+        cout  &amp;lt;&amp;lt;  fixed  &amp;lt;&amp;lt;  showpoint  &amp;lt;&amp;lt;  setprecision(2)  &amp;lt;&amp;lt;  setw(5);
+        cout  &amp;lt;&amp;lt;  "\n";
+        cout  &amp;lt;&amp;lt;  "                    \tName\tNumber\tPoints\n";
+        cout  &amp;lt;&amp;lt;  "------------------------------------------------"  &amp;lt;&amp;lt;  endl;
+
+        for(index  =  0;  index  &amp;lt;  numPlayers;  index++)
+        {
+                cout  &amp;lt;&amp;lt;  "Player  #  "  &amp;lt;&amp;lt;  (index  +  1);
+                cout  &amp;lt;&amp;lt;  ":  \t"  &amp;lt;&amp;lt;  players[index].name  &amp;lt;&amp;lt;  "\t"  &amp;lt;&amp;lt;  players[index].playerNum  &amp;lt;&amp;lt;  "\t"  &amp;lt;&amp;lt;  players[index].pointsScored  &amp;lt;&amp;lt;  endl;
+                cout  &amp;lt;&amp;lt;  "------------------------------------------------"  &amp;lt;&amp;lt;  endl;
+
+        }
+
+        //display  total  points  scored  by  all  players
+        for(index  =  0;  index  &amp;lt;  numPlayers;  index++)
+        {
+                //hold  total
+                total  +=  players[index].pointsScored;
+        }
+
+        cout  &amp;lt;&amp;lt;  "Total  Points  scored  are:  "  &amp;lt;&amp;lt;  total  &amp;lt;&amp;lt;  endl;
+
+  system("pause");
+return  0;
+
+}
+ 

@@ -1,0 +1,9 @@
+ class  AnotherClass
+{
+        //friend  class  Myclass;
+public:
+        static  AnotherClass*  getInstance();
+        void  addParams(int  (*myMethod)(char*,  char*)  =0);
+              //I  try  so  void  addParams(int  (Myclass::*myMethod)(char*,  char*)  =0);
+};
+ 

@@ -1,0 +1,35 @@
+ #include  &amp;lt;cstddef&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+typedef  unsigned  int  uint;
+
+class  C{  //  just  here  to  be  faithful  to  the  original  code
+    int  y;
+};
+
+template&amp;lt;typename  this_type&amp;gt;
+class  A{
+public:
+
+    void*  operator  new(size_t  enfacia_size,  uint  count){
+            size_t  total_size  
+        =  enfacia_size
+        +  sizeof(int)  *  count;  //  the  'tail'
+        ;
+            this_type  *new_pt  =  (this_type  *)malloc(total_size);
+            new_pt-&amp;gt;count  =  count;
+            return  new_pt;
+    };
+    uint  count;
+};
+
+class  B  :  public  C,  public  A&amp;lt;B&amp;gt;{
+public:
+        int  i;
+};
+
+int  main(){
+    B  *b_pt  =  new(5)  B;    
+    uint  j=0;
+    j++;
+};
+ 

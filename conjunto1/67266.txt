@@ -1,0 +1,62 @@
+ C=g++
+CCPLUS=g++
+CFLAGS=-c    #-Wall
+
+
+###  gsoap  
+INCL=-I/usr/include/gsoap
+LIBS=  -L/usr/lib/gsoap
+LINK=  -lgsoap  -lgsoap++  -lgsoapck  -lgsoapck++  -lgsoapssl  -lgsoapssl++
+OLINK=  -lgsoap++
+
+#OBJ=soapServer.o  soapServerLib.o  soapC.o
+
+.SUFFIXES:  .o  .cpp
+
+.cc.o:
+                @rm  -f  $@
+                $(CC)  $(CFLAGS)  $(INCL)  $(INC)  $&amp;lt;
+
+.cpp.o:
+                @rm  -f  $@
+                $(CC)  $(CFLAGS)  $(INCL)  $(INC)    $&amp;lt;
+
+default:        client
+
+clean:
+                rm  -r  *.o  
+
+cleanall:
+                rm  soap*  *.xml  *.nsmap  *.h  *.cgi  
+
+
+default:        all
+all:        client  server
+
+client:  KundenWebServiceClient
+
+
+server:  KundenWebServiceServer
+                cp  KundenWebServiceServer  /usr/lib/cgi-bin/
+
+proxy:  KundenWebService.h
+                soapcpp2  -x  -L  -C  -i  -I/usr/include/gsoap  KundenWebService.h
+                rm  *12*
+
+service:  KundenWebService.h
+                soapcpp2  -x  -L  -S  -i  -I/usr/include/gsoap  KundenWebService.h
+                rm  *12*
+
+KundenWebService.h:  KundenWebService.wsdl
+                wsdl2h  KundenWebService.wsdl
+
+###
+
+
+KundenWebServiceClient:  KundenWebServiceClient.o  soapKundenWebServiceSoap11BindingProxy.o  soapC.o  getrow.o
+                $(CC)    -o  KundenWebServiceClient  KundenWebServiceClient.o  soapKundenWebServiceSoap11BindingProxy.o  soapC.o  getrow.o  $(LIBS)  $(OLINK)
+
+
+KundenWebServiceServer:  KundenWebServiceServer.o  soapKundenWebServiceSoap11BindingService.o  soapC.o
+                $(CC)    -o  KundenWebServiceServer  KundenWebServiceServer.o  soapKundenWebServiceSoap11BindingService.o  soapC.o  $(OLINK)
+ 

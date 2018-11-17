@@ -1,0 +1,10 @@
+ #include  &amp;lt;boost/archive/text_oarchive.hpp&amp;gt;  
+#include  &amp;lt;iostream&amp;gt;  
+
+int  main()  
+{  
+    boost::archive::text_oarchive  oa(std::cout);  
+    int  i  =  1;  
+    oa  &amp;lt;&amp;lt;  i;  
+}
+ 

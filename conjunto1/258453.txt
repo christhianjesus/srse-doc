@@ -1,0 +1,2 @@
+ g++  -I../../speech_tools/include  -I../../speech_tools/base_class/string  -L../../speech_tools/lib/  -lestbase  -lncurses  -lasound  -leststring  -lestools  usingESTString.C  -o  usingESTString    
+ 

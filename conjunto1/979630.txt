@@ -1,0 +1,3 @@
+ sync();
+reboot(RB_POWER_OFF);
+ 

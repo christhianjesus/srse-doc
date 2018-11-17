@@ -1,0 +1,170 @@
+ /**
+      Is  it  reasonable  to  parameterize  different  data  back-ends  using  the
+      Policy  Pattern?  
+
+      The  goal  is  to  provide  a  unified  interface  to  different  classes
+      (e.g.,  `Body`,  `Star`,  `Spacecraft`).  However,  the  construction  of
+      specific  instances  requires  data  which  can  originate  from  different
+      sources.
+
+      For  example,  a  "Body"  has  a  radius  and  a  gravitational  parameter
+      (called  "gm").  But  these  values  can  come  from  different  sources
+      (different  libraries  which  provide  this  kind  of  information).
+
+      Say  that  library  1  (called  "Spice")  is  capable  of  providing  the
+      radius  given  the  body  name:
+
+      double  the_radius  =  compute_radius_with_spice("Mercury");
+
+      On  the  other  hand,  you  could  be  using  another  library,  which
+      computes  the  radius  with  a  completely  different  interface,  and  with
+      completely  different  requirements:
+
+      double  radii[3];
+      compute_the_radius_with_another_library("Mercury",  radii)
+      double  the_radius  =  (radii[0]  +  radii[1]  +  radii[2])  /  3.0;
+
+      Of  course,  the  values  computed  with  either  library  are  similar,  but
+      different  enough  to  make  a  difference.  What  matters  is  CONSISTENCY
+      (stick  to  one  back-end).
+*/
+
+
+#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;string&amp;gt;
+#include&amp;lt;vector&amp;gt;
+#include&amp;lt;memory&amp;gt;
+
+/*  Say  that  this  is  the  uniform  interface  that  I  want  to  provide.*/
+template&amp;lt;typename  DataPolicy&amp;gt;
+class  Body:
+    private  DataPolicy{
+public:  
+    Body(const  std::string&amp;amp;  name);
+    Body(const  Body&amp;amp;  body);
+    ~Body();
+    std::string  name()  const;
+    double  radius()  const;
+    double  gm()  const;
+private:
+    class  BodyImpl  *  pimpl_;;
+    //    std::unique_ptr&amp;lt;BodyImpl&amp;gt;  pimpl_;
+};
+
+/*  I  use  the  pimpl_  idiom  to  hide  the  implementation  */
+struct  BodyImpl{
+    std::string  m_name;
+    double  m_radius;
+    double  m_gm;    
+    BodyImpl(const  std::string&amp;amp;  name):
+        m_name(name){        
+    }
+};
+
+/*  The  constructor  has  to  build  the  pimpl  step  by  step  using  the  data
+      policy  as  a  data  source.  */
+template&amp;lt;typename  DataPolicy&amp;gt;
+Body&amp;lt;DataPolicy&amp;gt;::Body(const  std::string&amp;amp;  name):
+    pimpl_(new  BodyImpl(name)){
+    pimpl_-&amp;gt;m_radius  =  DataPolicy::get_radius(name);
+    pimpl_-&amp;gt;m_gm  =  DataPolicy::get_gm(name);
+}
+
+template&amp;lt;typename  DataPolicy&amp;gt;
+Body&amp;lt;DataPolicy&amp;gt;::Body(const  Body&amp;amp;  body):
+    pimpl_(new  BodyImpl(body.name())){
+    pimpl_-&amp;gt;m_radius  =  body.radius();
+    pimpl_-&amp;gt;m_gm  =  body.gm();
+}
+
+template&amp;lt;typename  DataPolicy&amp;gt;
+Body&amp;lt;DataPolicy&amp;gt;::~Body(){
+    delete  pimpl_;
+    pimpl_  =  0;
+}
+
+/*  The  methods  are  simple  forwarding  calls  to  the  implementation  (in
+      reality  it  is  not  as  simple  as  returning  a  primitive  data  type)*/
+template&amp;lt;typename  DataPolicy&amp;gt;
+std::string  Body&amp;lt;DataPolicy&amp;gt;::name()  const{
+    return  pimpl_-&amp;gt;m_name;
+}
+
+template&amp;lt;typename  DataPolicy&amp;gt;
+double  Body&amp;lt;DataPolicy&amp;gt;::radius()  const{
+    return  pimpl_-&amp;gt;m_radius;
+}
+
+template&amp;lt;typename  DataPolicy&amp;gt;
+double  Body&amp;lt;DataPolicy&amp;gt;::gm()  const{
+    return  pimpl_-&amp;gt;m_gm;
+}
+
+
+/*  Now  I  create  a  concrete  data  policy  -  in  reality  this  would  be  more
+      extensive  and  complex,  but  the  idea  remains  the  same  */
+struct  SPICEDataPolicy{
+    static  double  get_radius(const  std::string&amp;amp;  name){
+        std::cout&amp;lt;&amp;lt;"SPICEDataPolicy:  calculating  radius  for  "&amp;lt;&amp;lt;name&amp;lt;&amp;lt;std::endl;
+        return  0;
+    }
+    static  double  get_gm(const  std::string&amp;amp;  name){
+        std::cout&amp;lt;&amp;lt;"SPICEDataPolicy:  calculating  gm  for  "&amp;lt;&amp;lt;name&amp;lt;&amp;lt;std::endl;
+        return  0;
+    }
+};
+
+/*  This  is  another  data  policy  -  it  provides  the  same  data  but  it  may
+      call  a  completely  different  underlying  library,  and  calculate  the
+      values  using  completely  different  logic  */
+struct  OtherDataPolicy{
+    static  double  get_radius(const  std::string&amp;amp;  name){
+        std::cout&amp;lt;&amp;lt;"OtherDataPolicy:  calculating  radius  for  "&amp;lt;&amp;lt;name&amp;lt;&amp;lt;std::endl;
+        return  0;
+    }
+    static  double  get_gm(const  std::string&amp;amp;  name){
+        std::cout&amp;lt;&amp;lt;"OtherDataPolicy:  calculating  gm  for  "&amp;lt;&amp;lt;name&amp;lt;&amp;lt;std::endl;
+        return  0;
+    }
+};
+
+
+/*  My  algorithms  can  now  use  the  objects  via  the  unified  interface  */
+template&amp;lt;typename  T&amp;gt;
+void  individual_complex_calculation(const  Body&amp;lt;T&amp;gt;&amp;amp;  body){
+    //  Regardless  of  the  body's  data  policy,  I  know  I  can  call  a  uniform  interface.
+    std::cout&amp;lt;&amp;lt;"I  am  making  a  complex  calculation  involving  "&amp;lt;&amp;lt;body.name()&amp;lt;&amp;lt;"."&amp;lt;&amp;lt;std::endl
+              &amp;lt;&amp;lt;"[This  is  my  radius:  "&amp;lt;&amp;lt;body.radius()&amp;lt;&amp;lt;",  "
+              &amp;lt;&amp;lt;"and  this  is  my  gm:  "&amp;lt;&amp;lt;body.gm()&amp;lt;&amp;lt;"]"&amp;lt;&amp;lt;std::endl;
+}
+template&amp;lt;typename  T&amp;gt;
+void  complex_calculation(const  std::vector&amp;lt;Body&amp;lt;T&amp;gt;  &amp;gt;  bodies){
+    for(auto  it=bodies.begin(),  finished=bodies.end();  it!=finished;  it++)
+        individual_complex_calculation(*it);
+}
+
+int  main(){    
+    /*  Now  I  can  create  a  vector  of  bodies  which  are  consistent  with  one
+          another  */
+    std::cout&amp;lt;&amp;lt;"==========  Using  'SPICEDataPolicy  =========='"&amp;lt;&amp;lt;std::endl;
+    std::vector&amp;lt;Body&amp;lt;SPICEDataPolicy&amp;gt;  &amp;gt;  bodies;
+    bodies.push_back(Body&amp;lt;SPICEDataPolicy&amp;gt;("Mercury"));
+    bodies.push_back(Body&amp;lt;SPICEDataPolicy&amp;gt;("Venus"));
+    bodies.push_back(Body&amp;lt;SPICEDataPolicy&amp;gt;("Earth"));
+    bodies.push_back(Body&amp;lt;SPICEDataPolicy&amp;gt;("Mars"));
+
+    complex_calculation(bodies);
+
+    /*  And  even  create  other  set  of  bodies  consistent  with  one  another,
+          but  inconsistent  with  the  previous  ones.*/
+    std::cout&amp;lt;&amp;lt;"==========  Using  'OtherDataPolicy'  =========="&amp;lt;&amp;lt;std::endl;    
+    std::vector&amp;lt;Body&amp;lt;OtherDataPolicy&amp;gt;  &amp;gt;  other_bodies;
+    other_bodies.push_back(Body&amp;lt;OtherDataPolicy&amp;gt;("Mercury"));
+    other_bodies.push_back(Body&amp;lt;OtherDataPolicy&amp;gt;("Venus"));
+    other_bodies.push_back(Body&amp;lt;OtherDataPolicy&amp;gt;("Earth"));
+    other_bodies.push_back(Body&amp;lt;OtherDataPolicy&amp;gt;("Mars"));
+
+    complex_calculation(other_bodies);
+    return  0;
+}
+ 

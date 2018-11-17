@@ -1,0 +1,4 @@
+ Client  c;
+/*  Some  operations  on  c  */
+c.Serialize(output);
+ 

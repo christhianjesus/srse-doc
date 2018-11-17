@@ -1,0 +1,70 @@
+ void  mouse(int  button,  int  state,  int  x,  int  y)  {
+
+int  mod  =  glutGetModifiers();
+mouseState  =  state;
+mouseButton  =  button;
+double  modelview[16],  projection[16];
+
+int  viewport[4];
+float  z  =  0  ;
+
+/*Read  the  projection,  modelview  and  viewport  matrices
+using  the  glGet  functions.*/
+glGetIntegerv(  GL_VIEWPORT,  viewport  );
+glGetDoublev(  GL_MODELVIEW_MATRIX,  modelview  );
+//glGetDoublev(  GL_PROJECTION_MATRIX,  projection  );
+
+//Read  the  window  z  value  from  the  z-buffer  
+glReadPixels(  x,  viewport[3]-y,  1,  1,  GL_DEPTH_COMPONENT,  GL_FLOAT,  &amp;amp;z  );      
+
+//  Used  for  wheels,  has  to  be  up        
+if  (state  ==  GLUT_UP  )    {              
+        if  (  mod  ==  GLUT_ACTIVE_CTRL  &amp;amp;&amp;amp;  button  ==  GLUT_WHEEL_UP  ){                                    
+                printf("Wheel  Up\n");
+                zoom  +=  0.1;
+        }
+        else  if  (mod  ==  GLUT_ACTIVE_CTRL  &amp;amp;&amp;amp;    button  ==  GLUT_WHEEL_DOWN  ){
+                printf("Wheel  Down\n");  
+                zoom  -=  0.1;
+        }
+
+
+        else  if  (mod  ==  GLUT_ACTIVE_ALT  &amp;amp;&amp;amp;  button  ==  GLUT_WHEEL_UP)  {
+                //printf("Z++\n");
+                translation_z  =  translation_z  +  0.1;
+                //printf("Z  =  %f",  translation_z);
+        }
+
+        else  if  (mod  ==  GLUT_ACTIVE_ALT  &amp;amp;&amp;amp;  button  ==  GLUT_WHEEL_DOWN)  {
+                //printf("Z--\n");
+                translation_z  =  translation_z  -  0.1;
+        }
+
+        else  if  (mod  ==  GLUT_ACTIVE_SHIFT  &amp;amp;&amp;amp;  button  ==  GLUT_WHEEL_UP)  {
+                //printf("Shift  Wheel  Up.  Z  axis  rotation  goes  here.\n");
+                zrotation  +=  (5*(z  -  oldZ));  //  about  x-axis
+        }
+
+        else  if  (mod  ==  GLUT_ACTIVE_SHIFT  &amp;amp;&amp;amp;  button  ==  GLUT_WHEEL_DOWN)  {
+                //printf("Shift  Wheel  Down.  Z  Axis  rotation  goes  here\n");
+                zrotation  -=  (5*(z  -  oldZ));  //  about  x-axis
+                //translation_z  =  translation_z  -  0.1;
+        }
+
+
+}
+else  if  (state  ==  GLUT_DOWN)  {
+        //printf("Glut  Down  before  z  processing\n");
+
+        if  (button  ==  GLUT_LEFT_BUTTON){
+                cursorX  =  x;
+                cursorY  =  y;
+                mode  =  SELECT;
+                //printf("Left  is  down\n");
+        }
+
+        oldX  =  x;
+        oldY  =  y;
+}
+}
+ 

@@ -1,0 +1,2 @@
+ g++  BareBonesFrm.cpp  BareBonesApp.cpp  `wx-config  --cxxflags`  `wx-config  --libs`  -o  BareBones
+ 

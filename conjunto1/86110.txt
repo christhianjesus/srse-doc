@@ -1,0 +1,67 @@
+ int  main(void)
+{
+
+        struct  sockaddr_in  stSockAddr;
+        int  res,  addr_len,  SocketFD,  ConnectFD;
+
+        struct  sockaddr_in  addr;
+
+        SocketFD  =  socket(PF_INET,  SOCK_STREAM,  IPPROTO_TCP);
+
+        if(-1  ==  SocketFD)
+        {
+            perror("can  not  create  socket");
+            //exit(EXIT_FAILURE);
+            return  -1;
+        }
+
+        memset(&amp;amp;stSockAddr,  0,  sizeof  stSockAddr);
+        stSockAddr.sin_family  =  AF_INET;
+        stSockAddr.sin_port  =  htons(49335);
+        stSockAddr.sin_addr.s_addr  =  INADDR_ANY;
+
+        if(-1  ==  bind(SocketFD,(struct  sockaddr  *)&amp;amp;stSockAddr,  sizeof  stSockAddr))
+        {
+            perror("error  bind  failed");
+            close(SocketFD);
+          return  -1;
+        }
+
+
+        printf("going  to  listen!\n");  
+        if(-1  ==  listen(SocketFD,  10))
+        {      
+            perror("error  listen  failed");
+            close(SocketFD);
+            //exit(EXIT_FAILURE);
+            return  -1;  
+        }      
+
+        ConnectFD  =  accept(SocketFD,  NULL,  NULL);
+
+                if(0  &amp;gt;  ConnectFD)
+                {      
+                                perror("error  accept  failed");
+                                close(SocketFD);
+                                //exit(EXIT_FAILURE);
+                                return  -1;  
+                }      
+
+        addr.sin_family  =  AF_INET;
+        res  =  getsockname  (ConnectFD,  (struct  sockaddr  *)&amp;amp;addr,  &amp;amp;addr_len);
+        //  if  you  remove  the  following  comment,  that  means,  if  you  call  
+        //  two  times  of  getsockname,  the  result  will  be  correct.
+        //res  =  getsockname  (ConnectFD,  (struct  sockaddr  *)&amp;amp;addr,  &amp;amp;addr_len);
+
+        printf("addr:%x\n",  addr.sin_addr.s_addr);
+
+        while(1)  {
+                if  (getchar()  ==  'q')
+                                                break;
+        }
+
+        close(ConnectFD);
+        close(SocketFD);
+        return  0;
+}
+ 

@@ -1,0 +1,7 @@
+ ui-&amp;gt;treeWidget-&amp;gt;expandAll();
+QTreeWidgetItem  *item  =  new  QTreeWidgetItem();
+item-&amp;gt;setText(0,  "Add  details  about  your  Bug");
+item-&amp;gt;setFlags(item-&amp;gt;flags()  |  Qt::ItemIsEditable);
+bug-&amp;gt;addChild(item);
+ui-&amp;gt;treeWidget-&amp;gt;editItem(item,  0);
+ 

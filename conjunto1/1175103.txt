@@ -1,0 +1,24 @@
+ extern  "C"  int  EXPORT_API  GetJpeg(unsigned  char*  *data,  int*  size)
+
+cv::Mat  myMat(frame);
+
+std::vector&amp;lt;int&amp;gt;  p;
+p.push_back(CV_IMWRITE_JPEG_QUALITY);
+p.push_back(10);
+std::vector&amp;lt;unsigned  char&amp;gt;  buf;
+
+cv::imencode(".jpg",  myMat,  buf,  p);
+
+*data  =  &amp;amp;buf.front();
+*size  =  buf.size();
+
+p.clear();
+myMat.release();
+
+if  (buf.size()  &amp;gt;  0)
+{
+        return  1;
+}
+
+return  0;
+ 

@@ -1,0 +1,9 @@
+ case  WM_PAINT:
+{
+        MINMAXINFO  mmi  =  {  0  };
+        SendMessage(hWnd,  WM_GETMINMAXINFO,  NULL,  (LPARAM)&amp;amp;mmi);
+        POINT  sz  =  {  640,  480  };
+        mmi.ptMaxSize  =  sz;  
+}
+break;
+ 

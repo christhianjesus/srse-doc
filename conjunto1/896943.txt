@@ -1,0 +1,3 @@
+ Poin  TopLeft(x_top,  y_top);
+Poin  BottomRight(x_bot,  y_bot);
+ 

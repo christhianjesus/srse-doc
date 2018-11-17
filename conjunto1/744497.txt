@@ -1,0 +1,8 @@
+ int  skip  =  0;
+do
+{
+        size_t  skip  =  distance  +  512;
+        //....
+}
+while(something  !=  NULL);
+ 

@@ -1,0 +1,9 @@
+ #include  &amp;lt;string&amp;gt;        //  for  `std::string`
+#include  &amp;lt;ostream&amp;gt;      //  for  `std::ostream  &amp;amp;`  in  `operator&amp;lt;&amp;lt;`
+#include  &amp;lt;iostream&amp;gt;    //  for  std::cout
+
+int  main()  {
+    std::string  str  =  "hello  world";
+    std::cout  &amp;lt;&amp;lt;  str  &amp;lt;&amp;lt;  std::endl;
+}
+ 

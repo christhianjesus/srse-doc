@@ -1,0 +1,5 @@
+ GetBitIndex&amp;lt;short&amp;gt;::BitsetType  pollEventMask;
+
+pollEvents[EV_POLLIN]  =  true;  //  set  the  POLLIN  flag
+pollEvents[EV_POLLERR]  =  false;  //  unset  the  POLLERR  flag
+ 

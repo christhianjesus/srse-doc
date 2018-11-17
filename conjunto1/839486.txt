@@ -1,0 +1,2 @@
+ nlopt::result  nlopt::opt::optimize(std::vector&amp;lt;double&amp;gt;  &amp;amp;x,  double  &amp;amp;opt_f);
+ 

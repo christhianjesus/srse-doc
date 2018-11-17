@@ -1,0 +1,7 @@
+ std::vector&amp;lt;int&amp;gt;  someList;
+int  total  =  0;
+std::for_each(someList.begin(),  someList.end(),  [&amp;amp;total](int  x)  {
+    total  +=  x;
+});
+std::cout  &amp;lt;&amp;lt;  total;
+ 

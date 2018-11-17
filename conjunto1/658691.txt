@@ -1,0 +1,13 @@
+ #include  &amp;lt;type_traits&amp;gt;
+
+template&amp;lt;typename  T&amp;gt;
+struct  identity  {  using  type  =  T;  };
+
+template&amp;lt;typename  T&amp;gt;
+using  try_make_signed  =
+        typename  std::conditional&amp;lt;
+                std::is_integral&amp;lt;T&amp;gt;::value,
+                std::make_signed&amp;lt;T&amp;gt;,
+                identity&amp;lt;T&amp;gt;
+                &amp;gt;::type;
+ 

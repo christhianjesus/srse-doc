@@ -1,0 +1,4 @@
+ inline  float  CRANDOM()  {
+        return  random()  /  2.33f;
+}
+ 

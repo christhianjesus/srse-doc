@@ -1,0 +1,66 @@
+ void  main()
+{
+          MergeSort(list,  0,  n-1)  //calling  function  on  pointer  to  array  of  integers
+}
+
+int  *MergeSort(int  *A,  int  x,  int  y)  //declaration
+{
+if(x==y)
+{
+        return  A;
+}
+
+else
+{
+        int  size=1+y-x;
+        int  half=(x+y)/2;
+
+        MergeSort(A,  x,  half);    
+        MergeSort(A,  half+1,  y);        
+
+
+        int  *C;
+        C=(int  *)malloc(size*sizeof(int));
+        int  j=x;
+        int  k=half;
+        int  i=0;
+
+
+        while((j&amp;lt;=half)||(k&amp;lt;=y))                        
+        {
+                if(A[j]&amp;lt;=A[k])
+                {
+                        C[i]=A[j];
+                        j++;
+                }
+                else
+                {
+                        C[i]=A[k];
+                        k++;
+                }
+                i++;
+        }
+
+
+        if(j==(half+1))
+        {
+                while(i&amp;lt;size)
+                {
+                        C[i]=A[k];
+                        i++;
+                        k++;
+                }
+        }
+        else  if(k==(y+1))
+        {
+                while(i&amp;lt;size)
+                {
+                        C[i]=A[j];
+                        i++;
+                        j++;
+                }
+        }
+
+        return  C;
+}
+ 

@@ -1,0 +1,37 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+
+
+using  namespace  std;
+
+struct  Computer
+{
+        char  *  model;
+        char  *  assembler;
+        int  processorInt;
+};
+
+void  setValues()
+{
+        Computer  comp;
+        char*  model;
+        char*  assembler;
+        int  processorInt;
+
+        cin&amp;gt;&amp;gt;model;
+        cin&amp;gt;&amp;gt;assembler;
+        cin&amp;gt;&amp;gt;processor  int;
+
+        comp.model  =  model;
+        comp.assembler  =  assembler;
+        comp.processorInt  =  processorInt;
+}
+
+int  main()
+{
+        setValues();
+
+        return  0;
+}
+ 

@@ -1,0 +1,5 @@
+ main.cpp:  In  instantiation  of  ‘void  alg(const  Type&amp;amp;)  [with  Type  =  B]’:
+main.cpp:46:10:      required  from  here
+main.cpp:37:54:  error:  ‘boo’  is  not  a  member  of  ‘B’
+booable&amp;lt;std::is_member_function_pointer&amp;lt;decltype(&amp;amp;Type::boo)&amp;gt;::value&amp;gt;::booIt(t);
+ 

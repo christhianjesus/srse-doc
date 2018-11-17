@@ -1,0 +1,37 @@
+                 if  (outf!=NULL){
+                        printf("Output  file  already  exists,  overwrite  (y/n):");
+                        scanf("%c",yn);
+                }
+                if  (yn=='y'){
+        /*keep  reading  to  end  of  file*/
+                        while  (feof(inf)==0)  {
+                                linecounter++;
+        /*read  each  line  and  store  the  line  number  in  detail[WORDS  GO  HERE]*/
+                                fscanf  (inf,"%s",  &amp;amp;detail);
+        /*If  we  reach  the  line  selected  by  the  user*/
+                                if  (linecounter==linenumber){
+                                        strcpy(linedetail,detail);
+                                        linepresent=1;
+                                }
+                        }
+                        if  (linepresent==0)  {
+                                printf("File  only  contains  %i  lines",linecounter);
+                        }
+                }  else  {
+                        exit(1);
+                }
+        }  else  {
+                printf("Input  file  not  found");
+        }
+
+printf("%s",linedetail);
+
+/*  close  the  file  */
+
+        fclose(inf);
+        fclose(outf);
+
+        return  (0);
+
+}
+ 

@@ -1,0 +1,6 @@
+ Database::Database(string  Address,  string  Username,  string  Password,  string  Database)  {
+//  TODO  Auto-generated  constructor  stub
+connection  =  mysql_init(NULL);
+mysql_real_connect(connection,  Address.c_str(),  Username.c_str(),  Password.c_str(),  Database.c_str(),  0,  NULL,  0);
+}
+ 

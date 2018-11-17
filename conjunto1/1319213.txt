@@ -1,0 +1,5 @@
+ #define  UART0          0x4000C000
+#define  UART0CTL  (*((volatile  unsigned  int  *)  (UART0  +  0x30)))
+
+UART0CTL  &amp;amp;=  ~1;
+ 

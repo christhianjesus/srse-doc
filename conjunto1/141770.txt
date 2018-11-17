@@ -1,0 +1,7 @@
+ int  PASCAL  FAR  setsockopt  (
+                                              __in  SOCKET  s,
+                                              __in  int  level,
+                                              __in  int  optname,
+                                              __in_bcount_opt(optlen)  const  char  FAR  *  optval,
+                                              __in  int  optlen);
+ 

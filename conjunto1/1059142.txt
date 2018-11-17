@@ -1,0 +1,9 @@
+ void  generator(int  size){
+        map&amp;lt;int,int*&amp;gt;::iterator  it=index.find(size);
+        if(it!=index.end())  {
+              all_the_things_I_did_in_the_case(it-&amp;gt;second,size);
+        }  else  {
+                cout  &amp;lt;&amp;lt;  "Invalid  input_size"  &amp;lt;&amp;lt;  endl;
+        }
+}
+ 

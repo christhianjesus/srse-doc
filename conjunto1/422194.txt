@@ -1,0 +1,7 @@
+ Input:  1  ;  Class:  1  ;  Eval  =  -1
+Weight  for  node  1:  -2
+Input:  2  ;  Class:  -1  ;  Eval  =  -1
+Weight  for  node  2:  -2
+Input:  3  ;  Class:  -1  ;  Eval  =  -1
+Weight  for  node  3:  -1
+ 

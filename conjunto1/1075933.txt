@@ -1,0 +1,3 @@
+ if(m_pMyInterface.p  !  =  NULL)
+        m_pMyInterface.Release();
+ 

@@ -1,0 +1,9 @@
+ [...]
+#if  TIMER_LONG  //  Here  you  should  somehow  check  what  type  is  used  on  target  platform.
+        typedef  Timer&amp;lt;long&amp;gt;  implTimer;
+        typedef  FpsMeter&amp;lt;long&amp;gt;  implFpsMeter;
+#else  //  If  eg.  using  double?
+        typedef  Timer&amp;lt;double&amp;gt;  implTimer;
+        typedef  FpsMeter&amp;lt;double&amp;gt;  implFpsMeter;
+#fi
+ 

@@ -1,0 +1,47 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;string.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+
+int  main()
+{
+        char  *str              =  "This,is,a,comma,delimited,string,with,a,length,of,whatever";
+        char  **array        =  NULL;
+        char  *p;
+        size_t    items  =  0,  q;
+        char  *sepa            =  ",";
+
+        p  =  str;
+        for  (;;)
+        {
+                        p  +=  strspn(p,  sepa);
+                        if  (!(q  =  strcspn(p,  sepa)))
+                                        break;
+                        if  (q)
+                        {
+                                        array                      =  realloc(array,  (items+1)  *  sizeof(char  *));
+                                        array[items]        =  malloc(q+1);
+                                        strncpy(array[items],  p,  q);
+                                        array[items][q]  =  0;
+                                        items++;
+                                        p  +=  q;
+                        }
+        }
+        for  (q  =  0;  q  &amp;lt;  items;  q++)
+        {
+                        printf("(%s)  ",  array[q]);
+        }
+        printf("\n");
+
+        /*  Here  we  have  a  problem.  How  do  we  return  to  the  caller  the  information
+              about  how  many  items  do  we  have?  A  common  solution  is  to  return  the  number
+              of  items  PLUS  ONE,  and  that  one  is  NULL  */
+
+        array                      =  realloc(array,  (items+1)  *  sizeof(char  *));
+        array[items]        =  NULL;
+
+        /*  So  this  code  can  work  without  needing  to  know  the  value  of  "items"  */
+        for  (q  =  0;  array[q];  q++)
+                        printf("(%s)  ",  array[q]);
+        printf("\n");
+}
+ 

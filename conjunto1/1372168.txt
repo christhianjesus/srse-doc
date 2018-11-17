@@ -1,0 +1,231 @@
+ C:\Users\SUPER  USER\Desktop&amp;gt;clang++  a.cpp
+In  file  included  from  a.cpp:1:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+ostream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/o
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+os:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locnum:10:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+treambuf:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+iosbase:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locale:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+tdexcept:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/e
+xception:38:
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/eh.h(58)  :    error:
+            unknown  type  name  'type_info'
+_CRTIMP  int  __cdecl  _is_exception_typeof(_In_  const  type_info  &amp;amp;_Type,  ...
+                                                                                                        ^
+In  file  included  from  a.cpp:1:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+ostream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/o
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+os:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locnum:10:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+treambuf:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+iosbase:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locale:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+tdexcept:7:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+string:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+memory:7:
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/new(51)  :    error:
+            exception  specification  in  declaration  does  not  match  previous  declaration
+
+_Ret_bytecap_(_Size)  void  *__CRTDECL  operator  new(size_t  _Size)  ...
+                                                                          ^
+note:  previous  declaration  is  here
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/new(79)  :    error:
+            exception  specification  in  declaration  does  not  match  previous  declaration
+
+_Ret_bytecap_(_Size)  void  *__CRTDECL  operator  new[](size_t  _Size)
+                                                                          ^
+note:  previous  declaration  is  here
+In  file  included  from  a.cpp:1:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+ostream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/o
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+os:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locnum:10:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+treambuf:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+iosbase:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locale:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+tdexcept:7:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+string:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+memory:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+utility:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/u
+tility:9:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/t
+ype_traits:7:
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/xtr1common(355)  :    erro
+r:
+            rvalue  references  are  only  allowed  in  C++0x
+                struct  _Remove_reference&amp;lt;_Ty&amp;amp;&amp;amp;&amp;gt;
+                                                                        ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/xtr1common(368)  :    erro
+r:
+            rvalue  references  are  only  allowed  in  C++0x
+                struct  _Remove_rvalue_reference&amp;lt;_Ty&amp;amp;&amp;amp;&amp;gt;
+                                                                                      ^
+In  file  included  from  a.cpp:1:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+ostream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/o
+stream:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/i
+os:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locnum:10:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+treambuf:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+iosbase:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+locale:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/s
+tdexcept:7:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+string:6:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+memory:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/x
+utility:8:
+In  file  included  from  C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/u
+tility:9:
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(243)  :    err
+or:
+            rvalue  references  are  only  allowed  in  C++0x
+                typedef  _Ty  &amp;amp;&amp;amp;  type;
+                                        ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(427)  :    err
+or:
+            rvalue  references  are  only  allowed  in  C++0x
+                struct  is_rvalue_reference&amp;lt;_Ty&amp;amp;&amp;amp;&amp;gt;
+                                                                            ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(554)  :    err
+or:
+            '_From'  does  not  refer  to  a  value
+                struct  is_convertible  _IS_CONVERTIBLE(_From,  _To)
+                                                            ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:554:40:  not
+e:  instantiated  from:
+                struct  is_convertible  _IS_CONVERTIBLE(_From,  _To)
+                                                                                            ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(553)  :    not
+e:
+            declared  here
+template&amp;lt;class  _From,  class  _To&amp;gt;
+                              ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(555)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _From  is  convertible  to  _To
+                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(720)  :    err
+or:
+            expected  expression
+                struct  has_nothrow_constructor  _HAS_NOTHROW_CONSTRUCTOR(_Ty)
+                                                                              ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:42:36:  note
+:  instantiated  from:
+                :  _Cat_base&amp;lt;is_pod&amp;lt;_Ty&amp;gt;::value  ||  __has_nothrow_constructor(_Ty)&amp;gt;
+                                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(721)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _Ty  has  a  nothrow  constructor
+                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(726)  :    err
+or:
+            expected  expression
+                struct  has_nothrow_copy  _HAS_NOTHROW_COPY(_Ty)
+                                                                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:44:36:  note
+:  instantiated  from:
+                :  _Cat_base&amp;lt;is_pod&amp;lt;_Ty&amp;gt;::value  ||  __has_nothrow_copy(_Ty)&amp;gt;
+                                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(727)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _Ty  has  a  nothrow  copy  constructor
+                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(733)  :    err
+or:
+            expected  expression
+                struct  has_nothrow_default_constructor  _HAS_NOTHROW_CONSTRUCTOR(_Ty)
+                                                                                              ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:42:36:  note
+:  instantiated  from:
+                :  _Cat_base&amp;lt;is_pod&amp;lt;_Ty&amp;gt;::value  ||  __has_nothrow_constructor(_Ty)&amp;gt;
+                                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(734)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _Ty  has  a  nothrow  constructor
+                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(739)  :    err
+or:
+            expected  expression
+                struct  has_nothrow_copy_constructor  _HAS_NOTHROW_COPY(_Ty)
+                                                                                        ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:44:36:  note
+:  instantiated  from:
+                :  _Cat_base&amp;lt;is_pod&amp;lt;_Ty&amp;gt;::value  ||  __has_nothrow_copy(_Ty)&amp;gt;
+                                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(740)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _Ty  has  a  nothrow  copy  constructor
+                ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(746)  :    err
+or:
+            expected  expression
+                struct  has_nothrow_assign  _HAS_NOTHROW_ASSIGN(_Ty)
+                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits:46:36:  note
+:  instantiated  from:
+                :  _Cat_base&amp;lt;is_pod&amp;lt;_Ty&amp;gt;::value  ||  __has_nothrow_assign(_Ty)&amp;gt;
+                                                                                    ^
+C:\Program  Files\Microsoft  Visual  Studio  10.0\VC\include/type_traits(747)  :    err
+or:
+            expected  class  name
+                {              //  determine  whether  _Ty  has  a  nothrow  assignment  operator
+                ^
+fatal  error:  too  many  errors  emitted,  stopping  now  [-ferror-limit=]
+20  errors  generated.
+
+C:\Users\SUPER  USER\Desktop&amp;gt;
+ 

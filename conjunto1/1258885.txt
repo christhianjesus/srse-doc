@@ -1,0 +1,22 @@
+ #include  &amp;lt;exception&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+
+int  f()  {
+        throw  "message";
+}
+
+int  main()  {
+        try  {
+          f();
+        }
+        catch  (  ...  )  {
+          try  {
+            throw;
+          }
+          catch(  const  char  *    s  )  {
+            cout  &amp;lt;&amp;lt;  "caught  "  &amp;lt;&amp;lt;  s  &amp;lt;&amp;lt;  endl;
+          }
+        }
+}
+ 

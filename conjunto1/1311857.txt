@@ -1,0 +1,20 @@
+ struct  Point  {  
+        ...
+};
+struct  Circle  {  
+        ...        
+};
+struct  Shape  {
+        enum  Type  {  PointShape,  CircleShape  };
+        Type  type;
+        union  {
+                Point  p;
+                Circle  c;
+        }  data;
+};
+std::vector&amp;lt;Shape&amp;gt;  shapes;
+Point  p  =  {  1,  2  };
+shapes.push_back(p);
+if(shapes.front().type  ==  Shape::PointShape)
+        draw_point(shapes.front());
+ 

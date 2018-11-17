@@ -1,0 +1,47 @@
+ #include  &amp;lt;fstream&amp;gt;
+#include  &amp;lt;boost/cstdint.hpp&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+
+void  write()
+{
+    boost::uint8_t  one  =  (boost::uint32_t  )255;
+    boost::uint8_t  two  =  (boost::uint32_t)  254;
+    boost::uint8_t  three  =(boost::uint32_t)  253;
+
+    std::fstream  file("test",  std::fstream::out  |  std::fstream::binary  |  std::fstream::trunc);
+
+    file.write(  (char  *)  &amp;amp;one,  sizeof(one));
+    file.write(  (char  *)  &amp;amp;two,  sizeof(two));
+    file.write(  (char  *)  &amp;amp;three,  sizeof(two));
+
+    std::cout  &amp;lt;&amp;lt;  file.tellg()  &amp;lt;&amp;lt;  std::endl;
+    file.flush();
+    file.close();
+}
+
+void  read()
+{
+    boost::uint8_t  one=0;
+    boost::uint8_t  two=0;
+    boost::uint8_t  three=0;
+
+    std::fstream  file("test",  std::fstream::in  |  std::fstream::binary);
+
+
+    file.get((char  *)  &amp;amp;  one,  sizeof(one));  
+    file.get((char  *)  &amp;amp;  two,  sizeof(two));  
+    file.get((char  *)  &amp;amp;  three,  sizeof(three));  
+
+    std::cout  &amp;lt;&amp;lt;  file.tellg()  &amp;lt;&amp;lt;  std::endl;
+
+    std::cout  &amp;lt;&amp;lt;  (boost::uint32_t)  one  &amp;lt;&amp;lt;  ":"  &amp;lt;&amp;lt;  (boost::uint32_t)  two    &amp;lt;&amp;lt;  ":"  &amp;lt;&amp;lt;  (boost::uint32_t)three&amp;lt;&amp;lt;  std::endl;
+    file.close();
+}
+
+
+int  main()
+{
+    write();
+    read();    
+}
+ 

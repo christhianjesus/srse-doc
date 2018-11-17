@@ -1,0 +1,10 @@
+ int  processed  =  0;
+ALuint  bufID  =  0;
+//  ...
+alGetSourcei(source_handle,  AL_BUFFERS_PROCESSED,  &amp;amp;processed);
+while  (processed--)  {
+        alGetError();
+        alSourceUnqueueBuffers(source_handle,  1,  &amp;amp;bufID);
+        //  return  buffId  to  buffers  pool;
+}
+ 

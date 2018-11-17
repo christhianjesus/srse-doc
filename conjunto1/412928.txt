@@ -1,0 +1,20 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+
+#define  TAX  5      /*  Defines  percentage  of  tax  for  the  year  */
+
+int  main(void)
+{
+        float  amount;
+        float  taxes;
+        float  total;
+
+        printf("Enter  the  value  of  the  amount:  ");
+        scanf("%f",  &amp;amp;amount);
+
+        taxes  =  (TAX  /  amount);  
+        total  =  amount  +  taxes;
+
+        printf("The  total  amount  is:  $%.2f",total);
+        return  0;
+}
+ 

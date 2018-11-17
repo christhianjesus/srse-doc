@@ -1,0 +1,6 @@
+ if  ((this_is_the_first_part_of_a_long_condition)
+                &amp;amp;&amp;amp;  (the_second_part_is_shorter__wait_no_it_is_not)
+                &amp;amp;&amp;amp;  (and_one_more_for_the_road))  {
+        here_comes_the_block_code();
+}
+ 

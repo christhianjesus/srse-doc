@@ -1,0 +1,2 @@
+ boost/include/boost/geometry/algorithms/detail/recalculate.hpp:146:24:  Fehler:  »it_dest«  is  not  defined
+ 

@@ -1,0 +1,7 @@
+ [open  paren]  
+[suffix  (int  n)]          a  function  taking  an  `int`  argument  called  `n`  that  returns
+[prefix  *]                      a  pointer  to
+[close  paren]
+[suffix  (int,  int)]    a  function  taking  two  `int`  arguments  and  returning
+[prefix  int]                  an  integer
+ 

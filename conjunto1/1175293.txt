@@ -1,0 +1,7 @@
+ const  char  *  eop  =  std::string("EOP").c_str();
+char  pData[sizeof(int)  +  sizeof(_welcomeMessage)  +  sizeof(eop)];
+int  packetSize  =  sizeof(_welcomeMessage);
+memcpy(pData,  &amp;amp;packetSize,  sizeof(packetSize));
+memcpy(pData  +  sizeof(int),  &amp;amp;_welcomeMessage,  sizeof(_welcomeMessage));
+memcpy(pData  +  sizeof(int)  +  sizeof(_welcomeMessage),  &amp;amp;eop,  sizeof(eop));
+ 

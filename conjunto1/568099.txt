@@ -1,0 +1,8 @@
+                 ifstream  myfile;
+                string  line;
+                do
+                {
+                        cout  &amp;lt;&amp;lt;  getline(myfile,line);
+                }while(!myfile.eof());
+                break;
+ 

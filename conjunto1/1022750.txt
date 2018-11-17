@@ -1,0 +1,6 @@
+ for(i  =  1;  i;  i++)
+{
+                lineToken  =  realloc(lineToken,  i  +  1);  /*  Realloc  because  total  number  of  elements  is  unknown  */
+                lineToken[i]  =  strtok(NULL,  "  ");  /*  Put  new  strtok'd  string  into  lineToken[i]  */
+}
+ 

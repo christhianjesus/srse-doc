@@ -1,0 +1,5 @@
+ private:
+        Foo  foo;
+public:
+        Foo  getFoo()  {  return  foo;  }
+ 

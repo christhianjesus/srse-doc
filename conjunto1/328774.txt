@@ -1,0 +1,29 @@
+ #include  &amp;lt;algorithm&amp;gt;
+using  std::lexicographical_compare;
+
+#include  &amp;lt;cctype&amp;gt;
+using  std::tolower;
+
+#include  &amp;lt;iostream&amp;gt;
+using  std::cout;
+
+#include  &amp;lt;string&amp;gt;
+using  std::string;
+
+bool  nocase_compare  (char  one,  char  two)
+{
+        return  tolower  (one)  &amp;lt;  tolower  (two);
+}
+
+int  main()
+{
+        string  s1  =  "Hello";
+        string  s2  =  "happy";
+
+        if  (lexicographical_compare  (s1.begin(),  s1.end(),  s2.begin(),  s2.end(),  nocase_compare))
+                cout  &amp;lt;&amp;lt;  s1;
+        else
+                cout  &amp;lt;&amp;lt;  s2;
+        //prints  "happy"  even  though  'H'  &amp;lt;  'h'
+}
+ 

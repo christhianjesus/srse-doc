@@ -1,0 +1,5 @@
+ do  {
+        do_something();
+        usleep(50);
+}  while(!is_finished());
+ 

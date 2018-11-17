@@ -1,0 +1,13 @@
+ extern  "C++"
+{
+__attribute__((visibility("default")))  void*  operator  new(std::size_t)  throw  (std::bad_alloc);
+__attribute__((visibility("default")))  void*  operator  new[](std::size_t)  throw  (std::bad_alloc);
+__attribute__((visibility("default")))  void  operator  delete(void*)  throw();
+__attribute__((visibility("default")))  void  operator  delete[](void*)  throw();
+__attribute__((visibility("default")))  void*  operator  new(std::size_t,  const  std::nothrow_t&amp;amp;)  throw();
+__attribute__((visibility("default")))  void*  operator  new[](std::size_t,  const  std::nothrow_t&amp;amp;)  throw();
+__attribute__((visibility("default")))  void  operator  delete(void*,  const  std::nothrow_t&amp;amp;)  throw();
+__attribute__((visibility("default")))  void  operator  delete[](void*,  const  std::nothrow_t&amp;amp;)  throw();
+
+}
+ 

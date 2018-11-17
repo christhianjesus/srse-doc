@@ -1,0 +1,4 @@
+ int  iPower  =  -59;
+int16_t  power  =  CFSwapInt16HostToBig(iPower);
+NSData  *powerData  =  [NSData  dataWithBytes:&amp;amp;power  length:sizeof(power)];  
+ 

@@ -1,0 +1,15 @@
+ namespace  NS1{
+        namespace  NS2  {
+                namespace  NS3
+                {
+                        void  fun()  {
+                                std::cout  &amp;lt;&amp;lt;  "Understanding  namespace  alias\n";
+                        }
+                }
+        }
+}
+
+#define  NS  NS1::NS2::NS3
+//over
+namespace  NS=NS1::NS2::NS3;
+ 

@@ -1,0 +1,9 @@
+ struct  Node
+        {
+            int  Item;            //  User  data  item
+            Node  *  Succ;      //  Link  to  the  node's  successor
+        };
+
+unsigned  Num  //number  of  items  in  the  list
+Node  *  Head  //pointer  to  the  first  node
+ 

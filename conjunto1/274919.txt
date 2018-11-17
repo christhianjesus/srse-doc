@@ -1,0 +1,39 @@
+ struct  dimen  {
+        int  x;
+        int  key;
+}
+
+struct  dimen  horizontal[]  =  {  {  .x  =  10,  .key  =  0  },
+                                                            {  .x  =  20,  .key  =  1  },
+                                                            {  .x  =  50,  .key  =  2  },
+                                                            {  .x  =  90,  .key  =  3  },
+                                                            {  .x  =  120,  .key  =  4  },
+                                                            {  .x  =  200,  .key  =  5  },
+                                                            {  .x  =  300,  .key  =  6  },
+                                                            {  .x  =  10000,  .key  =  7  }};
+
+struct  dimen  vertical[]  =  {  {  .x  =  10,  .key  =  0  },
+                                                      {  .x  =  20,  .key  =  1  },
+                                                      {  .x  =  50,  .key  =  2  },
+                                                      {  .x  =  90,  .key  =  3  },
+                                                      {  .x  =  120,  .key  =  4  },
+                                                      {  .x  =  200,  .key  =  5  },
+                                                      {  .x  =  300,  .key  =  6  },
+                                                      {  .x  =  10000,  .key  =  7  }};
+
+/*  returns  0-63  as  written  */
+int  getClosestSizeTo(int  width,  int  height)  {
+        int  horizontal_key  =  find_just_larger(horizontal,  width);
+        int  vertical_key  =  find_just_larger(vertical,  height);
+        return  (horizontal_kee  &amp;lt;&amp;lt;  3)  &amp;amp;  vertical_key;
+}
+
+int  find_just_larger(struct  dimen*  d,  size)  {
+        int  ret  =  d.key;
+        while(d.x  &amp;lt;  size)  {
+                d++;
+                ret  =  d.key;
+        }
+        return  ret;
+}
+ 

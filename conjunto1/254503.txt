@@ -1,0 +1,9 @@
+ #include  &amp;lt;stdlib.h&amp;gt;
+#include  &amp;lt;stdio.h&amp;gt;
+
+int  main(int  argc,  char  *argv[])
+{
+        printf("%f\n",  strtof(argv[1],0));
+        return  0;
+}
+ 

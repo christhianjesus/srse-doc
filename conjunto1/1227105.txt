@@ -1,0 +1,8 @@
+ void  main(void)  {
+    CThread  thread;
+    thread.CreateThread();
+
+    MyClass*  myPointer  =  thread.getMyPointer();  
+    myPointer-&amp;gt;someMethod();  //  CRASH,  BOOM,  BANG!!!!
+}
+ 

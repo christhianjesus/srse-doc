@@ -1,0 +1,19 @@
+ _Z3foof:                                                                #  @_Z3foof
+        .cfi_startproc
+        .long      1413876459                            #  0x54460aeb
+        .quad      _ZTIFffE
+#  BB#0:
+        pushq      %rax
+.Ltmp1:
+        .cfi_def_cfa_offset  16
+        movss      %xmm0,  4(%rsp)                    #  4-byte  Spill
+        movd        %xmm0,  %esi
+        movl        $__unnamed_1,  %edi
+        xorl        %edx,  %edx
+        callq      __ubsan_handle_divrem_overflow
+        xorps      %xmm1,  %xmm1
+        movss      4(%rsp),  %xmm0                    #  4-byte  Reload
+        divss      %xmm1,  %xmm0
+        popq        %rax
+        ret
+ 

@@ -1,0 +1,9 @@
+ string  WordEntry::getWord()
+bool  WordEntry::operator&amp;lt;(WordEntry  otherWordEntry)
+{
+      return    lexicographical_compare(_word.begin(),
+                                                                      _word.end(),
+                                                                      otherWordEntry.getWord().begin(),
+                                                                      otherWordEntry.getWord().end());
+}
+ 

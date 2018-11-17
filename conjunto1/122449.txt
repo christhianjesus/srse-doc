@@ -1,0 +1,2 @@
+ g++  -o  test  main.cpp  file1.cpp  file2.cpp
+ 

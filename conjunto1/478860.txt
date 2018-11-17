@@ -1,0 +1,4 @@
+ gcc  -c  test.c  -nostartfiles  -nodefaultlibs  -nostdlib  -nostdinc  -o  test.o
+gcc  -o  test.exe  -nostartfiles  -nodefaultlibs  -nostdlib  -nostdinc  -s  -O2  test.o
+@%comspec%
+ 

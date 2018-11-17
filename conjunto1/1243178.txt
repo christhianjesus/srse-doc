@@ -1,0 +1,2 @@
+ class  CScrollBase  :  public  ATL::CWindowImpl&amp;lt;CScrollBase&amp;gt;
+ 

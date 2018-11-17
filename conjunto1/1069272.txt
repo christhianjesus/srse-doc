@@ -1,0 +1,20 @@
+ in  main()
+in  serverTCP::serverTCP()!
+in  spreadsheet::spreadsheet()
+in  serverTCP::start_accept()!
+in  client::client(asio::io_service&amp;amp;  io_service,  std::string  name)
+in  StringSocket::StringSocket(asio::ip::tcp::socket  *_socket)
+in  client::getSocket()
+in  StringSocket::underSoc()
+in  serverTCP::pickSpreadsheet()!
+in  client::getClientName()
+in  client::sendToGui(std::string  mess)
+in  StringSocket::beginSend(const  string&amp;amp;  toWrite,  sendCallback  callBack,  void*  payload)
+toWrite:  Welcome  to  SS!  user:  user0000
+in  StringSocket::ProcessSend()
+TextToSend:  Welcome  to  SS!  user:  user0000
+in  StringSocket::sendLine()
+is  the  socket  alive?:  1
+toWrite:  Welcome  to  SS!  user:  user0000
+Segmentation  fault
+ 

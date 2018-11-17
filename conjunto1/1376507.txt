@@ -1,0 +1,21 @@
+ namespace  foo
+{
+        struct  gizmo{int  n_;};
+        namespace  bar
+        {
+                namespace  foo
+                {
+                        float  f_;
+                };
+        };
+
+};
+
+int  main()
+{
+        using  namespace  foo::bar;
+
+        ::foo::gizmo  g;
+        g.n_;
+}
+ 

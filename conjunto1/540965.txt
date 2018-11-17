@@ -1,0 +1,8 @@
+ Player  p;                                                      //  This  calls  the  default  constructor  and  returns  a  Player  object
+
+Players  *players  =  new  Player[5];      //  Create  an  array  of  player  objects
+players[0].playerWidth  =  8;                  //  valid  because  the  object  has  already  been  constructed
+
+delete[]  players;  //  don't  forget  to  cleanup  the  array.
+                                    //  no  need  to  cleanup  individual  player  objects,  as  they  are  locally  scoped.
+ 

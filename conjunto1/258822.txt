@@ -1,0 +1,16 @@
+ #include  &amp;lt;boost/gil/image.hpp&amp;gt;
+#include  &amp;lt;boost/gil/typedefs.hpp&amp;gt;
+#include  &amp;lt;boost/gil/extension/io/jpeg_io.hpp&amp;gt;
+
+int  main()  {
+    using  namespace  boost::gil;
+
+    rgb8_image_t  img;
+    jpeg_read_image("test.jpg",img);
+
+    gray8s_view_t  view(img.dimensions());
+    color_converted_view&amp;lt;gray8_pixel_t&amp;gt;(const_view(img),  view);
+
+    jpeg_write_view("grey.jpg",  view);
+  }
+ 

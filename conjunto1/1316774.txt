@@ -1,0 +1,21 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;string&amp;gt;
+using  namespace  std;
+
+int  main()
+{
+        const  size_t  numStrings  =  7;
+        size_t  count  =  0;
+
+        string  s[  numStrings  ];
+
+        cout  &amp;lt;&amp;lt;  "\nEnter  "  &amp;lt;&amp;lt;  numStrings  &amp;lt;&amp;lt;  "  one-word  string  values:\n";
+
+        while  (count  &amp;lt;  numStrings)  {
+                cin  &amp;gt;&amp;gt;  s[  count  ];
+                count++;
+        }
+
+        return  0;
+}
+ 

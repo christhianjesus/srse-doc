@@ -1,0 +1,2 @@
+ std::wstring(L"Initial  Catalog=DatabaseName;Data  Source=")  +  SERVER_NAME  +  L";";
+ 

@@ -1,0 +1,13 @@
+ QGst::FlowReturn  MyMultimedia::newBuffer()
+{
+        QGst::BufferPtr  buf_ptr  =  pullBuffer();                
+        QGst::CapsPtr  caps_ptr  =  buf_ptr-&amp;gt;caps();
+        QGst::StructurePtr  struct_ptr  =  caps_ptr-&amp;gt;internalStructure(0);
+
+        qDebug()  &amp;lt;&amp;lt;  struct_ptr-&amp;gt;value("width").get&amp;lt;int&amp;gt;()  &amp;lt;&amp;lt;  
+                                "x"  &amp;lt;&amp;lt;  
+                                struct_ptr-&amp;gt;value("height").get&amp;lt;int&amp;gt;();
+
+        //  ...
+}
+ 

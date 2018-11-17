@@ -1,0 +1,7 @@
+ class  Foo
+{
+public:
+    Foo();  //Declares  a  default  constructor.
+    Foo(int);
+}
+ 

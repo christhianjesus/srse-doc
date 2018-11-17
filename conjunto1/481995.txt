@@ -1,0 +1,14 @@
+ Dictionary&amp;lt;float,  int&amp;gt;  noOfNumbers  =  new  Dictionary&amp;lt;float,  int&amp;gt;();
+
+for  (float  x  =  0f;  x  &amp;lt;  100f;  x  +=  0.0001f)  {
+        int  noOfOccurrences  =  0;
+
+        foreach  (float  y  in  largeFloatingPointArray)  {
+                if  (x  ==  y)  {
+                        noOfOccurrences++;
+                }
+        }
+
+        noOfNumbers.Add(x,  noOfOccurrences);
+}
+ 

@@ -1,0 +1,21 @@
+ //  This  class  encapsulates  a  fancier  type  of  name
+class  fancy_name  {
+public:
+        //  Getter
+        std::string  const&amp;amp;  operator()()  const  {
+                return  _compute_fancy_name();        //  Does  some  internal  work
+        }
+
+        //  Setter
+        void  operator()(std::string  const&amp;amp;  newName)  {
+                _set_fancy_name(newName);                //  Does  some  internal  work
+        }
+        ...
+};
+
+class  Foo  {
+public:
+        fancy_name  name;
+        ...
+};
+ 

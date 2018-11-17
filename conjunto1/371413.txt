@@ -1,0 +1,2 @@
+ for_each(  begin1,  end1,  begin2,  begin3,  function  );
+ 

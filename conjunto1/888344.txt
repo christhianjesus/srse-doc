@@ -1,0 +1,4 @@
+ Base2*  d3  =  new  Der3();
+d3-&amp;gt;v1();
+delete  d3;
+ 

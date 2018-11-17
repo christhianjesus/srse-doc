@@ -1,0 +1,3 @@
+ ostream&amp;amp;  operator&amp;lt;&amp;lt;(ostream&amp;amp;  out,  const  X  &amp;amp;  _class);
+ostream&amp;amp;  operator&amp;lt;&amp;lt;(ostream&amp;amp;  out,  const  X      _class);
+ 

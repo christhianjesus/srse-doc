@@ -1,0 +1,75 @@
+ #include&amp;lt;opencv2/objdetect/objdetect.hpp&amp;gt;
+#include&amp;lt;opencv2/highgui/highgui.hpp&amp;gt;
+#include&amp;lt;opencv2/imgproc/imgproc.hpp&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;stdio.h&amp;gt;
+#include&amp;lt;cv.h&amp;gt;
+
+using  namespace  std;
+using  namespace  cv;
+static  int  k=1;
+CvCapture  *capture=cvCaptureFromFile("foot.mp4");
+double  min_face_size=30;
+double  max_face_size=400;
+
+Mat  detectFace(Mat  src);
+void  saveImage(Mat  exim);  
+int  main(  )
+{
+    namedWindow(  "window1",  1  );    
+    while(1)
+    {
+        Mat  frame,frame1;
+        frame1=cvQueryFrame(capture);;              
+        frame=detectFace(frame1);
+        imshow(  "window1",  frame  );
+        if(waitKey(1)  ==  'c')  break;  
+    }
+
+    waitKey(0);                                  
+    return  0;
+}
+
+Mat  detectFace(Mat  image)
+{
+    CascadeClassifier  face_cascade(  "haarcascade_frontalface_alt2.xml"  );
+    CvPoint  ul,lr,w,h;
+    std::vector&amp;lt;Rect&amp;gt;  faces;
+    face_cascade.detectMultiScale(  image,  faces,  1.1,  1,  0|CV_HAAR_SCALE_IMAGE,      Size(min_face_size,  min_face_size),Size(max_face_size,  max_face_size)  );
+  for(  int  i  =  0;  i  &amp;lt;  faces.size();  i++  )
+  {
+      min_face_size  =  faces[i].width*0.8;
+      max_face_size  =  faces[i].width*1.2;
+      ul.x=faces[i].x;
+      ul.y=faces[i].y;
+      lr.x=faces[i].x  +  faces[i].width;
+      lr.y=faces[i].y  +  faces[i].height;
+      w.x=faces[i].width;
+      h.y=faces[i].height;
+      rectangle(image,ul,lr,CV_RGB(1,255,0),3,8,0);
+      Rect  roi(ul.x,ul.y,w.x,h.y);
+      Mat  exim=image(roi);
+      saveImage(exim);
+    }
+    return  image;
+    }
+
+  void  saveImage(Mat  exim)
+  {
+char  numstr[50];
+char  path[255]="/home/arya/Images/OutputImage";
+char  *ext[200];
+char  buff[1000];
+string  s1="im",re,rename,ex=".jpeg";
+sprintf(numstr,  "%d",  k);
+re  =  s1  +  numstr;
+rename=re+ex;
+char  *extract1=new  char[rename.size()+1];                //for  dynamic  storage
+extract1[rename.size()]=0;
+memcpy(extract1,rename.c_str(),rename.size());
+sprintf(buff,"%s/%s",path,extract1);
+strcat(path,buff);
+imwrite(buff,exim);
+k++;
+      }
+ 

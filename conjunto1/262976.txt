@@ -1,0 +1,2 @@
+ if  ((100  &amp;lt;=  x)  &amp;amp;&amp;amp;  (x  &amp;lt;=  149))  //do  this
+ 

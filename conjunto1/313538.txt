@@ -1,0 +1,12 @@
+ template  &amp;lt;typename  T,  typename  V&amp;gt;
+class  Number
+{
+        private:
+                T  num;
+        public:
+                Number()  {}
+                Number(  T  n  )  :  num(n)  {}
+                operator  T()  const  {  return  num;  }
+                operator=(  V&amp;amp;  rhs  ){  num  =  rhs;  //  etc  }
+};
+ 

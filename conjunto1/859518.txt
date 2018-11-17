@@ -1,0 +1,7 @@
+ using  namespace  std;
+
+#include  &amp;lt;iostream&amp;gt;
+#include  "test_header.h"
+
+int  main()  ...
+ 

@@ -1,0 +1,205 @@
+ #include  "DoGL.h"
+Context::Context(  pp::Instance  *instance  )  :  pp::Graphics3DClient(  instance  )
+{
+        pp::Module  *module  =  pp::Module::Get();
+        gles2Interface  =  static_cast&amp;lt;  const  struct  PPB_OpenGLES2  *  &amp;gt;  (  module-&amp;gt;GetBrowserInterface(  PPB_OPENGLES2_INTERFACE  )  );
+        init_  =  false;
+}
+Context::~Context()  {
+        glSetCurrentContextPPAPI(  0  );
+}
+bool  Context::MakeCurrentContext(  pp::Instance  *instance  )
+{
+        //Is  somthing  broken?//
+        if(  instance  ==  NULL  )  {
+                glSetCurrentContextPPAPI(  0  );
+                return  (  false  );
+        }
+        if(  context.is_null()  ==  true  )
+        {
+                //OpenGL  attributes.//
+                int32_t  attribs[]  =  
+                {  
+                        PP_GRAPHICS3DATTRIB_ALPHA_SIZE,  8,
+                        PP_GRAPHICS3DATTRIB_DEPTH_SIZE,  24,
+                        PP_GRAPHICS3DATTRIB_STENCIL_SIZE,  8,
+                        PP_GRAPHICS3DATTRIB_SAMPLES,  0,
+                        PP_GRAPHICS3DATTRIB_SAMPLE_BUFFERS,  0,
+                        PP_GRAPHICS3DATTRIB_WIDTH,  500,
+                        PP_GRAPHICS3DATTRIB_HEIGHT,  500,
+                        PP_GRAPHICS3DATTRIB_NONE  /*Terminate  list.*/
+                  };
+                context  =  pp::Graphics3D(  instance,  pp::Graphics3D(),  attribs  );
+                if  (  context.is_null()  ==  true  )  {
+                        glSetCurrentContextPPAPI(  0  );
+                        return  (  false  );
+                }
+                instance-&amp;gt;BindGraphics(  context  );
+        }
+        //Get  the  context.//
+        glSetCurrentContextPPAPI(  context.pp_resource()  );
+        glViewport(  0,  0,  500,  500  );
+        glClearColor(  0.0f,  0.0f,  0.0f,  1.0f  );
+        return  true;
+}
+void  Context::FlushContext()
+{
+        //Make  sure  that  the  flush  is  not  pending.//
+        for(  unsigned  int  wait  =  0;  wait  &amp;lt;  1001;  ++wait  );
+        context.SwapBuffers(  pp::CompletionCallback(  FillIn,  (  (  void*  )  this  )  )  );
+}
+
+GLuint  Context::LoadShader(  const  char  *shaderSrc,  GLenum  type  )
+{
+        GLuint  shader;
+        GLint  compiled;
+        //Create  the  shader  object.//
+        shader  =  glCreateShader(  type  );
+        if(  shader  ==  0  )  {
+                return  0;
+        }
+        //Load  the  shader  source.//
+        glShaderSource(  shader,  1,  &amp;amp;shaderSrc,  NULL  );
+        //Compile  the  shader.//
+        glCompileShader(  shader  );
+        //Check  the  compile  status.//
+        glGetShaderiv(  shader,  GL_COMPILE_STATUS,  &amp;amp;compiled  );
+        return  shader;
+}
+
+GLuint  Context::Init()
+{
+        const  char*  vShaderStr  =    
+                "#version  100                                \n"
+                "attribute  vec4  vPosition;      \n"
+                "void  main()                                  \n"
+                "{                                                      \n"
+                "      gl_Position  =  vPosition;  \n"
+                "}                                                      \n";
+        const  char*  fShaderStr  =    
+                "#version  100                                                              \n"
+                "precision  mediump  float;                                      \n"
+                "void  main()                                                                \n"
+                "{                                                                                    \n"
+                "    gl_FragColor  =  vec4(1.0,  0.0,  0.0,  1.0);  \n"
+                "}                                                                                    \n";
+        GLuint  vertexShader;
+        GLuint  fragmentShader;
+        GLint  linked;
+        //Load  the  vertex/fragment  shaders.//
+        vertexShader  =  LoadShader(  vShaderStr,  GL_VERTEX_SHADER  );
+        fragmentShader  =  LoadShader(  fShaderStr,  GL_FRAGMENT_SHADER  );
+        //Create  the  program  object.//
+        programObject  =  glCreateProgram();
+        if(  programObject  ==  0  )  {
+                return  0;
+        }
+        glAttachShader(  programObject,  vertexShader  );
+        glAttachShader(  programObject,  fragmentShader  );
+        //Bind  vPosition  to  attribute  0.//
+        glBindAttribLocation(  programObject,  0,  "vPosition"  );
+        //Link  the  program.//
+        glLinkProgram(  programObject  );
+        //Check  the  link  status.//
+        glGetProgramiv(  programObject,  GL_LINK_STATUS,  &amp;amp;linked  );
+        glClearColor(  0.0f,  0.0f,  0.0f,  1.0f  );
+        return  programObject;
+}
+
+
+void  Context::Draw()
+{
+        ppinstance-&amp;gt;PostMessage(  "Drawing!"  );
+        GLfloat  scaler  =  1.f;
+        GLfloat  vVertices[]  =  
+        {  
+                0.0f,    (  scaler  *  0.5f  ),  0.0f,  
+                (  scaler  *  -0.5f  ),  (  scaler  *  -0.5f  ),  0.0f,
+                (  scaler  *  0.5f  ),  (  scaler  *  -0.5f  ),    0.0f
+          };
+        ++scaler;
+        ppinstance-&amp;gt;PostMessage(  "Scaler"  );
+        ppinstance-&amp;gt;PostMessage(  scaler  );
+        //Set  the  viewport.
+        glViewport(  0,  0,  500,  500  );
+        //Clear  the  color  buffer.//
+        glClear(  GL_COLOR_BUFFER_BIT  );
+        //Use  the  program  object.//
+        glUseProgram(  programObject  );
+        //Load  the  vertex  data.//
+        glVertexAttribPointer(  0,  3,  GL_FLOAT,  GL_FALSE,  0,  vVertices  );
+        glEnableVertexAttribArray(  0  );
+        glDrawArrays(  GL_TRIANGLES,  0,  3  );
+}
+
+void  Context::DoGL()
+{
+        if(  init_  ==  false  )
+        {
+                pp::CompletionCallback  cc;
+                //ppinstance-&amp;gt;PostMessage(  "Init  is  false."  );
+                cjcontext-&amp;gt;MakeCurrentContext(  ppinstance  );
+                for(  int  i  =  0;  i  &amp;lt;  10001;  ++i  );
+                cc  =  pp::CompletionCallback(  &amp;amp;Init_,  0,  0  );
+                ppb_core_interface-&amp;gt;CallOnMainThread(  0,  cc,  0  );
+                init_  =  true;
+                cjcontext-&amp;gt;FlushContext();
+        }
+        pp::CompletionCallback  cc;
+        for(  int  i  =  0;  i  &amp;lt;  101;  ++i  );
+        cc  =  pp::CompletionCallback(  &amp;amp;MakeContext_,  0,  0  );
+        ppb_core_interface-&amp;gt;CallOnMainThread(  0,  cc,  0  );
+        for(  int  i  =  0;  i  &amp;lt;  101;  ++i  );
+        cc  =  pp::CompletionCallback(  &amp;amp;Draw_,  0,  0  );
+        ppb_core_interface-&amp;gt;CallOnMainThread(  0,  cc,  0  );
+        for(  int  i  =  0;  i  &amp;lt;  101;  ++i  );
+        cc  =  pp::CompletionCallback(  &amp;amp;FlushContext_,  0,  0  );
+        ppb_core_interface-&amp;gt;CallOnMainThread(  0,  cc,  0  );
+        void  *p;
+        DoGL_(  p  );
+}
+
+pthread_t  reanderHandle;
+int  threadStatus;
+
+//Standard  NaCl  chore  code.//
+class  CubeJumpInstance  :  public  pp::Instance
+{
+        public:  
+                explicit  CubeJumpInstance(  PP_Instance  instance  )  :  pp::Instance(  instance  )  {
+                        PostMessage(  "Instance  create.\n"  );
+                }
+                virtual  ~CubeJumpInstance()  {
+                        PostMessage(  "Instance  destroyed.\n"  );
+                }
+};
+
+class  CubeJumpModule  :  public  pp::Module
+{
+        public:  
+                CubeJumpModule()  :  pp::Module()  {
+                }
+                virtual  ~CubeJumpModule()  {
+                        glTerminatePPAPI();
+                }
+                virtual  pp::Instance*  CreateInstance(  PP_Instance  instance  )
+                {
+                        glInitializePPAPI(  get_browser_interface()  );
+                        pp::Instance  *instance_  =  new  CubeJumpInstance(  instance  );
+                        cjcontext  =  new  Context(  instance_  );
+                        cjcontext-&amp;gt;ppinstance  =  instance_;
+                        cjcontext-&amp;gt;ppb_core_interface  =  this-&amp;gt;core();
+                        threadStatus  =  pthread_create(  &amp;amp;reanderHandle,  0,  DoGL_,  0  );
+                        cjcontext-&amp;gt;ppinstance-&amp;gt;PostMessage(  "Instace  done.\n"  );
+                        //pthread_join(  reanderHandle,  0  );
+                        return  cjcontext-&amp;gt;ppinstance;
+                }
+};
+
+namespace  pp
+{
+        pp::Module*  CreateModule()  {
+                return  new  CubeJumpModule();
+        }
+}
+ 

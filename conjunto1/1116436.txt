@@ -1,0 +1,3 @@
+ void  foo(double  a);
+void  foo(float  a);
+ 

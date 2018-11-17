@@ -1,0 +1,28 @@
+ song  *songCreate  (char  *artist,  char  *title,  mtime  *lastPlayed)  {
+        song  *s  =  malloc  (sizeof  (song));
+        if  (s  ==  NULL)  return  NULL;
+
+        s-&amp;gt;artist  =  strdup  (artist);
+        if  (s-&amp;gt;artist  ==  NULL)  {
+                free  (s);
+                return  NULL;
+        }
+
+        s-&amp;gt;title  =  strdup  (title);
+        if  (s-&amp;gt;title  ==  NULL)  {
+                free  (s-&amp;gt;artist);
+                free  (s);
+                return  NULL;
+        }
+
+        s-&amp;gt;lastPlayed  =  mtimeDup  (lastPlayed);
+        if  (s-&amp;gt;lastPlayed  ==  NULL)  {
+                free  (s-&amp;gt;title);
+                free  (s-&amp;gt;artist);
+                free  (s);
+                return  NULL;
+        }
+
+        return  s;
+}
+ 

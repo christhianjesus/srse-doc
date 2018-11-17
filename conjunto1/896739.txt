@@ -1,0 +1,10 @@
+ if(!src.empty()){
+    auto*  prev  =  &amp;amp;src.begin()-&amp;gt;second;
+    dest.push_back(*prev);
+    for(auto  it  =  std::next(src.begin());  it  !=  sec.end();  ++it){
+        if  (it-&amp;gt;second  ==  *prev)  continue;
+        prev=&amp;amp;it-&amp;gt;second;
+        dest.push_back(*prev);
+    }
+}
+ 

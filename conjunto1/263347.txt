@@ -1,0 +1,12 @@
+ #include  &amp;lt;iostream&amp;gt;
+using  namespace  std;
+int  main()
+{
+        int  n,  p,  r  =  -1;
+        cin  &amp;gt;&amp;gt;  n;
+        for  (p  =  0;  p  &amp;lt;  10;  p++)
+                r  *=  (-1);
+        cout  &amp;lt;&amp;lt;  r  &amp;lt;&amp;lt;  endl;
+        return  0;
+}
+ 

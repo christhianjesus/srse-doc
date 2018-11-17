@@ -1,0 +1,10 @@
+ #ifndef  MYDLL_H
+#define  MYDLL_H
+
+extern  "C"  __declspec(dllexport)
+#define  EXPORT_DLL  __declspec(dllexport)
+
+EXPORT_DLL  void  hello();
+
+#endif
+ 

@@ -1,0 +1,2 @@
+   value  =  matrix[indexTable[0][RowIndex]][indexTable[1][ColumnIndex];
+ 

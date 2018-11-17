@@ -1,0 +1,2 @@
+ int  minus_one  =  0xffffffff;  
+ 

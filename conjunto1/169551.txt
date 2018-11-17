@@ -1,0 +1,8 @@
+ #include  &amp;lt;vector&amp;gt;
+#include  &amp;lt;iostream&amp;gt;
+
+int  main()  {
+    std::cout  &amp;lt;&amp;lt;  std::vector&amp;lt;char&amp;gt;().max_size()  &amp;lt;&amp;lt;  std::endl;
+    std::cout  &amp;lt;&amp;lt;  std::vector&amp;lt;char&amp;gt;::size_type(~0)  &amp;lt;&amp;lt;  std::endl;
+}
+ 

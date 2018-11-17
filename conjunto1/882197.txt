@@ -1,0 +1,55 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+
+#include  &amp;lt;stdlib.h&amp;gt;
+
+struct    mystruct
+
+  {
+        char  *cArr;  
+
+    //  U  were  trying  to  assign  array  using  =  operator
+
+    //  Remember  its  not  like  in  STL  where  u  can  perform  deep  copy  of  a  vector        
+
+};
+
+
+  struct  mystruct  **ptr;
+
+
+  int  count  =  0;
+
+
+  int  main()
+
+{      int  i;
+
+        ptr  =  malloc(20*sizeof(struct  mystruct  *));
+
+        for  (i  =  0;  i  !=  20  ;  i++)  
+
+{
+        ptr[i]  =  malloc(sizeof(struct  mystruct));
+
+}
+
+      char  burp[500]="No  this  is  not  correct  boy.";
+
+    //put  whatever  I  want  in  burp;
+
+    (*ptr+count)-&amp;gt;cArr  =  burp  ;  
+
+      //  Assigning  pointer  to  a  pointer  ,  OK.  Remember  pointer  !=  Array.
+
+
+    //is  this  right?  Or  do  I  have  to  memcpy  to  it,  and  if  so  how?
+
+
+    //count++;  //  Has  no  use  in  your  code,  enclose  in  a  loop  to  then  use  it.
+
+
+    printf("%s\n",(*ptr  +  count)-&amp;gt;cArr);  //  This  works  ,  I  think.
+
+
+  }
+ 

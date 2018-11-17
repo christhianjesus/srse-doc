@@ -1,0 +1,2 @@
+ [Warning]  assignment  makes  integer  from  pointer  without  a  cast
+ 

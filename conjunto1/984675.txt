@@ -1,0 +1,3 @@
+ auto  screen  =  objc_msgSend(objc_lookUpClass("NSScreen"),sel_getUid("mainScreen"));  //Returns  an  NSScreen*
+auto  frame  =  objc_msgSend(screen,  sel_getUid("frame"));  //  should  return  an  NSRect  but  I  get  an  EXC_BAD_ACCESS  and  the  program  quits
+ 

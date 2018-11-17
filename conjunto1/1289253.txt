@@ -1,0 +1,2 @@
+ assert(  (mytype*)integer_param  ==  original_pointer  )  ;
+ 

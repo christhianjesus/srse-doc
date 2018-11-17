@@ -1,0 +1,9 @@
+   int  main()
+        {
+                char  name[10];
+                printf("Enter  your  name\t");
+                scanf("%s",  &amp;amp;name);
+                printf("Hello  %s",name);
+                return  0;
+        }
+ 

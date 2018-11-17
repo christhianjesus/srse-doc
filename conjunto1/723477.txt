@@ -1,0 +1,4 @@
+ if(root-&amp;gt;data  &amp;lt;  leftsubtreemax  ||
+  root-&amp;gt;data  &amp;gt;  rightsubtreemin){
+return  -1;
+ 

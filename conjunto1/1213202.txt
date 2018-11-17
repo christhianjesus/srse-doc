@@ -1,0 +1,6 @@
+ typedef  struct  Vector
+{
+      int  items[DEFAULT_CAPACITY];
+      int  size;      
+}*VectorP;
+ 

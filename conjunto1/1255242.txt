@@ -1,0 +1,6 @@
+ main()
+{
+    B  b;
+    int  n  =  b.getn();
+}
+ 

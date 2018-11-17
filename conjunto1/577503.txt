@@ -1,0 +1,2 @@
+ a-&amp;gt;f(a);  a-&amp;gt;f(ab);  a-&amp;gt;f(b);
+ 

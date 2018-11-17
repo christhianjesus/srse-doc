@@ -1,0 +1,4 @@
+         sbi-&amp;gt;s_overhead_last  =  overhead;
+        smp_wmb();
+        sbi-&amp;gt;s_blocks_last  =  le32_to_cpu(es-&amp;gt;s_blocks_count);
+ 

@@ -1,0 +1,6 @@
+ typedef  struct  {
+        char  name[20];
+        char  surname[20];
+        int  code;
+}  entry;
+ 

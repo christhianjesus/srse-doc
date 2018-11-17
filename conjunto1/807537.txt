@@ -1,0 +1,41 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;stack&amp;gt;
+#include  &amp;lt;string&amp;gt;
+#include  &amp;lt;vector&amp;gt;
+
+bool  isOpen(char  c)  {
+    return  c  ==  '('  ||  c  ==  '['  ||  c  ==  '{'  ||  c  ==  '&amp;lt;';  }
+
+bool  isClose(char  c)  {
+    return  c  ==  ')'  ||  c  ==  ']'  ||  c  ==  '}'  ||  c  ==  '&amp;gt;';  }
+
+bool  isMatch(char  c1,  char  c2)  {
+    return  (c1  ==  '('  &amp;amp;&amp;amp;  c2  ==  ')')
+            ||  (c1  ==  '['  &amp;amp;&amp;amp;  c2  ==  ']')
+            ||  (c1  ==  '{'  &amp;amp;&amp;amp;  c2  ==  '}')
+            ||  (c1  ==  '&amp;lt;'  &amp;amp;&amp;amp;  c2  ==  '&amp;gt;');  }
+
+bool  parse(const  std::string&amp;amp;  s)  {
+    std::stack&amp;lt;std::string::value_type&amp;gt;  stk;
+
+    for  (std::string::size_type  i  =  0;  i  &amp;lt;  s.size();  ++i)  {
+        if  (isOpen(s[i]))  {  stk.push(s[i]);  }
+        else  if  (isClose(s[i]))  {
+            if  (!stk.empty()  &amp;amp;&amp;amp;  isMatch(stk.top(),  s[i]))  {  stk.pop();  }
+            else  {  return  false;  }  }  }
+
+    return  stk.empty();  }
+
+int  main()  {
+    std::vector&amp;lt;std::string&amp;gt;  ptests  =  {
+            "",  "()",  "()()",  "(())",  "a(a)a"  };
+    std::vector&amp;lt;std::string&amp;gt;  ftests  =  {
+            "(",  ")",  ")(",  ")()(",  "))(("  };
+
+    for  (const  auto&amp;amp;  t  :  ptests)  {
+        if  (!parse(t))  {  std::cout  &amp;lt;&amp;lt;  "fail:  "  &amp;lt;&amp;lt;  t  &amp;lt;&amp;lt;  std::endl;  }  }
+
+    for  (const  auto&amp;amp;  t  :  ftests)  {
+        if  (parse(t))  {  std::cout  &amp;lt;&amp;lt;  "fail:  "  &amp;lt;&amp;lt;  t  &amp;lt;&amp;lt;  std::endl;  }  }
+}
+ 

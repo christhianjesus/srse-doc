@@ -1,0 +1,2 @@
+ int  myData  =  reinterpret_cast&amp;lt;int&amp;gt;(arg);
+ 

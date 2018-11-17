@@ -1,0 +1,3 @@
+ test/%:  test/%.o  src/libcore.a
+        $(CC)  -o  $@  $&amp;lt;  -Lsrc  -lcore
+ 

@@ -1,0 +1,5 @@
+ Shape,Square
+Area,10
+Min,2
+Max,1
+ 

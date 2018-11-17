@@ -1,0 +1,20 @@
+     typedef  enum  {  version_1,  version_2,  }  version_e;
+
+    typedef  struct  {
+              version_e  v;
+              union  {
+                      struct{  int  id;  char  name[10];  }    d1;
+                      struct{  int  s1;  double  average;  }  d2;
+              }  u;
+    }  data;
+
+    data  person;
+    person.v  =  version_1;
+    if  (person.v  ==  version_1)  {
+              person.u.d1.id  =  1234;
+    }
+    person.v  =  version_2;
+    if  (person.v  ==  version_2)  {
+              person.u.d2.average  =  12.34;
+    }
+ 

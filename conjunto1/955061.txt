@@ -1,0 +1,16 @@
+ void  FanBookServer::fanToFanRequest(std::shared_ptr&amp;lt;BaseRequest&amp;gt;  request){
+        std::shared_ptr&amp;lt;Fan&amp;gt;  srcFan,  dstFan;
+        try  {      
+                dstFan  =  connectedFans[request-&amp;gt;getDestination()];
+                srcFan  =  connectedFans[request-&amp;gt;getSource()];
+        }  catch  (mtm::MappingDoesntExist&amp;amp;){
+                throw  UserNotConnectedException();
+        }
+
+        try  {
+                dstFan-&amp;gt;pendingRequests.insert(srcFan-&amp;gt;getId(),  request);
+        }  catch  (mtm::MappingAlreadyExists&amp;amp;){
+                throw  AlreadySendRequestException();
+        }
+}
+ 

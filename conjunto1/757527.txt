@@ -1,0 +1,14 @@
+ struct  dnode  *dllist_push_front(struct  dllist  *dllist,  void  *data)
+{              
+                struct  dnode  *dnode  =  malloc(sizeof(struct  dnode));
+                if  (dnode)  {
+                                dnode-&amp;gt;data  =  data;
+                                dnode-&amp;gt;next  =  dllist-&amp;gt;sentinel-&amp;gt;next;
+                                dnode-&amp;gt;prev  =  dlllist-&amp;gt;sentinel;
+                                dnode-&amp;gt;next-&amp;gt;prev  =  dnode;
+                                dllist-&amp;gt;sentinel-&amp;gt;next  =  dnode;
+                                dllist-&amp;gt;size++;
+                }
+                return  dnode;
+}
+ 

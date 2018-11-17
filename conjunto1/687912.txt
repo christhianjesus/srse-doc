@@ -1,0 +1,4 @@
+ int  file  =  open(...);
+...
+write(file,buffer,4096);
+ 

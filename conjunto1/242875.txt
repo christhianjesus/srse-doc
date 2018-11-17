@@ -1,0 +1,9 @@
+ #include  "placeable.h"
+
+class  game
+{
+...
+class  placeable*  holding;
+...
+};
+ 

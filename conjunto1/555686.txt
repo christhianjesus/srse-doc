@@ -1,0 +1,25 @@
+ template&amp;lt;  class  T  &amp;gt;
+class  Base
+{
+
+public:
+
+        int  foo_interface()  
+        {  
+                return  static_cast&amp;lt;  T*  &amp;gt;(this)-&amp;gt;foo_implementation();                                                
+        }
+
+};
+
+class  Derived  :  public  Base&amp;lt;  Derived  &amp;gt;
+{
+
+        friend  class  Base&amp;lt;  Derived  &amp;gt;;
+
+        int  foo_implementation()  
+        {  
+                return  5;
+        }
+
+};
+ 

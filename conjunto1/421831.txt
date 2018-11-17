@@ -1,0 +1,5 @@
+ std::remove_copy_if(std::istream_iterator&amp;lt;row&amp;gt;(input_file),
+                                        std::istream_iterator&amp;lt;row&amp;gt;(),
+                                        std::ostream_iterator&amp;lt;row&amp;gt;(output_file),
+                                        row::filter());
+ 

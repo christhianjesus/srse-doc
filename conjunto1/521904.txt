@@ -1,0 +1,6 @@
+ (gdb)  s
+5              int  *p  =  malloc(sizeof  *p);
+(gdb)  s
+__GI___libc_malloc  (bytes=4)  at  malloc.c:2910
+2910        malloc.c:  No  such  file  or  directory.
+ 

@@ -1,0 +1,6 @@
+ for  over  i
+        for  over  j
+                C[i][j]  =  0
+                for  over  k
+                        C[i][j]  +=  A[i][k]*B[k][j]
+ 

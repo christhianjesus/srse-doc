@@ -1,0 +1,4 @@
+ short  n  =  0;
+n  |=  buffer[2]  &amp;lt;&amp;lt;  0;
+n  |=  buffer[3]  &amp;lt;&amp;lt;  8;
+ 

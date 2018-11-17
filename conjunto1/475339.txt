@@ -1,0 +1,7 @@
+ case  1:
+        if  (fork())
+                wait(0);
+        else
+                execlp("ls",  "ls",  (char  *)NULL);
+        break;
+ 

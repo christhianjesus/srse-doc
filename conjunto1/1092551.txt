@@ -1,0 +1,6 @@
+ class  Name  {
+public:
+        int  key;
+        Name*  next;
+}
+ 

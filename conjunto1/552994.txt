@@ -1,0 +1,24 @@
+ template&amp;lt;typename  MyType&amp;gt;
+struct  Network
+{
+        template&amp;lt;typename  MyOtherType&amp;gt;
+        void  Do_Stuff(char  param[MyOtherType::size]);
+};
+
+template&amp;lt;typename  MyType&amp;gt;
+template&amp;lt;typename  MyOtherType&amp;gt;
+void  Network&amp;lt;MyType&amp;gt;::Do_Stuff(char  param[MyOtherType::size])
+{
+};
+
+struct  Array_Size
+{
+        static  const  int  size;
+};
+
+const  int  Array_Size::size=3;
+
+int  main()
+{
+}
+ 

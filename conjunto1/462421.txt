@@ -1,0 +1,19 @@
+ #include  "Test.h"
+#include  &amp;lt;iostream&amp;gt;
+
+JNIEXPORT  void  JNICALL  Java_Test_helloWorld(JNIEnv  *,  jobject)
+{
+        std::cout&amp;lt;&amp;lt;"Hello  World";
+        try  {
+                throw  1;
+        }
+        catch(int  )
+        {
+                std::cout&amp;lt;&amp;lt;"  catch  int  block"&amp;lt;&amp;lt;std::endl;
+        }
+        catch(...)
+        {
+                std::cout&amp;lt;&amp;lt;"  catch  block"&amp;lt;&amp;lt;std::endl;
+        }
+}
+ 

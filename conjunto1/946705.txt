@@ -1,0 +1,17 @@
+         #ifndef  ITEM_H
+#define  ITEM_H
+
+
+class  Item
+{
+        public:
+                int  level,  durability,  damage,  armor,  weight,  grade,  sex;
+                Item(int  _level,  int  _durability,  int  _damage,  int  _armor,  int  _weight,  int  _grade,  int  _sex);
+                Item();
+                virtual  ~Item();
+        protected:
+        private:
+};
+
+#endif  //  ITEM_H
+ 

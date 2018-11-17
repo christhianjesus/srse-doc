@@ -1,0 +1,22 @@
+ template  &amp;lt;typename  M&amp;gt;
+TypeMethod(const  char*  methodName,  M&amp;amp;m)
+{
+        setName(methodName);
+        setObjectType&amp;lt;typename  decompose_mem_fun_ptr&amp;lt;M&amp;gt;::class_type&amp;gt;();
+        setReturnType&amp;lt;typename  decompose_mem_fun_ptr&amp;lt;M&amp;gt;::return_type&amp;gt;();
+
+        //  use  other  info  from  decompose_mem_fun_ptr&amp;lt;M&amp;gt;.
+
+        using  args_type  =  typename  decompose_mem_fun_ptr&amp;lt;M&amp;gt;::arguments;  
+
+        internal_setArgs&amp;lt;args_type&amp;gt;(make_index_sequence&amp;lt;std::tuple_size&amp;lt;args_type&amp;gt;::value&amp;gt;());
+}
+
+template&amp;lt;typename  Tuple,  std::size_t...Is&amp;gt;
+void  internal_setArgs(index_sequence&amp;lt;Is...&amp;gt;)
+{
+        //  Assuming  setArg&amp;lt;T&amp;gt;(i_th).
+        int  dummy[]  =  {0,  (setArg&amp;lt;typename  std::tuple_element&amp;lt;Is,  Tuple&amp;gt;::type&amp;gt;(Is),  0)...};
+        static_cast&amp;lt;void&amp;gt;(dummy);  //  silent  warning  about  unused  variable.
+}
+ 

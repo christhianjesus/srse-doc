@@ -1,0 +1,2 @@
+ sizeof((struct{char  c;}  *)0,0)
+ 

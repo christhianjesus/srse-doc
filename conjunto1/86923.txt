@@ -1,0 +1,6 @@
+ void  aglobal(int  a)
+{
+        a++;
+}
+for_each(aglobal,aglobal);
+ 

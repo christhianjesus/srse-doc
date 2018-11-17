@@ -1,0 +1,6 @@
+ #include  "CustomValues.h"
+#include  "Module.h"
+
+...
+Module::printParam1();  //  Should  print  "100"
+ 

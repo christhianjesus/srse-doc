@@ -1,0 +1,7 @@
+ void  Foo()    
+{    
+        std::vector&amp;lt;int&amp;gt;  blah;
+        blah.reserve(5);
+        blah.begin();    
+}  
+ 

@@ -1,0 +1,13 @@
+ boost::shared_ptr&amp;lt;A&amp;gt;  g_a;
+
+void  func1(boost::shared_ptr&amp;lt;A&amp;gt;  v)
+{
+        g_a  =  v;
+}
+
+void  func2()
+{
+        boost::shared_ptr&amp;lt;A&amp;gt;  a  =  g_a;
+        //  a  is  good?
+}
+ 

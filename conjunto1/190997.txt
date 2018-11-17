@@ -1,0 +1,5 @@
+ Example::Example(  int  size,  int  grow_by)  :  m_size(5),  m_top(-1)
+{
+...  some  code  here
+}
+ 

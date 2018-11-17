@@ -1,0 +1,3 @@
+ UINT8  *  mArray;
+memcpy(&amp;amp;mArray[someOffset],&amp;amp;array,2);
+ 

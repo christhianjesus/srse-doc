@@ -1,0 +1,5 @@
+ __m128i*  pa  =  reinterpret_cast&amp;lt;__m128i*&amp;gt;(a);
+for  (int  i  =  0;  i  &amp;lt;  n;  i  +=  2)  {        //  2  uint64  in  single  __m128i
+        __m128i  v  =  _mm_loadu_si128(pa);
+        pa++;
+ 

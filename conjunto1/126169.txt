@@ -1,0 +1,5 @@
+ struct  floor_size
+{
+    floor_size(int,  int);
+}floor;
+ 

@@ -1,0 +1,9 @@
+ extern  "C"
+{
+//Note:  must  use  __declspec(dllexport)  to  make  (export)  methods  as  'public'
+            __declspec(dllexport)  void  DoSomethingInC(unsigned  short  int  ExampleParam,  unsigned  char  AnotherExampleParam)
+            {
+                        printf("You  called  method  DoSomethingInC(),  You  passed  in  %d  and  %c\n\r",  ExampleParam,  AnotherExampleParam);
+            }
+}//End  'extern  "C"'  to  prevent  name  mangling
+ 

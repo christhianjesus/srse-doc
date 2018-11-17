@@ -1,0 +1,9 @@
+ class  Factory{
+public:
+        template&amp;lt;class  T&amp;gt;
+        static  T*  CreateObject(T&amp;amp;  newOb){
+                return  &amp;amp;newOb;
+        }
+        //Other  non  template  functions
+}
+ 

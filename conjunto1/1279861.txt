@@ -1,0 +1,5 @@
+ byte[]  myBuf  =  new  myBuf[4096];
+Int32  maxSize  =  myBuf.Length;
+
+GetBuffer(myBuf,  ref  maxSize);
+ 

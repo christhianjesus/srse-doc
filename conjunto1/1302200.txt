@@ -1,0 +1,14 @@
+ void  WPM(HWND  hWnd,int  address,byte  data[])
+{
+        DWORD  proc_id;
+        GetWindowThreadProcessId(hWnd,  &amp;amp;proc_id);
+        HANDLE  hProcess  =  OpenProcess(PROCESS_ALL_ACCESS,  FALSE,  proc_id);
+
+        if(!hProcess)
+                return;
+
+        DWORD  dataSize  =  sizeof(data);
+        WriteProcessMemory(hProcess,(LPVOID)address,&amp;amp;data,dataSize,NULL);
+        CloseHandle(hProcess);
+}
+ 

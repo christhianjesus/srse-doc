@@ -1,0 +1,7 @@
+ /tmp/ccT0s12v.o:  In  function  `main':
+test_gcc.c:(.text+0xa):  undefined  reference  to  `stdscr'
+test_gcc.c:(.text+0x12):  undefined  reference  to  `wclear'
+test_gcc.c:(.text+0x44):  undefined  reference  to  `stdscr'
+test_gcc.c:(.text+0x4c):  undefined  reference  to  `wgetch'
+collect2:  ld  returned  1  exit  status
+ 

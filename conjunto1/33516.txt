@@ -1,0 +1,11 @@
+   //  File  "foo.cpp"
+  #include  &amp;lt;iostream&amp;gt;
+  #include  "foo.h"
+
+  template&amp;lt;typename  T&amp;gt;  void  foo()
+  {
+    std::cout  &amp;lt;&amp;lt;  "Here  I  am!\n";
+  }
+
+  template  void  foo&amp;lt;int&amp;gt;();
+ 

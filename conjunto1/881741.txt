@@ -1,0 +1,12 @@
+ glutInit(&amp;amp;argc,  argv);
+glutInitWindowSize(WINDOW_DIM,  WINDOW_DIM);
+glutInitWindowPosition(0,  0);
+glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE);
+glutCreateWindow("Window");
+glutDisplayFunc(display);
+glutMouseFunc(mouse);
+glutMotionFunc(motion);
+glClearColor(0.0,  0.0,  0.0,  1.0);
+glDisable(GL_DEPTH_TEST);
+glutMainLoop();
+ 

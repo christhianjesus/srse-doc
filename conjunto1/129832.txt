@@ -1,0 +1,8 @@
+ class  Foo{
+public:
+    Foo(int  i)  :  _i(i)  {}
+
+private:
+    int  _i;
+};
+ 

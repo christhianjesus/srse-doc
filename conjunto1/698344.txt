@@ -1,0 +1,3 @@
+ vector  vector1;
+initVector(&amp;amp;vector1,  1,  2);
+ 

@@ -1,0 +1,2 @@
+ int  checkpositivenumbers(int  numbers[],  int  20);
+ 

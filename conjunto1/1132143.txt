@@ -1,0 +1,8 @@
+ template&amp;lt;class  A,  class  B&amp;gt;
+auto  operator==(const  A&amp;amp;  a,  const  B&amp;amp;  b)  -&amp;gt;  decltype(b==a)  
+{  return  b==a;  }
+
+template&amp;lt;class  A,  class  B&amp;gt;
+auto  operator!=(const  A&amp;amp;  a,  const  B&amp;amp;  b)  -&amp;gt;  decltype(!(a==b))
+{  return  !(a==b);  }
+ 

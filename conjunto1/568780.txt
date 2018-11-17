@@ -1,0 +1,12 @@
+ #include  &amp;lt;X11/Xlib.h&amp;gt;
+
+    //  ...
+
+    char  *display_name  =  NULL;
+
+    /*  connect  to  X  server  */
+    if  (  (display=XOpenDisplay(display_name))  ==  NULL  )
+    {
+        //printf  or  whatever
+    }
+ 

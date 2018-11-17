@@ -1,0 +1,7 @@
+ template&amp;lt;  class  ThingType  &amp;gt;
+  class  ThingManager
+        {
+            void  add(  ThingType&amp;amp;  thing  );  
+            //...
+        };
+ 

@@ -1,0 +1,3 @@
+ template  &amp;lt;class  T&amp;gt;
+Object&amp;lt;T&amp;gt;  CreateObject(T);
+ 

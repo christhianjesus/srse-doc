@@ -1,0 +1,2 @@
+ const  double  Foo::d  =  42;
+ 

@@ -1,0 +1,7 @@
+ cv::Mat  src  =  cv::imread("D:\\Test\\a.jpg",  1);
+if  (src.empty())
+{
+        std::cout  &amp;lt;&amp;lt;  "!!!  Couldn't  load  image"  &amp;lt;&amp;lt;  endl;
+        //  exit
+}
+ 

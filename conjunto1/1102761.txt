@@ -1,0 +1,27 @@
+ #include&amp;lt;math.h&amp;gt;
+double  power(int  x)
+  {
+          int  i,pow,n,  ans;
+          ans=1;
+
+
+          printf  ("Enter  the  number  and  power:");
+          scanf  ("%d%d",  &amp;amp;pow,  &amp;amp;n);
+
+          for(i=1;i&amp;lt;=pow;  i++)
+          {
+              ans  =  ans  *n                                        
+                return  pow(2,n);
+            }
+
+
+
+
+        int  main  ()
+        {
+              int  x,  y,c;
+              c=pow(x,y);
+
+              printf("%d  to  the  power  %d  is  %d",n,pow,ans);
+              getch();
+ 

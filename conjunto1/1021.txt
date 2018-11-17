@@ -1,0 +1,2 @@
+ ndigit[0],  ndigit[  1],  ...,  ndigit[9]
+ 

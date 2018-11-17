@@ -1,0 +1,3 @@
+ template&amp;lt;&amp;gt;
+bool  rat&amp;lt;3&amp;gt;::k  =  0;
+ 

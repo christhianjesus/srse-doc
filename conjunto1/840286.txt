@@ -1,0 +1,69 @@
+ #include  &amp;lt;stdio.h&amp;gt;
+#include  &amp;lt;stdlib.h&amp;gt;
+#include  &amp;lt;time.h&amp;gt;
+
+//FUNCTION:  Draw  the  Board
+int  drawBoard()
+{
+        //Declare  array  size
+        int  board[9][9];
+
+        //initialize  variables
+        int  rows,  columns,  randomNumber,  flag;
+
+        //random  number  seed  generator
+        srand(time(NULL));
+
+                for  (  rows  =  0  ;  rows  &amp;lt;  9  ;  rows++  )
+                {
+
+                        for  (  columns  =  0  ;  columns  &amp;lt;  9  ;  columns++  )
+                        {
+                                flag  =  0;
+
+                                do
+                              {
+                                        //generate  random  numbers  from  2  -  8
+                                randomNumber  =  rand()  %7  +  2;
+
+                                board[rows][columns]  =  randomNumber;
+
+                                //Checks  for  2  adjacent  numbers.
+                                if    (  board[rows][columns]  ==  board[rows  -  1][columns]  ||  board[rows][columns]  ==  board[rows][columns  -  1]  )
+                                        {
+                                                flag  =  0;
+                                                continue;
+                                        }
+
+                                else
+                                          {
+                                                flag  =  1;
+                                                printf(  "    %d    ",  board[rows][columns]  );
+                                          }
+
+                                }  while  (  flag  ==  0  );
+
+                        }//end  inner  for-loop
+
+                        printf("\n\n");
+
+                }//end  outer  for-loop
+
+//call  FUNCTION  marker()  to  display  marker  around  board[5][5]
+marker(  board[5][5]  );
+
+}//end  FUNCTION  drawBoard
+
+//FUNCTION:  Mark  the  surrounding  of  the  number  with  "|"  and  "_"  at  board[5][5]
+void  marker(  int  a  )
+{
+        printf(  "  _  \n"  );
+        printf(  "|%c|\n",  a  );
+        printf(  "  _  \n"  );
+}
+
+int  main()
+{
+        drawBoard();
+}
+ 

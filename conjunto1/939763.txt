@@ -1,0 +1,6 @@
+ public  class  Demo{
+        private  int  val;
+        public  Demo(int  val){this.val  =  val;}
+        public  Demo(){this(0);}
+}
+ 

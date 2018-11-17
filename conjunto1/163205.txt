@@ -1,0 +1,16 @@
+ struct  Board  *makeBoard(...)
+{
+        struct  Board  *b  =  malloc(sizeof  *b);
+        if(b  ==  NULL)  goto  end1;
+
+        b-&amp;gt;board  =  malloc(...);
+        if(b-&amp;gt;board  ==  NULL)  goto  end2;
+
+        //  ...
+
+    end2:
+        free(b);
+    end1:
+        return  NULL;
+}
+ 

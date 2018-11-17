@@ -1,0 +1,22 @@
+ const  int  tallafirma  =  100;
+char  firma[tallafirma];
+fich_in  &amp;gt;&amp;gt;  std::setw(100)  &amp;gt;&amp;gt;  firma;  //  Read  the  P3  part,  can  be  ignored
+
+int  maxvalue,  numpixels;
+fich_in  &amp;gt;&amp;gt;  height  &amp;gt;&amp;gt;  width  &amp;gt;&amp;gt;  maxvalue;  //  Read  the  next  three  values
+numpixels  =  height*width;
+datos  =  new  Pixel[numpixels];
+
+int  r,g,b;  //Don't  need  to  be  ints,  max  value  is  256,  so  an  unsigned  char  would  be  ok.
+for  (int  i=0;  i&amp;lt;numpixels;  i++)  {
+      fich_in  &amp;gt;&amp;gt;  r  &amp;gt;&amp;gt;  g  &amp;gt;&amp;gt;  b;
+      datos[i]  =  Pixel(  r,  g  ,b);
+}
+//This  last  part  is  the  slow  one,  
+//I  thing  I  should  be  able  to  read  all  this  data  in  one  single  read  
+//to  buffer  or  something  which  would  be  stored  in  an  array  of  unsigned  chars,  
+//and    then  I'd  only  need  to  to  do:
+//buffer[0]  -&amp;gt;  //Pixel  1  -  Red  data
+//buffer[1]  -&amp;gt;  //Pixel  1  -  Green  data
+//buffer[2]  -&amp;gt;  //Pixel  1  -  Blue  data
+ 

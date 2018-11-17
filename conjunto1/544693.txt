@@ -1,0 +1,4 @@
+ tmp  $  clang  -std=c++11  -stdlib=libc++  -lc++  test.cpp
+test.cpp:16:27:  error:  invalid  operands  to  binary  expression  ('__ph&amp;lt;1&amp;gt;'  and  'int')
+    transform(a,  a+5,  a,  _1  *  2);
+ 

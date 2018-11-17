@@ -1,0 +1,5 @@
+ FD_SET(s,  &amp;amp;readfds);
+//  (...)
+int  iConnected  =  ConnectToHost(PortNum,  IpAddy);
+//^  This  actually  calls:  s  =  socket  (AF_INET,  SOCK_STREAM,  IPPROTO_TCP);
+ 

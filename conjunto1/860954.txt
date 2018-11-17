@@ -1,0 +1,4 @@
+ int  fib()  {
+        return  round((pow((1+sqrt(5))/2,  scan)-(-pow((1-sqrt(5))/2,  scan)))/sqrt(5));
+}
+ 

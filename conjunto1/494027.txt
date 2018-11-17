@@ -1,0 +1,24 @@
+ #include  &amp;lt;functional&amp;gt;
+#include  &amp;lt;boost/assign/list_of.hpp&amp;gt;
+#include  &amp;lt;vector&amp;gt;
+using  namespace  std;
+
+typedef  function&amp;lt;  float(  float  tElevation,  float  pAzimuth  )&amp;gt;  f3Func;
+vector&amp;lt;f3Func  const&amp;gt;  const  colorFunctions  =  boost::assign::list_of(
+    f3Func([](  float  /*tElevation*/,  float  /*pAzimuth*/  )  -&amp;gt;  float  {
+        float  v  =  2.0f  ;
+        return  v  ;
+    }))
+    ([](float  a,  float  b)  -&amp;gt;  float  {
+        float  someFloat  =  3.14f;
+        return  a*b*someFloat;
+    })
+;
+
+#include  &amp;lt;iostream&amp;gt;
+
+int  main()
+{
+    cout  &amp;lt;&amp;lt;  colorFunctions[1](0.3f,0.4f)  &amp;lt;&amp;lt;  '\n';
+}
+ 

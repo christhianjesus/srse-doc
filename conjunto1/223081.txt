@@ -1,0 +1,7 @@
+ float  base_a;
+printf("enter  starting  angle,  counter  clockwise  from  3:00\n");
+scanf("%f",  &amp;amp;base_a);
+
+for  (n  =  0;  n  &amp;lt;  h;  n++)  {
+        a  =  base_a  +  n*k;
+ 

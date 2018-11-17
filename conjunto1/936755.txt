@@ -1,0 +1,21 @@
+ ...
+
+struct  Student  {
+    long  long  int  ID;
+    string  FirstName,LastName;
+}  mystudent[100];
+
+...
+
+int  main  ()
+{
+    ...
+    std::sort(mystudent,  mystudent+100,
+          [](mystudent  const  &amp;amp;  a,  mystudent  const  &amp;amp;b){return  a.ID  &amp;lt;  b.ID;});
+
+    cout&amp;lt;&amp;lt;"Sorted  list  in  ascending  order:\n";        
+    PrintInformation(mystudent,n);  
+    getch();
+    return  0;  
+}
+ 

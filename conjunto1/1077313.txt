@@ -1,0 +1,5 @@
+ int  fileExists(  char  *fileName  )  {
+        struct  stat  buf;
+        return  (  stat(  fileName,  &amp;amp;buf  )  ==  0  );
+}
+ 

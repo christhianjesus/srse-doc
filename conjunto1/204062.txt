@@ -1,0 +1,6 @@
+ class  MyApp  :  public  QApplication,  public  QObject
+{
+        Q_OBJECT
+        ...
+}
+ 

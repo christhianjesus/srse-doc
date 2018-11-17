@@ -1,0 +1,17 @@
+   float  t[20][2];
+for  (int  k1=0;  k1&amp;lt;20;  k1++)
+{
+          for  (int  k2=0;  k2&amp;lt;2;  k2++)
+                {
+                t[k1][k2]  =  cvmGet(mat,k1,k2);
+                std::cout&amp;lt;&amp;lt;  t[k1][k2]&amp;lt;&amp;lt;"\t";
+                                  }
+}
+
+
+
+std::cout  &amp;lt;&amp;lt;"          "&amp;lt;&amp;lt;  std::endl;
+std::cout  &amp;lt;&amp;lt;"          "&amp;lt;&amp;lt;  std::endl;
+std::cout  &amp;lt;&amp;lt;"          "&amp;lt;&amp;lt;  std::endl;
+        }
+ 

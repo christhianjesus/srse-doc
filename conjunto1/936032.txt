@@ -1,0 +1,3 @@
+ int  strcmp(char  *string1,  char  *string2);  
+char  *strcpy(char  *dest,  const  char  *src)    
+ 

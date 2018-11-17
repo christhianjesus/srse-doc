@@ -1,0 +1,19 @@
+   if(this.Index==1100  &amp;amp;&amp;amp;  this.SubIndex==1)
+  {
+  putValue(Com_stMECUErr,this.Data);
+    }
+
+  else  if(this.Index==1100  &amp;amp;&amp;amp;  this.SubIndex==2)
+    {
+    putValue(B_sbbvk,this.Data);
+      }
+
+  else  if(this.Index==1100  &amp;amp;&amp;amp;  this.SubIndex==3)
+    {
+  putValue(Com_bMSVIdle,this.Data);
+      }
+
+    //  haivng  100  more  similar  conditions
+
+      }
+ 

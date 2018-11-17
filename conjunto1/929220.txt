@@ -1,0 +1,4 @@
+ RedBlackTree  &amp;lt;Item,  Key&amp;gt;  *T=  &amp;amp;Tree;
+Node&amp;lt;Item,  Key&amp;gt;*  nill=T-&amp;gt;nill;
+Node&amp;lt;Item,  Key&amp;gt;*  root=T-&amp;gt;root;
+ 

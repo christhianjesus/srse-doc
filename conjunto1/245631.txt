@@ -1,0 +1,2 @@
+ CopyMemory(lContentPointer,  @ByteArray[0],  5);
+ 

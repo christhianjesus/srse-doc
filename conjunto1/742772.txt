@@ -1,0 +1,3 @@
+ Read  32B  from  p,  compute,  read  32B  from  p+8192  (this  is  next  row  of  block),  compute,
+Read  and  compute  until  all  8  rows  are  done,    write  32B  to  target  matrix  row  p3
+ 

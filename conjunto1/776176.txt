@@ -1,0 +1,17 @@
+ map&amp;lt;vector&amp;lt;unsigned  int&amp;gt;,  unsigned  int&amp;gt;  sequenceFrequency;
+vector&amp;lt;unsigned  int&amp;gt;  codedWord;
+
+void  MapSequenceFrequency(unsigned  int  key0,  unsigned  int  key1,  unsigned  int  key2)
+{
+        codedWord[0]  =  key0;
+        codedWord[1]  =  key1;
+        codedWord[2]  =  key2;
+
+        map&amp;lt;vector&amp;lt;unsigned  int&amp;gt;,  unsigned  int&amp;gt;::iterator  it;
+
+        if  (sequenceFrequency.find(codedWord)  ==  sequenceFrequency.end())
+                sequenceFrequency[codedWord]  =  0;
+        else
+                sequenceFrequency[codedWord]++;
+}
+ 

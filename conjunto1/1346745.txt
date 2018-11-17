@@ -1,0 +1,3 @@
+ gcc  -c  wtf.c
+gcc  main.c  wtf.o  -o  main
+ 

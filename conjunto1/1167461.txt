@@ -1,0 +1,5 @@
+ QVideoEncoder.obj:-1:  Error:  LNK2019:  unresolved  external  symbol  _avcodec_init  referenced  in  function  "protected:  bool  __thiscall  QVideoEncoder::initCodec(void)"  (?initCodec@QVideoEncoder@@IAE_NXZ)
+QVideoDecoder.obj:-1:  Error:  LNK2001:  unresolved  external  symbol  _avcodec_init
+QVideoEncoder.obj:-1:  Error:  LNK2019:  unresolved  external  symbol  _avcodec_thread_init  referenced  in  function  "public:  bool  __thiscall  QVideoEncoder::createFile(class  QString,unsigned  int,unsigned  int,unsigned  int,unsigned  int,unsigned  int)"  (?createFile@QVideoEncoder@@QAE_NVQString@@IIIII@Z)
+QVideoEncoder.obj:-1:  Error:  LNK2019:  unresolved  external  symbol  _avcodec_open  referenced  in  function  "public:  bool  __thiscall  QVideoEncoder::createFile(class  QString,unsigned  int,unsigned  int,unsigned  int,unsigned  int,unsigned  int)"  (?createFile@QVideoEncoder@@QAE_NVQString@@IIIII@Z)
+ 

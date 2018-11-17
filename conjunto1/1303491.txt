@@ -1,0 +1,4 @@
+   SET  (LIB_TYPE  SHARED)
+
+  ADD_LIBRARY(MyLibrary  ${LIB_TYPE}  MyLibrary.h)
+ 

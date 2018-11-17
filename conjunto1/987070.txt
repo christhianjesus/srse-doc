@@ -1,0 +1,6 @@
+ Matthews-MacBook-Pro-7:cs220  Matt$  ./b64  -d  
+TWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuTWFuYWJjZGVmZ2hp
+
+error  in  the  decode  loop
+QanManManManManManManManManManManManManabcdefg?i
+ 

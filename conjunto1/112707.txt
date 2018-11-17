@@ -1,0 +1,141 @@
+         //  een  simpele  floodfill
+
+        #include  &amp;lt;stdlib.h&amp;gt;
+        #include  &amp;lt;iostream&amp;gt;
+        #include  &amp;lt;bitset&amp;gt;
+
+
+class  Cell  {
+
+        private:
+            int    kamer,  value;
+            bool  left,  right,  up,  down;
+
+        public:                        
+            //  constructor
+            Cell::Cell()  {};
+            //  functions
+            bool  CanLeft()            {  return  left  ;  }
+            bool  CanRight()          {  return  right;  }
+            bool  CanDown()            {  return  down  ;  }
+            bool  CanUp()                {  return  up      ;  }
+            int    GetRoom()              {  return  kamer;  }
+            void  SetRoom(int  x)    {  kamer  =  x      ;  }            
+            void  SetValue(int  x,  int  room=0)  {  value    =  x;
+                                                          kamer  =  room;
+                                                          std::bitset&amp;lt;sizeof(int)&amp;gt;  bits(value);  
+                                                          if  (bits[3])  left    =  true;
+                                                          else                  left    =  false;
+                                                          if  (bits[2])  down    =  true;
+                                                          else                  down    =  false;
+                                                          if  (bits[1])  right  =  true;
+                                                          else                  right  =  false;
+                                                          if  (bits[0])  up        =  true;
+                                                          else                  up        =  false;
+                                                      }
+};
+
+class  Field  {
+
+        private:
+            int  Biggest_Chamber;
+            int  Y;
+            int  X;
+            int  temp;
+            Cell  playfield[][1];
+
+        public:
+            //  constructor
+            Field::Field(int  SizeY,  int  SizeX)  {
+                                        Y  =  SizeY;
+                                        X  =  SizeX;
+                                        Cell  playfield[SizeY-1][SizeX-1];
+                                        }
+            //  Create  a  2d  array  and  fill  it
+
+            void  Get_input()  {
+
+                      for  (int  Yas  =  0;  Yas  &amp;lt;  Y;  Yas++){
+
+                              for  (int  Xas  =  0;  Xas  &amp;lt;  X;  Xas++){
+
+                                      std::cin  &amp;gt;&amp;gt;  temp;
+                                      playfield[Yas][Xas].SetValue(temp);                  
+                              }
+                      }  
+            };    
+            void  Start()  {  Mark(0,0,1);  }
+
+            void  Mark(int  y,  int  x,  int  nr)  {
+                                    std::cout  &amp;lt;&amp;lt;  nr;
+                                    temp  =  nr;
+                                    playfield[y][x].SetRoom(nr);
+                                    if  (playfield[y][x].CanLeft())      {
+                                          if  (playfield[y][x-1].GetRoom()  !=  0)  {
+                                                                                                        Mark(y,  x-1,  nr);
+                                                                                                        std::cout  &amp;lt;&amp;lt;  nr;
+                                                                                                        system("pause");}}
+                                    if  (playfield[y][x].CanDown())  {
+                                          if  (playfield[y+1][x].GetRoom()  !=  0)  {
+                                                                                                        Mark(y+1,  x,  nr);
+                                                                                                        std::cout  &amp;lt;&amp;lt;  nr;
+                                                                                                        system("pause");}}
+                                    if  (playfield[y][x].CanRight())    {
+                                          if  (playfield[y][x+1].GetRoom()  !=  0)  {
+                                                                                                        Mark(y,  x+1,  nr);
+                                                                                                        std::cout  &amp;lt;&amp;lt;  nr;
+                                                                                                        system("pause");}}
+                                    if  (playfield[y][x].CanUp())      {
+                                          if  (playfield[y-1][x].GetRoom()  !=  0)  {
+                                                                                                        Mark(y-1,  x,  nr);
+                                                                                                        std::cout  &amp;lt;&amp;lt;  nr;
+                                                                                                        system("pause");}}  
+                                    for  (int  vertical  =  0;  vertical  &amp;lt;  Y;  vertical++)  {
+                                            for  (int  horizontal  =  0;  horizontal  &amp;lt;  X;  horizontal++)  {
+                                                    if  (playfield[vertical][horizontal].GetRoom()  ==  0)  Mark(vertical,  horizontal,  nr+1);                                      
+                                            }            
+                                    }
+            }                  
+            int  MaxValue()  {
+                    int  counter[temp];
+                    int  max  =  0;
+
+                    for  (int  y  =  0;  y  &amp;lt;  Y;  y++)  {
+                            for  (int  x  =  0;  x  &amp;lt;  X;  x++)  {
+                                    counter[playfield[y][x].GetRoom()]++;
+                            }
+                    }
+
+                    for  (int  i  =  0;  i  &amp;lt;  temp;  i++)
+                    {
+                            if  (counter[i]  &amp;gt;  max)
+                                  max  =  counter[i];
+                    }
+
+                    return  max;
+          }                        
+};
+
+
+        int  main()  {
+        using  namespace  std;
+
+
+        int  NrKamers;
+        int  sizeY;
+        int  sizeX;
+
+        std::cin  &amp;gt;&amp;gt;  NrKamers;
+        for  (int  i  =  0;  i  &amp;lt;  NrKamers;  i++){
+
+                std::cin  &amp;gt;&amp;gt;  sizeY  &amp;gt;&amp;gt;  sizeX;
+
+                Field  floodfield(sizeY,  sizeX);
+                floodfield.Get_input();
+                floodfield.Start();
+
+                std::cout  &amp;lt;&amp;lt;  floodfield.MaxValue()  &amp;lt;&amp;lt;  std::endl;
+        }
+        return  0;
+}
+ 

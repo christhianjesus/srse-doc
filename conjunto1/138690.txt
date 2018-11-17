@@ -1,0 +1,10 @@
+ template  &amp;lt;typename  T&amp;gt;
+inline  T  cX(const  std::tuple&amp;lt;T,T,T&amp;gt;  &amp;amp;  t)  {  return  std::get&amp;lt;0&amp;gt;(t);  }
+
+typedef  std::tuple&amp;lt;double,  double,  double&amp;gt;  coords;
+//template  &amp;lt;typename  T&amp;gt;  using  coords  =  std::tuple&amp;lt;T,T,T&amp;gt;;  //  if  I  had  GCC  4.8
+
+coords  c{1.2,  -3.4,  5.6};
+
+//  Now  we  can  access  cX(c),  cY(c),  cZ(c).
+ 

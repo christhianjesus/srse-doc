@@ -1,0 +1,49 @@
+ class  FunMeta  {
+public:
+        virtual  ~FunMeta  ()  {}
+        virtual  boost::any  call  (std::string  args)  const  =  0;
+};
+
+template  &amp;lt;typename  Ret,  typename  ...Args&amp;gt;
+class  ConcreteFunMeta  :  public  FunMeta  {
+public:
+        ConcreteFunMeta  (Ret  (*fun)  (Args...))  :  fun(fun)  {}
+
+        boost::any  call  (std::string  args)  const  {
+                //  Use  a  stringstream  for  trivial  parsing.
+                std::istringstream  ss;
+                ss.str  (args);
+
+                //  Use  a  tuple  to  store  our  parameters  somewhere.
+                //  We  could  later  get  some  more  performance  by  combining  the  parsing
+                //  and  the  calling.
+                std::tuple&amp;lt;Args...&amp;gt;  params;
+                init_args&amp;lt;sizeof...(Args)&amp;gt;  (params,  ss);
+
+                //  This  demondstrates  expanding  the  tuple  to  full  parameter  lists.
+                return  unfold&amp;lt;Ret&amp;gt;  (fun,  params);
+        }
+
+private:
+        Ret  (*fun)  (Args...);
+};
+
+class  Registry  {
+public:
+        template  &amp;lt;typename  Ret,  typename  ...Args&amp;gt;
+        void  set  (std::string  name,  Ret  (*fun)  (Args...))  {
+                funs[name].reset  (new  ConcreteFunMeta&amp;lt;Ret,  Args...&amp;gt;  (fun));
+        }
+
+        boost::any  invoke  (std::string  name,  std::string  args)  const  {
+                const  auto  it  =  funs.find  (name);
+                if  (it  ==  funs.end())
+                        throw  std::runtime_error  ("meh");
+                return  it-&amp;gt;second-&amp;gt;call  (args);
+        }
+
+private:
+        //  You  could  use  a  multimap  to  support  function  overloading.
+        std::map&amp;lt;std::string,  std::shared_ptr&amp;lt;FunMeta&amp;gt;&amp;gt;  funs;
+};
+ 

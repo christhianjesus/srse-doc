@@ -1,0 +1,8 @@
+ {
+        std::unique_lock&amp;lt;std::mutex&amp;gt;  guard(mtx);                //  lock  
+                                                                                                        //  wait  condition
+        ready.wait(guard,  [&amp;amp;]()  {return  /*  queue  not  empty  */;  });    //  lock  is  released  as  long  as  condition  is  false  
+        //...  here  lock  is  set  and  condition  is  true:  read  element  from  queue
+        //...  if  processing  is  long  release  the  lock  when  queue  is  read
+}        //  otherwhise  the  lock  is  removed  here
+ 

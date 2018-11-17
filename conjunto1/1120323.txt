@@ -1,0 +1,42 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;initializer_list&amp;gt;
+
+using  namespace  std;
+
+template&amp;lt;class  T&amp;gt;
+void  print(T  val)  {
+        cout  &amp;lt;&amp;lt;  val;
+}
+
+template&amp;lt;class  T&amp;gt;
+void  print(initializer_list&amp;lt;T&amp;gt;  lst)  {
+        bool  first  =  true;
+        cout  &amp;lt;&amp;lt;  "[";
+        for  (auto  i  :  lst)  {
+                if  (!first)  cout  &amp;lt;&amp;lt;  ",  ";
+                print(i);
+                first  =  false;
+        }
+        cout  &amp;lt;&amp;lt;  "]";
+}
+
+template&amp;lt;class  T&amp;gt;
+void  print(initializer_list&amp;lt;initializer_list&amp;lt;T&amp;gt;&amp;gt;  lst)  {
+        bool  first  =  true;
+        cout  &amp;lt;&amp;lt;  "[";
+        for  (auto  i  :  lst)  {
+                if  (!first)  cout  &amp;lt;&amp;lt;  ",  ";
+                print(i);
+                first  =  false;
+        }
+        cout  &amp;lt;&amp;lt;  "]";
+}
+
+int  main()
+{
+        print({1,  2,  3});
+        cout  &amp;lt;&amp;lt;  endl;
+        //  Without  this  line,  Visual  C++  2013  is  happy
+        print({{1,  2},  {3,  4,  5},  {6}});
+}
+ 

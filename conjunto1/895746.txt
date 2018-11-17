@@ -1,0 +1,13 @@
+ #include  "authentication.h"
+
+using  namespace  std;
+
+int  main(int  argc,  char  *argv[])
+{
+authentication  test1;
+test1.authenticate();
+
+system("PAUSE");
+return  EXIT_SUCCESS;
+}
+ 

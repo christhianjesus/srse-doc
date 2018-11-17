@@ -1,0 +1,2 @@
+ A::A(  int  a,  string  b)  :  a(  a  ),  b(  b  )  {}
+ 

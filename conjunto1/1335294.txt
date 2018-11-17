@@ -1,0 +1,9 @@
+ Image*  foo()  {
+      std::auto_ptr&amp;lt;Image&amp;gt;  tmp(  new  Image()  );
+      //  ...
+      return  tmp.release();
+}
+int  main()  {
+      std::auto_ptr&amp;lt;Image&amp;gt;  ptr(  foo()  );
+}
+ 

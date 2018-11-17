@@ -1,0 +1,16 @@
+ struct  columns  {
+            char*  c_name;
+            char*  c_type;
+            char*  c_size;
+};
+
+int  main(int  argc,  char*  argv[])
+{
+    int  column_num  =  3;
+    struct  columns  col[10];
+    //columns  *col  =  (columns*)  malloc  (sizeof(columns)  *  column_num);
+    strcpy(col[0].c_name,  "PSID");
+    strcpy(col[0].c_type,  "INT");
+    strcpy(col[0].c_size,  "4");
+}
+ 

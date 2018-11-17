@@ -1,0 +1,19 @@
+ #ifndef  HTABLE_H_INCLUDED
+#define  HTABLE_H_INCLUDED
+
+struct  htablerec  {
+      char  **key;
+      int  *frequencies;
+      int  num_keys;
+      int  capacity;
+};
+
+typedef  struct  htablerec  *htable;
+
+extern  int  htable_insert(htable  h,  char  *str);
+extern  htable  htable_new(unsigned  size);
+extern  int  htable_search(htable  h,  char  *str);
+extern  void  htable_free(htable  h);
+
+#endif  /*  HTABLE_H_INCLUDED  */
+ 

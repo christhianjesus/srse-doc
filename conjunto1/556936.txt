@@ -1,0 +1,5 @@
+ int  x;
+for(x  =  0;  x  &amp;lt;  M;  x++)
+    free(array[x]);
+free(array);
+ 

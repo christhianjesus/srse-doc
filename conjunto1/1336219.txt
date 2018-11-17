@@ -1,0 +1,50 @@
+ case  WM_PAINT:
+                GetCursorPos(&amp;amp;mouse);
+                GetClientRect(hWnd,&amp;amp;rct);
+
+                hdc  =  BeginPaint(hWnd,  &amp;amp;ps);
+                MemDC  =  CreateCompatibleDC(hdc);
+                bmp  =  CreateCompatibleBitmap(hdc,  600,  600);
+                SelectObject(MemDC,bmp);
+                g  =  new  Graphics(MemDC);
+
+                for(int  i  =  0;  i  &amp;lt;  1;  ++i)
+                {
+                        SolidBrush  sb(Color(255,255,255));
+                        g-&amp;gt;FillRectangle(&amp;amp;sb,rct.top,rct.left,rct.right,rct.bottom);
+                }
+
+                for(int  i  =  0;  i  &amp;lt;  250;  ++i)
+                {
+                        pts[0].X  =  0;
+                        pts[0].Y  =  0;
+
+                        pts[1].X  =  10  +  mouse.x  *  i;
+                        pts[1].Y  =  0  +  mouse.y  *  i;
+
+                        pts[2].X  =  10  *  i  +  mouse.x;
+                        pts[2].Y  =  10  +  mouse.y  *  i;
+
+                        pts[3].X  =  0  +  mouse.x;
+                        pts[3].Y  =  (rand()  %  600)  +  mouse.y;
+
+                        Point  p1,  p2;
+                        p1.X  =  0;
+                        p1.Y  =  0;
+                        p2.X  =  300;
+                        p2.Y  =  300;
+
+                        g-&amp;gt;FillPolygon(&amp;amp;b,pts,4);
+                }
+
+
+                BitBlt(hdc,0,0,900,900,MemDC,0,0,SRCCOPY);
+
+                EndPaint(hWnd,  &amp;amp;ps);
+
+                DeleteObject(bmp);
+                g-&amp;gt;ReleaseHDC(MemDC);
+                DeleteDC(MemDC);
+                delete  g;
+                break;
+ 

@@ -1,0 +1,3 @@
+ mClientFormat.SetCanonical(2,  true);
+mClientFormat.mSampleRate  =  kSampleRate;
+ 

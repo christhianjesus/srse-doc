@@ -1,0 +1,17 @@
+ class  Outer  {
+public:
+        struct  Inner  {
+                Inner(int  innerValue)  :  foo(innerValue)  {};
+                int  foo;
+        };
+
+        Outer(int  innerValue)  :  _inner(innerValue)  {};
+
+        const  Inner&amp;amp;  getInner()  const  {
+                return  _inner;
+        };
+
+private:
+        Inner  _inner;
+};
+ 

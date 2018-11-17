@@ -1,0 +1,33 @@
+ #include  &amp;lt;iostream&amp;gt;
+
+//  An  array  of  strings  for  all  the  special  characters.
+char  const*  data[]  =  {"",  "",  "",  "",  "",  "",  "",  ""
+                                            "\\a","\\b","\\t","\\n","\\v","\\f","\\r"
+                                            //  etc
+                                          };
+
+char  const*  toStr(int  loop)
+{
+        //  Used  by  normal  character.
+        //  Note  buffer[0]  is  where  we  put  the  char.  buffer[1]  is  always  '\0'
+        static  char  buffer[]  =  "  ";
+
+        if  (loop  &amp;lt;  32)
+        {
+                return  data[loop];
+        }
+        else
+        {
+                buffer[0]  =  loop;
+                return  buffer;
+        }
+}
+
+int  main()
+{
+        for(int  loop  =0;loop  &amp;lt;  128;++loop)
+        {
+                std::cout  &amp;lt;&amp;lt;  loop  &amp;lt;&amp;lt;  "="  &amp;lt;&amp;lt;  toStr(loop)  &amp;lt;&amp;lt;  "\n";
+        }
+}
+ 

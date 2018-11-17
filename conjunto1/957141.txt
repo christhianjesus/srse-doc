@@ -1,0 +1,24 @@
+ #include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;string&amp;gt;
+using  namespace  std;
+
+int  main()
+{
+        char  source[1001];
+        cin.getline(source,  1001,  '/n');
+
+        char  alpha[27];
+        cin.getline(alpha,  27);
+
+        const  int  len  =  strlen(source);
+        for  (int  i  =  0;  i  &amp;lt;  len;  i++)
+        {
+                if  ('a'  &amp;lt;=  source[i]  &amp;amp;&amp;amp;  source[i]  &amp;lt;=  'z')
+                {
+                        source[i]  =  alpha[source[i]  -  'a'];
+                }
+        }
+        cout  &amp;lt;&amp;lt;  source  &amp;lt;&amp;lt;  endl;
+        return  0;
+}
+ 

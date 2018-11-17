@@ -1,0 +1,8 @@
+ Json::Value  val,  copy;
+val["newMember"]  =  100;
+val["newMember2"]  =  "hello";
+copy  =  val;
+val["newMember2"]  =  "bye";
+assert(val["newMember"]  ==  copy["newMember"]);
+assert(val["newMember2"]  !=  copy["newMember2"]);
+ 

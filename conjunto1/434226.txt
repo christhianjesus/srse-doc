@@ -1,0 +1,6 @@
+ double  *  data  =  (double  *)  malloc(sizeof(double)  *  100  *  2);
+for  (ii  =  0;  ii  &amp;lt;  100;  ii++)  {
+        data[2*ii]  =  ii;
+        data[2*ii  +  1]  =  ii;
+}
+ 

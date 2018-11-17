@@ -1,0 +1,2 @@
+ cvSaveImage(  out_img_name,  img);
+ 

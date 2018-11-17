@@ -1,0 +1,32 @@
+ template  &amp;lt;typename  T,  typename  Y&amp;gt;
+class  ObjectCreatorBase_c:  public  ObjectCreatorAutoUnlinkHook_t
+{
+        public:
+                  typedef  T  ObjectType_t;
+                  typedef  Y  ObjectCreatorProc_t;
+
+        public:
+                  ObjectCreatorBase_c(const  String_c  &amp;amp;name,  ObjectCreatorProc_t  proc):
+                          strName(name),
+                          pfnCreateProc(proc)
+                  {
+                  }
+
+                  T  Create(const  String_c  &amp;amp;name)  const
+                  {
+                          return  pfnCreateProc(name);
+                  }
+
+                  template  &amp;lt;typename  Z&amp;gt;
+                  T  Create(const  String_c  &amp;amp;name,  Z  param)  const
+                  {
+                          return  pfnCreateProc(name,  param);
+                  }
+
+          //"irrelevant"  code  removed
+
+                  private:
+                          String_c  strName;
+                          ObjectCreatorProc_t  pfnCreateProc;
+};
+ 

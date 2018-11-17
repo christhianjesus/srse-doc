@@ -1,0 +1,3 @@
+ myPtr.myFloat  =  &amp;amp;floatie;
+printf("myFloat:  %f\n",  *myPtr.myFloat);
+ 

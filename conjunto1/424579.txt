@@ -1,0 +1,4 @@
+ 8191:  1.499  seconds
+8192:  2.122  seconds
+8193:  1.582  seconds
+ 

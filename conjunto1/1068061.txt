@@ -1,0 +1,13 @@
+ root@kevin-VirtualBox://home/kevin/Desktop/makef#  make  -f  Makefilegcc  -o  main  obj/main.o  obj/serial.o  obj/fb.o  obj/menu_main.o  obj/timer.o  obj/cmdin.o  obj/buzzer.o  obj/statemachine.o  obj/inout.o  obj/network.o  obj/text_file_input.o  obj/text_file_input_oven.o  -I./  -lgd  -lrt
+/usr/bin/ld:  skipping  incompatible  /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/libgd.so  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/libgd.a  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/../lib/libgd.so  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/../lib/libgd.a  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../libgd.so  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../libgd.a  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/libgd.so  when  searching  for  -lgd
+/usr/bin/ld:  skipping  incompatible  /usr/lib/libgd.a  when  searching  for  -lgd
+/usr/bin/ld:  cannot  find  -lgd
+collect2:  ld  returned  1  exit  status
+make:  ***  [main]  Error  1
+ 

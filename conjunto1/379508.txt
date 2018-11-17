@@ -1,0 +1,6 @@
+ class  Derived  :  public  Base
+        {
+        public:
+          Derived::Derived(string  name  =  "Jeff")  :  Base  (name)  {};
+        };
+ 

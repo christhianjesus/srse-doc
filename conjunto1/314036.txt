@@ -1,0 +1,35 @@
+ struct  Operation  {
+    DataType  rettype;
+
+    Operation(DataType  rettype)  :  rettype(rettype);
+    virtual  void*  compute();
+};
+
+template&amp;lt;DataType  RetType&amp;gt;
+class  Constant  :  public  Operation  {
+    typedef  typename  TypeTraits&amp;lt;RetType&amp;gt;::T  RType;
+    RType  val;
+
+    Constant(RType  val)  :  val(val),  Operation(RetType)  {};  
+    virtual  void*  compute(){  return  &amp;amp;val;  }
+};    
+
+template&amp;lt;DataType  T1,  DataType  T2,  DataType  RetType&amp;gt;
+class  Add  :  public  Operation  {
+    typedef  typename  TypeTraits&amp;lt;RetType&amp;gt;::T1  T1Type;
+    typedef  typename  TypeTraits&amp;lt;RetType&amp;gt;::T2  T2Type;
+    typedef  typename  TypeTraits&amp;lt;RetType&amp;gt;::RetType  RType;
+    RType  val;
+
+    Operation  *c1,  *c2;
+
+    Add(Operation  *c1,  Operation  *c2)  :  c1(c1),  c2(c2),  Operation(RetType)  {};  
+
+    virtual  void*  compute(){
+        T1Type  *a  =  (T1Type  *)c1-&amp;gt;compute();
+        T2Type  *b  =  (T2Type  *)c2-&amp;gt;compute();
+        val  =  *a  +  *b;  
+        return  &amp;amp;val;
+    }      
+};    
+ 

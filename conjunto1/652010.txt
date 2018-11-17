@@ -1,0 +1,31 @@
+ //Call  by  Address
+        void  SwapIntAddr(int*  ptmp1,  int*  ptmp2)  
+        {
+                int  ptmp;
+                ptmp    =  *ptmp1;
+                *ptmp1  =  *ptmp2;
+                *ptmp2  =  ptmp;
+        }
+
+//Call  by  Value
+
+        void  SwapIntVal(int  tmp1,  int  tmp2)  
+        {
+                  int  tmp;
+                  tmp    =  tmp1;
+                  tmp1  =  tmp2;
+                  tmp2  =  tmp;
+        }
+
+
+int  main(){
+    int  a  =  3,  b=  5;
+
+    SwapIntVal(a,b);  //  This  will  have  no  effect
+    printf("%d  %d\n",a,b);
+
+    SwapIntAddr(&amp;amp;a,&amp;amp;b);  //  This  will  have  effect
+    printf("%d  %d\n",a,b);
+
+}
+ 

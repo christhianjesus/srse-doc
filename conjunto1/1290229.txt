@@ -1,0 +1,16 @@
+ int  main(int  argc,  char  *argv[])  {
+
+        Player  *  pPlayer  =  NULL;
+        if  (argv[3]  ==  string("simple"))  {
+                pPlayer  =  get_Simple();
+        }  else  if  (argv[3]  ==  string("counting"))  {
+                pPlayer  =  get_Counting();
+        }  else  if  (argv[3]  ==  string("competitor"))  {
+                pPlayer  =  get_Competitor();
+        }
+
+        //Then  if  you  really  want  to...
+        Player  &amp;amp;player  =  *pPlayer;
+
+}
+ 

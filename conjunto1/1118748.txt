@@ -1,0 +1,2 @@
+ file.write(reinterpret_cast&amp;lt;const  char*&amp;gt;(&amp;amp;StudentData),sizeof(Student));
+ 

@@ -1,0 +1,10 @@
+ typedef  boost::adjacency_list&amp;lt;boost::vecS,  boost::vecS,  boost::undirectedS&amp;gt;  Graph;
+typedef  boost::graph_traits&amp;lt;Graph&amp;gt;::edge_iterator  EdgeIterator;
+typedef  std::pair&amp;lt;EdgeIterator,  EdgeIterator&amp;gt;  EdgePair;
+
+EdgePair  ep;
+for  (ep  =  edges(g);  ep.first  !=  ep.second;  ++ep.first)
+{
+        //  Get  the  two  vertices  that  are  joined  by  this  edge...
+}
+ 

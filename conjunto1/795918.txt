@@ -1,0 +1,8 @@
+ @interface  MyViewController  :  UIViewController
+
+@property  IBOutlet  UILabel  label;
+
++  (MyViewController  *)sharedInstance;
+
+@end
+ 

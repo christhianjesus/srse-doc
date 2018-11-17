@@ -1,0 +1,5 @@
+ std::vector&amp;lt;double&amp;gt;  arry;
+arry.resize(HOW_MANY_I_WANT);
+mycustomfunction(input1,  input2,  input3,  &amp;amp;arry[0],  HOW_MANY_I_WANT);
+...
+ 

@@ -1,0 +1,6 @@
+ C  of  1  is:  2
+C  of  2  is:  4
+C  of  3  is:  8
+C  of  4  is:  16
+C  of  5  is:  32
+ 

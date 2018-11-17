@@ -1,0 +1,11 @@
+ char  *  string_add(char  *  base,  char  *  toAdd)
+{
+        char  *  string=malloc(strlen(base)+streln(toAdd)+1);
+        sprintf(string,"%s%s",base,toAdd);
+        char  returnString[strlen(string)+1];  
+        //  here  comes  my  problem:
+        memcpy(returnString,string,strlen(string)+1);
+        //  want  to  add  free(string)  here
+        return  returnString;
+}
+ 

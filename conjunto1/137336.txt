@@ -1,0 +1,17 @@
+ X={1,2,4,7,9,10}  N=9
+
+step  one:
+{9}
+X'={1,2,4,7,9}
+
+step  2:  cannot  chose  9  and  10
+X={(1,2)  (1,4)  (2,4)  (1,7)  (2,7)  (4,7)}
+{2,7}
+X'={(1,2)  (1,4)  (2,4)  (1,7)}
+
+step  3:  4  and  2  cannot  go  with  7:
+X={(1,2,4)}
+no  sol
+
+{9}  {2,7}  are  the  only  solutions
+ 

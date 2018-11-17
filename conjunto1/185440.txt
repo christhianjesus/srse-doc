@@ -1,0 +1,23 @@
+ static  Derived*  ToDerived(Base*  b)
+{
+        return  dynamic_cast&amp;lt;Derived*&amp;gt;(b);  //  return  null  for  incompatible  subtypes
+}
+
+static  void  DoSomething(Derived*  d)
+{  
+                    if  (!d)
+                              return;  //  incompatible  type  or  null  entry
+                    //  do  work
+}
+
+
+//  somewhere:
+{
+        std::vector&amp;lt;Base*&amp;gt;  bases;
+
+        std::for_each(
+                  boost::make_transform_iterator(bases.begin(),  &amp;amp;ToDerived),
+                  boost::make_transform_iterator(bases.end(),  &amp;amp;ToDerived),
+                  DoSomething);
+}
+ 

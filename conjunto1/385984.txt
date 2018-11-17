@@ -1,0 +1,19 @@
+ [...]
+//  code  snippet  to  show  the  dialog  and  to  enable  user  interactions  with  the  buttons  on  the  lower  side  of  the  window
+while(TRUE)  {
+        gint  run  =  gtk_dialog_run  (window_main);
+        if  (run  ==  GTK_RESPONSE_APPLY)  {
+                gboolean  success  =  start_long_operation();
+        }
+        else  if  (run  ==  GTK_RESPONSE_HELP)  {
+                open_about();
+        }
+        else  if  (run  ==  GTK_RESPONSE_CANCEL)  {
+                stop_long_operation();
+        }
+        else  {
+                gtk_widget_destroy  (window_main);
+                return;
+        }
+}
+ 

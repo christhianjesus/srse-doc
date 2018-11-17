@@ -1,0 +1,2 @@
+ word  =  (char  *)  malloc(20*sizeof(char));
+ 

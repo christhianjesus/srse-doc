@@ -1,0 +1,2 @@
+ mpz_init_set_ui(p[0],  2UL);
+ 

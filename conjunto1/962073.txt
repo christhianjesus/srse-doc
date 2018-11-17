@@ -1,0 +1,141 @@
+ static  int  modtimer_open  (struct  inode  *inod,  struct  file  *f){
+        int  ret  =  0;
+
+        //Iniciar  el  timer
+        if(openDevices==0){
+                my_timer.expires  =  jiffies  +  DELAY;
+                add_timer(&amp;amp;my_timer);
+        }
+
+        try_module_get(THIS_MODULE);              
+        openDevices++;
+
+        return  ret;
+}
+
+static  int  modtimer_release  (struct  inode  *inod,  struct  file  *f){
+
+        del_timer_sync(&amp;amp;my_timer);
+        flush_scheduled_work();
+
+        remove_cbuffer_t  (cbuf);  //delete  the  buffer
+        vacia_list_item();  //removes  every  element  from  the  list
+
+        openDevices--;    
+        module_put(THIS_MODULE);
+
+        return  0;
+}
+
+static  ssize_t  modtimer_read  (struct  file  *file,  char  *user,  size_t  nbits,  loff_t  *  offset){
+        struct  list_head*  pos  =  mylist.next;
+        struct  list_head*  auxpos;  
+        list_item_t*  item;
+        char  aux[MAX_BUFFER];
+        char  aux2[10];
+        int  total  =0;
+        int  subt  =0;
+        int  hecho  =  0;
+
+
+        if(down_interruptible(&amp;amp;mtx)){
+                return  -EINTR;
+        }
+
+        while  (hecho  ==  0){
+                if(pos  ==  pos-&amp;gt;next  ||  list_num_items  ==0){
+                        hecho++;
+                }else{
+                        item  =  list_entry(pos,  list_item_t,  links);
+                        subt=sprintf(aux2,  "%d\n",item-&amp;gt;data);
+                        auxpos  =  pos-&amp;gt;next;
+                        if(subt  +  total  &amp;gt;  MAX_BUFFER  )    {                      
+                                hecho++;
+
+                        }else  {
+
+                                total+=  sprintf(&amp;amp;aux[total],"%i\n",item-&amp;gt;data);
+                                list_del(pos);
+                                vfree(item);
+                                list_num_items--;
+                        }
+                        subt  =  0;
+                        pos  =  auxpos;
+                }
+        }
+
+        aux[total]  =  '\0';
+        up(&amp;amp;mtx);
+
+        copy_to_user(user,aux,total);
+
+        return  total;
+}
+
+/*********************************************************/
+/******************  Planified  functions  ******************/
+/*********************************************************/
+
+//Fills  a  buffer  with  integgers  and  planifies  when  is  about  to  be  out  of  space
+void  fire_timer(unsigned  long  data){  
+        unsigned  long  flags;
+        int  rnd  =  jiffies  &amp;amp;  0xFF;
+
+        spin_lock_irqsave(&amp;amp;spinlock,flags);
+        if(!is_full_cbuffer_t(cbuf))
+        {
+                items_cbuf++;
+                insert_cbuffer_t(cbuf,  rnd);
+        }
+
+
+        printk(KERN_INFO  "workqueue_pendiente  =  %d,  items_cbuf=%d,  CBUFFER_SIZE  =  %d,  TRESHOLD_SIZE  =  %d,  umbral  =  %d",  
+                                                                    workqueue_pendiente,  items_cbuf,  CBUFFER_SIZE,  TRESHOLD_SIZE,  (CBUFFER_SIZE*TRESHOLD_SIZE)/100);
+
+        if(workqueue_pendiente  ==  0  &amp;amp;&amp;amp;
+                items_cbuf  &amp;gt;=  (CBUFFER_SIZE*TRESHOLD_SIZE)/100  )
+        {
+                workqueue_pendiente=1;
+
+                schedule_work(&amp;amp;my_workqueue);
+        }
+
+        my_timer.expires  =  jiffies  +  DELAY;
+        spin_unlock_irqrestore(&amp;amp;spinlock,flags);
+        mod_timer(&amp;amp;my_timer,  my_timer.expires);
+}
+
+void  copy_items_into_list(struct  work_struct  *work){  //Dumps  the  buffer  into  the  list
+        unsigned  long  flags;
+        list_item_t  *items[items_cbuf];
+        int  numbers[items_cbuf];
+        int  a  =  -1;
+
+        while  (++a  &amp;lt;  items_cbuf){
+                items[a]  =  vmalloc(sizeof(list_item_t));
+        }
+        a  =  -1;
+
+        spin_lock_irqsave(&amp;amp;spinlock,flags);
+        while(++a  &amp;lt;  items_cbuf){
+                numbers[a]  =  *head_cbuffer_t(cbuf);
+                remove_cbuffer_t(cbuf);
+        }
+        workqueue_pendiente  =  0;  
+        spin_unlock_irqrestore(&amp;amp;spinlock,flags);
+
+        a  =  -1;
+        if  (down_interruptible(&amp;amp;mtx))  /*BLOQUEO*/
+                return;
+
+
+        while  (++a  &amp;lt;  items_cbuf){//size_cbuffer_t(cbuf)  &amp;gt;  0){
+                items[a]-&amp;gt;data  =  numbers[a];
+                list_add_tail(&amp;amp;items[a]-&amp;gt;links,  &amp;amp;mylist);
+                list_num_items++;
+        }
+
+
+        up(&amp;amp;mtx);      
+}
+ 

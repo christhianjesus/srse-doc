@@ -1,0 +1,22 @@
+ [...]
+
+#pragma  omp  parallel
+{
+      #pragma  omp  single  firstprivate(nodes)
+      {
+
+            [...]  /*  Do  some  calculation  to  find  out  the  value  of  "nodes"  */
+
+            double  *tForTasks[nodes];
+
+            for(node=0;  node  &amp;lt;  nodes  ;  node++){
+
+                  #pragma  omp  task  private(l,  k  ,j)  shared(tForTasks)
+                  {
+                        [...]  /*  Piece  of  iterative  kernel  that  writes  on  tForTasks  and  on  private  data  structures  */
+                  }
+        }
+}
+
+[...]
+ 

@@ -1,0 +1,5 @@
+ bool  NumberClass::operator&amp;lt;(  const  NumberClass  &amp;amp;rhs  )  const
+{
+        return  integer  &amp;lt;  rhs.integer;    
+}
+ 

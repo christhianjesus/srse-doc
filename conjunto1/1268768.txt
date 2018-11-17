@@ -1,0 +1,6 @@
+ if  (!cin  &amp;gt;&amp;gt;  i)  {
+    cin.clear();
+    cin.ignore(INT_MAX,  '\n');
+    cout  &amp;lt;&amp;lt;  "Haha,  your  looping  efforts  have  been  thwarted  dear  sir\n";
+}
+ 

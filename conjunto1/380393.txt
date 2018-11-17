@@ -1,0 +1,5 @@
+ void  intelStartEraseBlock(volatile  uint16_t  *wordAddress)  {
+    *wordAddress  =    0x20;    //block  erase
+    *wordAddress  =    0xD0;    //block  erase  confirm
+}
+ 

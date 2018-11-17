@@ -1,0 +1,2 @@
+ cout  &amp;lt;&amp;lt;  iter-&amp;gt;string()  &amp;lt;&amp;lt;  "  (file)\n"  ;
+ 

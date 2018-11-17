@@ -1,0 +1,8 @@
+ 
+#define  STATUS_LED_PORT  LATB
+#define  STATUS_LED_MASK  0x0040;
+#define  STATUS_LED  STATUS_LED_PORT,  STATUS_LED_MASK
+
+//And  I  try  to  use  it  via
+SET(  STATUS_LED  );
+ 

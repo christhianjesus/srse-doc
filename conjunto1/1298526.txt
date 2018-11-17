@@ -1,0 +1,18 @@
+ #include  &amp;lt;limits.h&amp;gt;
+
+int  min_call(int  num,  ...)
+{
+        va_list  argptr;
+        int  number;
+        static  int  min  =  INT_MAX;
+
+        va_start(argptr,  num);
+
+        while  ((number  =  va_arg(argptr,  int))  !=  -1)
+                if  (number  &amp;lt;  min)
+                        min  =  number;
+
+        va_end(argptr);
+        return  min;
+}
+ 

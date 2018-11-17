@@ -1,0 +1,4 @@
+         char  *p  =  ...;  //  read  a  huge  chuck  from  a  file
+
+        std::string  s(p);  //  this  is  not  what  I  want
+ 

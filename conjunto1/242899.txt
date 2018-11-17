@@ -1,0 +1,2 @@
+ table  =  new  HashEntry*[TABLE_SIZE]
+ 

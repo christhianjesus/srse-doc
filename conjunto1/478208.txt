@@ -1,0 +1,28 @@
+ double  ***data;
+...
+data  =  malloc(d0  *  sizeof  *data);
+if  (data)
+{
+    size_t  i;
+    for  (i  =  0;  i  &amp;lt;  d0;  i++)
+    {
+        data[i]  =  malloc(d1  *  sizeof  *data[i]);
+        if  (data[i])
+        {
+            size_t  j;
+            for  (j  =  0;  j  &amp;lt;  d1;  j++)
+            {
+                data[i][j]  =  malloc(d2  *  sizeof  *data[i][j]);
+                if  (data[i][j])
+                {
+                    size_t  k;
+                    for  (k  =  0;  k  &amp;lt;  d2;  k++)
+                    {
+                        data[i][j][k]  =  initial_value();
+                    }
+                }
+            }
+        }
+    }
+}
+ 

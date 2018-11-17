@@ -1,0 +1,2 @@
+ ((void(*)(void*,  void*,  int))&amp;amp;memcpy+1)(&amp;amp;dest,  &amp;amp;src,  len);
+ 

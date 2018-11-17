@@ -1,0 +1,6 @@
+ void  SomeClass::Erase(std::vector&amp;lt;YourType*&amp;gt;  &amp;amp;a)
+{
+      for(  size_t  i  =  0;  i  &amp;lt;  a.size();  i++  )  delete  a[i];
+      a.clear();
+}
+ 

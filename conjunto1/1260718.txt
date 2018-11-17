@@ -1,0 +1,4 @@
+ R  =  TopR  +  (SourceR  *  alpha)  &amp;gt;&amp;gt;  8;
+G  =  TopG  +  (SourceG  *  alpha)  &amp;gt;&amp;gt;  8;
+B  =  TopB  +  (SourceB  *  alpha)  &amp;gt;&amp;gt;  8;
+ 

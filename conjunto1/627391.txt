@@ -1,0 +1,9 @@
+ struct  tm  tm  =  {
+        .tm_sec  =  sec,
+        .tm_min  =  min,
+        ...
+};
+
+time_t  t  =  mktime(&amp;amp;tm);
+printf("%ju\n",  (uintmax_t)  t);
+ 

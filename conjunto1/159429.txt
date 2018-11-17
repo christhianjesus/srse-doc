@@ -1,0 +1,2 @@
+ std::fill(cc_no_issue,  cc_no_issue+context.size();  0)  ;
+ 

@@ -1,0 +1,3 @@
+ Store  store(  /*parameters*/  );
+store.accessInventory(/*password*/).accessItem(/*item  name*/).setPrice(9.50);
+ 

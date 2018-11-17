@@ -1,0 +1,5 @@
+ void  Status::showPomodoroTime()  {
+        QTime  time  =  pomodoroTime-&amp;gt;addSecs(elapsed);
+        activeTime-&amp;gt;display(time.toString("mm:ss"));
+}
+ 

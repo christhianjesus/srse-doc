@@ -1,0 +1,72 @@
+ //  TldPart.cpp  -  TldPart  validation  class  implementation
+//  Written  by  Max  I.  Fomitchev-Zamilov
+
+#pragma  once
+
+#include  "TldPart.h"
+using  namespace  std;
+
+void  TldPart()
+{
+
+}
+
+//  Takes  the  address  and  stores  into  the  Address  data  member
+void  TldPart::Set(const  String&amp;amp;  address)
+{
+        Address  =  address;
+}
+
+static  void  PreloadTLDs()
+{
+        bool  initialized  =  false;
+        bool  fileStatus  =  false;
+        string  tldTest  =  "";  //  used  for  getline()  as  allowed.
+        char  *  transferString  =  "  ";  //  used  to  transfer  chars  from  string  to  String
+
+        ifstream  infile;
+
+        infile.open("ValidTLDs.txt");
+
+        fileStatus  =  infile.good();
+
+        if(fileStatus  !=  true)
+                cout  &amp;lt;&amp;lt;  "Cannot  read  ValidTLD's  file.  Please  check  your  file  paths  and  try  again.";
+        else
+        {
+                while(!infile.eof())
+                {
+                        getline  (infile,  tldTest);  //  sets  the  current  TLD  in  the  list  to  a  string  for  comparision
+
+                        //  converts  TLD  to  lowercase  for  comparison.
+                        for(unsigned  int  x  =  0;  x&amp;lt;tldTest.length();  x++)
+                        {
+                                tldTest[x]  =  tolower(tldTest[x]);
+                                transferString[x]  =  tldTest[x];
+
+                                ValidTlds[transferString]  =  String(transferString);
+                        }
+                }
+        }
+}
+
+//  Returns  true  when  the  Address  is  valid  or  false  otherwise
+bool  TldPart::IsValid()
+{      
+        bool  tldFound  =  false;
+
+        map&amp;lt;String,  String&amp;gt;::iterator  it;
+
+        String  TLDMatch;
+
+        TLDMatch  =  TldPart::ValidTlds.find(Address)-&amp;gt;first;
+        it  =  TldPart::ValidTlds.find(Address);
+
+        if(it  ==  ValidTlds.end())
+                tldFound  ==  false;
+        else
+                tldFound  ==  true;
+
+        return  tldFound;
+}
+ 

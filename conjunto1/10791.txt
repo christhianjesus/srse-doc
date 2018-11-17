@@ -1,0 +1,79 @@
+ void  angles(double  a1,  double  a2)  {
+        int  deg1,  min1,  sec1,  deg2,  min2,  sec2;
+        double  const  mult  =  0.0166666667;
+        double  angle;
+        if  (a1  ==  (int)a1)  {
+                deg1  =  a1;  min1  =  0;  sec1  =  0;
+        }  else  {
+                deg1  =  a1;
+                min1  =  (int)(60  *  (a1  -  (int)a1));
+                sec1  =  (int)(60  *  ((60  *  (a1  -  (int)a1))  -  min1)  +  0.5);
+        }
+        if  (a2  ==  (int)a2)  {
+                deg2  =  a2  -  1;  min2  =  59;  sec2  =  60;
+        }  else  {
+                deg2  =  a2;
+                min2  =  (int)(60  *  (a2  -  (int)a2));
+                sec2  =  (int)(60  *  ((60  *  (a2  -  (int)a2))  -  min2)  +  0.5);
+                if  (sec2  ==  0)  {
+                        sec2  =  60;
+                        min2--;
+                }
+        }
+        if  (deg1  &amp;lt;=  deg2)  {
+                cout  &amp;lt;&amp;lt;  deg1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec1  &amp;lt;&amp;lt;  "  &amp;lt;  "  &amp;lt;&amp;lt;  deg2  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min2  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec2  &amp;lt;&amp;lt;  endl;
+                while  (deg1  &amp;lt;=  deg2)  {
+                        if  (deg1  &amp;lt;  deg2)  {
+                                while  (min1  &amp;lt;  60)  {
+                                        while  (sec1  &amp;lt;  60)  {
+                                                angle  =  deg1  +  (min1  *  mult)  +  (sec1  *  mult  *  mult);
+                                                cout  &amp;lt;&amp;lt;  deg1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec1  &amp;lt;&amp;lt;  "  =  "  &amp;lt;&amp;lt;  angle  &amp;lt;&amp;lt;  endl;
+                                                sec1++;
+                                        }
+                                        sec1  =  0;
+                                        min1++;
+                                }
+                        }  else  {
+                                if  (min1  &amp;lt;  min2)  {
+                                        while  (min1  &amp;lt;=  min2)  {
+                                                if  (sec1  &amp;lt;  sec2)  {
+                                                        while  (sec1  &amp;lt;  60)  {
+                                                                angle  =  deg1  +  (min1  *  mult)  +  (sec1  *  mult  *  mult);
+                                                                cout  &amp;lt;&amp;lt;  deg1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec1  &amp;lt;&amp;lt;  "  =  "  &amp;lt;&amp;lt;  angle  &amp;lt;&amp;lt;  endl;
+                                                                sec1++;
+                                                        }
+                                                        sec1  =  0;
+                                                        min1++;
+                                                }  else  {
+                                                        while  (sec1  &amp;lt;=  sec2)  {
+                                                                angle  =  deg1  +  (min1  *  mult)  +  (sec1  *  mult  *  mult);
+                                                                cout  &amp;lt;&amp;lt;  deg1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec1  &amp;lt;&amp;lt;  "  =  "  &amp;lt;&amp;lt;  angle  &amp;lt;&amp;lt;  endl;
+                                                                sec1++;
+                                                        }
+                                                        sec1  =  0;
+                                                        min1++;
+                                                }
+                                        }
+                                }  else  {
+                                        while  (min1  &amp;lt;  60)  {
+                                                while  (sec1  &amp;lt;  60)  {
+                                                        angle  =  deg1  +  (min1  *  mult)  +  (sec1  *  mult  *  mult);
+                                                        cout  &amp;lt;&amp;lt;  deg1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  min1  &amp;lt;&amp;lt;  "  "  &amp;lt;&amp;lt;  sec1  &amp;lt;&amp;lt;  "  =  "  &amp;lt;&amp;lt;  angle  &amp;lt;&amp;lt;  endl;
+                                                        sec1++;
+                                                }
+                                                sec1  =  0;
+                                                min1++;
+                                        }
+                                }
+                        }
+                        min1  =  0;
+                        deg1++;
+                }
+        }
+}
+
+int  main()  {
+        angles(40.3472,  40.5);
+        return  0;
+}
+ 

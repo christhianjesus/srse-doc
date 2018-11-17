@@ -1,0 +1,28 @@
+ int  main(int  argc,  char  *argv[])
+{
+        QApplication  app(argc,  argv);
+        SplashScreen  splash();
+        splash.show();
+        app.processEvents();  //  need  to  process  events  manually
+
+        QMainWindow  window;
+        SomeLogicClass  data;
+        window.setData(&amp;amp;data);
+
+        connect(&amp;amp;data,  SIGNAL(initializationProgressChanged(int)),
+                        &amp;amp;spash,  SLOT(setProgress(int)));
+
+        //  show  main  window  when  initialization  is  finished
+        connect(&amp;amp;data,  SIGNAL(initializationFinished()),
+                        &amp;amp;window,  SLOT(show()));  
+
+        //  close  splash  when  initialization  is  finished
+        connect(&amp;amp;data,  SIGNAL(initializationFinished()),
+                        &amp;amp;spash,  SLOT(close()));
+
+        //  this  line  I  usually  hide  behind  some  method  like:  startBackgroundInitialization
+        QtCuncurent::run(&amp;amp;data,  &amp;amp;SomeLogicClass::heavyInitialization);
+
+        return  app.exec();
+}
+ 

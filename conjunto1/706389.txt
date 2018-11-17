@@ -1,0 +1,7 @@
+ i  =  0;
+if  (condition1)  i++;
+if  (condition2)  i++;
+if  (condition3)  i++;
+if  (i  &amp;gt;=  2)
+        //do  something
+ 

@@ -1,0 +1,13 @@
+ 
+template  &amp;lt;  typename  ForwardIter,  typename  Predicate  &gt;
+std::vector&amp;lt;ForwardIter&gt;  where(ForwardIter  beg,  ForwardIter  end,  Predicate  pred)
+{
+    ForwardIter  fit  =  std::find_if(beg,end,pred);
+    if  (fit  ==  end)  return  std::vector&amp;lt;ForwardIter&gt;();
+
+    ForwardIter  nit  =  fit;  ++nit;
+    std::vector&amp;lt;ForwardIter&gt;  collection  =  where(nit,end,pred);
+    collection.push_front(fit);
+    return  collection;
+}
+ 

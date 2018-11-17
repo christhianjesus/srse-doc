@@ -1,0 +1,2 @@
+ TCHAR        cFileName[MAX_PATH];
+ 

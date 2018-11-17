@@ -1,0 +1,10 @@
+ #if  HAVE_MYLIB_H
+#  include  &amp;lt;mylib.h&amp;gt;
+#endif
+
+...
+
+#if  HAVE_MYLIB
+function_in_mylib();
+#endif
+ 

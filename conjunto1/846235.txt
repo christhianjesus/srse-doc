@@ -1,0 +1,5 @@
+ typedef  QVector&amp;lt;QVector2D&amp;gt;  Contour;
+BOOST_GEOMETRY_REGISTER_POINT_2D_GET_SET(QVector2D,  float,
+        boost::geometry::cs::cartesian,  x,  y,  setX,  setY)
+BOOST_GEOMETRY_REGISTER_RING(Contour)
+ 

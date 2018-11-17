@@ -1,0 +1,5 @@
+ if  (mysearch.getPath()  ==  NULL)  {  
+
+                std::cout&amp;lt;&amp;lt;"No  property  of  this  type  was  found";
+        }
+ 

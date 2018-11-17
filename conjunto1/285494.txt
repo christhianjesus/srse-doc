@@ -1,0 +1,21 @@
+ #include  "askdialog.h"          
+#include  "ui_askdialog.h"          
+
+AskDialog::AskDialog(QWidget  *parent)  :
+  QDialog(parent),          
+ui(new  Ui::AskDialog)          
+{
+ui-&amp;gt;setupUi(this);          
+}
+
+AskDialog::~AskDialog()          
+{
+delete  ui;          
+}
+
+void  AskDialog::on_dokbutton_clicked()          
+{
+QString  data=ui-&amp;gt;dline-&amp;gt;text();  
+showlist(data);          
+  }
+ 

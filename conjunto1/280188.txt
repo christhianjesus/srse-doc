@@ -1,0 +1,33 @@
+ typedef  struct  List_Node
+{
+void  *  data;
+struct  List_Node  *  next;
+}List_Node;
+
+Status  List__Add  (List_Struct  *  This,void  *  const  item)
+{
+        Assert(This)
+        Assert(item)        
+
+        struct  List_Node  *  node  =  (List_Node*)  malloc(sizeof(List_Node));
+        IsAllocated(node);
+
+        node-&amp;gt;data  =  malloc(This-&amp;gt;SizeOfData);
+        IsAllocated(node-&amp;gt;data);
+
+        memcpy(node-&amp;gt;data,item,This-&amp;gt;SizeOfData);
+        node-&amp;gt;next  =  NULL;
+
+        if(NULL  ==  This-&amp;gt;root)  /*if  first  item  to  be  added*/
+        {
+                This-&amp;gt;root=  node;
+                This-&amp;gt;last  =This-&amp;gt;root;
+        }
+        else
+        {
+                This-&amp;gt;last-&amp;gt;next  =  node;
+        }
+
+        return  STATUS_OK;
+}
+ 

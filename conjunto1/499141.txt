@@ -1,0 +1,8 @@
+ int  i;
+char  c;
+char  buffer[32];
+fgets(buffer,  32,  stdin);
+sscanf(buffer,  "%c%d",  &amp;amp;c,  &amp;amp;i)
+                  ^
+            you're  missing  this  part
+ 

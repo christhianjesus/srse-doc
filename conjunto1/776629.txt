@@ -1,0 +1,6 @@
+ std::string  Func()
+{
+    std::string  named("foo");
+    return  named;
+}
+ 

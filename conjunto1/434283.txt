@@ -1,0 +1,32 @@
+ void  sort(int*  a,  int  size)
+{
+        if  (size  &amp;lt;=  1)  return;
+        else  if  (size  ==  2)
+        {
+                if  (a[0]  &amp;gt;  a[1])
+                        swap  (a[0],  a[1]);
+                return;
+        }
+        else
+        {
+                int  i  =  size  /  2;
+                sort(a,  i);
+                sort(a+i,  size  -  i);
+                int  j  =  0,  k  =  i  ;
+                while  (k  &amp;lt;  size  &amp;amp;&amp;amp;  j  &amp;lt;  k)
+                {
+                        if  (a[j]  &amp;gt;  a[k])
+                        {
+                                int  temp  =  k;
+                                while  (temp  &amp;gt;  j)
+                                {
+                                        swap(a[temp  -  1],  a[temp]);
+                                        temp--;
+                                }
+                                k++;
+                        }
+                        j++;
+                }
+        }
+}
+ 

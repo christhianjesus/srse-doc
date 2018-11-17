@@ -1,0 +1,2 @@
+ const  ENTITY*  s_e  =  NULL;
+ 

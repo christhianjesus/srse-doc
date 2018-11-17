@@ -1,0 +1,5 @@
+ void  test(string  &amp;amp;  s){
+        std::string  s2  =  s  +  ',';
+        return  test(s2);
+}
+ 

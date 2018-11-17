@@ -1,0 +1,41 @@
+ class  Edge  {                //  an  edge  associates  an  Earley  style  dotted-item  with  a  span
+            public:
+
+                &amp;lt;some  irrelevant  stuff&amp;gt;
+
+                Span  span;            //  Span  of  the  edge
+                bool  isActive;
+                vector&amp;lt;Traversal  *&amp;gt;  leading_traversals;  //  The  list  of  traversals  which  lead  to  parsing  of  this  edge
+
+                vector&amp;lt;nth_best_parse&amp;gt;  n_best_parses;
+
+
+                union  {
+                                DottedRule  rule_state;    //  Accessed  if  isActive  is  true
+                                int  symbol;          //  Accessed  if  isActive  is  false
+                                                                //  A  symbol  corresponding  to  the  category  of  a  passive  edge
+                                                                //  Put  inside  this  union  to  save  space
+                };
+
+                inline  int  span_length()  {return  span.end  -  span.start;}
+
+        };
+
+&amp;lt;some  other  stuff&amp;gt;
+
+class  BPCFGParser  {
+
+    public:
+
+        //  Some  data  structures  used  in  intermediary  computations  for  calculating  the  n-best  parses
+
+//        vector&amp;lt;vector&amp;lt;int&amp;gt;  &amp;gt;  nth_best_pairs;
+        vector&amp;lt;vector&amp;lt;nth_best_parse&amp;gt;  &amp;gt;  n_best_pairs_for_traversals;
+
+        &amp;lt;some  other  stuff&amp;gt;
+
+        void  compute_n_best_parses(Edge  *e,  int  n);
+
+        &amp;lt;some  other  stuff&amp;gt;
+}
+ 

@@ -1,0 +1,2 @@
+ if  (  &amp;amp;str[i]  ==  "1")  cout  &amp;lt;&amp;lt;  "SET"  &amp;lt;&amp;lt;  endl  &amp;lt;&amp;lt;  endl;
+ 

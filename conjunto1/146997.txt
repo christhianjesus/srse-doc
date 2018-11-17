@@ -1,0 +1,19 @@
+ &amp;lt;create/bind  serversocket,  listen  on  it,  add  it  to  fd_set&amp;gt;
+
+while  (  running  )
+{
+      nd  =  select(  maxfd,  fd_set,  null,  null,  timeout  )
+      if  (  nd  ==  0  )
+            continue;    //  timeout  -  do  periodic  processing
+      if  (  fd_isset(  fd,  serversocket  )
+      {
+              do  the  accept  on  the  server  socket  and  add  new  socket  to  the  fd_set
+      }
+      if  (  isset(  fd,  clientsocket  )  )
+      {
+              now  you  know  data  is  available  on  the  socket,  so  you  can  read  from  it
+              a  return  of  0  on  the  socket  indicates  the  socket  was  closed
+              in  which  case  you  should  close  your  end  and  remove  socket  from  fd_set
+      }
+}
+ 

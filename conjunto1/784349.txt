@@ -1,0 +1,6 @@
+ template&amp;lt;typename  P,  EnableIf&amp;lt;NullablePointer&amp;lt;P&amp;gt;&amp;gt;...&amp;gt;
+void  foo(P&amp;amp;);
+
+template&amp;lt;typename  It,  EnableIf&amp;lt;Iterator&amp;lt;It&amp;gt;&amp;gt;...&amp;gt;
+void  foo(It&amp;amp;);
+ 

@@ -1,0 +1,14 @@
+ char  *substring(const  char  *text,  int  position,  int  length)
+{
+      char  *temp  =  malloc(length  +  1);
+      int  i,  j;
+
+      for  (i  =  position,  j  =  0;  i  &amp;lt;  position  +  length;  i++,  j++)
+      {
+              temp[j]  =  text[i];
+      }
+      temp[j]  =  '\0';
+
+      return  temp;
+}
+ 

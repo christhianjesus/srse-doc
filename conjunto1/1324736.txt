@@ -1,0 +1,4 @@
+ test*  t  =  new  test();
+t-&amp;gt;read();  //  the  arrow  is  short  for  (*test).
+delete  t;  //  don't  forget  to  clean  up!
+ 

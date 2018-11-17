@@ -1,0 +1,40 @@
+ //  This  is  a  file  designed  to  crash  horribly  when  run.
+//  It  should  generate  a  core,  and  it  should  crash  inside  some  lua  functions
+
+#include  "lua.h"
+#include  "lualib.h"
+#include  "lauxlib.h"
+
+#include  &amp;lt;iostream&amp;gt;
+#include  &amp;lt;signal.h&amp;gt;
+
+int  crash_function(lua_State  *  L)
+{
+    raise(  SIGABRT  );  //This  should  dump  core!
+    return  0;
+}
+
+
+
+int  main()
+{
+    lua_State  *  L  =  luaL_newstate();
+    lua_pushcfunction(L,  crash_function);
+    lua_setfield(L,  LUA_GLOBALSINDEX,  "C");
+
+    luaopen_base(L);
+    if(  1  ==  luaL_dofile(L,  "a.lua"  ))
+    {
+        std::cout&amp;lt;&amp;lt;"ERROR:  "&amp;lt;&amp;lt;lua_tostring(L,-1)&amp;lt;&amp;lt;std::endl;
+        return  1;
+    }
+    if(  1  ==  luaL_dofile(L,  "b.lua"  ))
+    {
+        std::cout&amp;lt;&amp;lt;"ERROR:  "&amp;lt;&amp;lt;lua_tostring(L,-1)&amp;lt;&amp;lt;std::endl;
+        return  1;
+    }
+
+    lua_getfield(L,  LUA_GLOBALSINDEX,  "A");
+    lua_pcall(L,  0,  0,  NULL);
+}
+ 

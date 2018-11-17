@@ -1,0 +1,20 @@
+ std::copy(buffer1.begin(),buffer1.end(),&amp;amp;buffer2[0]);
+0030109C    mov                  esi,dword  ptr  [esp+14h]    
+003010A0    mov                  ecx,dword  ptr  [esp+18h]    
+003010A4    mov                  edi,dword  ptr  [esp+24h]    
+003010A8    mov                  eax,esi    
+003010AA    cmp                  esi,ecx    
+003010AC    je                    main+8Eh  (3010CEh)    
+003010AE    mov                  edx,edi    
+003010B0    sub                  edx,esi    
+003010B2    mov                  ebx,dword  ptr  [eax]    
+003010B4    mov                  dword  ptr  [edx+eax],ebx    
+003010B7    mov                  ebx,dword  ptr  [eax+4]    
+003010BA    mov                  dword  ptr  [edx+eax+4],ebx    
+003010BE    mov                  ebx,dword  ptr  [eax+8]    
+003010C1    mov                  dword  ptr  [edx+eax+8],ebx    
+003010C5    add                  eax,0Ch    
+003010C8    cmp                  eax,ecx    
+003010CA    jne                  main+72h  (3010B2h)    
+003010CC    xor                  ebx,ebx    
+ 

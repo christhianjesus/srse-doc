@@ -1,0 +1,4 @@
+ void  generateNumbers(double  &amp;amp;  number)  {
+number  =  1  +  rand()  %  500;
+}
+ 

@@ -1,0 +1,2 @@
+ std::vector&amp;lt;the  type  of  each  object  in  the  vector&amp;gt;  someName
+ 

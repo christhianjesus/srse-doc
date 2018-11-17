@@ -1,0 +1,12 @@
+ while(getline(tasksClone,  testBuffer)){
+                if(testBuffer  ==  workingString){
+                        //  This  condition  does  nothing.  Essentially  erasing  the  'completed'  task  from  the  list.
+                }
+                else  if(testBuffer  !=  workingString  &amp;amp;&amp;amp;  tasksClone.eof()){
+                        //  This  writes  everything  except  the  specified  task  to  taskbuffer.dat
+                                saveTasks  &amp;lt;&amp;lt;  testBuffer;
+                                                        }
+                else  {  
+                                saveTasks  &amp;lt;&amp;lt;  testBuffer  &amp;lt;&amp;lt;  '\n';
+                }
+ 

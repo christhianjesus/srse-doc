@@ -1,0 +1,2 @@
+         void  addEventHandler(EventHandler  handler);
+ 

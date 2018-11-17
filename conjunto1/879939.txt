@@ -1,0 +1,3 @@
+     bool  operator()  (const  T  &amp;amp;v1,  const  U  &amp;amp;v2)  //  You're  returning  bool
+//^^  should  be  T
+ 

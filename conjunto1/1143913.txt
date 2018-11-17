@@ -1,0 +1,13 @@
+ player  =    new  QMediaPlayer;
+audio    =    new  QAudioProbe  ;
+QAudioRecorder  *recorder  =  new  QAudioRecorder();
+
+
+if  (audio-&amp;gt;setSource(player))
+{
+        //  Probing  succeeded,  audioProbe-&amp;gt;isValid()  should  be  true.
+        std::cout  &amp;lt;&amp;lt;  "probing  succed"&amp;lt;&amp;lt;  std::endl;
+        connect(audio,  SIGNAL(audioBufferProbed(QAudioBuffer)),  this,
+                                    SLOT(processBuffer(QAudioBuffer)));
+}
+ 

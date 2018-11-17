@@ -1,0 +1,2 @@
+ argtype::Title  TITLE  =  argtype::IdToken&amp;lt;1&amp;gt;();
+ 

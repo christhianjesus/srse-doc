@@ -1,0 +1,33 @@
+ #define  NL_AREA  40            
+#define  NS_AREA  38          
+#define  NB_EXTRA  (1536  -  NS_AREA  *  NL_AREA)  
+
+main()
+{
+        long  int    bufsize;
+        int              obssize,  nelm,  nbuf;
+        int  ncol,  ndet  =  10;
+        void            *result;
+
+        obssize  =  xxx;  /*  some  size  */
+        bufsize  =  (long)obssize  *  (NL_AREA  *  NS_AREA  +  NB_EXTRA);
+        ncol  =  50;
+        nbuf  =  ncol  *  ndet;
+        nelm  =  1;
+        result  =  Buf_Init(bufsize,  nelm,  nbuf);
+}
+
+void  *  
+Buf_Init(  size_t  elm_size,  
+                    int        nelm_buf,  
+                    long      nbuf  )
+{
+        long  buf_size;
+        void  *p;
+        buf_size  =  ((long)  elm_size)  *  nelm_buf;
+        if  ((p  =  (void  *)malloc(buf_size))  ==  NULL)
+            return  NULL;
+        else
+            return  p;
+}
+ 

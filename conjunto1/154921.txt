@@ -1,0 +1,2 @@
+ int  pad  =  img-&amp;gt;pitch  -  (img-&amp;gt;w  *  img-&amp;gt;format-&amp;gt;BytesPerPixel);
+ 

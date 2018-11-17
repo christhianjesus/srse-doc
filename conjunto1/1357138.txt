@@ -1,0 +1,2 @@
+ rm  -rf  &amp;lt;path-to-directory&amp;gt;/*
+ 

@@ -1,0 +1,7 @@
+ template&amp;lt;typename  T&amp;gt;  class  TVector3  {
+public:
+        T  x,  y,  z;
+}
+
+typedef  TVector3&amp;lt;int&amp;gt;                      Vector3i;
+ 

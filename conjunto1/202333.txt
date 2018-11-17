@@ -1,0 +1,3 @@
+ processBlockIdx(arr,  lastIdx1);
+processBlockIdx(arr  +  lastIdx1  +1,  lastIdx2  -  lastIdx1  -  1);
+ 

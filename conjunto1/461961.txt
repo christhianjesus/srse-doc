@@ -1,0 +1,2 @@
+ prog.cpp:9:  warning:  direct  base  ‘A’  inaccessible  in  ‘C’  due  to  ambiguity  
+ 

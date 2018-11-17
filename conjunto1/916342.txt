@@ -1,0 +1,2 @@
+ outfile.open(nameOfFile)&amp;lt;&amp;lt;(".txt");  //  Opens  the  quotations  file
+ 

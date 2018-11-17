@@ -1,0 +1,10 @@
+ int  compare  (words  *a,  words  *b)  {
+        if  (a-&amp;gt;hitCount  &amp;gt;  b-&amp;gt;hitCount)  {
+                return  -1;
+        }  else  if  (a-&amp;gt;hitCount  &amp;lt;  b-&amp;gt;hitCount)  {
+                return  1;
+        }  else  {
+                return  0;
+        }
+}
+ 

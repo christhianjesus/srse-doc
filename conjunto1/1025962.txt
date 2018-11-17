@@ -1,0 +1,5 @@
+ cout  &amp;lt;&amp;lt;  "Enter  the  hight"
+cin  &amp;gt;&amp;gt;  x;
+cout  &amp;lt;&amp;lt;  "Enter  length  of  the  base"
+cin  &amp;gt;&amp;gt;  y;
+ 

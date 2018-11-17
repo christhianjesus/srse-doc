@@ -1,0 +1,3 @@
+ (gdb)  break  MyClass::MyClass(const  MyClass  &amp;amp;)          //  break  when  copied
+(gdb)  break  MyClass::~MyClass()                                      //  break  when  object  destroyed
+ 

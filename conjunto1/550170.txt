@@ -1,0 +1,27 @@
+ void  insertNewNode(node  **rowHead,  node  **columnHead,  int  value,  int  row,  int  column)  {
+
+        //Get  to  the  correct  position  in  the  column  linked  list
+        if  (*columnHead  ==  NULL)  {
+                *columnHead  =  malloc(sizeof(node));
+        }  else  {
+                while((*columnHead)-&amp;gt;nextColumn  !=  NULL  &amp;amp;&amp;amp;  (*columnHead)-&amp;gt;nextColumn-&amp;gt;row  &amp;lt;  row)
+                        *columnHead  =  (*columnHead)-&amp;gt;nextColumn;
+        }
+
+        //Get  to  the  correct  position  in  the  row  linked  list.
+        if  (*rowHead  ==  NULL)  {
+                *rowHead  =  malloc(sizeof(node));
+        }  else  {
+                while((*rowHead)-&amp;gt;nextRow  !=  NULL  &amp;amp;&amp;amp;  ((*rowHead)-&amp;gt;nextRow-&amp;gt;column  &amp;lt;  column))
+                        *rowHead  =  (*rowHead)-&amp;gt;nextRow;
+        }
+
+        node  *newNode  =  malloc(sizeof(node));
+        newNode-&amp;gt;column  =  column;
+        newNode-&amp;gt;row  =  row;
+        newNode-&amp;gt;value  =  value;
+
+        (*columnHead)-&amp;gt;nextColumn  =  newNode;
+        (*rowHead)-&amp;gt;nextRow  =  newNode;
+}
+ 

@@ -1,0 +1,3 @@
+ strcpy(temp-&amp;gt;singerName,  singerName);  //  was:  temp-&amp;gt;singerName[50]=signerName[50];
+strcpy(temp-&amp;gt;albumTitle,  albumTitle);
+ 

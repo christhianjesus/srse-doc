@@ -1,0 +1,4 @@
+ ==16851==  Invalid  write  of  size  1
+
+==16851==        at  0x4A082E7:  strcpy  (mc_replace_strmem.c:303)
+ 

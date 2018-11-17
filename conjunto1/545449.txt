@@ -1,0 +1,5 @@
+ your  example  in  bin:      0011  0011  1100  0000
+make  a  AND  with:              1111  0000  0000  0000
+Result:                                0011  0000  0000  0000
+Shift  12  places:              0000  0000  0000  0011  &amp;lt;--  This  is  3,  so  you  got  the  instruction  3
+ 

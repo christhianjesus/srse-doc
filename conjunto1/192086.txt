@@ -1,0 +1,7 @@
+ class  XLightSprite  :  public  XSprite,  public  XILightSource
+{
+  public:
+        using  XSprite::position;
+        XVec2  position()  const;
+};
+ 

@@ -1,0 +1,7 @@
+ std::string  cmnd;
+std::string  file;
+
+if  (commands  &amp;gt;&amp;gt;  cmnd  &amp;gt;&amp;gt;  file)
+{
+}
+ 

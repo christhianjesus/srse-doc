@@ -1,0 +1,4 @@
+ int*  pi  =  new  int[30];
+...
+Destroy(&amp;amp;pi);  //  `pi`  is  now  pointing  to  0
+ 

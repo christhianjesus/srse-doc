@@ -1,0 +1,6 @@
+ char  memory[164];
+int  *p0,*p1,*p2;
+p0=((int*)((void*)(memory)));        //  p0  starts  from  start
+p1=((int*)((void*)(memory+64)));  //  p1  starts  from  64th  char
+p2=((int*)((void*)(&amp;amp;memory[64])));  //  p2  starts  from  64th  char
+ 
